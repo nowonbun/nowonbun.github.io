@@ -33,7 +33,9 @@ body{
 	background-color: #e5ebef;
 	scrollbar-face-color: #121212;
 }
-
+ul {
+	list-style: none;
+}
 ::-webkit-scrollbar {
 	width: 10px;
 } 
@@ -433,8 +435,8 @@ a:hover{
 }
 
 #header .header-top{
-	/*background-color: rgba(0, 0, 0, 0.9);*/
-	background-color: rgba(255, 255, 255, 0.9);
+	background-color: rgba(0, 0, 0, 0.9);
+	/*background-color: rgba(255, 255, 255, 0.9);*/
 	padding: 10px 0;
 	margin-bottom: 70px;
 }
@@ -479,9 +481,9 @@ a:hover{
 }
 
 .navbar.navbar-default{
-	/*background-color: #29343a;*/
-	background-color: #FFFFFF;
-	/*border-bottom: 3px solid #e5ebef;*/
+	background-color: #29343a;
+	/*background-color: #FFFFFF;*/
+	border-bottom: 3px solid #e5ebef;
 	border-bottom: 3px solid #001C58;
 	margin-bottom: 35px;
 	padding: 8px 0;
@@ -519,7 +521,10 @@ a:hover{
 	    -ms-box-shadow: none;
 	     -o-box-shadow: none;
 }
-
+.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+ }
 .dropdown-menu li a{
 	color: #fff;
 	padding: 10px 20px;
@@ -530,7 +535,9 @@ a:hover{
 }
 
 .navbar-default ul.nav li a:hover{
-	color: #f1c40f;
+	/*color: #f1c40f;*/
+	color: #fff;
+	background-color: #f1c40f;
 }
 
 /* CONTENT

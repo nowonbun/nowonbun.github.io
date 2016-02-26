@@ -5,9 +5,9 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>명월일지</title>
+<title>[##_title_##]</title>
 <!-- link rel="stylesheet" type="text/css" href="http://nowonbun.github.io/theme/style.css"-->
-<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="./style.css">
 <meta name="description" content="" />
 <meta name="keywords" content="" />
 <meta name="author" content="" />
@@ -33,7 +33,7 @@
 					<div class="col-lg-4 col-lg-offset-4 col-md-4">
 						<div class="text-center">
 							<div class="slide-header">
-								<h2>명월 일지</h2>
+								<h2><a href="[##_blog_link_##]">[##_title_##]</a></h2>
 								<div id="owl-header" class="owl-carousel owl-theme">
 									<div class="item">
 										<h5>개발은 즐겁게...</h5>
@@ -60,27 +60,27 @@
 					<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
 				</button>
 			</div>
+			
+			<style>
+</style>
 			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div class="collapse navbar-collapse navbar-ex1-collapse">
-
-				<ul class="nav navbar-nav">
-					<li><a href="index.html">HOME</a></li>
-					<li><a href="about.html">ABOUT</a></li>
-					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">CONTACT <b class="caret"></b></a>
-						<ul class="dropdown-menu">
-							<li><a href="contact.html">CONTACT</a></li>
-							<li><a href="contact-alt.html">CONTACT WITH SIDEBAR</a></li>
-						</ul></li>
-					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">PAGES <b class="caret"></b></a>
-						<ul class="dropdown-menu">
-							<li><a href="single.html">SINGLE BLOG</a></li>
-							<li><a href="login.html">LOGIN</a></li>
-							<li><a href="login-alt.html">LOGIN ALTERNATIF</a></li>
-							<li><a href="register.html">REGISTER</a></li>
-							<li><a href="register-alt.html">REGISTER ALTERNATIF</a></li>
-							<li><a href="blank.html">BLANK PAGE</a></li>
-						</ul></li>
-				</ul>
+			<div class="collapse navbar-collapse navbar-ex1-collapse menuNavi">
+				[##_category_list_##]
+				<script src="http://nowonbun.github.io/theme/js/jquery-1.12.1.min.js"></script>
+				<script>
+					<!--분류 전체보기 삭제-->
+					$("ul.tt_category > li > a").hide();
+					$("ul.tt_category > li > img").hide();
+					<!--메뉴 바로가기 설정-->
+					$("ul.category_list > li > a > img").hide();
+					$("ul.category_list > li").prop("class","dropdown");
+					$("ul.category_list > li > a").prop("class","dropdown-toggle");
+					$("ul.sub_category_list").prop("class","dropdown-menu");
+					
+					$("ul.category_list").prop("class","buffer");
+					$("ul.tt_category").html($("ul.buffer").html());
+					$("ul.tt_category").prop("class","nav navbar-nav");
+			</script>
 			</div>
 			<!-- /.navbar-collapse -->
 		</div>
@@ -131,11 +131,9 @@
 	<!-- end:footer bottom -->
 
 	<!-- start:javascript -->
-	<script src="http://nowonbun.github.io/theme/js/jquery-1.12.1.min.js"></script>
 	<script src="http://nowonbun.github.io/theme/bootstrap/js/bootstrap.min.js"></script>
 	<script src="http://nowonbun.github.io/theme/js/owl.carousel.min.js"></script>
 	<script src="http://nowonbun.github.io/theme/js/kagum.js"></script>
 	<!-- end:javascript -->
-
 </body>
 </html>
