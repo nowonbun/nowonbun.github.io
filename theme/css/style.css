@@ -12,7 +12,7 @@
 /* IMPORT
 ===============================*/
 
-@import url('../bootstrap/css/bootstrap.min.css');
+@import url('../bootstrap/css/bootstrap.css');
 @import url('font-awesome.min.css');
 @import url('owl.carousel.css');
 @import url('owl.theme.css');
@@ -533,7 +533,7 @@ a:hover{
 
 @media screen and (min-width:768px) {
 	.navbar-default ul.nav li a:hover {
-		color: #f1c40f;
+		/*color: #f1c40f;*/
 		color: #fff;
 		background-color: #f1c40f;
 	}
@@ -541,6 +541,9 @@ a:hover{
 		display: block;
 		margin-top: 0;
 	}
+}
+.navbar-default .navbar-nav>li>a:focus, .
+navbar-default .navbar-nav>li>a:hover {
 }
 /* CONTENT
 ===============================*/

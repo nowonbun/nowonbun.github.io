@@ -65,54 +65,23 @@
 </style>
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse navbar-ex1-collapse menuNavi">
-				<!-- [##_category_list_##]-->
-				<ul class="tt_category">
-					<li><a class="link_tit" href="/category">분류 전체보기 <img src=http://i1.daumcdn.net/cfs.tistory/resource/2115/blog/image/category/new_ico_5.gif alt="N" style='vertical-align: middle; padding-left: 2px;' /></a>
-					<ul class="category_list">
-							<li><a class="link_item" href="/category/노트">노트 <img src=http://i1.daumcdn.net/cfs.tistory/resource/2115/blog/image/category/new_ico_5.gif alt="N" style='vertical-align: middle; padding-left: 2px;' /></a>
-							<ul class="sub_category_list">
-									<li><a class="link_sub_item" href="/category/노트/개발%20노트">개발 노트 <img src=http://i1.daumcdn.net/cfs.tistory/resource/2115/blog/image/category/new_ico_5.gif alt="N" style='vertical-align: middle; padding-left: 2px;' /></a></li>
-									<li><a class="link_sub_item" href="/category/노트/생활%20노트">생활 노트</a></li>
-								</ul></li>
-							<li><a class="link_item" href="/category/코드%20연습">코드 연습</a>
-							<ul class="sub_category_list">
-									<li><a class="link_sub_item" href="/category/코드%20연습/C%20/%20C++">C / C++</a></li>
-									<li><a class="link_sub_item" href="/category/코드%20연습/Java">Java</a></li>
-									<li><a class="link_sub_item" href="/category/코드%20연습/C%23">C#</a></li>
-									<li><a class="link_sub_item" href="/category/코드%20연습/Javascript">Javascript</a></li>
-									<li><a class="link_sub_item" href="/category/코드%20연습/Jquery">Jquery</a></li>
-									<li><a class="link_sub_item" href="/category/코드%20연습/Windows">Windows</a></li>
-									<li><a class="link_sub_item" href="/category/코드%20연습/Linux">Linux</a></li>
-									<li><a class="link_sub_item" href="/category/코드%20연습/그%20외">그 외</a></li>
-								</ul></li>
-							<li><a class="link_item" href="/category/플젝%20노트">플젝 노트</a>
-							<ul class="sub_category_list">
-									<li><a class="link_sub_item" href="/category/플젝%20노트/가계부%28C%23%29">가계부(C#)</a></li>
-									<li><a class="link_sub_item" href="/category/플젝%20노트/가계부%28Jsp%29">가계부(Jsp)</a></li>
-									<li><a class="link_sub_item" href="/category/플젝%20노트/블로그%20에디터">블로그 에디터</a></li>
-								</ul></li>
-							<li><a class="link_item" href="/category/공부%20노트">공부 노트</a></li>
-							<li><a class="link_item" href="/category/그%20외">그 외</a></li>
-						</ul></li>
-				</ul>
-				<ul id="temp" style="display:none"></ul>
+				<ul class="nav navbar-nav"></ul>
+				<div style="display:none">
+					[##_category_list_##]
+				</div>
 				<input type="hidden" id="webType">
 
 				<script src="http://nowonbun.github.io/theme/js/jquery-1.12.1.min.js"></script>
 				<script>
 					<!--분류 전체보기 삭제-->
 					$("ul.tt_category > li > a").hide();
-					$("ul.tt_category > li > img").hide();
 					<!--메뉴 바로가기 설정-->
 					$("ul.category_list > li > a > img").hide();
 					$("ul.category_list > li").prop("class","dropdown");
 					$("ul.category_list > li > a").prop("class","dropdown-toggle");
 					$("ul.sub_category_list").prop("class","dropdown-menu");
-					
-					//$("ul.category_list").prop("class","buffer");
-					$("ul#temp").html($("ul.category_list").html());
-					$("ul.tt_category").html($("ul#temp").html());
-					$("ul.tt_category").prop("class","nav navbar-nav");
+					console.log($("ul.tt_category").html());
+					$("ul.navbar-nav").html($("ul.tt_category > li  > ul.category_list").html());
 					$("#webType").val("0");
 					if($(".navbar-toggle").css("display") === "block"){
 						$("li.dropdown > a").prop("href","#");
@@ -120,10 +89,10 @@
 						$("#webType").val("1");
 					}
 					$(window).resize(function() {
-						console.log($("ul#temp").html());
+						$("li.open").prop("class","dropdown");
 						if($(".navbar-toggle").css("display") === "block"){
 							if($("#webType").val()  !== "1" ){
-								$("ul.tt_category").html($("ul#temp").html());
+								$("ul.navbar").html($("ul.tt_category").html());
 								
 								$("li.dropdown > a").prop("href","#");
 								$("li.dropdown > a").attr("data-toggle","dropdown");
@@ -131,11 +100,16 @@
 							}
 						}else{
 							if($("#webType").val()  !== "0" ){
-								$("ul.tt_category").html($("ul#temp").html());
+								$("ul.navbar").html($("ul.tt_category").html());
 								$("#webType").val("0");
-								console.log($("ul#temp").html());
 							}
 						}
+					});
+					$(".dropdown-menu").hover(function(){
+						$(this).parent().css("color","#fff");
+						$(this).parent().css("background-color","#f1c40f");
+					},function(){
+						$(this).parent().css("background-color","#29343a");
 					});
 			</script>
 			</div>
