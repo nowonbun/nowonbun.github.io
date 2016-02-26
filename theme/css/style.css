@@ -521,10 +521,7 @@ a:hover{
 	    -ms-box-shadow: none;
 	     -o-box-shadow: none;
 }
-.dropdown:hover .dropdown-menu {
-    display: block;
-    margin-top: 0;
- }
+
 .dropdown-menu li a{
 	color: #fff;
 	padding: 10px 20px;
@@ -534,12 +531,17 @@ a:hover{
 	font-weight: 400;
 }
 
-.navbar-default ul.nav li a:hover{
-	/*color: #f1c40f;*/
-	color: #fff;
-	background-color: #f1c40f;
+@media screen and (min-width:768px) {
+	.navbar-default ul.nav li a:hover {
+		color: #f1c40f;
+		color: #fff;
+		background-color: #f1c40f;
+	}
+	.dropdown:hover .dropdown-menu {
+		display: block;
+		margin-top: 0;
+	}
 }
-
 /* CONTENT
 ===============================*/
 
