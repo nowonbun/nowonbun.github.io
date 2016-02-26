@@ -405,7 +405,7 @@ a:hover{
 ===============================*/
 
 #header{
-	background: url('../image/bg-body.jpg') no-repeat center center fixed;
+	background: url('../image/IMG_9173.jpg') no-repeat center center fixed;
 	color: #ecf0f1;
 	background-size: cover;
 	-webkit-background-size: cover;
@@ -433,7 +433,8 @@ a:hover{
 }
 
 #header .header-top{
-	background-color: rgba(0, 0, 0, 0.9);
+	/*background-color: rgba(0, 0, 0, 0.9);*/
+	background-color: rgba(255, 255, 255, 0.9);
 	padding: 10px 0;
 	margin-bottom: 70px;
 }
@@ -478,8 +479,10 @@ a:hover{
 }
 
 .navbar.navbar-default{
-	background-color: #29343a;
-	border-bottom: 3px solid #e5ebef;
+	/*background-color: #29343a;*/
+	background-color: #FFFFFF;
+	/*border-bottom: 3px solid #e5ebef;*/
+	border-bottom: 3px solid #001C58;
 	margin-bottom: 35px;
 	padding: 8px 0;
 }
@@ -1130,7 +1133,7 @@ ul.comments p.meta{
 ===============================*/
 
 #login{
-	background: url('../image/bg-body.jpg')no-repeat center center fixed;
+	background: url('../image/IMG_9173.jpg')no-repeat center center fixed;
 	background-size: cover;
 	-webkit-background-size: cover;
 	   -moz-background-size: cover;
@@ -1193,7 +1196,7 @@ ul.comments p.meta{
 ===============================*/
 
 #register{
-	background: url('../image/bg-body.jpg')no-repeat center center fixed;
+	background: url('../image/IMG_9173.jpg')no-repeat center center fixed;
 	background-size: cover;
 	-webkit-background-size: cover;
 	   -moz-background-size: cover;
@@ -1248,7 +1251,8 @@ ul.comments p.meta{
 footer{
 	background-color: #202020;
 	padding: 30px 0;
-	border-top: 7px solid #bdc3c7;
+	/*border-top: 7px solid #bdc3c7;*/
+	border-top: 3px solid #001C58;
 	color: #ecf0f1;
 }
 
