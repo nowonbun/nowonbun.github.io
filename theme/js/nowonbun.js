@@ -31,8 +31,10 @@ $(window).resize(function() {
 	}
 });
 $(".dropdown-menu").hover(function(){
-	$(this).parent().css("color","#fff");
-	$(this).parent().css("background-color","#f1c40f");
+	if($("#webType").val()  === "0" ){
+		$(this).parent().css("color","#fff");
+		$(this).parent().css("background-color","#f1c40f");
+	}
 },function(){
 	$(this).parent().css("background-color","#29343a");
 });
