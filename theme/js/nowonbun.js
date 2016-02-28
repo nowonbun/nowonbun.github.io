@@ -38,3 +38,4 @@ $(".dropdown-menu").hover(function(){
 },function(){
 	$(this).parent().css("background-color","#29343a");
 });
+$("div.widget-footer").html($("div.article>div.tt_article_useless_p_margin").html());

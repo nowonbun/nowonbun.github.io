@@ -1,22 +1,32 @@
-@font-face{
-	font-family : 'childpaper';
-	src : url('childpaper.ttf') format('truetype');
+@font-face {
+	font-family: 'childpaper';
+	src: url('childpaper.ttf') format('truetype');
 }
-body{
-	font-family : childpaper;
+
+body {
+	font-family: childpaper;
 }
 
 .navbar-default ul.nav li a {
 	font-size: 1.5em;
 }
-div.titleArea div.title{
-	font-size:3em;
+/* 글 타이틀*/
+div.titleArea div.title {
+	font-size: 4em;
 	margin-bottom: 0.2em;
 }
-div.titleArea div.categoryArea{
-	margin-bottom: 0.2em;
-	
+/* 글 카테고리*/
+div.titleArea div.categoryArea {
+	margin-bottom: 1.0em;
 }
-div.titleArea div.categoryArea a{
-	color: #337ab7;	
+div.titleArea div.categoryArea a {
+	color: #337ab7;
+}
+/* 글*/
+div.article>div.tt_article_useless_p_margin {
+	font-size:2em;
+}
+/*카테고리의 다른 글*/
+div.article>div.tt_article_useless_p_margin {
+	display:none;
 }
