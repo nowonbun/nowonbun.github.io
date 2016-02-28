@@ -1,0 +1,7 @@
+@font-face{
+	font-family : 'childpaper';
+	src : url('childpaper.ttf') format('truetype');
+}
+body{
+	font-family : childpaper;
+}
