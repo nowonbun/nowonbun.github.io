@@ -5,7 +5,7 @@ $("ul.category_list > li > a > img").hide();
 $("ul.category_list > li").prop("class","dropdown");
 $("ul.category_list > li > a").prop("class","dropdown-toggle");
 $("ul.sub_category_list").prop("class","dropdown-menu");
-console.log($("ul.tt_category").html());
+// console.log($("ul.tt_category").html());
 $("ul.navbar-nav").html($("ul.tt_category > li  > ul.category_list").html());
 $("#webType").val("0");
 if($(".navbar-toggle").css("display") === "block"){
@@ -39,5 +39,9 @@ $(".dropdown-menu").hover(function(){
 	$(this).parent().css("background-color","#29343a");
 });
 var htmltest = $("div.article>div.tt_article_useless_p_margin>div.another_category").html();
-console.log(htmltest);
-$("div.widget-footer").html(htmltest);
+//console.log(htmltest);
+if(htmltest.length < 5){
+	$("footer").hide();
+}else{
+	$("div.widget-footer").html(htmltest);
+}

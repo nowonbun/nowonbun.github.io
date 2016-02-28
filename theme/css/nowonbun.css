@@ -31,3 +31,14 @@ div.article>div.tt_article_useless_p_margin {
 div.article>div.tt_article_useless_p_margin>div.another_category {
 	display: none;
 }
+div.widget-footer table{
+	width:100%;
+}
+div.widget-footer td{
+	text-align: right;
+} 
+
+div.entry hr{
+	border-color: #000;
+}
+
