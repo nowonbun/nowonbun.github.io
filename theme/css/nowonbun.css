@@ -19,14 +19,15 @@ div.titleArea div.title {
 div.titleArea div.categoryArea {
 	margin-bottom: 1.0em;
 }
+
 div.titleArea div.categoryArea a {
 	color: #337ab7;
 }
 /* 글*/
 div.article>div.tt_article_useless_p_margin {
-	font-size:2em;
+	font-size: 2em;
 }
 /*카테고리의 다른 글*/
-div.article>div.tt_article_useless_p_margin {
-	display:none;
+div.article>div.another_category {
+	display: none;
 }
