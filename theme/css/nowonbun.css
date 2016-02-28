@@ -28,6 +28,6 @@ div.article>div.tt_article_useless_p_margin {
 	font-size: 2em;
 }
 /*카테고리의 다른 글*/
-div.article>div.another_category {
+div.article>div.tt_article_useless_p_margin>div.another_category {
 	display: none;
 }
