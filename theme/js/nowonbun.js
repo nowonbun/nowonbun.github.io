@@ -41,7 +41,7 @@ $(".dropdown-menu").hover(function(){
 var htmltest = $("div.article>div.tt_article_useless_p_margin>div.another_category").html();
 //console.log(htmltest);
 console.log(htmltest.length);
-if(htmltest.length < 5){
+if(htmltest == null){
 	$("footer").hide();
 }else{
 	$("div.widget-footer").html(htmltest);
