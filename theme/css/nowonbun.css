@@ -5,3 +5,18 @@
 body{
 	font-family : childpaper;
 }
+
+.navbar-default ul.nav li a {
+	font-size: 1.5em;
+}
+div.titleArea div.title{
+	font-size:3em;
+	margin-bottom: 0.2em;
+}
+div.titleArea div.categoryArea{
+	margin-bottom: 0.2em;
+	
+}
+div.titleArea div.categoryArea a{
+	color: #337ab7;	
+}
