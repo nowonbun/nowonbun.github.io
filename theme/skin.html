@@ -221,7 +221,7 @@
 									</div>
 									<!-- 2-8-5. 트랙백 -->
 									<!-- 2-8-6. 댓글 -->
-									<div class="tab-pane fade" id="tb">
+									<div class="tab-pane fade active in" id="tb">
 										<s_rp>
 										<div class="comment">
 											<!-- 2-8-6-2. 댓글 쓰기 -->
@@ -233,23 +233,21 @@
 															<s_rp_member> 
 															<s_rp_guest>
 															<div class="row">
-																<div class="form-group col-md-2">
+																<div class="form-group col-md-1">
 																	<label for="[##_rp_input_name_##]_[##_article_rep_id_##]" class="lableTb">name</label>
 																</div>
 																<div class="form-group col-md-3">
 																	<input type="text" id="[##_rp_input_name_##]_[##_article_rep_id_##]" name="[##_rp_input_name_##]" value="" class="form-control textField nowonbuntext" placeholder="enter name">
 																</div>
-																<div class="form-group col-md-2">
+																<div class="form-group col-md-1">
 																	<label for="[##_rp_input_password_##]_[##_article_rep_id_##]" class="lableTb">password</label> 
 																</div>
 																<div class="form-group col-md-3">	
 																	<input type="password" id="[##_rp_input_password_##]_[##_article_rep_id_##]" class="form-control textField nowonbuntext" maxlength="8" name="[##_rp_input_password_##]" value="" placeholder="password">
 																</div>
-																<div class="form-group col-md-1">
-																	<input type="checkbox" name="[##_rp_input_is_secret_##]" class="checkbox" id="[##_rp_input_is_secret_##]_[##_article_rep_id_##]" name="[##_rp_input_is_secret_##]" value="1" /> 
-																</div>
-																<div class="form-group col-md-1">
-																	<label class="lableTb">secret</label> 
+																<div>
+																	<input type="checkbox" name="[##_rp_input_is_secret_##]" class="checkbox" id="[##_rp_input_is_secret_##]_[##_article_rep_id_##]" name="[##_rp_input_is_secret_##]" value="1" />
+																	<label class="lableTb" style="text-align: left">secret</label>
 																</div>
 															</div>
 															</s_rp_guest>

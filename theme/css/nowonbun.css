@@ -46,6 +46,7 @@ div.entry hr {
 
 div.article {
 	margin-bottom: 1.0em;
+	min-height:200px;
 }
 
 div.tagText {
