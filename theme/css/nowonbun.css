@@ -41,4 +41,12 @@ div.widget-footer td{
 div.entry hr{
 	border-color: #000;
 }
-
+div.article{
+	margin-bottom: 1.0em;
+}
+div.tagText{
+    font-size: 1.0px;
+    clear: both;
+    padding: 0px 0px 14px 37px;
+    background: url("http://static.naver.net/blog/ico_tag.gif") 0px 5px no-repeat;
+}
