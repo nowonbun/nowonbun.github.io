@@ -66,3 +66,12 @@ div.tagText>a :hover{
 input.nowonbuntext{
 	border:#000;
 }
+div.actionTrail {
+	margin-bottom: 1em;
+}
+label.lableTb{
+    font-size: 1.5em;
+    margin-top: 0.2em;
+    text-align: center;
+    width: 100%;
+}

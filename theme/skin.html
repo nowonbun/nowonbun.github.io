@@ -176,7 +176,7 @@
 								<!-- 2-8-4. 트랙백과 댓글 보이기/감추기 -->
 								<div class="actionTrail ">
 									<ul class="nav nav-tabs nav-justified">
-										<li><a href="#tb" data-toggle="tab"> <span id="[##_article_rep_rp_cnt_id_##]"">댓글 <span class="cnt">[##_article_rep_rp_cnt_##]</span>개
+										<li class="active"><a href="#tb" data-toggle="tab"> <span id="[##_article_rep_rp_cnt_id_##]"">댓글 <span class="cnt">[##_article_rep_rp_cnt_##]</span>개
 											</span>
 										</a></li>
 										<li><a href="#rp" data-toggle="tab"> <span id="[##_article_rep_tb_cnt_id_##]">트랙백 <span class="cnt">[##_article_rep_tb_cnt_##]</span>개
@@ -234,19 +234,22 @@
 															<s_rp_guest>
 															<div class="row">
 																<div class="form-group col-md-2">
-																	<label for="[##_rp_input_name_##]_[##_article_rep_id_##]">name</label>
+																	<label for="[##_rp_input_name_##]_[##_article_rep_id_##]" class="lableTb">name</label>
 																</div>
 																<div class="form-group col-md-3">
 																	<input type="text" id="[##_rp_input_name_##]_[##_article_rep_id_##]" name="[##_rp_input_name_##]" value="" class="form-control textField nowonbuntext" placeholder="enter name">
 																</div>
 																<div class="form-group col-md-2">
-																	<label for="[##_rp_input_password_##]_[##_article_rep_id_##]">password</label> 
+																	<label for="[##_rp_input_password_##]_[##_article_rep_id_##]" class="lableTb">password</label> 
 																</div>
 																<div class="form-group col-md-3">	
 																	<input type="password" id="[##_rp_input_password_##]_[##_article_rep_id_##]" class="form-control textField nowonbuntext" maxlength="8" name="[##_rp_input_password_##]" value="" placeholder="password">
 																</div>
-																<div class="form-group col-md-2">
-																	<input type="checkbox" name="[##_rp_input_is_secret_##]" class="checkbox" id="[##_rp_input_is_secret_##]_[##_article_rep_id_##]" name="[##_rp_input_is_secret_##]" value="1" /> secret
+																<div class="form-group col-md-1">
+																	<input type="checkbox" name="[##_rp_input_is_secret_##]" class="checkbox" id="[##_rp_input_is_secret_##]_[##_article_rep_id_##]" name="[##_rp_input_is_secret_##]" value="1" /> 
+																</div>
+																<div class="form-group col-md-1">
+																	<label class="lableTb">secret</label> 
 																</div>
 															</div>
 															</s_rp_guest>
