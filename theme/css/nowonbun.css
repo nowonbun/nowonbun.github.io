@@ -31,22 +31,38 @@ div.article>div.tt_article_useless_p_margin {
 div.article>div.tt_article_useless_p_margin>div.another_category {
 	display: none;
 }
-div.widget-footer table{
-	width:100%;
-}
-div.widget-footer td{
-	text-align: right;
-} 
 
-div.entry hr{
+div.widget-footer table {
+	width: 100%;
+}
+
+div.widget-footer td {
+	text-align: right;
+}
+
+div.entry hr {
 	border-color: #000;
 }
-div.article{
+
+div.article {
 	margin-bottom: 1.0em;
 }
-div.tagText{
-    font-size: 1.0px;
-    clear: both;
-    padding: 0px 0px 14px 37px;
-    background: url("http://static.naver.net/blog/ico_tag.gif") 0px 5px no-repeat;
+
+div.tagText {
+	font-size: 1.0em;
+	clear: both;
+	padding: 0px 0px 0px 37px;
+	background: url("http://static.naver.net/blog/ico_tag.gif") 0px 5px
+		no-repeat;
+}
+
+div.tagText>a {
+	color: #337ab7;
+	text-decoration: none;
+}
+div.tagText>a :hover{
+	text-decoration: none;
+}
+input.nowonbuntext{
+	border:#000;
 }
