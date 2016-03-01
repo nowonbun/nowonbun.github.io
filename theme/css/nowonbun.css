@@ -12,7 +12,7 @@ body {
 }
 /* 글 타이틀*/
 div.titleArea div.title {
-	font-size: 4em;
+	font-size: 3em;
 	margin-bottom: 0.2em;
 }
 /* 글 카테고리*/
@@ -98,6 +98,7 @@ hr.commentHr{
 span.name,
 span.name > a{
 	font-size:1.5em;
+	color:#000;
 }
 a.commentA > span{
 	color:#337ab7;
@@ -105,3 +106,22 @@ a.commentA > span{
 div.webComment{
 	font-size:1.5em;
 }
+p.commentContents{
+	font-size:1.2em;
+}
+
+div.paging{
+	text-align: center;
+	font-size:1.5em;
+	margin:1em;
+}
+
+div.paging > a{
+	color:#000;
+}
+div.paging span.selected{
+	color:#337ab7;
+	cursor: pointer; 
+}
+
+

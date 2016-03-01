@@ -81,6 +81,14 @@ a:hover{
 	     -o-transition: all 1s ease;
 }
 
+span.name > a{
+	color:#000;
+	text-decoration: none;
+}
+span.name > a{
+	text-decoration: none;
+}
+
 /*	BOOTSTRAP RESET
 ===============================*/
 
@@ -1332,6 +1340,6 @@ footer .sosmed-footer i.fa:hover{
 	    -ms-transition: all 1s ease;
 	     -o-transition: all 1s ease;
 }
-
+@import url('http://nowonbun.github.io/theme/css/nowonbun.css');
 /*
 ===============================*/
