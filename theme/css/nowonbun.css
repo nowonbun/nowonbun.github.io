@@ -84,18 +84,24 @@ textarea.commenttext{
 	border:#000;
 }
 button.btnComment{
-	background: #000
+	background-color: #000;
 }
 li.commentList{
 	background-color:#FFF; 
 	margin:10px;
 }
+hr.titileHr,
 hr.commentHr{
-	margin:5px;
+	margin-top:5px;
+	margin-bottom:5px;
 }
-span.name{
+span.name,
+span.name > a{
 	font-size:1.5em;
 }
 a.commentA > span{
 	color:#337ab7;
+}
+div.webComment{
+	font-size:1.5em;
 }

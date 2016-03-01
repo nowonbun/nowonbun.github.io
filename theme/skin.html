@@ -155,6 +155,7 @@
 								<!-- 글 관련 정보 : 글제목, 카테고리, 날짜, 관리자 -->
 								<div class="titleArea">
 									<div class="title">[##_article_rep_title_##]</div>
+									<hr class="titileHr">
 									<div class="categoryArea">
 										<a href="[##_article_rep_category_link_##]">[##_article_rep_category_##]</a> &nbsp;[##_article_rep_date_##]
 										<s_ad_div> &nbsp;|&nbsp; <a href="[##_s_ad_m_link_##]">Modify</a> : <a href="#" onclick="[##_s_ad_m_onclick_##]">Modify(new)</a> &nbsp;|&nbsp; ([##_s_ad_s1_label_##])→<a href="#" onclick="[##_s_ad_s2_onclick_##]">[##_s_ad_s2_label_##]</a> &nbsp;|&nbsp; <a href="#" onclick="[##_s_ad_t_onclick_##]">Trackback</a> &nbsp;|&nbsp; <a href="#" onclick="[##_s_ad_d_onclick_##]">Delete</a> </s_ad_div>
@@ -252,7 +253,7 @@
 															<div class="row">
 																<div class="col-md-12 content-line">
 																	<textarea id="[##_rp_input_comment_##]_[##_article_rep_id_##]" placeholder="enter comment" name="[##_rp_input_comment_##]" class="form-control commenttext" rows="10"></textarea>
-																	<button type="button" class="btn btn-default btnComment" onclick="[##_rp_onclick_submit_##]">submit</button>
+																	<button type="button" class="btn btn-default btnComment pull-right" onclick="[##_rp_onclick_submit_##]">submit</button>
 																</div>
 															</div>
 														</form>
@@ -312,19 +313,6 @@
 							</div>
 							</s_article_rep>
 							<!-- ************************글************************-->
-							<!-- ************************2-8-7. 퍼머링크 페이지 / 인덱스 페이지************************ -->
-							<s_index_article_rep>
-							<div class="list_content">
-								<s_article_rep_thumbnail> <img src="[##_article_rep_thumbnail_url_##]"> </s_article_rep_thumbnail>
-								<a href="[##_article_rep_link_##]" class="link_post"> <strong class="tit_post">[##_article_rep_title_##]</strong>
-									<p class="txt_post">[##_article_rep_summary_##]</p>
-								</a>
-								<div class="detail_info">
-									<a href="[##_article_rep_category_link_##]" class="link_cate"> [##_article_rep_category_##] </a> <span class="txt_bar"></span> [##_article_rep_date_##]
-								</div>
-							</div>
-							</s_index_article_rep>
-							<!-- ************************2-8-7. 퍼머링크 페이지 / 인덱스 페이지************************ -->
 							<!-- ************************2-9. 페이징************************ -->
 							<s_paging>
 							<div class="paging">
