@@ -46,7 +46,7 @@ div.entry hr {
 
 div.article {
 	margin-bottom: 1.0em;
-	min-height:200px;
+	min-height: 200px;
 }
 
 div.tagText {
@@ -61,67 +61,93 @@ div.tagText>a {
 	color: #337ab7;
 	text-decoration: none;
 }
-div.tagText>a :hover{
+
+div.tagText>a :hover {
 	text-decoration: none;
 }
-input.nowonbuntext{
-	border:#000;
+
+input.nowonbuntext {
+	border: #000;
 }
+
 div.actionTrail {
 	margin-bottom: 1em;
 }
-div.actionTrail  a{
-	color:#000;
+
+div.actionTrail  a {
+	color: #000;
 }
-div.actionTrail li{
-	border : 1px solid #000;
+
+div.actionTrail li {
+	border: 1px solid #000;
 }
-div.commentWrite div.row > div{
-	margin:0px;
+
+div.commentWrite div.row>div {
+	margin: 0px;
 }
-input.commenttext,
-textarea.commenttext{
-	border:#000;
+
+input.commenttext, textarea.commenttext {
+	border: #000;
 }
-button.btnComment{
+
+button.btnComment {
 	background-color: #000;
 }
-li.commentList{
-	background-color:#FFF; 
-	margin:10px;
-}
-hr.titileHr,
-hr.commentHr{
-	margin-top:5px;
-	margin-bottom:5px;
-}
-span.name,
-span.name > a{
-	font-size:1.5em;
-	color:#000;
-}
-a.commentA > span{
-	color:#337ab7;
-}
-div.webComment{
-	font-size:1.5em;
-}
-p.commentContents{
-	font-size:1.2em;
+
+li.commentList {
+	background-color: #FFF;
+	margin: 10px;
+	padding:10px;
 }
 
-div.paging{
+hr
+.titileHr
+,
+hr.commentHr {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+span.name, span.name>a {
+	font-size: 20px;
+	color: #000;
+}
+
+a.commentA>span {
+	color: #337ab7;
+}
+
+div.webComment {
+	font-size: 1.5em;
+}
+
+p.commentContents {
+	font-size: 1.2em;
+}
+
+div.paging {
 	text-align: center;
-	font-size:1.5em;
-	margin:1em;
+	font-size: 1.5em;
+	margin: 1em;
+	cursor: pointer;
 }
 
-div.paging > a{
-	color:#000;
+div.paging>a {
+	color: #000;
+	text-decoration: none;
 }
-div.paging span.selected{
-	color:#337ab7;
-	cursor: pointer; 
+div.paging>a:HOVER{
+	text-decoration: none;
 }
 
+span.numbox>a.num {
+	color: #000;
+	text-decoration: none;
+}
+span.numbox>a.num:HOVER{
+	text-decoration: none;
+}
 
+div.paging span.selected {
+	color: #337ab7;
+}
