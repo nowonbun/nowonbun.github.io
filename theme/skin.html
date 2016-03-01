@@ -6,7 +6,6 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>[##_title_##]</title>
-<!-- link rel="stylesheet" type="text/css" href="http://nowonbun.github.io/theme/style.css"-->
 <link rel="stylesheet" type="text/css" href="./style.css">
 <meta http-equiv="Keywords" content="[##_meta_http_equiv_keywords_##]" />
 <link rel="alternate" type="application/rss+xml" title="[##_title_##]" href="[##_rss_url_##]" />
@@ -233,21 +232,25 @@
 															<s_rp_member> 
 															<s_rp_guest>
 															<div class="row">
-																<div class="form-group col-md-1">
-																	<label for="[##_rp_input_name_##]_[##_article_rep_id_##]" class="lableTb">name</label>
+																<div class="form-group col-md-12">
+																	<label for="[##_rp_input_name_##]_[##_article_rep_id_##]" >name</label>
 																</div>
-																<div class="form-group col-md-3">
+																<div class="form-group col-md-12">
 																	<input type="text" id="[##_rp_input_name_##]_[##_article_rep_id_##]" name="[##_rp_input_name_##]" value="" class="form-control textField nowonbuntext" placeholder="enter name">
 																</div>
-																<div class="form-group col-md-1">
-																	<label for="[##_rp_input_password_##]_[##_article_rep_id_##]" class="lableTb">password</label> 
+																<div class="form-group col-md-12">
+																	<label for="[##_rp_input_password_##]_[##_article_rep_id_##]" >password</label> 
 																</div>
-																<div class="form-group col-md-3">	
+																<div class="form-group col-md-12">	
 																	<input type="password" id="[##_rp_input_password_##]_[##_article_rep_id_##]" class="form-control textField nowonbuntext" maxlength="8" name="[##_rp_input_password_##]" value="" placeholder="password">
 																</div>
-																<div>
-																	<input type="checkbox" name="[##_rp_input_is_secret_##]" class="checkbox" id="[##_rp_input_is_secret_##]_[##_article_rep_id_##]" name="[##_rp_input_is_secret_##]" value="1" />
-																	<label class="lableTb" style="text-align: left">secret</label>
+																<div class="form-group col-md-12">
+																	<div class="checkbox checkbox-success">
+												                        <input id="[##_rp_input_is_secret_##]_[##_article_rep_id_##]" type="checkbox" name="[##_rp_input_is_secret_##]" value="1" />
+												                        <label for="checkbox3">
+												                            secret
+												                        </label>
+												                    </div>
 																</div>
 															</div>
 															</s_rp_guest>

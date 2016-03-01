@@ -70,9 +70,15 @@ input.nowonbuntext{
 div.actionTrail {
 	margin-bottom: 1em;
 }
-label.lableTb{
-    font-size: 1.5em;
-    margin-top: 0.2em;
-    text-align: center;
-    width: 100%;
+div.actionTrail  a{
+	color:#000;
+}
+div.actionTrail li{
+	border : 1px solid #000;
+}
+div.commentWrite div.row > div{
+	margin:0px;
+}
+div.commentWrite div.row > div input[type=text]{
+	border:#000;
 }
