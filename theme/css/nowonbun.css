@@ -79,6 +79,23 @@ div.actionTrail li{
 div.commentWrite div.row > div{
 	margin:0px;
 }
-div.commentWrite div.row > div input[type=text]{
+input.commenttext,
+textarea.commenttext{
 	border:#000;
+}
+button.btnComment{
+	background: #000
+}
+li.commentList{
+	background-color:#FFF; 
+	margin:10px;
+}
+hr.commentHr{
+	margin:5px;
+}
+span.name{
+	font-size:1.5em;
+}
+a.commentA > span{
+	color:#337ab7;
 }
