@@ -159,3 +159,7 @@ div.paging span.selected {
 div.guestWrite > div{
 	margin: 0px;	
 }
+
+div.guestList{
+	margin-top:50px;
+}
