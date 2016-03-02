@@ -98,51 +98,67 @@
 								<s_guest_input_form>
 								<div class="guestWrite">
 									<s_guest_member> <s_guest_form>
-									<p>
-										<input type="text" name="[##_guest_input_name_##]" value="[##_guest_name_##]" /> <label for="name"> : 이름 </label>
-									</p>
-									<p>
-										br> <input type="password" maxlength="8" name="[##_guest_input_password_##]" value="[##_guest_password_##]" /> <label for="password"> : 패스워드 </label>
-									</p>
-									<p>
-										<input type="text" name="[##_guest_input_homepage_##]" value="[##_guest_homepage_##]" /> <label for="homepage"> : 홈페이지 </label>
-									</p>
+									<div class="form-group col-md-12">
+										<label for="name">name</label>
+									</div>
+									<div class="form-group col-md-12">
+										<input type="text" name="[##_guest_input_name_##]" value="[##_guest_name_##]" class="form-control textField commenttext" placeholder="enter name" />
+									</div>
+									<div class="form-group col-md-12">
+										<label for="password">password</label>
+									</div>
+									<div class="form-group col-md-12">
+										<input type="password" name="[##_guest_input_password_##]" value="[##_guest_password_##]" class="form-control textField commenttext" maxlength="8" placeholder="password" />
+									</div>
+									<div class="form-group col-md-12">
+										<label for="homepage">homepage</label>
+									</div>
+									<div class="form-group col-md-12">
+										<input type="text" name="[##_guest_input_homepage_##]" value="[##_guest_homepage_##]" class="form-control textField commenttext" placeholder="enter name" />
+									</div>
 									</s_guest_form> </s_guest_member>
-									<p>
-										<textarea name="[##_guest_textarea_body_##]" cols="50" rows="6"></textarea>
-									</p>
-									<p>
-										<input type="submit" value="안부 남기기" onclick="[##_guest_onclick_submit_##]" />
-									</p>
+									<p>&nbsp;</p>
+									<div class="form-group col-md-12">
+										<textarea placeholder="enter comment" name="[##_guest_textarea_body_##]" class="form-control commenttext" rows="3" style="resize: none;"></textarea>
+										<button type="button" class="btn btn-default btnComment pull-right" onclick="[##_guest_onclick_submit_##]" style="background-color: #000;">submit</button>
+									</div>
 								</div>
 								</s_guest_input_form>
 								<!-- 2-5-1. 방명록 글쓰기 -->
 								<!-- 2-5-2. 방명록 리스트 -->
 								<s_guest_container>
 								<div class="guestList">
-									<ol>
-										<s_guest_rep>
-										<li id='[##_guest_rep_id_##]'>
-											<div class="[##_guest_rep_class_##]">
-												<span class="name">[##_guest_rep_name_##]</span> <span class="date"> [##_guest_rep_date_##]</span> <span class="control"> <a href="#" onclick="[##_guest_rep_onclick_delete_##]">MODIFY/DELETE</a> <a href="#" onclick="[##_guest_rep_onclick_reply_##]">REPLY</a>
-												</span>
-												<p>[##_guest_rep_desc_##]</p>
-											</div> <s_guest_reply_container>
-											<ul>
-												<s_guest_reply_rep>
-												<li id='[##_guest_rep_id_##]'>
-													<div class="[##_guest_rep_class_##]">
-														<span class="name">[##_guest_rep_name_##]</span> <span class="date"> [##_guest_rep_date_##]</span> <span class="control"> <a href="#" onclick="[##_guest_rep_onclick_delete_##]"> MODIFY/DELETE </a>
-														</span>
-														<p>[##_guest_rep_desc_##]</p>
-													</div>
-												</li>
-												</s_guest_reply_rep>
-											</ul>
-											</s_guest_reply_container>
-										</li>
-										</s_guest_rep>
-									</ol>
+									<div class="col-md-12">
+										<ol class="reply list-unstyled">
+											<s_guest_rep>
+											<li id='[##_guest_rep_id_##]' class="commentList">
+												<div class="[##_guest_rep_class_##]">
+													<span class="name">[##_guest_rep_name_##]</span> <br /> <span class="date"> [##_guest_rep_date_##]</span> | <span class="control"> 
+													<a href="#" onclick="[##_guest_rep_onclick_delete_##]" class="modify commentA">&nbsp;<span>수정/삭제</span></a> 
+													<a href="#" onclick="[##_guest_rep_onclick_reply_##]" class="modify commentA">&nbsp;<span>댓글쓰기</span></a>
+													</span>
+													<hr class="commentHr">
+													<p class="commentContents">[##_guest_rep_desc_##]</p>
+												</div> <s_guest_reply_container>
+												<ul>
+													<s_guest_reply_rep>
+													<li id='[##_guest_rep_id_##]'>
+														<div class="[##_guest_rep_class_##]">
+															<span class="name">[##_guest_rep_name_##]</span><br /> <span class="date"> [##_guest_rep_date_##]</span> | <span class="control"> 
+															<a href="#" onclick="[##_guest_rep_onclick_delete_##]" class="modify commentA"> &nbsp;<span>수정/삭제</span>
+															</a>
+															</span>
+															<hr class="commentHr">
+															<p class="commentContents">[##_guest_rep_desc_##]</p>
+														</div>
+													</li>
+													</s_guest_reply_rep>
+												</ul>
+												</s_guest_reply_container>
+											</li>
+											</s_guest_rep>
+										</ol>
+									</div>
 								</div>
 								</s_guest_container>
 								<!-- 2-5-2. 방명록 리스트 -->
@@ -252,8 +268,8 @@
 															</s_rp_guest> </s_rp_member>
 															<div class="row">
 																<div class="col-md-12 content-line">
-																	<textarea id="[##_rp_input_comment_##]_[##_article_rep_id_##]" placeholder="enter comment" name="[##_rp_input_comment_##]" class="form-control commenttext" rows="10"></textarea>
-																	<button type="button" class="btn btn-default btnComment pull-right" onclick="[##_rp_onclick_submit_##]" style="background-color:#000;">submit</button>
+																	<textarea id="[##_rp_input_comment_##]_[##_article_rep_id_##]" placeholder="enter comment" name="[##_rp_input_comment_##]" class="form-control commenttext" rows="3" style="resize: none;"></textarea>
+																	<button type="button" class="btn btn-default btnComment pull-right" onclick="[##_rp_onclick_submit_##]" style="background-color: #000;">submit</button>
 																</div>
 															</div>
 														</form>
@@ -271,24 +287,16 @@
 															<s_rp_rep>
 															<li id='[##_rp_rep_id_##]' class="commentList">
 																<div class="[##_rp_rep_class_##]">
-																	<span class="name">[##_rp_rep_name_##]</span> <br /> 
-																	<span class="date"> [##_rp_rep_date_##]</span> | 
-																	<span class="control"> 
-																	<a href="#" onclick="[##_rp_rep_onclick_delete_##]" class="modify commentA">&nbsp;<span>수정/삭제</span></a> 
-																	<a href="#" onclick="[##_rp_rep_onclick_reply_##]" class="write commentA">&nbsp;<span>댓글쓰기</span></a>
+																	<span class="name">[##_rp_rep_name_##]</span> <br /> <span class="date"> [##_rp_rep_date_##]</span> | <span class="control"> <a href="#" onclick="[##_rp_rep_onclick_delete_##]" class="modify commentA">&nbsp;<span>수정/삭제</span></a> <a href="#" onclick="[##_rp_rep_onclick_reply_##]" class="write commentA">&nbsp;<span>댓글쓰기</span></a>
 																	</span>
 																	<hr class="commentHr">
 																	<p class="commentContents">[##_rp_rep_desc_##]</p>
-																</div> 
-																<s_rp2_container>
+																</div> <s_rp2_container>
 																<ul>
 																	<s_rp2_rep>
 																	<li id='[##_rp_rep_id_##]'>
 																		<div class="[##_rp_rep_class_##]">
-																			<span class="name">[##_rp_rep_name_##]</span><br />
-																			 <span class="date"> [##_rp_rep_date_##]</span> | 
-																			 <span class="control"> 
-																			<a href="#" onclick="[##_rp_rep_onclick_delete_##]" class="modify">&nbsp;<span>수정/삭제</span></a>
+																			<span class="name">[##_rp_rep_name_##]</span><br /> <span class="date"> [##_rp_rep_date_##]</span> | <span class="control"> <a href="#" onclick="[##_rp_rep_onclick_delete_##]" class="modify">&nbsp;<span>수정/삭제</span></a>
 																			</span>
 																			<hr class="commentHr">
 																			<p class="commentContents">[##_rp_rep_desc_##]</p>
@@ -353,6 +361,7 @@
 							</s_sidebar_element>
 						</div>
 						<!-- 방문자수 -->
+						<a href="/guestbook" style="font-size: 1.5em;">방명록에 글을 남겨주세요</a>
 						<p class="pull-right">Copyright © 2016 nowonbun.tistory.com</p>
 					</div>
 				</div>

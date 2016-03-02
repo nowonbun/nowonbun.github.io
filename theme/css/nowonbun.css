@@ -40,7 +40,8 @@ div.widget-footer td {
 	text-align: right;
 }
 /* 밑줄 색*/
-div.entry hr {
+div.entry hr 
+{
 	border-color: #000;
 }
 /*본문 내용 최소 크기 및 아래 여백 설정*/
@@ -86,8 +87,9 @@ div.commentWrite div.row>div {
 	margin: 0px;
 }
 /*댓글 텍스트박스 설정*/
+/*방명록 텍스트박스 설정*/
 input.commenttext, textarea.commenttext {
-	border: #000;
+	border: 1px solid #000;
 }
 /*댓글 입력 버튼*/
 button.btnComment {
@@ -102,6 +104,7 @@ li.commentList {
 /*밑줄 설정(타이틀 밑과 댓글 아이디 밑)*/
 hr.titileHr,
 hr.commentHr {
+	border-color: #000;
 	margin-top: 5px;
 	margin-bottom: 5px;
 }
@@ -150,4 +153,8 @@ span.numbox>a.num:HOVER{
 /*페이징 설정*/
 div.paging span.selected {
 	color: #337ab7;
+}
+
+div.guestWrite > div{
+	margin: 0px;	
 }
