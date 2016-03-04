@@ -1,25 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <skin>
 	<information>
-		<name>Tirium</name>
-		<version>0.83b</version>
+		<name>nowonbun</name>
+		<version>0.01b</version>
 		<description>
-		<![CDATA[ Tirium is medium-like theme for Tistory designed by Vanns Kang ]]>
+		<![CDATA[ 부트스트랩을 응용한 스킨입니다. ]]>
 		</description>
 		<license>
-		<![CDATA[GNU General Public License. GPL. HOWEVER, Must Notify about Author's info ]]>
+		<![CDATA[자유롭게 수정이 가능하며, 저작권 표시하에 재배포 가능합니다. ]]>
 		</license>
 	</information>
 	<author>
-		<name>Vanns Kang</name>
-		<homepage>http://vannskang.tistory.com</homepage>
-		<email>vannskang@gmail.com</email>
+		<name>nowonbun</name>
+		<homepage>http://nowonbun.tistory.com</homepage>
+		<email>nowonbun@naver.com</email>
 	</author>
 	<default>
 		<recentEntries>0</recentEntries>
 		<recentComments>0</recentComments>
 		<recentTrackbacks>0</recentTrackbacks>
-		<itemsOnGuestbook>0</itemsOnGuestbook>
+		<itemsOnGuestbook>10</itemsOnGuestbook>
 		<tagsInCloud>30</tagsInCloud>
 		<sortInCloud>1</sortInCloud>
 		<expandComment>1</expandComment>
@@ -30,7 +30,7 @@
 		<lengthOfRecentTrackback>10</lengthOfRecentTrackback>
 		<lengthOfLink>30</lengthOfLink>
 		<showListOnCategory>1</showListOnCategory>
-		<showListOnArchive>1</showListOnArchive>
+		<showListOnArchive>0</showListOnArchive>
 		<commentMessage>
 			<none>댓글이 없습니다.</none>
 			<single>댓글 &lt;span class="cnt"&gt;하나&lt;/span&gt; 달렸습니다.</single>
