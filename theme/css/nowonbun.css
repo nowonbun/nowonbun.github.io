@@ -163,3 +163,7 @@ div.guestWrite > div{
 div.guestList{
 	margin-top:50px;
 }
+
+div.searchList ol{
+	font-size : 1.5em;
+}

@@ -84,7 +84,10 @@
 								<h3>'[##_list_conform_##]'에 해당되는 글 [##_list_count_##]건</h3>
 								<ol>
 									<s_list_rep>
-									<li><span class="date">[##_list_rep_regdate_##]</span> <a href="[##_list_rep_link_##]">[##_list_rep_title_##]</a> <span class="cnt">[##_list_rep_rp_cnt_##]</span></li>
+									<li> <a href="[##_list_rep_link_##]">[##_list_rep_title_##]</a> 
+									<span class="cnt">[##_list_rep_rp_cnt_##]</span>
+									<span class="date pull-right">[##_list_rep_regdate_##]</span>
+									</li>
 									</s_list_rep>
 								</ol>
 							</div>
@@ -113,6 +116,12 @@
 										</div>
 										<div class="form-group col-md-12">
 											<label for="homepage">homepage</label>
+										</div>
+										<div class="form-group col-md-12">
+											<div>
+												<input id="[##_guest_input_is_secret_##]" type="checkbox" name="[##_guest_input_is_secret_##]" value="1" /> 
+												<label for="[##_guest_input_is_secret_##]"> 비밀글 </label>
+											</div>
 										</div>
 										<div class="form-group col-md-12">
 											<input type="text" name="[##_guest_input_homepage_##]" value="[##_guest_homepage_##]" class="form-control textField commenttext" placeholder="enter name" />
@@ -360,7 +369,8 @@
 							</s_sidebar_element>
 						</div>
 						<!-- 방문자수 -->
-						<a href="/guestbook" style="font-size: 1.5em;">방명록에 글을 남겨주세요</a>
+						<p class="pull-right"><a href="/guestbook" style="font-size: 1.5em;">방명록에 글을 남겨주세요</a></p>
+						<p class="pull-right"><a href="mailto:nowonbun@naver.com" style="font-size: 1.5em;">nowonbun@naver.com</a></p>
 						<p class="pull-right">Copyright © 2016 nowonbun.tistory.com</p>
 					</div>
 				</div>
