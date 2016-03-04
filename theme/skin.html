@@ -84,10 +84,7 @@
 								<h3>'[##_list_conform_##]'에 해당되는 글 [##_list_count_##]건</h3>
 								<ol>
 									<s_list_rep>
-									<li> <a href="[##_list_rep_link_##]">[##_list_rep_title_##]</a> 
-									<span class="cnt">[##_list_rep_rp_cnt_##]</span>
-									<span class="date pull-right">[##_list_rep_regdate_##]</span>
-									</li>
+									<li><a href="[##_list_rep_link_##]">[##_list_rep_title_##]</a> <span class="cnt">[##_list_rep_rp_cnt_##]</span> <span class="date pull-right">[##_list_rep_regdate_##]</span></li>
 									</s_list_rep>
 								</ol>
 							</div>
@@ -96,39 +93,38 @@
 							<!-- ************************방명록************************-->
 							<s_guest>
 							<div class="guestbook">
-								<div class="col-md-12">
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 									<h3>방명록</h3>
 									<!-- 2-5-1. 방명록 글쓰기 -->
 									<s_guest_input_form>
 									<div class="guestWrite">
 										<s_guest_member> <s_guest_form>
-										<div class="form-group col-md-12">
+										<div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
 											<label for="name">name</label>
 										</div>
-										<div class="form-group col-md-12">
+										<div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
 											<input type="text" name="[##_guest_input_name_##]" value="[##_guest_name_##]" class="form-control textField commenttext" placeholder="enter name" />
 										</div>
-										<div class="form-group col-md-12">
+										<div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
 											<label for="password">password</label>
 										</div>
-										<div class="form-group col-md-12">
+										<div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
 											<input type="password" name="[##_guest_input_password_##]" value="[##_guest_password_##]" class="form-control textField commenttext" maxlength="8" placeholder="password" />
 										</div>
-										<div class="form-group col-md-12">
+										<div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
 											<label for="homepage">homepage</label>
 										</div>
-										<div class="form-group col-md-12">
+										<div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
 											<div>
-												<input id="[##_guest_input_is_secret_##]" type="checkbox" name="[##_guest_input_is_secret_##]" value="1" /> 
-												<label for="[##_guest_input_is_secret_##]"> 비밀글 </label>
+												<input id="[##_guest_input_is_secret_##]" type="checkbox" name="[##_guest_input_is_secret_##]" value="1" /> <label for="[##_guest_input_is_secret_##]"> 비밀글 </label>
 											</div>
 										</div>
-										<div class="form-group col-md-12">
+										<div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
 											<input type="text" name="[##_guest_input_homepage_##]" value="[##_guest_homepage_##]" class="form-control textField commenttext" placeholder="enter name" />
 										</div>
 										</s_guest_form> </s_guest_member>
 										<p>&nbsp;</p>
-										<div class="form-group col-md-12">
+										<div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
 											<textarea placeholder="enter comment" name="[##_guest_textarea_body_##]" class="form-control commenttext" rows="3" style="resize: none;"></textarea>
 											<button type="button" class="btn btn-default btnComment pull-right" onclick="[##_guest_onclick_submit_##]" style="background-color: #000;">submit</button>
 										</div>
@@ -139,7 +135,7 @@
 								<!-- 2-5-2. 방명록 리스트 -->
 								<s_guest_container>
 								<div class="guestList">
-									<div class="col-md-12">
+									<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 										<ol class="reply list-unstyled">
 											<s_guest_rep>
 											<li id='[##_guest_rep_id_##]' class="commentList">
@@ -215,7 +211,7 @@
 										<s_tb>
 										<div class="trackback">
 											<div class="row">
-												<div class="col-md-12">
+												<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 													<div class="trackbackAdd webComment">
 														<strong>트랙백 주소</strong> :: [##_tb_address_##]
 													</div>
@@ -251,23 +247,23 @@
 											<s_rp_input_form>
 											<div class="commentWrite">
 												<div class="row">
-													<div class="col-md-12">
+													<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 														<form role="form">
 															<s_rp_member> <s_rp_guest>
 															<div class="row">
-																<div class="form-group col-md-12">
+																<div class="form-group col-col-lg-12 col-md-12 col-sm-12 col-xs-12">
 																	<label for="[##_rp_input_name_##]_[##_article_rep_id_##]">name</label>
 																</div>
-																<div class="form-group col-md-12">
+																<div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
 																	<input type="text" id="[##_rp_input_name_##]_[##_article_rep_id_##]" name="[##_rp_input_name_##]" value="" class="form-control textField commenttext" placeholder="enter name">
 																</div>
-																<div class="form-group col-md-12">
+																<div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
 																	<label for="[##_rp_input_password_##]_[##_article_rep_id_##]">password</label>
 																</div>
-																<div class="form-group col-md-12">
+																<div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
 																	<input type="password" id="[##_rp_input_password_##]_[##_article_rep_id_##]" class="form-control textField commenttext" maxlength="8" name="[##_rp_input_password_##]" value="" placeholder="password">
 																</div>
-																<div class="form-group col-md-12">
+																<div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
 																	<div>
 																		<input id="[##_rp_input_is_secret_##]_[##_article_rep_id_##]" type="checkbox" name="[##_rp_input_is_secret_##]" value="1" /> <label for="checkbox3"> 비밀글 </label>
 																	</div>
@@ -275,7 +271,7 @@
 															</div>
 															</s_rp_guest> </s_rp_member>
 															<div class="row">
-																<div class="col-md-12 content-line">
+																<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 content-line">
 																	<textarea id="[##_rp_input_comment_##]_[##_article_rep_id_##]" placeholder="enter comment" name="[##_rp_input_comment_##]" class="form-control commenttext" rows="3" style="resize: none;"></textarea>
 																	<button type="button" class="btn btn-default btnComment pull-right" onclick="[##_rp_onclick_submit_##]" style="background-color: #000;">submit</button>
 																</div>
@@ -290,7 +286,7 @@
 											<s_rp_container>
 											<div class="commentList">
 												<div class="row">
-													<div class="col-md-12">
+													<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 														<ol class="reply list-unstyled">
 															<s_rp_rep>
 															<li id='[##_rp_rep_id_##]' class="commentList">
@@ -369,9 +365,15 @@
 							</s_sidebar_element>
 						</div>
 						<!-- 방문자수 -->
-						<p class="pull-right"><a href="/guestbook" style="font-size: 1.5em;">방명록에 글을 남겨주세요</a></p>
-						<p class="pull-right"><a href="mailto:nowonbun@naver.com" style="font-size: 1.5em;">nowonbun@naver.com</a></p>
-						<p class="pull-right">Copyright © 2016 nowonbun.tistory.com</p>
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<a class="pull-right" href="/guestbook" style="font-size: 1.5em;">방명록에 글을 남겨주세요</a>
+						</div>
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<a class="pull-right" href="mailto:nowonbun@naver.com" style="font-size: 1.5em;">nowonbun@naver.com</a>
+						</div>
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<p class="pull-right">Copyright © 2016 nowonbun.tistory.com</p>
+						</div>
 					</div>
 				</div>
 			</div>
