@@ -12,6 +12,9 @@ if($(".navbar-toggle").css("display") === "block"){
 	$("li.dropdown > a").prop("href","#");
 	$("li.dropdown > a").attr("data-toggle","dropdown");
 	$("#webType").val("1");
+	mobileFont();
+}else{
+	browserFont();
 }
 $(window).resize(function() {
 	$("li.open").prop("class","dropdown");
