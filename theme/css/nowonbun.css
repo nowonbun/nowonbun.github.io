@@ -13,7 +13,8 @@ body {
 /* 글 타이틀*/
 div.titleArea div.title {
 	/*font-size: 3em;*/
-	font-size: 2em;
+	/*font-size: 2em;*/
+	font-size: 30px;
 	margin-bottom: 0.2em;
 }
 /* 글 카테고리*/
@@ -27,7 +28,7 @@ div.titleArea div.categoryArea a {
 /* 글*/
 div.article>div.tt_article_useless_p_margin {
 	/*font-size: 2em;*/
-	font-size: 1.5em;
+	font-size: 20px;;
 }
 /*카테고리의 다른 글*/
 div.article>div.tt_article_useless_p_margin>div.another_category {
@@ -122,16 +123,19 @@ a.commentA>span {
 }
 /*트랙백 설정*/
 div.webComment {
-	font-size: 1.5em;
+	/*font-size: 1.5em;*/
+	font-size: 18px;
 }
 /*댓글 내용*/
 p.commentContents {
-	font-size: 1.2em;
+	/*font-size: 1.2em;*/
+	font-size: 18px;
 }
 /*페이징 설정*/
 div.paging {
 	text-align: center;
-	font-size: 1.5em;
+	/*font-size: 1.5em;*/
+	font-size: 18em;
 	margin: 1em;
 	cursor: pointer;
 }
@@ -167,8 +171,12 @@ div.guestList{
 }
 
 div.searchList ol{
-	font-size : 1.5em;
+	/*font-size : 1.5em;*/
+	font-size : 18px;
 }
 div.sourcecode > div {
-	font-size : 0.5em;
+	/*font-size : 0.5em;*/
+	font-size : 15px;
 }
+
+img
