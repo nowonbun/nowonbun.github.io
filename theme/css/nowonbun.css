@@ -1,6 +1,6 @@
 @font-face {
 	font-family: 'childpaper';
-	src: url('childpaper.ttf') format('truetype');
+	src: url('childpaper.woff') format('truetype');
 }
 /* 전체 글꼴 설정*/
 body {
