@@ -139,6 +139,11 @@ div.paging {
 	margin: 1em;
 	cursor: pointer;
 }
+@media screen and (min-width:768px) {
+	div.paging {
+		font-size:10px;
+	}
+}
 /*ÆäÀÌÂ¡ ¼³Á¤*/
 div.paging>a {
 	color: #000;
