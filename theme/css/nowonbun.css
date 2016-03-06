@@ -181,7 +181,11 @@ div.searchList ol{
 }
 div.sourcecode > div {
 	/*font-size : 0.5em;*/
-	font-size : 15px;
+	font-size : 13px;
 }
-
+@media screen and (min-width:768px) {
+	div.sourcecode > div {
+		font-size:15px;
+	}
+}
 img
