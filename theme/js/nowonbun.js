@@ -49,9 +49,9 @@ if(htmltest == null){
 
 function mobileFont(){
 	$("div.title").css("font-size","2em");
-	$("div.article > div.tt_article_useless_p_margi").css("font-size","1.2em");
+	$("div.article > div.tt_article_useless_p_margin").css("font-size","1.2em");
 }
 function browserFont(){
 	$("div.title").css("font-size","3em");
-	$("div.article > div.tt_article_useless_p_margi").css("font-size","2em");
+	$("div.article > div.tt_article_useless_p_margin").css("font-size","2em");
 }
