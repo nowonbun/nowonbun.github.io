@@ -12,7 +12,8 @@ body {
 }
 /* 글 타이틀*/
 div.titleArea div.title {
-	font-size: 3em;
+	/*font-size: 3em;*/
+	font-size: 2em;
 	margin-bottom: 0.2em;
 }
 /* 글 카테고리*/
@@ -25,7 +26,8 @@ div.titleArea div.categoryArea a {
 }
 /* 글*/
 div.article>div.tt_article_useless_p_margin {
-	font-size: 2em;
+	/*font-size: 2em;*/
+	font-size: 1.5em;
 }
 /*카테고리의 다른 글*/
 div.article>div.tt_article_useless_p_margin>div.another_category {
