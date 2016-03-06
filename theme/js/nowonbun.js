@@ -50,10 +50,10 @@ if(htmltest == null){
 }
 
 function mobileFont(){
-	$("div.title").css("font-size","2em");
+	$("div.title").css("font-size","2.0em");
 	$("div.article > div.tt_article_useless_p_margin").css("font-size","1.2em");
 }
 function browserFont(){
-	$("div.title").css("font-size","3em");
-	$("div.article > div.tt_article_useless_p_margin").css("font-size","2em");
+	$("div.title").css("font-size","3.0em");
+	$("div.article > div.tt_article_useless_p_margin").css("font-size","2.0em");
 }
