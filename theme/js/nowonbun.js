@@ -8,13 +8,12 @@ $("ul.sub_category_list").prop("class","dropdown-menu");
 // console.log($("ul.tt_category").html());
 $("ul.navbar-nav").html($("ul.tt_category > li  > ul.category_list").html());
 $("#webType").val("0");
+browserFont();
 if($(".navbar-toggle").css("display") === "block"){
 	$("li.dropdown > a").prop("href","#");
 	$("li.dropdown > a").attr("data-toggle","dropdown");
 	$("#webType").val("1");
 	mobileFont();
-}else{
-	browserFont();
 }
 $(window).resize(function() {
 	$("li.open").prop("class","dropdown");
