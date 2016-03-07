@@ -1,0 +1,216 @@
+@font-face {
+	font-family: 'childpaper';
+	src: url('childpaper.woff') format('truetype');
+}
+/* 전체 글꼴 설정*/
+body {
+	font-family: childpaper;
+}
+/* 메뉴 글자 크기*/
+.navbar-default ul.nav li a {
+	font-size: 1.5em;
+}
+/* 글 타이틀*/
+div.titleArea div.title {
+	/*font-size: 3em;*/
+	/*font-size: 2em;*/
+	font-size: 30px;
+	margin-bottom: 0.2em;
+}
+/* 글 카테고리*/
+div.titleArea div.categoryArea {
+	margin-bottom: 1.0em;
+}
+/* 글 카테고리 */
+div.titleArea div.categoryArea a {
+	color: #337ab7;
+}
+/* 글*/
+div.article>div.tt_article_useless_p_margin {
+	/*font-size: 2em;*/
+	font-size: 20px;;
+}
+/*카테고리의 다른 글*/
+div.article>div.tt_article_useless_p_margin>div.another_category {
+	display: none;
+}
+/*카테고리의 다른글 테이블 사이즈*/
+div.widget-footer table {
+	width: 100%;
+}
+/*카테고리의 다른글 날짜 정렬(오른쪽으로)*/
+div.widget-footer td {
+	text-align: right;
+}
+/* 밑줄 색*/
+div.entry hr 
+{
+	border-color: #000;
+}
+/*본문 내용 최소 크기 및 아래 여백 설정*/
+div.article {
+	margin-bottom: 1.0em;
+	min-height: 200px;
+}
+/*태그 설정*/
+div.tagText {
+	font-size: 1.0em;
+	clear: both;
+	padding: 0px 0px 0px 37px;
+	background: url("http://static.naver.net/blog/ico_tag.gif") 0px 5px
+		no-repeat;
+}
+/*태그 설정*/
+div.tagText>a {
+	color: #337ab7;
+	text-decoration: none;
+}
+/*태그 설정*/
+div.tagText>a :hover {
+	text-decoration: none;
+}
+/*댓글 텍스트박스 설정*/
+input.nowonbuntext {
+	border: 1px solid #000;
+}
+/*트랙백 설정*/
+div.actionTrail {
+	margin-bottom: 1em;
+}
+/*트랙백 설정*/
+div.actionTrail  a {
+	color: #000;
+}
+/*트랙백 설정*/
+div.actionTrail li {
+	border: 1px solid #000;
+}
+/*댓글 설정*/
+div.commentWrite div.row>div {
+	margin: 0px;
+}
+/*댓글 텍스트박스 설정*/
+/*방명록 텍스트박스 설정*/
+input.commenttext, textarea.commenttext {
+	border: 1px solid #000;
+}
+/*댓글 입력 버튼*/
+button.btnComment {
+	background-color: #000;
+}
+/*댓글 리스트 설정*/
+li.commentList {
+	background-color: #FFF;
+	margin: 10px;
+	padding:10px;
+	border: 1px solid #000;
+}
+/*밑줄 설정(타이틀 밑과 댓글 아이디 밑)*/
+hr.titileHr,
+hr.commentHr {
+	border-color: #000;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+/*댓글 아이디 설정*/
+span.name, span.name>a {
+	font-size: 20px;
+	color: #000;
+}
+/*댓글 카테고리*/
+a.commentA>span {
+	color: #337ab7;
+}
+/*트랙백 설정*/
+div.webComment {
+	/*font-size: 1.5em;*/
+	font-size: 18px;
+}
+/*댓글 내용*/
+p.commentContents {
+	/*font-size: 1.2em;*/
+	font-size: 18px;
+}
+/*페이징 설정*/
+div.paging {
+	text-align: center;
+	/*font-size: 1.5em;*/
+	font-size: 13px;
+	margin: 1em;
+	cursor: pointer;
+}
+@media screen and (min-width:768px) {
+	div.paging {
+		font-size:18px;
+	}
+}
+/*페이징 설정*/
+div.paging>a {
+	color: #000;
+	text-decoration: none;
+}
+/*페이징 설정*/
+div.paging>a:HOVER{
+	text-decoration: none;
+}
+/*페이징 설정*/
+span.numbox>a.num {
+	color: #000;
+	text-decoration: none;
+}
+/*페이징 설정*/
+span.numbox>a.num:HOVER{
+	text-decoration: none;
+}
+/*페이징 설정*/
+div.paging span.selected {
+	color: #337ab7;
+}
+
+div.guestWrite > div{
+	margin: 0px;	
+}
+
+div.guestList{
+	margin-top:50px;
+}
+
+div.searchList ol{
+	/*font-size : 1.5em;*/
+	font-size : 18px;
+}
+div.sourcecode > div {
+	/*font-size : 0.5em;*/
+	font-size : 13px;
+}
+@media screen and (min-width:768px) {
+	div.sourcecode > div {
+		font-size:15px;
+	}
+}
+a.current{
+	color:#FFF;
+}
+/* 반응형 테이블 테두리 색상 재선언 */
+.table-bordered {
+    border: 1px solid #000;
+    font-size : 13px;
+}
+@media screen and (min-width:768px) {
+	.table-bordered {
+		font-size:15px;
+	}
+}
+@media screen and (max-width: 767px){
+	.table-responsive {
+	    border: 1px solid #000;
+	}
+}
+.table-bordered>tbody>tr>td, 
+.table-bordered>tbody>tr>th, 
+.table-bordered>tfoot>tr>td, 
+.table-bordered>tfoot>tr>th, 
+.table-bordered>thead>tr>td, 
+.table-bordered>thead>tr>th {
+    border: 1px solid #000;
+}
