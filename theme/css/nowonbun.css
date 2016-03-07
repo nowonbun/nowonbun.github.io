@@ -200,8 +200,10 @@ a.current{
 	.table-bordered {
 		font-size:15px;
 	}
+}
+@media screen and (max-width: 767px){
 	.table-responsive {
-		border: 1px solid #000;
+	    border: 1px solid #000;
 	}
 }
 .table-bordered>tbody>tr>td, 
