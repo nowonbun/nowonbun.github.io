@@ -214,3 +214,8 @@ a.current{
 .table-bordered>thead>tr>th {
     border: 1px solid #000;
 }
+.navbar-default .navbar-nav > li > a:focus,
+.navbar-default .navbar-nav > li > a:hover{
+	color:#FFF;
+	background-color: #f1c40f;
+}
