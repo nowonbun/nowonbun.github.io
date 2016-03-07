@@ -191,3 +191,15 @@ div.sourcecode > div {
 a.current{
 	color:#FFF;
 }
+<!-- 반응형 테이블 테두리 색상 재선언 -->
+.table-bordered {
+    border: 1px solid #000;
+}
+.table-bordered>tbody>tr>td, 
+.table-bordered>tbody>tr>th, 
+.table-bordered>tfoot>tr>td, 
+.table-bordered>tfoot>tr>th, 
+.table-bordered>thead>tr>td, 
+.table-bordered>thead>tr>th {
+    border: 1px solid #000;
+}
