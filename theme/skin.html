@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="kr">
 <head>
@@ -8,12 +7,8 @@
 <meta name="theme-color" content="#29343a">
 <title>[##_title_##] :: [##_page_title_##]</title>
 <link rel="stylesheet" type="text/css" href="./style.css">
-<link rel="cononical" href="http://nowonbun.tistory.com">
-<meta http-equiv="Keywords" content="[##_meta_http_equiv_keywords_##]" />
+<link rel="canonical" href="http://nowonbun.tistory.com">
 <link rel="alternate" type="application/rss+xml" title="[##_title_##]" href="[##_rss_url_##]" />
-<link rel="alternate" type="application/rss+xml" title="[##_title_##] : comments" href="[##_comment_rss_url_##]" />
-<link rel="alternate" type="application/rss+xml" title="[##_title_##] : trackbacks" href="[##_trackback_rss_url_##]" />
-<link rel="alternate" type="application/rss+xml" title="[##_title_##] : comments + trackbacks" href="[##_response_rss_url_##]" />
 <meta name="description" content="[##_title_##],  [##_page_title_##]" />
 <meta name="Author" content="[##_blogger_##]" />
 <meta name="title" content="[##_page_title_##]" />
@@ -32,7 +27,7 @@
 <meta name="keywords" content="Software" />
 <meta name="keywords" content="HTML5" />
 <meta name="description" content="[##_title_##] " />
-<meta name="naver-site-verification" content="32aa8ce7d767e05669cb5b31f2579de56cc15359"/>
+<meta name="naver-site-verification" content="32aa8ce7d767e05669cb5b31f2579de56cc15359" />
 <meta name="google-site-verification" content="ljPQvQ6mq2E944lm0Rs7S8zSSYT8Fbc3gQxtLS5wb7I" />
 <script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -262,11 +257,9 @@ wcs_do();
 								<!-- 2-8-4. 트랙백과 댓글 보이기/감추기 -->
 								<div class="actionTrail ">
 									<ul class="nav nav-tabs nav-justified">
-										<li class="active"><a href="#tb" data-toggle="tab"> <span id="[##_article_rep_rp_cnt_id_##]"">댓글 <span class="cnt">[##_article_rep_rp_cnt_##]</span>개
-											</span>
+										<li class="active"><a href="#tb" data-toggle="tab">댓글 <span class="cnt">[##_article_rep_rp_cnt_##]</span>개
 										</a></li>
-										<li><a href="#rp" data-toggle="tab"> <span id="[##_article_rep_tb_cnt_id_##]">트랙백 <span class="cnt">[##_article_rep_tb_cnt_##]</span>개
-											</span>
+										<li><a href="#rp" data-toggle="tab"> 트랙백 <span class="cnt">[##_article_rep_tb_cnt_##]</span>개
 										</a></li>
 									</ul>
 								</div>
@@ -314,35 +307,33 @@ wcs_do();
 											<div class="commentWrite">
 												<div class="row">
 													<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-														<form role="form">
-															<s_rp_member> <s_rp_guest>
-															<div class="row">
-																<div class="form-group col-col-lg-12 col-md-12 col-sm-12 col-xs-12">
-																	<label for="[##_rp_input_name_##]_[##_article_rep_id_##]">name</label>
-																</div>
-																<div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
-																	<input type="text" id="[##_rp_input_name_##]_[##_article_rep_id_##]" name="[##_rp_input_name_##]" value="" class="form-control textField commenttext" placeholder="enter name">
-																</div>
-																<div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
-																	<label for="[##_rp_input_password_##]_[##_article_rep_id_##]">password</label>
-																</div>
-																<div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
-																	<input type="password" id="[##_rp_input_password_##]_[##_article_rep_id_##]" class="form-control textField commenttext" maxlength="8" name="[##_rp_input_password_##]" value="" placeholder="password">
-																</div>
-																<div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
-																	<div>
-																		<input id="[##_rp_input_is_secret_##]_[##_article_rep_id_##]" type="checkbox" name="[##_rp_input_is_secret_##]" value="1" /> <label for="checkbox3"> 비밀글 </label>
-																	</div>
+														<s_rp_member> <s_rp_guest>
+														<div class="row">
+															<div class="form-group col-col-lg-12 col-md-12 col-sm-12 col-xs-12">
+																<label for="[##_rp_input_name_##]_[##_article_rep_id_##]">name</label>
+															</div>
+															<div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+																<input type="text" id="[##_rp_input_name_##]_[##_article_rep_id_##]" name="[##_rp_input_name_##]" value="" class="form-control textField commenttext" placeholder="enter name">
+															</div>
+															<div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+																<label for="[##_rp_input_password_##]_[##_article_rep_id_##]">password</label>
+															</div>
+															<div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+																<input type="password" id="[##_rp_input_password_##]_[##_article_rep_id_##]" class="form-control textField commenttext" maxlength="8" name="[##_rp_input_password_##]" value="" placeholder="password">
+															</div>
+															<div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+																<div>
+																	<input id="[##_rp_input_is_secret_##]_[##_article_rep_id_##]" type="checkbox" name="[##_rp_input_is_secret_##]" value="1" /> <label for="checkbox3"> 비밀글 </label>
 																</div>
 															</div>
-															</s_rp_guest> </s_rp_member>
-															<div class="row">
-																<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 content-line">
-																	<textarea id="[##_rp_input_comment_##]_[##_article_rep_id_##]" placeholder="enter comment" name="[##_rp_input_comment_##]" class="form-control commenttext" rows="3" style="resize: none;"></textarea>
-																	<button type="button" class="btn btn-default btnComment pull-right" onclick="[##_rp_onclick_submit_##]" style="background-color: #000;">submit</button>
-																</div>
+														</div>
+														</s_rp_guest> </s_rp_member>
+														<div class="row">
+															<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 content-line">
+																<textarea id="[##_rp_input_comment_##]_[##_article_rep_id_##]" placeholder="enter comment" name="[##_rp_input_comment_##]" class="form-control commenttext" rows="3" style="resize: none;"></textarea>
+																<button type="button" class="btn btn-default btnComment pull-right" onclick="[##_rp_onclick_submit_##]" style="background-color: #000;">submit</button>
 															</div>
-														</form>
+														</div>
 													</div>
 												</div>
 											</div>
@@ -424,11 +415,9 @@ wcs_do();
 					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 						<div style="text-align: right">
 							<!-- 방문자수 -->
-							<s_sidebar_element>
 							<div class="counter">
 								<span class="total">Total : [##_count_total_##] </span> <span class="today">Today : [##_count_today_##]</span> <span class="yesterday">Yesterday : [##_count_yesterday_##]</span>
 							</div>
-							</s_sidebar_element>
 						</div>
 						<!-- 방문자수 -->
 						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
