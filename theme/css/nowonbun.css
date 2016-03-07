@@ -200,6 +200,9 @@ a.current{
 	.table-bordered {
 		font-size:15px;
 	}
+	.table-responsive {
+		border: 1px solid #000;
+	}
 }
 .table-bordered>tbody>tr>td, 
 .table-bordered>tbody>tr>th, 
