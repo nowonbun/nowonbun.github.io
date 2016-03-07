@@ -1,0 +1,26 @@
+자주 사용되는 태그
+
+<div style="border-style:solid;" class="sourcecode">
+<textarea name="code" class="brush:text;"> 
+에디터 모드에서 이 사이에 코드를 작성하면 된다.
+</textarea>
+</div>
+
+
+
+<div class="table-responsive">
+	<table class="table">
+		<thead>
+			<tr>
+				<th>a</th>
+				<th>b</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>c</td>
+				<td>d</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
