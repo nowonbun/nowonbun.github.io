@@ -214,3 +214,6 @@ a.current{
 .table-bordered>thead>tr>th {
     border: 1px solid #000;
 }
+div.sourcecode .syntaxhighlighter{
+	margin : 0px;
+}
