@@ -215,5 +215,5 @@ a.current{
     border: 1px solid #000;
 }
 div.sourcecode .syntaxhighlighter{
-	margin : 0px;
+	margin : 0px!important;
 }
