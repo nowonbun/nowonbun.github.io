@@ -65,21 +65,28 @@ aside{
 	background-color: rgba( 100, 100, 100, 0 );
 	background-color: #FFF;
 	z-index: 1000;
+	transition: left 300ms linear
 }
 /*사이드메뉴*/
 aside.off{
 	left:-300px;
-	transition: left 300ms linear
 }
 /*사이드메뉴*/
 aside.on{
 	left:0px;
-	position: absolute;
-	
-	transition: left 300ms linear
 }
 /*사이드메뉴*/
 div.mainBody{
 	float:right;
 	width:100%;
+}
+div.adminbox{
+	border:1px solid #000;
+	position:absolute;
+	transition: top 50ms linear;
+	height:200px;
+	width:200px;
+}
+div.adminOff{
+	top:-200px;
 }
