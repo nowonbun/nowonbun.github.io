@@ -13,6 +13,7 @@ if($(".navbar-toggle").css("display") === "block"){
 	$("li.dropdown > a").prop("href","#");
 	$("li.dropdown > a").attr("data-toggle","dropdown");
 	$("#webType").val("1");
+	$("div.paging").hide();
 //	mobileFont();
 }
 $(window).resize(function() {
@@ -24,12 +25,14 @@ $(window).resize(function() {
 			$("li.dropdown > a").prop("href","#");
 			$("li.dropdown > a").attr("data-toggle","dropdown");
 			$("#webType").val("1");
+			$("div.paging").hide();
 //			mobileFont();
 		}
 	}else{
 		if($("#webType").val()  !== "0" ){
 			$("ul.navbar").html($("ul.tt_category").html());
 			$("#webType").val("0");
+			$("div.paging").show();
 //			browserFont();
 		}
 	}

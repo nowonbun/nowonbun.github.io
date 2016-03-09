@@ -1,3 +1,5 @@
+@charset "utf-8";
+
 @font-face {
 	font-family: 'childpaper';
 	src: url('childpaper.woff') format('truetype');
@@ -206,6 +208,11 @@ a.current{
 	    border: 1px solid #000;
 	}
 }
+.navbar-default .navbar-nav > li > a:focus,
+.navbar-default .navbar-nav > li > a:hover{
+	color:#FFF;
+	background-color: #f1c40f;
+}
 .table-bordered>tbody>tr>td, 
 .table-bordered>tbody>tr>th, 
 .table-bordered>tfoot>tr>td, 
@@ -213,4 +220,10 @@ a.current{
 .table-bordered>thead>tr>td, 
 .table-bordered>thead>tr>th {
     border: 1px solid #000;
+}
+div.sourcecode .syntaxhighlighter{
+	margin : 0px!important;
+}
+div.entry{
+	margin-bottom: 5px;
 }
