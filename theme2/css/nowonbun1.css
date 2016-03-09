@@ -3,6 +3,9 @@
 	font-family: 'childpaper';
 	src: url('childpaper.woff') format('truetype');
 }
+body {
+	font-family: childpaper;
+}
 .none{
 	display:none;
 }
