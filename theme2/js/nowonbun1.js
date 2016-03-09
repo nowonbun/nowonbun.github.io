@@ -29,3 +29,14 @@ function menu(){
 		$("div.mainBody").removeClass("mainBodyOff");
 	}
 }
+function admin(){
+	if($("div.adminbox").hasClass("adminOff")){
+		$("div.adminbox").removeClass("adminOff");
+		$("div.adminbox").css("top",$("header").css("height"));
+		$("div.adminbox").css("left",$("a#adminBtn").offset().left);
+	}else{
+		$("div.adminbox").addClass("adminOff");
+		$("div.adminbox").css("top","-200px");
+		$("div.adminbox").css("left",$("a#adminBtn").offset().left);
+	}
+}
