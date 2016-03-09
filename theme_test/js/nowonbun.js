@@ -19,9 +19,11 @@ $(window).resize(function(){
 	initAside();
 });
 function initAside(){
-	$("aside").css("width",$(window).width());
-	$("aside").css("height",$(window).height());
-	$("aside").css("left",-$(window).width());
+	dom = $("aside");
+	dom.css("width",$(window).width());
+	dom.css("height",$(window).height());
+	dom.css("left",-$(window).width());
+	dom.show();
 	if(dom.hasClass("on")){
 		dom.removeClass("on");
 	}
