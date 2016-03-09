@@ -6,13 +6,13 @@
 body {
 	font-family: childpaper;
 }
-<!-- 모바일 메뉴-->
+/*모바일 메뉴*/
 .navbar .navbar-default {
 	padding : 0px;
 	min-height:40px;
 	height:40px;
 }
-<!-- 모바일 메뉴-->
+/*모바일 메뉴*/
 .navbar-nav a {
 	color: #9d9d9d;
 	text-decoration:none;
@@ -20,19 +20,21 @@ body {
 	padding-bottom: 10px;
 	line-height: 20px;
 }
-<!-- 모바일 메뉴-->
+/*모바일 메뉴*/
 .navbar-nav > li > ul > li{
 	padding-top: 10px;
 	padding-bottom: 10px;
 	line-height: 20px;
 }
+/*모바일 메뉴*/
 .navbar-nav a:hover{
 	color:#FFF;
 }
+/*모바일 메뉴*/
 .navbar-nav ul {
 	list-style:none;
 }
-<!-- 탑 메뉴-->
+/*탑 메뉴*/
 .top-nav{
 	border-radius: 0px;
 }
@@ -42,19 +44,19 @@ body {
 div.tistorytoolbar{
 	display:none;
 }
-<!--모바일만-->
+/*모바일만*/
 @media screen and (max-width:768px) {
 	div.navbar-header > a{
 		display : none;
 	}
 }
-<!--브라우저만-->
+/*브라우저만*/
 @media screen and (min-width:768px) {
 	ul.navbar-nav{
 		display : none!important;
 	}
 }
-<!--사이드 메뉴-->
+/*사이드메뉴*/
 aside{
 	position:absolute;
 	float:left;
@@ -64,19 +66,19 @@ aside{
 	background-color: #FFF;
 	z-index: 1000;
 }
-<!--사이드 메뉴-->
+/*사이드메뉴*/
 aside.off{
 	left:-300px;
 	transition: left 300ms linear
 }
-<!--사이드 메뉴-->
+/*사이드메뉴*/
 aside.on{
 	left:0px;
 	position: absolute;
 	
 	transition: left 300ms linear
 }
-<!--사이드 메뉴-->
+/*사이드메뉴*/
 div.mainBody{
 	float:right;
 	width:100%;
