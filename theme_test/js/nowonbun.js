@@ -16,29 +16,30 @@ $(function(){
 	initAside();
 });
 $(window).resize(function(){
-	initAside();
-});
-function initAside(){
 	dom = $("aside");
-	dom.css("width",$(window).width());
-	dom.css("height",$(window).height());
-	dom.css("left",$(window).width() > 300 ? -$(window).width() : -300);
-	dom.show();
 	if(dom.hasClass("on")){
 		dom.removeClass("on");
 	}
+	dom.css("left",$(window).width() > 300 ? -$(window).width() : -300);
+});
+function initAside(){
+	dom = $("aside");
+	dom.css("width",0);
+	dom.css("height",$(window).height());
 }
 function menu(){
 	dom = $("aside");
 	if(dom.hasClass("on")){
 		dom.removeClass("on");
-		dom.css("width",0);
 		dom.css("left",-$(window).width());
+		dom.css("width",0);
+		dom.hide();
 		$('html').css("overflow","auto");
 	}else{
-		dom.addClass("on");
+		$('html').css("overflow","hidden");
+		dom.show();
 		dom.css("width",$(window).width());
 		dom.css("left",0);
-		$('html').css("overflow","hidden");
+		dom.addClass("on");
 	}
 }
