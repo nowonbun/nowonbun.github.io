@@ -60,20 +60,24 @@ div.tistorytoolbar{
 aside{
 	position:absolute;
 	float:left;
-	border:1px solid #000;	
-	width:300px;
-	background-color: rgba( 100, 100, 100, 0 );
-	background-color: #FFF;
+	width:100%;
+	background-color:rgba( 255, 255, 255, 0.5 );
 	z-index: 1000;
-	transition: left 50ms linear
-}
-/*사이드메뉴*/
-aside.off{
-	left:-300px;
+	transition: left 50ms linear;
 }
 /*사이드메뉴*/
 aside.on{
 	left:0px;
+}
+/*사이드메뉴*/
+aside div{
+	width:300px;
+	background-color: rgba( 255, 255, 255, 1 );
+	border:1px solid #000;		
+}
+aside div > h1{
+	background-color: rgba(99, 23, 156, 0.44);
+	margin :0px;
 }
 /*사이드메뉴*/
 main{
@@ -83,7 +87,6 @@ main{
 main.on{
 }
 main.off{
-    -webkit-filter: blur(20px);
 }
 div.adminbox{
 	border:1px solid #000;
