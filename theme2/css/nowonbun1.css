@@ -86,7 +86,13 @@ div.adminbox{
 	transition: top 50ms linear;
 	height:200px;
 	width:200px;
+	background-color: rgba( 100, 100, 100, 0 );
+	background-color: #FFF;
+	z-index: 1000;
 }
 div.adminOff{
 	top:-200px;
+}
+nav{
+	z-index: 1001;
 }
