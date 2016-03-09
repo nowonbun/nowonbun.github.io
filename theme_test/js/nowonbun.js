@@ -22,7 +22,7 @@ function initAside(){
 	dom = $("aside");
 	dom.css("width",$(window).width());
 	dom.css("height",$(window).height());
-	dom.css("left",-$(window).width());
+	dom.css("left",$(window).width() > 300 ? -$(window).width() : -300);
 	dom.show();
 	if(dom.hasClass("on")){
 		dom.removeClass("on");
