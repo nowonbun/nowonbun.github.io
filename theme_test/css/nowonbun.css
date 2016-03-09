@@ -76,9 +76,14 @@ aside.on{
 	left:0px;
 }
 /*사이드메뉴*/
-div.mainBody{
+main{
 	float:right;
 	width:100%;
+}
+main.on{
+}
+main.off{
+    -webkit-filter: blur(20px);
 }
 div.adminbox{
 	border:1px solid #000;

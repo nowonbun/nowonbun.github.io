@@ -16,19 +16,19 @@ $(function(){
 	});
 });
 function menu(){
-	dom = $("aside");
+	transOnOff($("aside"));
+	transOnOff($("main"));
+}
+function transOnOff(dom){
 	if(dom.hasClass("on")){
 		dom.removeClass("on");
 		dom.addClass("off");
-		$("div.mainBody").addClass("mainBodyOff");
-		$("div.mainBody").removeClass("mainBodyOn");
 	}else{
 		dom.removeClass("off");
 		dom.addClass("on");
-		$("div.mainBody").addClass("mainBodyOn");
-		$("div.mainBody").removeClass("mainBodyOff");
 	}
 }
+/*
 function admin(){
 	if($("div.adminbox").hasClass("adminOff")){
 		$("div.adminbox").removeClass("adminOff");
@@ -39,4 +39,4 @@ function admin(){
 		$("div.adminbox").css("top","-200px");
 		$("div.adminbox").css("left",$("a#adminBtn").offset().left);
 	}
-}
+}*/
