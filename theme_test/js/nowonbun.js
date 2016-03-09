@@ -32,11 +32,13 @@ function menu(){
 	dom = $("aside");
 	if(dom.hasClass("on")){
 		dom.removeClass("on");
-		$("aside").css("left",-$(window).width());
+		dom.css("width",0);
+		dom.css("left",-$(window).width());
 		$('html').css("overflow","auto");
 	}else{
 		dom.addClass("on");
-		$("aside").css("left",0);
+		dom.css("width",$(window).width());
+		dom.css("left",0);
 		$('html').css("overflow","hidden");
 	}
 }
