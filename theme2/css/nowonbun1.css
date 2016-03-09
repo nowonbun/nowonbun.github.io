@@ -65,7 +65,7 @@ aside{
 	background-color: rgba( 100, 100, 100, 0 );
 	background-color: #FFF;
 	z-index: 1000;
-	transition: left 300ms linear
+	transition: left 50ms linear
 }
 /*사이드메뉴*/
 aside.off{
