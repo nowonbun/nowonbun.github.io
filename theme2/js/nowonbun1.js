@@ -15,3 +15,17 @@ $(function(){
 		}
 	});
 });
+function menu(){
+	dom = $("aside");
+	if(dom.hasClass("on")){
+		dom.removeClass("on");
+		dom.addClass("off");
+		$("div.mainBody").addClass("mainBodyOff");
+		$("div.mainBody").removeClass("mainBodyOn");
+	}else{
+		dom.removeClass("off");
+		dom.addClass("on");
+		$("div.mainBody").addClass("mainBodyOn");
+		$("div.mainBody").removeClass("mainBodyOff");
+	}
+}
