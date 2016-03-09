@@ -1,3 +1,8 @@
+@charset "utf-8";
+@font-face {
+	font-family: 'childpaper';
+	src: url('childpaper.woff') format('truetype');
+}
 .none{
-		display:none;
-	}
+	display:none;
+}
