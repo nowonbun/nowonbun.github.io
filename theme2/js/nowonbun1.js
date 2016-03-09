@@ -1,5 +1,6 @@
 $(function(){
 	temp = $("ul.category_list").html();
+	console.log(temp);
 	$("ul.top-nav").html(temp);
 	$("ul.side-nav").html(temp);
 	$("ul.navbar-nav ul").addClass("none");
