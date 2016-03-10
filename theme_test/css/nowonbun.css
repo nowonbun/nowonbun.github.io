@@ -230,3 +230,15 @@ div.side-list > ul.side-nav > li > ul > li > a{
 div.side-footer div.bs-glyphicons{
 	margin-bottom:0px;
 }
+li.on{
+
+}
+li.off{
+	background-color:#222;
+	cursor:pointer;
+}
+ul.bs-glyphicons-list > li.off:hover{
+	background-color:#222;
+	cursor:auto;
+	color:#333;
+}
