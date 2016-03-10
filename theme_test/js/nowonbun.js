@@ -20,6 +20,23 @@ function initMenu(){
 			dom.addClass("none");
 		}
 	});
+	$("div.side-list > ul.side-nav > li > a").append("<a href='#' class='glyphicon glyphicon-triangle-bottom pull-right' aria-hidden='true' onclick='menuopen($(this));'></a>");
+	changeClassState($("div.side-list > ul.side-nav ul"),false);
+}
+function menuopen(obj){
+	if(obj.hasClass("glyphicon-triangle-bottom")){
+		obj.removeClass("glyphicon-triangle-bottom");
+		obj.addClass("glyphicon-triangle-top");
+	}else if(obj.hasClass("glyphicon-triangle-top")){
+		obj.removeClass("glyphicon-triangle-top");
+		obj.addClass("glyphicon-triangle-bottom");
+	}
+	dom = obj.parent().parent().children("ul");
+	if(dom.hasClass("on")){
+		changeClassState(dom,false);
+	}else{
+		changeClassState(dom,true);
+	}
 }
 function initAside(){
 	dom = $("aside");
@@ -31,6 +48,7 @@ function initAside(){
 	dom.hide();
 	$('html').css("overflow","auto");
 	$("aside img").prop("src",$("div#blogImage").html());
+	
 }
 function menu(){
 	dom = $("aside");
@@ -46,6 +64,7 @@ function menu(){
 		dom.show();
 		dom.css("width",$(window).width());
 		dom.css("left",0);
+		$("aside > div > div.side-list").css("min-height",$("aside> div").height()-210);
 		changeClassState($("main"),true);
 		changeClassState(dom,true);
 	}
