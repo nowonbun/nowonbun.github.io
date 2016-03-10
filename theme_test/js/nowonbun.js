@@ -40,7 +40,7 @@ function menu(){
 	}else{
 		$('html').css("overflow","hidden");
 		dom.show();
-		dom.css("left",$(window).width() > 300 ? -$(window).width() : -300);
+		dom.css("width",$(window).width());
 		dom.css("left",0);
 		dom.addClass("on");
 	}
