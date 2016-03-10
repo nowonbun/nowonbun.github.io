@@ -91,7 +91,7 @@ aside{
 	width:100%;
 	background-color:rgba( 255, 255, 255, 0.5 );
 	z-index: 1000;
-	transition: left 50ms linear;
+	transition: left 100ms linear;
 }
 /*사이드메뉴*/
 aside.on{
