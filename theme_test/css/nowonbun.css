@@ -87,6 +87,7 @@ main{
 	width:100%;
 }
 main.on{
+	-webkit-filter:blur(1px);
 }
 main.off{
 }
