@@ -101,24 +101,30 @@ function login(){
 	if($("div#loginstate").hasClass("logout")){
 		location.href='https://www.tistory.com/login';
 	}
+	return false;
 }
 function logout(){
 	if($("div#loginstate").hasClass("login")){
 		location.href='https://www.tistory.com/logout/?requestURI='+$("input#myUrl").val();
 	}
+	return false;
 }
 function addLink(){
 	if($("div#loginstate").hasClass("login")){
-		location.href="/toolbar/popup/link/";
+		window.open("/toolbar/popup/link/");
+		//location.href="/toolbar/popup/link/";
 	}
+	return false;
 }
-function write(){
+function writeTistory(){
 	if($("div#loginstate").hasClass("admin")){
-		location.href='/admin/entry/post';
+		location.href="/admin/entry/post/";
 	}
+	return false;
 }
-function admin(){
+function adminTistory(){
 	if($("div#loginstate").hasClass("admin")){
-		location.href='/admin/network/followingLink/';
+		location.href="/admin/network/followingLink/";
 	}
+	return false;
 }
