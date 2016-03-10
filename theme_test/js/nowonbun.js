@@ -20,9 +20,8 @@ $(window).resize(function(){
 });
 function initAside(){
 	dom = $("aside");
-	if(dom.hasClass("on")){
-		dom.removeClass("on");
-	}
+	changeClassState(dom,false);
+	changeClassState($("main"),false);
 	dom.css("height",$(window).height());
 	dom.css("left",$(window).width() > 300 ? -$(window).width() : -300);
 	dom.css("width",0);
