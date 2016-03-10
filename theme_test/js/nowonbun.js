@@ -32,7 +32,8 @@ function initAside(){
 function menu(){
 	dom = $("aside");
 	if(dom.hasClass("on")){
-		dom.removeClass("on");
+		changeClassState(dom,"off");
+		changeClassState($main,"off");
 		dom.css("left",$(window).width() > 300 ? -$(window).width() : -300);
 		dom.css("width",0);
 		dom.hide();
@@ -42,6 +43,17 @@ function menu(){
 		dom.show();
 		dom.css("width",$(window).width());
 		dom.css("left",0);
-		dom.addClass("on");
+		changeClassState($main,"on");
+		changeClassState(dom,"on");
 	}
 }
+function changeClassState(dom,state){
+	if(dom.hasClass("on")){
+		dom.removeClass("on");
+	}
+	if(dom.hasClass("off")){
+		dom.removeClass("off");
+	}
+	dom.addClass(state);
+}
+
