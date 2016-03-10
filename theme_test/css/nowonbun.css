@@ -49,11 +49,18 @@ div.navbar-header > a.title > span{
 	font-size: 25px;
 	margin-right:10px;
 }
+div.navbar-header > a{
+	padding-top:15px;
+}
+nav.navbar{
+	border-radius:0px;
+}
+/*
 nav.navbar{
 	border-radius:0px;
 	min-height:40px;
 	height:40px;
-}
+}*/
 .navbar-brand{
 	padding:10px 10px;
 }

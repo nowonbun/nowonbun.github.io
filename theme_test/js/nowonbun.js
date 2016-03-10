@@ -68,16 +68,8 @@ function openSublist(obj){
 /*메뉴 초기 설정 - 메뉴숨기기,사이즈 변경때마다도 요청한다.(메뉴가 가끔씩 튀어나오는 버그때문에)*/
 function initAside(){
 	dom = $("aside");
-	changeClassState(dom,false);
-	changeClassState($("main"),false);
 	dom.css("height",$(window).height());
-	dom.css("left",$(window).width() > 300 ? -$(window).width() : -300);
-	dom.css("width",0);
-	dom.hide();
-	if($(window).width() < 768){
-		$('html').css("position","static");
-	}
-	$('html').css("overflow","auto");
+	sideOff(dom);
 	$("aside img").prop("src",$("div#blogImage").html());
 	
 }
@@ -85,27 +77,31 @@ function initAside(){
 function menu(){
 	dom = $("aside");
 	if(dom.hasClass("on")){
+		sideOff(dom);
+	}else{
+		sideOn(dom);
+	}
+}
+function sideOff(dom){
 		changeClassState(dom,false);
 		changeClassState($("main"),false);
 		dom.css("left",$(window).width() > 300 ? -$(window).width() : -300);
 		dom.css("width",0);
 		dom.hide();
-		if($(window).width() < 768){
-			$('html').css("position","static");
-		}
+		$('body').css("width","");
+		$('html').css("position","static");
 		$('html').css("overflow","auto");
-	}else{
+}
+function sideOn(dom){
 		$('html').css("overflow","hidden");
-		if($(window).width() < 768){
-			$('html').css("position","fixed");
-		}
+		$('html').css("position","fixed");
+		$('body').css("width",$(window).width());
 		dom.show();
 		dom.css("width",$(window).width());
 		dom.css("left",0);
 		$("aside > div > div.side-list").css("min-height",$("aside> div").height()-210);
 		changeClassState($("main"),true);
 		changeClassState(dom,true);
-	}
 }
 /*클래스 상태 변경*/
 function changeClassState(dom,state){
