@@ -1,155 +1,279 @@
-/*OnLoad*/
-$(function(){
-	initMenu();
-	initAside();
-});
-/*onResize*/
-$(window).resize(function(){
-	initAside();
-});
-/*초기화*/
-function initMenu(){
-	/*메뉴 만들기*/
-	temp = $("ul.category_list").html();
-	$("ul.top-nav").html(temp);
-	$("ul.side-nav").html(temp);
-	/*모바일 메뉴에서 중간 버튼 클릭 없애기*/
-	$("ul.navbar-nav ul").addClass("none");
-	$("ul.navbar-nav > li > a").prop("href","#");
-	$("ul.navbar-nav > li > a").addClass("dropdown");
-	$("a.dropdown").bind("click",function(){
-		dom = $(this).parent().children("ul");
-		if(dom.hasClass("none")){
-			dom.removeClass("none");
-		}else{
-			dom.addClass("none");
-		}
-	});
-	/*사이드 메뉴 하위가 있을경우 생성*/
-	$("div.side-list > ul.side-nav > li > ul").parent().children("a").append("<a href='#' class='glyphicon glyphicon-triangle-bottom pull-right' aria-hidden='true' onclick='openSublist($(this));'></a>");
-	changeClassState($("div.side-list > ul.side-nav ul"),false);
-	/*사이드 메뉴 아래 활성화 처리*/
-	if($("div.tistorytoolbar").hasClass("tt_menubar_login")){
-		changeClassState($("ul.bs-glyphicons-list > li.logout"),true);
-		changeClassState($("ul.bs-glyphicons-list > li.login"),false);
-		changeClassState($("ul.bs-glyphicons-list > li.admin"),false);
-		$("div#loginstate").addClass("logout");
-	}else{
-		changeClassState($("ul.bs-glyphicons-list > li.logout"),false);
-		changeClassState($("ul.bs-glyphicons-list > li.login"),true);
-		changeClassState($("ul.bs-glyphicons-list > li.admin"),false);
-		$("div#loginstate").addClass("login");
-		myUrl = $("input#myUrl").val();
-		$("a.tt_menubar_link").each(function(){
-			if($(this).attr("href") === myUrl){
-				$("div#loginstate").addClass("admin");
-				changeClassState($("ul.bs-glyphicons-list > li.admin"),true);
-			}
-		});
+@charset "utf-8";
+@font-face {
+	font-family: 'childpaper';
+	src: url('childpaper.woff') format('truetype');
+}
+body {
+	font-family: childpaper;
+}
+/*모바일 메뉴*/
+.navbar .navbar-default {
+	padding : 0px;
+	min-height:40px;
+	height:40px;
+}
+/*모바일 메뉴*/
+.navbar-nav a {
+	color: #9d9d9d;
+	text-decoration:none;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	line-height: 20px;
+}
+/*모바일 메뉴*/
+.navbar-nav > li > ul > li{
+	padding-top: 10px;
+	padding-bottom: 10px;
+	line-height: 20px;
+}
+/*모바일 메뉴*/
+.navbar-nav a:hover{
+	color:#FFF;
+}
+/*모바일 메뉴*/
+.navbar-nav ul {
+	list-style:none;
+}
+/*탑 메뉴*/
+.top-nav{
+	border-radius: 0px;
+}
+.none{
+	display:none;
+}
+div.tistorytoolbar{
+	display:none;
+}
+div.navbar-header > a.title > span{
+	color: #fff;
+	font-size: 25px;
+	margin-right:10px;
+}
+nav.navbar{
+	border-radius:0px;
+	min-height:40px;
+	height:40px;
+}
+.navbar-brand{
+	padding:10px 10px;
+}
+.navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
+    margin-left: -15px;
+}
+/*모바일만*/
+@media screen and (max-width:768px) {
+	/*div.navbar-header > a,
+	div.navbar-header > span{
+		display : none;
+	}*/
+	div.navbar-header{
+		margin-left: 0px!important;
 	}
 }
-/*메뉴에서 서브리스트-누르면 들어가고 누르면 나오는 구조*/
-function openSublist(obj){
-	/*상위 메뉴 버튼 이미지 교체*/
-	if(obj.hasClass("glyphicon-triangle-bottom")){
-		obj.removeClass("glyphicon-triangle-bottom");
-		obj.addClass("glyphicon-triangle-top");
-	}else if(obj.hasClass("glyphicon-triangle-top")){
-		obj.removeClass("glyphicon-triangle-top");
-		obj.addClass("glyphicon-triangle-bottom");
+/*브라우저만*/
+@media screen and (min-width:768px) {
+	ul.navbar-nav{
+		display : none!important;
 	}
-	dom = obj.parent().parent().children("ul");
-	if(dom.hasClass("on")){
-		changeClassState(dom,false);
-	}else{
-		changeClassState(dom,true);
+	/*nav.navbar{
+		border-radius:0px;
+		min-height:40px;
+		height:40px;
+	}
+	.navbar-brand{
+		padding:10px 10px;
+	}*/
+}
+/*사이드메뉴*/
+aside{
+	position:absolute;
+	float:left;
+	width:100%;
+	background-color:rgba( 255, 255, 255, 0.5 );
+	z-index: 1000;
+	transition: left 50ms linear;
+}
+/*사이드메뉴*/
+aside.on{
+	left:0px;
+}
+/*사이드메뉴*/
+aside > div{
+	width:300px;
+	height:85%;
+	background-color: rgba( 255, 255, 255, 1 );
+	border:1px solid #000;
+	overflow:auto;
+}
+aside > div > h2{
+    background-color: #222;
+    color: #FFF;
+    margin: 0px;
+    padding: 10px;
+}
+/*사이드메뉴*/
+main{
+	float:right;
+	width:100%;
+}
+/*브라우저만*/
+@media screen and (min-width:768px) {
+	main.on{
+		-webkit-filter:blur(1px);
+	}
+	aside > div,aside h2{
+		border-top-right-radius: 10px;
 	}
 }
-/*메뉴 초기 설정 - 메뉴숨기기,사이즈 변경때마다도 요청한다.(메뉴가 가끔씩 튀어나오는 버그때문에)*/
-function initAside(){
-	dom = $("aside");
-	changeClassState(dom,false);
-	changeClassState($("main"),false);
-	dom.css("height",$(window).height());
-	dom.css("left",$(window).width() > 300 ? -$(window).width() : -300);
-	dom.css("width",0);
-	dom.hide();
-	if($(window).width() < 768){
-		$('html').css("position","static");
+/*모바일만*/
+@media screen and (max-width:768px) {
+	aside{
+		position: absolute;
+		top: 0px;
+		z-index: 1002;
+		min-height: 100%;
 	}
-	$('html').css("overflow","auto");
-	$("aside img").prop("src",$("div#blogImage").html());
-	
-}
-/*메뉴 상태.. 처음 누르면 메뉴가 나옴. 다시 누르면 메뉴가 들어감*/
-function menu(){
-	dom = $("aside");
-	if(dom.hasClass("on")){
-		changeClassState(dom,false);
-		changeClassState($("main"),false);
-		dom.css("left",$(window).width() > 300 ? -$(window).width() : -300);
-		dom.css("width",0);
-		dom.hide();
-		if($(window).width() < 768){
-			$('html').css("position","static");
-		}
-		$('html').css("overflow","auto");
-	}else{
-		$('html').css("overflow","hidden");
-		if($(window).width() < 768){
-			$('html').css("position","fixed");
-		}
-		dom.show();
-		dom.css("width",$(window).width());
-		dom.css("left",0);
-		$("aside > div > div.side-list").css("min-height",$("aside> div").height()-210);
-		changeClassState($("main"),true);
-		changeClassState(dom,true);
+	aside > div{
+		height:100%;
 	}
 }
-/*클래스 상태 변경*/
-function changeClassState(dom,state){
-	if(dom.hasClass("on")){
-		dom.removeClass("on");
-	}
-	if(dom.hasClass("off")){
-		dom.removeClass("off");
-	}
-	dom.addClass(state?"on":"off");
+main.off{
 }
-/*로그인*/
-function login(){
-	if($("div#loginstate").hasClass("logout")){
-		location.href='https://www.tistory.com/login';
-	}
-	return false;
+div.adminbox{
+	border:1px solid #000;
+	position:absolute;
+	transition: top 50ms linear;
+	height:200px;
+	width:200px;
+	background-color: rgba( 100, 100, 100, 0 );
+	background-color: #FFF;
+	z-index: 1000;
 }
-/*로그아웃*/
-function logout(){
-	if($("div#loginstate").hasClass("login")){
-		location.href='https://www.tistory.com/logout/?requestURI='+$("input#myUrl").val();
-	}
-	return false;
+div.adminOff{
+	top:-200px;
 }
-/*링크추가 팝업*/
-function addLink(){
-	if($("div#loginstate").hasClass("login")){
-		window.open("/toolbar/popup/link/");
-		//location.href="/toolbar/popup/link/";
-	}
-	return false;
+nav{
+	z-index: 1001;
 }
-/*글쓰기로 이동*/
-function writeTistory(){
-	if($("div#loginstate").hasClass("admin")){
-		location.href="/admin/entry/post/";
-	}
-	return false;
+aside h2{
+	background: #222;
+    background: -webkit-linear-gradient(#222, #FFF); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#222, #FFF); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#222, #FFF); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#222, #FFF); /* Standard syntax */
 }
-/*관리 메뉴로 이동*/
-function adminTistory(){
-	if($("div#loginstate").hasClass("admin")){
-		location.href="/admin/center/";
-	}
-	return false;
+aside img{
+	width:50px;
+	height:50px;
+	background-color:#FFF;
+	border-radius: 30px;
+	margin-right:20px;
+}
+div.bs-glyphicons{
+	width:100%;
+	height: 55px;
+	margin-bottom:20px;
+}
+ul.bs-glyphicons-list{
+	list-style: none;
+	padding:0px;
+	margin:0px;
+}
+ul.bs-glyphicons-list > li{
+    float: left;
+    width: 20%;
+    height: 55px;
+    padding: 3px;
+    font-size: 10px;
+    line-height: 1;
+    text-align: center;
+    /*background-color: #f9f9f9;*/
+    /*border: 1px solid #bdc3c7;*/
+	cursor:pointer;
+	padding-top:6px;
+}
+ul.bs-glyphicons-list > li:hover{
+	background-color:#81a9db;
+	color:#FFF;
+}
+ul.bs-glyphicons-list > li > span{
+	width:100%;
+}
+ul.bs-glyphicons-list > li > span:first-child{
+	font-size:30px;
+}
+ul.bs-glyphicons-list > li > span:last-child{
+	font-size:10px;
+}
+div.side-list ul{
+	list-style: none;
+}
+div.side-list > ul.side-nav{
+	padding:0px;
+}
+div.side-list a{
+	text-decoration:none;
+	color:#000;
+}
+div.side-list > ul.side-nav > li > a{
+	height:40px;
+	/*background-color: #f9f9f9;*/
+	display:block;
+	border-bottom: 1px solid #bdc3c7;
+	margin:10px;
+	padding:5px;
+	padding-top:12px;
+	padding-bottom:3px;
+	font-size:20px;
+}
+div.side-list a:hover{
+	color: #81a9db;
+}
+div.side-list > ul.side-nav > li > a > a{
+	margin-top:10px;
+	font-size:15px;
+	width:20%;
+	text-align:right;
+	padding-right:10px;
+}
+div.side-list > ul.side-nav ul{
+	padding:0px;
+}
+div.side-list > ul.side-nav ul.off{
+	display:none;
+}
+div.side-list > ul.side-nav ul a{
+	padding-left:20px;
+}
+div.side-list > ul.side-nav > li > ul > li > a{
+	height:30px;
+	display:block;
+	/*border-bottom: 1px solid #bdc3c7;*/
+	margin:5px;
+	margin-left:30px;
+	padding:5px;
+	padding-top:7px;
+	padding-bottom:3px;
+	font-size:15px;
+}
+div.side-footer div.bs-glyphicons{
+	margin-bottom:0px;
+}
+li.on{
+
+}
+li.off{
+	background-color:#222;
+	cursor:pointer;
+}
+ul.bs-glyphicons-list > li.off:hover{
+	background-color:#222;
+	cursor:auto;
+	color:#333;
+}
+
+div.footer-bottom{
+	background-color:#101010;
+	color:#EFEFEF;
+	padding-top:10px;
 }
