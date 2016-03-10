@@ -44,13 +44,10 @@ body {
 div.tistorytoolbar{
 	display:none;
 }
-div.navbar-header > a{
-	margin-left: 50px!important;
-}
-div.navbar-header > span{
+div.navbar-header > a.title > span{
 	color: #fff;
-    margin-left: -120px;
-    font-size: 25px;
+	font-size: 25px;
+	margin-right:10px;
 }
 /*모바일만*/
 @media screen and (max-width:768px) {
@@ -250,4 +247,10 @@ ul.bs-glyphicons-list > li.off:hover{
 	background-color:#222;
 	cursor:auto;
 	color:#333;
+}
+
+div.footer-bottom{
+	background-color:#101010;
+	color:#EFEFEF;
+	padding-top:10px;
 }
