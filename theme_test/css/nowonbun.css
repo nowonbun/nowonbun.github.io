@@ -49,11 +49,25 @@ div.navbar-header > a.title > span{
 	font-size: 25px;
 	margin-right:10px;
 }
+nav.navbar{
+	border-radius:0px;
+	min-height:40px;
+	height:40px;
+}
+.navbar-brand{
+	padding:10px 10px;
+}
+.navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
+    margin-left: -15px;
+}
 /*모바일만*/
 @media screen and (max-width:768px) {
-	div.navbar-header > a,
+	/*div.navbar-header > a,
 	div.navbar-header > span{
 		display : none;
+	}*/
+	div.navbar-header{
+		margin-left: 0px!important;
 	}
 }
 /*브라우저만*/
@@ -61,14 +75,14 @@ div.navbar-header > a.title > span{
 	ul.navbar-nav{
 		display : none!important;
 	}
-	nav.navbar{
+	/*nav.navbar{
 		border-radius:0px;
 		min-height:40px;
 		height:40px;
 	}
 	.navbar-brand{
 		padding:10px 10px;
-	}
+	}*/
 }
 /*사이드메뉴*/
 aside{
