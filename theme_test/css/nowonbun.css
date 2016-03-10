@@ -70,12 +70,12 @@ aside.on{
 	left:0px;
 }
 /*사이드메뉴*/
-aside div{
+aside > div{
 	width:300px;
 	background-color: rgba( 255, 255, 255, 1 );
 	border:1px solid #000;		
 }
-aside div > h1{
+aside > div > h2{
     background-color: #222;
     color: #FFF;
     margin: 0px;
@@ -106,4 +106,58 @@ div.adminOff{
 }
 nav{
 	z-index: 1001;
+}
+
+
+/*회사서 추가*/
+aside > div,aside h2{
+	border-top-right-radius: 10px;
+}
+aside h2{
+	background: #222;
+    background: -webkit-linear-gradient(#222, #bdc3c7); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#222, #bdc3c7); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#222, #bdc3c7); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#222, #bdc3c7); /* Standard syntax */
+}
+aside img{
+	width:50px;
+	height:50px;
+	background-color:#FFF;
+	border-radius: 30px;
+}
+div.bs-glyphicons{
+	width:100%;
+}
+ul.bs-glyphicons-list{
+	list-style: none;
+	padding:0px;
+}
+ul.bs-glyphicons-list > li{
+    float: left;
+    width: 20%;
+    height: 55px;
+    padding: 3px;
+    font-size: 10px;
+    line-height: 1;
+    text-align: center;
+    background-color: #f9f9f9;
+    border: 1px solid #bdc3c7;
+	cursor:pointer;
+}
+ul.bs-glyphicons-list{
+	margin:0px;
+}
+ul.bs-glyphicons-list > li:hover{
+	background-color:#bdc3c7;
+	color:#FFF;
+}
+ul.bs-glyphicons-list > li > span{
+	width:100%;
+}
+ul.bs-glyphicons-list > li > span:first-child{
+	font-size:30px;
+}
+ul.bs-glyphicons-list > li > span:last-child{
+	font-size:10px;
 }
