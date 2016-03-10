@@ -7,7 +7,7 @@
 <meta name="theme-color" content="#29343a">
 <title>[##_title_##] :: [##_page_title_##]</title>
 <link rel="stylesheet" type="text/css" href="./style.css">
-<link rel="canonical" href="http://nowonbun.tistory.com">
+<link rel="canonical" href="http://nowonbunskinex.tistory.com">
 <link rel="alternate" type="application/rss+xml" title="[##_title_##]" href="[##_rss_url_##]" />
 <meta name="description" content="[##_title_##],  [##_page_title_##] " />
 <meta name="Author" content="[##_blogger_##]" />
@@ -70,24 +70,78 @@ SyntaxHighlighter.all();
 		<nav class="navbar navbar-inverse">
 			<div class="container">
 				<div class="navbar-header">
+					<!--
 					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
 						<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
-					</button>
+					</button>-->
 					<!--glyphicon glyphicon-th-list-->
+					<a class="navbar-brand title" href="#" onclick="/"><span>[##_title_##]</span></a>
 					<a class="navbar-brand" href="#" onclick="menu()"><span class="glyphicon glyphicon-th-list"></span></a> 
 				</div>
-				<div id="navbar" class="collapse navbar-collapse">
+				<!--<div id="navbar" class="collapse navbar-collapse">
 					<ul class="nav navbar-nav top-nav">
 					</ul>
-				</div>
+				</div>-->
 				<!--/.nav-collapse -->
 			</div>
 		</nav>
 	</header>
 	<aside style="display:none;">
 		<div>
-			<h1>[##_title_##]</h1>
-			<ul class="side-nav"></ul>
+			<h2 class="side-header"><img src="" alt="[##_blogger_##]">[##_title_##]</h2>
+			<div class="side-menu bs-glyphicons">
+				<ul class="bs-glyphicons-list">
+				<li onclick="location.href='/';">
+					<span class="glyphicon glyphicon-home" aria-hidden="true" title="홈으로"></span>
+					<span>홈으로</span>
+				</li>
+				<li onclick="location.href='mailto:nowonbun@naver.com';">
+					<span class="glyphicon glyphicon-envelope" aria-hidden="true" title="메일보내기"></span>
+					<span>메일발송</span>
+				</li>
+				<li onclick="window.external.AddFavorite('http://nowonbun.tistory.com','☆~명월일지~☆');">
+					<span class="glyphicon glyphicon-star-empty" aria-hidden="true" title="즐겨찾기"></span>
+					<span>즐겨찾기</span>
+				</li>
+				<li onclick="location.href='[##_guestbook_link_##]';">
+					<span class="glyphicon glyphicon-pencil" aria-hidden="true" title="방명록"></span>
+					<span>방명록</span>
+				</li>
+				<li onclick="menu();">
+					<span class="glyphicon glyphicon-remove" aria-hidden="true" title="메뉴닫기"></span>
+					<span>메뉴닫기</span>
+				</li>
+				</ul>
+			</div>
+			<div class="side-list">
+				<ul class="side-nav"></ul>
+			</div>
+			<div class="side-footer">
+				<div class="bs-glyphicons">
+					<ul class="bs-glyphicons-list">
+						<li onclick="login();" class='logout on'>
+							<span class="glyphicon glyphicon-log-in" aria-hidden="true" title="로그인"></span>
+							<span>로그인</span>
+						</li>
+						<li onclick="logout();" class='login off'>
+							<span class="glyphicon glyphicon-log-out" aria-hidden="true" title="로그인"></span>
+							<span>로그아웃</span>
+						</li>
+						<li onclick="addLink();" class='login off'>
+							<span class="glyphicon glyphicon-list-alt" aria-hidden="true" title="링크추가"></span>
+							<span>링크추가</span>
+						</li>
+						<li onclick="writeTistory();" class='admin off'>
+							<span class="glyphicon glyphicon-leaf" aria-hidden="true" title="글쓰기"></span>
+							<span>글쓰기</span>
+						</li>
+						<li onclick="adminTistory();" class='admin off'>
+							<span class="glyphicon glyphicon-cog" aria-hidden="true" title="관리"></span>
+							<span>관리</span>
+						</li>
+					</ul>
+				</div>
+			</div>
 		</div>
 	</aside>
 	<main role="main" class="off">
@@ -382,12 +436,6 @@ SyntaxHighlighter.all();
 						</div>
 						<!-- 방문자수 -->
 						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-							<a class="pull-right" href="/guestbook" style="font-size: 1.5em;">방명록에 글을 남겨주세요</a>
-						</div>
-						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-							<a class="pull-right" href="mailto:nowonbun@naver.com" style="font-size: 1.5em;">nowonbun@naver.com</a>
-						</div>
-						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 							<p class="pull-right">Copyright © 2016 nowonbun.tistory.com</p>
 						</div>
 					</div>
@@ -397,11 +445,14 @@ SyntaxHighlighter.all();
 		<!-- end:footer bottom -->
 	</footer>
 	<!-- end:footer -->
-	<!--div style="display: none">[##_category_list_##]</div-->
-	<div style="display: none"><ul class="tt_category"><li><a class="link_tit" href="/category">분류 전체보기</a><ul class="category_list"><li><a class="link_item" href="/category/노트">노트</a><ul class="sub_category_list"><li><a class="link_sub_item" href="/category/노트/개발%20노트">개발 노트</a></li><li><a class="link_sub_item" href="/category/노트/생활%20노트">생활 노트</a></li></ul></li><li><a class="link_item" href="/category/코드%20연습">코드 연습</a><ul class="sub_category_list"><li><a class="link_sub_item" href="/category/코드%20연습/C%20/%20C++">C / C++</a></li><li><a class="link_sub_item" href="/category/코드%20연습/Java">Java</a></li><li><a class="link_sub_item" href="/category/코드%20연습/C%23">C#</a></li><li><a class="link_sub_item" href="/category/코드%20연습/Javascript">Javascript</a></li><li><a class="link_sub_item" href="/category/코드%20연습/Jquery">Jquery</a></li><li><a class="link_sub_item" href="/category/코드%20연습/Windows">Windows</a></li><li><a class="link_sub_item" href="/category/코드%20연습/Linux">Linux</a></li><li><a class="link_sub_item" href="/category/코드%20연습/그%20외">그 외</a></li></ul></li><li><a class="link_item" href="/category/플젝%20노트">플젝 노트</a><ul class="sub_category_list"><li><a class="link_sub_item" href="/category/플젝%20노트/가계부%28C%23%29">가계부(C#)</a></li><li><a class="link_sub_item" href="/category/플젝%20노트/가계부%28Jsp%29">가계부(Jsp)</a></li><li><a class="link_sub_item" href="/category/플젝%20노트/블로그%20에디터">블로그 에디터</a></li></ul></li><li><a class="link_item" href="/category/공부%20노트">공부 노트</a></li><li><a class="link_item" href="/category/그%20외">그 외</a></li></ul></li></ul></div>
+	<section style="display: none" id="template">
+		<div id="categoryTemplate">[##_category_list_##]</div>
+		<div id="blogImage">[##_image_##]</div>
+		<div id="loginstate"></div>
+		<input type="hidden" id="myUrl" value="http://nowonbunskinex.tistory.com">
+	</section>
 	<!-- start:javascript -->
-	<!-- <script src="http://nowonbun.github.io/theme_test/js/nowonbun.js"></script>-->
-	<script src="js/nowonbun.js"></script>
+	<script src="http://nowonbun.github.io/theme_test/js/nowonbun.js"></script>
 	<!-- end:javascript -->
 </body>
 </html>
