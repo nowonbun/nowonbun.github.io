@@ -12,7 +12,7 @@ $(window).resize(function(){
 var lastScroll = 0;
 $(window).scroll(function(event){
 	var st = $(this).scrollTop();
-	if (st > lastScroll){
+	if (st > lastScroll || st <50){
 		$("header").css("width","");
 		$("header").css("position","static");
 	}else{
