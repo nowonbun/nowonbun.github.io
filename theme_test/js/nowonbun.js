@@ -13,11 +13,11 @@ var lastScroll = 0;
 $(window).scroll(function(event){
 	var st = $(this).scrollTop();
 	if (st > lastScroll && st > 30){
-		$("header").css("position","fixed");
-		$("header").css("width",$(window).width());
-	}else{
 		$("header").css("width","");
 		$("header").css("position","static");
+	}else{
+		$("header").css("position","fixed");
+		$("header").css("width",$(window).width());
 	}
 	lastScroll = st;
 });
