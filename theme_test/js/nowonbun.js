@@ -54,6 +54,6 @@ function changeClassState(dom,state){
 	if(dom.hasClass("off")){
 		dom.removeClass("off");
 	}
-	dom.addClass(state?"on","off");
+	dom.addClass(state?"on":off");
 }
 
