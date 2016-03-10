@@ -20,8 +20,27 @@ function initMenu(){
 			dom.addClass("none");
 		}
 	});
-	$("div.side-list > ul.side-nav > li > a").append("<a href='#' class='glyphicon glyphicon-triangle-bottom pull-right' aria-hidden='true' onclick='menuopen($(this));'></a>");
+	$("div.side-list > ul.side-nav > li > ul").parent().children("a").append("<a href='#' class='glyphicon glyphicon-triangle-bottom pull-right' aria-hidden='true' onclick='menuopen($(this));'></a>");
 	changeClassState($("div.side-list > ul.side-nav ul"),false);
+
+	if($("div.tistorytoolbar").hasClass("tt_menubar_login")){
+		changeClassState($("ul.bs-glyphicons-list > li.logout"),true);
+		changeClassState($("ul.bs-glyphicons-list > li.login"),false);
+		changeClassState($("ul.bs-glyphicons-list > li.admin"),false);
+		$("div#loginstate").addClass("logout");
+	}else{
+		changeClassState($("ul.bs-glyphicons-list > li.logout"),false);
+		changeClassState($("ul.bs-glyphicons-list > li.login"),true);
+		changeClassState($("ul.bs-glyphicons-list > li.admin"),false);
+		$("div#loginstate").addClass("login");
+		myUrl = $("input#myUrl").val();
+		$("a.tt_menubar_link").each(function(){
+			if($(this).attr("href") === myUrl){
+				$("div#loginstate").addClass("admin");
+				changeClassState($("ul.bs-glyphicons-list > li.admin"),true);
+			}
+		});
+	}
 }
 function menuopen(obj){
 	if(obj.hasClass("glyphicon-triangle-bottom")){
@@ -77,4 +96,29 @@ function changeClassState(dom,state){
 		dom.removeClass("off");
 	}
 	dom.addClass(state?"on":"off");
+}
+function login(){
+	if($("div#loginstate").hasClass("logout")){
+		location.href='https://www.tistory.com/login';
+	}
+}
+function logout(){
+	if($("div#loginstate").hasClass("login")){
+		location.href='https://www.tistory.com/logout/?requestURI='+$("input#myUrl").val();
+	}
+}
+function addLink(){
+	if($("div#loginstate").hasClass("login")){
+		location.href="/toolbar/popup/link/";
+	}
+}
+function write(){
+	if($("div#loginstate").hasClass("admin")){
+		location.href='/admin/entry/post';
+	}
+}
+function admin(){
+	if($("div#loginstate").hasClass("admin")){
+		location.href='/admin/network/followingLink/';
+	}
 }
