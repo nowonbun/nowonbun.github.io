@@ -3,57 +3,68 @@
 	font-family: 'childpaper';
 	src: url('childpaper.woff') format('truetype');
 }
+/*헤더 z-index  스크롤링때문에*/
+header{
+	z-index:999;
+}
+/*폰트 설정*/
 body {
 	font-family: childpaper;
 }
 /*모바일 메뉴*/
-.navbar .navbar-default {
+/*.navbar .navbar-default {
 	padding : 0px;
 	min-height:40px;
 	height:40px;
-}
+}*/
 /*모바일 메뉴*/
-.navbar-nav a {
+/*.navbar-nav a {
 	color: #9d9d9d;
 	text-decoration:none;
 	padding-top: 10px;
 	padding-bottom: 10px;
 	line-height: 20px;
-}
+}*/
 /*모바일 메뉴*/
-.navbar-nav > li > ul > li{
+/*.navbar-nav > li > ul > li{
 	padding-top: 10px;
 	padding-bottom: 10px;
 	line-height: 20px;
-}
+}*/
 /*모바일 메뉴*/
-.navbar-nav a:hover{
+/*.navbar-nav a:hover{
 	color:#FFF;
-}
+}*/
 /*모바일 메뉴*/
-.navbar-nav ul {
+/*.navbar-nav ul {
 	list-style:none;
-}
+}*/
 /*탑 메뉴*/
-.top-nav{
+/*.top-nav{
 	border-radius: 0px;
-}
+}*/
+/*
 .none{
 	display:none;
 }
+*/
+/*오른쪽 상단 로그인 하는 기본 툴*/
 div.tistorytoolbar{
 	display:none;
 }
+/*해더 타이틀*/
 div.navbar-header > a.title > span{
 	color: #fff;
 	font-size: 25px;
 	margin-right:10px;
 }
+/*해더 타이틀과 메뉴버튼*/
 div.navbar-header > a{
 	padding-top:15px;
 }
+/*해더 재정의*/
 nav.navbar{
-	border-radius:0px;
+	border-radius:0px!important;
 }
 /*
 nav.navbar{
@@ -61,35 +72,13 @@ nav.navbar{
 	min-height:40px;
 	height:40px;
 }*/
+/*해더 재정의*/
 .navbar-brand{
-	padding:10px 10px;
+	padding:10px 10px!important;
 }
+/*해더 재정의*/
 .navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
-    margin-left: -15px;
-}
-/*모바일만*/
-@media screen and (max-width:768px) {
-	/*div.navbar-header > a,
-	div.navbar-header > span{
-		display : none;
-	}*/
-	div.navbar-header{
-		margin-left: 0px!important;
-	}
-}
-/*브라우저만*/
-@media screen and (min-width:768px) {
-	ul.navbar-nav{
-		display : none!important;
-	}
-	/*nav.navbar{
-		border-radius:0px;
-		min-height:40px;
-		height:40px;
-	}
-	.navbar-brand{
-		padding:10px 10px;
-	}*/
+    margin-left: -15px!important;
 }
 /*사이드메뉴*/
 aside{
@@ -112,6 +101,7 @@ aside > div{
 	border:1px solid #000;
 	overflow:auto;
 }
+/*사이드 타이틀*/
 aside > div > h2{
     background-color: #222;
     color: #FFF;
@@ -123,30 +113,7 @@ main{
 	float:right;
 	width:100%;
 }
-/*브라우저만*/
-@media screen and (min-width:768px) {
-	main.on{
-		-webkit-filter:blur(1px);
-	}
-	aside > div,aside h2{
-		border-top-right-radius: 10px;
-	}
-}
-/*모바일만*/
-@media screen and (max-width:768px) {
-	aside{
-		position: absolute;
-		top: 0px;
-		z-index: 1002;
-		min-height: 100%;
-	}
-	aside > div{
-		height:100%;
-	}
-}
-main.off{
-}
-div.adminbox{
+/*div.adminbox{
 	border:1px solid #000;
 	position:absolute;
 	transition: top 50ms linear;
@@ -158,10 +125,12 @@ div.adminbox{
 }
 div.adminOff{
 	top:-200px;
-}
-nav{
+}*/
+/*버그 체크 바람*/
+/*nav{
 	z-index: 1001;
-}
+}*/
+/*사이드바 타이틀 색깔 효과*/
 aside h2{
 	background: #222;
     background: -webkit-linear-gradient(#222, #FFF); /* For Safari 5.1 to 6.0 */
@@ -169,6 +138,7 @@ aside h2{
     background: -moz-linear-gradient(#222, #FFF); /* For Firefox 3.6 to 15 */
     background: linear-gradient(#222, #FFF); /* Standard syntax */
 }
+/*사이드바 타이틀 유저 사진*/
 aside img{
 	width:50px;
 	height:50px;
@@ -176,16 +146,19 @@ aside img{
 	border-radius: 30px;
 	margin-right:20px;
 }
+/*사이드바 아이콘 메뉴*/
 div.bs-glyphicons{
 	width:100%;
 	height: 55px;
 	margin-bottom:20px;
 }
+/*사이드바 아이콘 메뉴*/
 ul.bs-glyphicons-list{
 	list-style: none;
 	padding:0px;
 	margin:0px;
 }
+/*사이드바 아이콘 메뉴*/
 ul.bs-glyphicons-list > li{
     float: left;
     width: 20%;
@@ -194,37 +167,46 @@ ul.bs-glyphicons-list > li{
     font-size: 10px;
     line-height: 1;
     text-align: center;
-    /*background-color: #f9f9f9;*/
-    /*border: 1px solid #bdc3c7;*/
 	cursor:pointer;
 	padding-top:6px;
 }
+/*사이드바 아이콘 HOVER*/
 ul.bs-glyphicons-list > li:hover{
 	background-color:#81a9db;
 	color:#FFF;
 }
+/*사이드바 아이콘설정*/
 ul.bs-glyphicons-list > li > span{
 	width:100%;
 }
+/*사이드바 아이콘 이미지*/
 ul.bs-glyphicons-list > li > span:first-child{
 	font-size:30px;
 }
+/*사이드바 아이콘 글씨*/
 ul.bs-glyphicons-list > li > span:last-child{
 	font-size:10px;
 }
+/*사이드바 메뉴리스트 점 빼기*/
 div.side-list ul{
 	list-style: none;
 }
+/*사이드바 메뉴리스트 위치 조정*/
 div.side-list > ul.side-nav{
 	padding:0px;
 }
+/*사이드바 메뉴리스트 링크 기본설정*/
 div.side-list a{
 	text-decoration:none;
 	color:#000;
 }
+/*사이드바 메뉴리스트 링크 기본설정HOVER*/
+div.side-list a:hover{
+	color: #81a9db;
+}
+/*사이드바 메뉴리스트 상위 메뉴 기본설정*/
 div.side-list > ul.side-nav > li > a{
 	height:40px;
-	/*background-color: #f9f9f9;*/
 	display:block;
 	border-bottom: 1px solid #bdc3c7;
 	margin:10px;
@@ -233,9 +215,7 @@ div.side-list > ul.side-nav > li > a{
 	padding-bottom:3px;
 	font-size:20px;
 }
-div.side-list a:hover{
-	color: #81a9db;
-}
+/*사이드바 메뉴리스트 상위 메뉴 드롭 버튼 ▼▲*/
 div.side-list > ul.side-nav > li > a > a{
 	margin-top:10px;
 	font-size:15px;
@@ -243,15 +223,19 @@ div.side-list > ul.side-nav > li > a > a{
 	text-align:right;
 	padding-right:10px;
 }
+/*사이드바 메뉴리스트 하위 메뉴 그룹설정*/
 div.side-list > ul.side-nav ul{
 	padding:0px;
 }
+/*사이드바 메뉴리스트 하위 메뉴 ▲클릭설정*/
 div.side-list > ul.side-nav ul.off{
 	display:none;
 }
+/*사이드바 메뉴리스트 하위 메뉴 위치설정*/
 div.side-list > ul.side-nav ul a{
 	padding-left:20px;
 }
+/*사이드바 메뉴리스트 하위 메뉴 위치설정*/
 div.side-list > ul.side-nav > li > ul > li > a{
 	height:30px;
 	display:block;
@@ -263,24 +247,68 @@ div.side-list > ul.side-nav > li > ul > li > a{
 	padding-bottom:3px;
 	font-size:15px;
 }
+/*사이드바 메뉴리스트 하위 아이콘 (스크롤바 버그 수정)*/
 div.side-footer div.bs-glyphicons{
 	margin-bottom:0px;
 }
-li.on{
-
-}
-li.off{
+/*아이콘 설정*//*체크 필요*/
+ul.bs-glyphicons-list > li.off{
 	background-color:#222;
 	cursor:pointer;
 }
+/*아이콘 설정HOVER*/
 ul.bs-glyphicons-list > li.off:hover{
 	background-color:#222;
 	cursor:auto;
 	color:#333;
 }
-
+/*푸터 저작권 및 카운팅*/
 div.footer-bottom{
 	background-color:#101010;
 	color:#EFEFEF;
 	padding-top:10px;
+}
+/*모바일만*/
+@media screen and (max-width:768px) {
+	/*div.navbar-header > a,
+	div.navbar-header > span{
+		display : none;
+	}*/
+	/*해더 재정의 버그...(왜 부트스트랩엔 이런 기능이 있지??)*/
+	div.navbar-header{
+		margin-left: 0px!important;
+	}
+	/*사이드바 위치(왼쪽 상단 고정)*/
+	aside{
+		position: absolute;
+		top: 0px;
+		z-index: 1002;
+		min-height: 100%;
+	}
+	/*사이드바 크기*/
+	aside > div{
+		height:100%;
+	}
+}
+/*브라우저만*/
+@media screen and (min-width:768px) {
+	/*사이드바가 나올때 뒤 배경흐리기*/
+	main.on{
+		-webkit-filter:blur(5px);
+	}
+	/*사이드바가 나올때 뒤 모서리*/
+	aside > div,aside h2{
+		border-top-right-radius: 10px;
+	}
+	/*ul.navbar-nav{
+		display : none!important;
+	}*/
+	/*nav.navbar{
+		border-radius:0px;
+		min-height:40px;
+		height:40px;
+	}
+	.navbar-brand{
+		padding:10px 10px;
+	}*/
 }
