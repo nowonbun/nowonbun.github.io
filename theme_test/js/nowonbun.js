@@ -74,6 +74,9 @@ function initAside(){
 	dom.css("left",$(window).width() > 300 ? -$(window).width() : -300);
 	dom.css("width",0);
 	dom.hide();
+	if($(window).width() < 768){
+		$('html').css("position","static");
+	}
 	$('html').css("overflow","auto");
 	$("aside img").prop("src",$("div#blogImage").html());
 	
@@ -87,9 +90,15 @@ function menu(){
 		dom.css("left",$(window).width() > 300 ? -$(window).width() : -300);
 		dom.css("width",0);
 		dom.hide();
+		if($(window).width() < 768){
+			$('html').css("position","static");
+		}
 		$('html').css("overflow","auto");
 	}else{
 		$('html').css("overflow","hidden");
+		if($(window).width() < 768){
+			$('html').css("position","fixed");
+		}
 		dom.show();
 		dom.css("width",$(window).width());
 		dom.css("left",0);
