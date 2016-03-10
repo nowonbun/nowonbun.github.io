@@ -44,9 +44,18 @@ body {
 div.tistorytoolbar{
 	display:none;
 }
+div.navbar-header > a{
+	margin-left: 50px!important;
+}
+div.navbar-header > span{
+	color: #fff;
+    margin-left: -120px;
+    font-size: 25px;
+}
 /*모바일만*/
 @media screen and (max-width:768px) {
-	div.navbar-header > a{
+	div.navbar-header > a,
+	div.navbar-header > span{
 		display : none;
 	}
 }
