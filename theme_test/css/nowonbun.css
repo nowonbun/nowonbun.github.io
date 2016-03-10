@@ -85,7 +85,7 @@ aside{
 	position:absolute;
 	float:left;
 	width:100%;
-	background-color:rgba( 255, 255, 255, 0.5 );
+	background-color:rgba( 255, 255, 255, 0.7 );
 	z-index: 1000;
 	transition: left 50ms linear;
 }
@@ -294,7 +294,7 @@ div.footer-bottom{
 @media screen and (min-width:768px) {
 	/*사이드바가 나올때 뒤 배경흐리기*/
 	main.on{
-		-webkit-filter:blur(5px);
+		-webkit-filter:blur(1px);
 	}
 	/*사이드바가 나올때 뒤 모서리*/
 	aside > div,aside h2{
