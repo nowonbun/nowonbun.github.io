@@ -16,6 +16,7 @@ if(url[1] == '') {
 $(function(){
 	initMenu();
 	initAside();
+	initFooter();
 });
 /*onResize*/
 $(window).resize(function(){
@@ -41,19 +42,6 @@ function initMenu(){
 	/*탑메뉴 삭제*/
 	/*$("ul.top-nav").html(temp);*/
 	$("ul.side-nav").html(temp);
-	/*모바일 메뉴에서 중간 버튼 클릭 없애기*/
-	/*
-	$("ul.navbar-nav ul").addClass("none");
-	$("ul.navbar-nav > li > a").prop("href","#");
-	$("ul.navbar-nav > li > a").addClass("dropdown");
-	$("a.dropdown").bind("click",function(){
-		dom = $(this).parent().children("ul");
-		if(dom.hasClass("none")){
-			dom.removeClass("none");
-		}else{
-			dom.addClass("none");
-		}
-	});*/
 	/*사이드 메뉴 하위가 있을경우 위 아래 이미지생성*/
 	$("div.side-list > ul.side-nav > li > ul").parent().children("a").append("<a href='#' class='glyphicon glyphicon-triangle-bottom pull-right' aria-hidden='true' onclick='openSublist($(this));'></a>");
 	/*사이드 메뉴 상위 메뉴 초기화*/
@@ -102,11 +90,30 @@ function openSublist(obj){
 function initAside(){
 	dom = $("aside");
 	/*사이드 메뉴 높이 설정*/
-	dom.css("height",$(window).height());
+	//dom.css("height",$(window).height()-$("header").height());
+	aside_height = $(window).height();
+	/*모바일이 되면 position이 absolute으로 되기 때문에 사이드바가 깨짐*/
+	if(!isMobile()){
+		aside_height -= $("header").height();
+	}
+	dom.css("height",aside_height);
 	sideOff(dom);
 	/*이미지 집어넣기*/
 	$("aside img").prop("src",$("div#blogImage").html());
+	/*메인 최소사이즈 변경(Footer)*/
+	main_min_height = $(window).height();
+	main_min_height -= $("header").height();
+	main_min_height -= $("div.footer-bottom").height();
+	main_min_height -= $("div.widget-footer").height();
+	main_min_height -= 27;
+	$("main").css("min-height",main_min_height);
 	
+}
+function initFooter(){
+	htmltest = $("div.article>div.tt_article_useless_p_margin>div.another_category").html();
+	if(htmltest != null){
+		$("div.widget-footer").html(htmltest);
+	}
 }
 /*메뉴 상태.. 처음 누르면 메뉴가 나옴. 다시 누르면 메뉴가 들어감*/
 function menu(){
@@ -190,6 +197,13 @@ function writeTistory(){
 function adminTistory(){
 	if($("div#loginstate").hasClass("admin")){
 		location.href="/admin/center/";
+	}
+	return false;
+}
+/*반응형 모바일 체크*/
+function isMobile(){
+	if($(window).width() < 768){
+		return true;
 	}
 	return false;
 }

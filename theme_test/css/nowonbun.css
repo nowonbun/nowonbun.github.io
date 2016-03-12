@@ -11,43 +11,6 @@ header{
 body {
 	font-family: childpaper;
 }
-/*모바일 메뉴*/
-/*.navbar .navbar-default {
-	padding : 0px;
-	min-height:40px;
-	height:40px;
-}*/
-/*모바일 메뉴*/
-/*.navbar-nav a {
-	color: #9d9d9d;
-	text-decoration:none;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	line-height: 20px;
-}*/
-/*모바일 메뉴*/
-/*.navbar-nav > li > ul > li{
-	padding-top: 10px;
-	padding-bottom: 10px;
-	line-height: 20px;
-}*/
-/*모바일 메뉴*/
-/*.navbar-nav a:hover{
-	color:#FFF;
-}*/
-/*모바일 메뉴*/
-/*.navbar-nav ul {
-	list-style:none;
-}*/
-/*탑 메뉴*/
-/*.top-nav{
-	border-radius: 0px;
-}*/
-/*
-.none{
-	display:none;
-}
-*/
 /*오른쪽 상단 로그인 하는 기본 툴*/
 div.tistorytoolbar{
 	display:none;
@@ -66,12 +29,6 @@ div.navbar-header > a{
 nav.navbar{
 	border-radius:0px!important;
 }
-/*
-nav.navbar{
-	border-radius:0px;
-	min-height:40px;
-	height:40px;
-}*/
 /*해더 재정의*/
 .navbar-brand{
 	padding:10px 10px!important;
@@ -80,10 +37,18 @@ nav.navbar{
 .navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
     margin-left: -15px!important;
 }
+/*해더 재정의*/
+.navbar{
+	margin-bottom:0px;
+}
+header,main{
+	margin-bottom:15px;
+}
 /*사이드메뉴*/
 aside{
 	position:absolute;
-	float:left;
+	/*float:left;*/
+	float:initial;
 	width:100%;
 	background-color:rgba( 255, 255, 255, 0.7 );
 	z-index: 1000;
@@ -96,7 +61,7 @@ aside.on{
 /*사이드메뉴*/
 aside > div{
 	width:300px;
-	height:85%;
+	height:90%;
 	background-color: rgba( 255, 255, 255, 1 );
 	border:1px solid #000;
 	overflow:auto;
@@ -110,26 +75,10 @@ aside > div > h2{
 }
 /*사이드메뉴*/
 main{
-	float:right;
+	/*float:left;*/
+	float:initial;
 	width:100%;
 }
-/*div.adminbox{
-	border:1px solid #000;
-	position:absolute;
-	transition: top 50ms linear;
-	height:200px;
-	width:200px;
-	background-color: rgba( 100, 100, 100, 0 );
-	background-color: #FFF;
-	z-index: 1000;
-}
-div.adminOff{
-	top:-200px;
-}*/
-/*버그 체크 바람*/
-/*nav{
-	z-index: 1001;
-}*/
 /*사이드바 타이틀 색깔 효과*/
 aside h2{
 	background: #222;
@@ -268,12 +217,37 @@ div.footer-bottom{
 	color:#EFEFEF;
 	padding-top:10px;
 }
+/*메인타이틀*/
+main div.title{
+	font-size:30px;
+	font-weight:bold;
+}
+/*메인글*/
+main div.article{
+	font-size:20px;
+}
+/*카테고리 다른글 가리기*/
+main div.another_category{
+	display:none;
+}
+/*Footer 카테고리 다른글*/
+footer > div.footer-widget{
+	background-color:#123;
+    color: #fff;
+}
+footer > div.footer-widget a{
+	color: rgb(227, 255, 12);
+}
+/*카테고리의 다른글 테이블 사이즈*/
+div.widget-footer table {
+	width: 100%;
+}
+/*카테고리의 다른글 날짜 정렬(오른쪽으로)*/
+div.widget-footer td {
+	text-align: right;
+}
 /*모바일만*/
 @media screen and (max-width:768px) {
-	/*div.navbar-header > a,
-	div.navbar-header > span{
-		display : none;
-	}*/
 	/*해더 재정의 버그...(왜 부트스트랩엔 이런 기능이 있지??)*/
 	div.navbar-header{
 		margin-left: 0px!important;
@@ -300,15 +274,4 @@ div.footer-bottom{
 	aside > div,aside h2{
 		border-top-right-radius: 10px;
 	}
-	/*ul.navbar-nav{
-		display : none!important;
-	}*/
-	/*nav.navbar{
-		border-radius:0px;
-		min-height:40px;
-		height:40px;
-	}
-	.navbar-brand{
-		padding:10px 10px;
-	}*/
 }
