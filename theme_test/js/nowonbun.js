@@ -1,4 +1,17 @@
 
+var lastScroll = 0;
+var myUrl = "http://nowonbunskinex.tistory.com";
+
+/*메인 화면 리다이렉트*/
+var url = decodeURIComponent(location.href);
+url = url.replace('http://','').replace('https://','');
+url = url.split('#')[0];
+url = url.split('?')[0];
+url = url.split('/');
+if(url[1] == '') { 
+	location.href = '/notice/3'; 
+}
+
 /*OnLoad*/
 $(function(){
 	initMenu();
@@ -9,7 +22,7 @@ $(window).resize(function(){
 	initAside();
 });
 /*스크롤링시 헤더처리*/
-var lastScroll = 0;
+
 $(window).scroll(function(event){
 	var st = $(this).scrollTop();
 	if (st > lastScroll || st <50){
@@ -58,7 +71,6 @@ function initMenu(){
 		changeClassState($("ul.bs-glyphicons-list > li.login"),true);
 		changeClassState($("ul.bs-glyphicons-list > li.admin"),false);
 		$("div#loginstate").addClass("login");
-		myUrl = $("input#myUrl").val();
 		$("a.tt_menubar_link").each(function(){
 			/*관리자 일경우*/
 			if($(this).attr("href") === myUrl){
@@ -155,7 +167,7 @@ function login(){
 /*로그아웃*/
 function logout(){
 	if($("div#loginstate").hasClass("login")){
-		location.href='https://www.tistory.com/logout/?requestURI='+$("input#myUrl").val();
+		location.href='https://www.tistory.com/logout/?requestURI='+ myUrl;
 	}
 	return false;
 }
