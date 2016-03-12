@@ -9,7 +9,7 @@ url = url.split('#')[0];
 url = url.split('?')[0];
 url = url.split('/');
 if(url[1] == '') { 
-	location.href = '/notice/3'; 
+	//location.href = '/notice/3'; 
 }
 
 /*OnLoad*/
@@ -105,7 +105,8 @@ function initAside(){
 	main_min_height -= $("header").height();
 	main_min_height -= $("div.footer-bottom").height();
 	main_min_height -= $("div.widget-footer").height();
-	main_min_height -= 27;
+	/*padding값들*/
+	main_min_height -= 41;
 	$("main").css("min-height",main_min_height);
 	
 }

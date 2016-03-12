@@ -168,6 +168,18 @@ SyntaxHighlighter.all();
 								</div>
 								</s_list>
 								<!-- ************************검색 결과 리스트************************-->
+								<!-- ************************공지사항************************-->
+								<s_notice_rep>
+									<div class="entryNotice">
+										<div class="titleWrap">
+											<h2><a href="[##_notice_rep_link_##]">[##_notice_rep_title_##]</a></h2>
+											<!--span class="date"> [##_notice_rep_date_##]</span-->
+										</div>
+										<hr class="titileHr">
+										<div class="article">[##_notice_rep_desc_##]</div>
+									</div>
+								</s_notice_rep>
+								<!-- ************************공지사항************************-->
 								<!-- ************************방명록************************-->
 								<s_guest>
 								<div class="guestbook">
@@ -276,45 +288,10 @@ SyntaxHighlighter.all();
 										<ul class="nav nav-tabs nav-justified">
 											<li class="active"><a href="#tb" data-toggle="tab"> 댓글 <span class="cnt">[##_article_rep_rp_cnt_##]</span>개
 											</a></li>
-											<li><a href="#rp" data-toggle="tab"> 트랙백 <span class="cnt">[##_article_rep_tb_cnt_##]</span>개
-											</a></li>
 										</ul>
 									</div>
 									<!-- 2-8-4. 트랙백과 댓글 보이기/감추기 -->
 									<div class="tab-content">
-										<div class="tab-pane fade" id="rp">
-											<!-- 2-8-5. 트랙백 -->
-											<s_tb>
-											<div class="trackback">
-												<div class="row">
-													<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-														<div class="trackbackAdd webComment">
-															<strong>트랙백 주소</strong> :: [##_tb_address_##]
-														</div>
-													</div>
-												</div>
-												<div class="trackbackList">
-													<s_tb_container>
-													<ol>
-														<s_tb_rep>
-														<li id="[##_tb_rep_id_##]">
-															<h4>
-																<a href="[##_tb_rep_url_##]" onclick="window.open(this.href); return false" rel="external nofollow">[##_tb_rep_title_##]</a>
-															</h4> <span class="from">Tracked from <span class="name"> [##_tb_rep_site_##] </span>
-														</span> <span class="date">[##_tb_rep_date_##]</span>
-															<button type="button" onclick="[##_tb_rep_onclick_delete_##]; return false" class="delete">
-																<span>delete</span>
-															</button>
-															<p>[##_tb_rep_desc_##]</p>
-														</li>
-														</s_tb_rep>
-													</ol>
-													</s_tb_container>
-												</div>
-											</div>
-											</s_tb>
-										</div>
-										<!-- 2-8-5. 트랙백 -->
 										<!-- 2-8-6. 댓글 -->
 										<div class="tab-pane fade active in" id="tb">
 											<s_rp>
