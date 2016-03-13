@@ -66,12 +66,31 @@ aside#leftside#leftside{
 	z-index: 1000;
 	transition: left 50ms linear;
 }
+/*오른쪽 사이드 메뉴*/
+aside#rightside{
+	position:absolute;
+	/*float:left;*/
+	float:initial;
+	width:300px;
+	z-index: 1001;
+	transition: left 50ms linear;
+}
 /*사이드메뉴*/
 aside#leftside.on{
 	left:0px;
 }
+aside#rightside.on{
+	right:300px;
+}
 /*사이드메뉴*/
 aside#leftside > div{
+	width:300px;
+	height:90%;
+	background-color: rgba( 255, 255, 255, 1 );
+	border:1px solid #000;
+	overflow:auto;
+}
+aside#rightside > div{
 	width:300px;
 	height:90%;
 	background-color: rgba( 255, 255, 255, 1 );
@@ -277,6 +296,19 @@ div.widget-footer td {
 	/*사이드바 크기*/
 	aside#leftside > div{
 		height:100%;
+	}
+	aside#rightside{
+		position: absolute;
+		top: 0px;
+		z-index: 1002;
+		min-height: 100%;
+		width:100%;
+		background-color:rgba( 255, 255, 255, 0.7 );
+	}
+	aside#rightside > div{
+		height:100%;
+	    position: absolute;
+	    right: 0px;
 	}
 }
 /*브라우저만*/
