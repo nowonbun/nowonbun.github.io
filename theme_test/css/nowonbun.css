@@ -44,6 +44,18 @@ nav.navbar{
 header,main{
 	margin-bottom:15px;
 }
+header div.navbar-header{
+	width:100%;
+}
+header div.navbar-header > a:first-child,
+header div.navbar-header > a:last-child{
+	position:absolute;
+}
+header div.navbar-header > a:nth-child(2){
+	display:block;
+	width:100%;
+	text-align:center;
+}
 /*사이드메뉴*/
 aside{
 	position:absolute;
