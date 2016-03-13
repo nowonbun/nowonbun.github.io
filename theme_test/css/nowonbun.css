@@ -47,15 +47,25 @@ header,main{
 header div.navbar-header{
 	width:100%;
 }
-header div.navbar-header > a:first-child,
+header div.navbar-header > a:first-child{
+	float:left;
+}
 header div.navbar-header > a:last-child{
+	float:right;
+}
+header div.navbar-header > a:nth-child(2){
 	position:absolute;
 }
+/*header div.navbar-header > a:first-child,
+header div.navbar-header > a:last-child{
+	position:absolute;
+}*/
+/*
 header div.navbar-header > a:nth-child(2){
 	display:block;
 	width:100%;
 	text-align:center;
-}
+}*/
 /*사이드메뉴*/
 aside#leftside#leftside{
 	position:absolute;

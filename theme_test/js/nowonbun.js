@@ -14,12 +14,14 @@ if(url[1] == '') {
 
 /*OnLoad*/
 $(function(){
+	initLogo();
 	initMenu();
 	initAside();
 	initFooter();
 });
 /*onResize*/
 $(window).resize(function(){
+	initLogo();
 	initAside();
 });
 /*스크롤링시 헤더처리*/
@@ -35,6 +37,9 @@ $(window).scroll(function(event){
 	}
 	lastScroll = st;
 });
+function initLogo(){
+	$("header div.navbar-header > a:nth-child(2)").css("left",($(window).width()/2)-($("header div.navbar-header > a:nth-child(2)").width()/2));
+}
 /*초기화*/
 function initMenu(){
 	/*메뉴 만들기*/
