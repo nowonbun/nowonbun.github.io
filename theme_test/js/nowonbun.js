@@ -9,7 +9,7 @@ url = url.split('#')[0];
 url = url.split('?')[0];
 url = url.split('/');
 if(url[1] == '') { 
-	location.href = '/notice/3'; 
+	//location.href = '/notice/3'; 
 }
 
 /*OnLoad*/
@@ -88,7 +88,7 @@ function openSublist(obj){
 }
 /*메뉴 초기 설정 - 메뉴숨기기,사이즈 변경때마다도 요청한다.(메뉴가 가끔씩 튀어나오는 버그때문에)*/
 function initAside(){
-	dom = $("aside");
+	dom = $("aside#leftside");
 	/*사이드 메뉴 높이 설정*/
 	//dom.css("height",$(window).height()-$("header").height());
 	aside_height = $(window).height();
@@ -99,7 +99,7 @@ function initAside(){
 	dom.css("height",aside_height);
 	sideOff(dom);
 	/*이미지 집어넣기*/
-	$("aside img").prop("src",$("div#blogImage").html());
+	$("aside#leftside img").prop("src",$("div#blogImage").html());
 	/*메인 최소사이즈 변경(Footer)*/
 	main_min_height = $(window).height();
 	main_min_height -= $("header").height();
@@ -118,7 +118,7 @@ function initFooter(){
 }
 /*메뉴 상태.. 처음 누르면 메뉴가 나옴. 다시 누르면 메뉴가 들어감*/
 function menu(){
-	dom = $("aside");
+	dom = $("aside#leftside");
 	if(dom.hasClass("on")){
 		sideOff(dom);
 	}else{
@@ -151,7 +151,7 @@ function sideOn(dom){
 	dom.css("width",$(window).width());
 	dom.css("left",0);
 	/*하단 아이콘처리*/
-	$("aside > div > div.side-list").css("min-height",$("aside> div").height()-210);
+	$("aside#leftside > div > div.side-list").css("min-height",$("aside#leftside> div").height()-210);
 	changeClassState($("main"),true);
 	changeClassState(dom,true);
 }

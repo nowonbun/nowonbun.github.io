@@ -57,7 +57,7 @@ header div.navbar-header > a:nth-child(2){
 	text-align:center;
 }
 /*사이드메뉴*/
-aside{
+aside#leftside#leftside{
 	position:absolute;
 	/*float:left;*/
 	float:initial;
@@ -67,11 +67,11 @@ aside{
 	transition: left 50ms linear;
 }
 /*사이드메뉴*/
-aside.on{
+aside#leftside.on{
 	left:0px;
 }
 /*사이드메뉴*/
-aside > div{
+aside#leftside > div{
 	width:300px;
 	height:90%;
 	background-color: rgba( 255, 255, 255, 1 );
@@ -79,7 +79,7 @@ aside > div{
 	overflow:auto;
 }
 /*사이드 타이틀*/
-aside > div > h2{
+aside#leftside > div > h2{
     background-color: #222;
     color: #FFF;
     margin: 0px;
@@ -92,7 +92,7 @@ main{
 	width:100%;
 }
 /*사이드바 타이틀 색깔 효과*/
-aside h2{
+aside#leftside h2{
 	background: #222;
     background: -webkit-linear-gradient(#222, #FFF); /* For Safari 5.1 to 6.0 */
     background: -o-linear-gradient(#222, #FFF); /* For Opera 11.1 to 12.0 */
@@ -100,7 +100,7 @@ aside h2{
     background: linear-gradient(#222, #FFF); /* Standard syntax */
 }
 /*사이드바 타이틀 유저 사진*/
-aside img{
+aside#leftside img{
 	width:50px;
 	height:50px;
 	background-color:#FFF;
@@ -230,8 +230,7 @@ div.footer-bottom{
 	padding-top:10px;
 }
 /*메인타이틀*/
-main div.title,
-main div.entryNotice > div.titleWrap{
+main div.title{
 	font-size:30px;
 	font-weight:bold;
 }
@@ -244,7 +243,7 @@ main div.another_category{
 	display:none;
 }
 main div.titleArea{
-	margin-bottom : 15px;
+	margin-botton : 15px;
 }
 /*Footer 카테고리 다른글*/
 footer > div.footer-widget{
@@ -269,14 +268,14 @@ div.widget-footer td {
 		margin-left: 0px!important;
 	}
 	/*사이드바 위치(왼쪽 상단 고정)*/
-	aside{
+	aside#leftside{
 		position: absolute;
 		top: 0px;
 		z-index: 1002;
 		min-height: 100%;
 	}
 	/*사이드바 크기*/
-	aside > div{
+	aside#leftside > div{
 		height:100%;
 	}
 }
@@ -287,7 +286,7 @@ div.widget-footer td {
 		-webkit-filter:blur(1px);
 	}
 	/*사이드바가 나올때 뒤 모서리*/
-	aside > div,aside h2{
+	aside#leftside > div,aside#leftside h2{
 		border-top-right-radius: 10px;
 	}
 }

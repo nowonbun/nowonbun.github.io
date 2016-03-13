@@ -429,9 +429,25 @@ SyntaxHighlighter.all();
 	</footer>
 	<!-- end:footer -->
 	<section style="display: none" id="template">
-		<div id="categoryTemplate">[##_category_list_##]</div>
-		<div id="blogImage">[##_image_##]</div>
-		<div id="loginstate"></div>
+		<s_sidebar>
+			<div id="categoryTemplate">[##_category_list_##]</div>
+			<div id="blogImage">[##_image_##]</div>
+			<div id="loginstate"></div>
+			<s_sidebar_element>
+				<!-- 최근에 올라온 글 -->
+				<div class="recentPost">
+					<h3>최근에 올라온 글 </h3>
+					<ul>
+						<s_rctps_rep>
+							<li>
+								<a href="[##_rctps_rep_link_##]"> [##_rctps_rep_title_##].</a> 
+								<span class="cnt">[##_rctps_rep_rp_cnt_##]</span>
+							</li>
+						</s_rctps_rep>
+					</ul>
+				</div>
+			</s_sidebar_element>
+		</s_sidebar>
 	</section>
 </body>
 </html>
