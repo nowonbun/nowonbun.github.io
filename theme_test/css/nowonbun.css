@@ -190,7 +190,7 @@ aside#rightside hr{
 	margin:0px;
 }
 /*사이드바 타이틀 유저 사진*/
-aside#leftside img{
+aside#leftside h2.side-header > img{
 	width:50px;
 	height:50px;
 	background-color:#FFF;

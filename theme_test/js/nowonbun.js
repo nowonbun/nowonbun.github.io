@@ -107,7 +107,7 @@ function initAside(){
 	sideLeftOff();
 	sideRightOff();
 	/*이미지 집어넣기*/
-	$("aside#leftside> h2.side-header > img").prop("src",$("div#blogImage").html());
+	$("aside#leftside h2.side-header > img").prop("src",$("div#blogImage").html());
 	/*메인 최소사이즈 변경(Footer)*/
 	main_min_height = $(window).height();
 	main_min_height -= $("header").height();
