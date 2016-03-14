@@ -229,5 +229,6 @@ div.entry{
 }
 p.commentContents,
 div.article{
-	word-break: break-all;
+	/*word-break: break-all;*/
+    overflow-wrap: break-word;
 }
