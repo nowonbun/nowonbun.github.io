@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 <meta name="theme-color" content="#29343a">
 <title>[##_title_##] :: [##_page_title_##]</title>
 <link rel="stylesheet" type="text/css" href="./style.css">
@@ -78,9 +79,9 @@ SyntaxHighlighter.all();
 						<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
 					</button>-->
 					<!--glyphicon glyphicon-th-list-->
-					<a class="navbar-brand" href="#" onclick="menu()"><span class="glyphicon glyphicon-th-list"></span></a> 
+					<a class="navbar-brand" href="#" onclick="menu('left')"><span class="glyphicon glyphicon-th-list"></span></a> 
 					<a class="navbar-brand title" href="#" onclick="/"><span>[##_title_##]</span></a>
-					<a class="navbar-brand" href="#" onclick="menu()"><span class="glyphicon glyphicon-th-list"></span></a> 
+					<a class="navbar-brand" href="#" onclick="menu('right')"><span class="glyphicon glyphicon-th-list"></span></a> 
 				</div>
 				<!--<div id="navbar" class="collapse navbar-collapse">
 					<ul class="nav navbar-nav top-nav">
@@ -90,7 +91,7 @@ SyntaxHighlighter.all();
 			</div>
 		</nav>
 	</header>
-	<aside style="display:none;">
+	<aside id="leftside" style="display:none;">
 		<div>
 			<h2 class="side-header"><img src="" alt="[##_blogger_##]">[##_title_##]</h2>
 			<div class="side-menu bs-glyphicons">
@@ -111,7 +112,7 @@ SyntaxHighlighter.all();
 					<span class="glyphicon glyphicon-pencil" aria-hidden="true" title="방명록"></span>
 					<span>방명록</span>
 				</li>
-				<li onclick="menu();">
+				<li onclick="menu('close');">
 					<span class="glyphicon glyphicon-remove" aria-hidden="true" title="메뉴닫기"></span>
 					<span>메뉴닫기</span>
 				</li>
@@ -145,6 +146,48 @@ SyntaxHighlighter.all();
 						</li>
 					</ul>
 				</div>
+			</div>
+		</div>
+	</aside>
+	<aside id="rightside"style="display:none;">
+		<div>
+			<h2 class="side-header">
+				<a href="#" onclick="menu('close');">
+					<span class="glyphicon glyphicon-remove" aria-hidden="true" title="메뉴닫기"></span>
+					<span>메뉴닫기</span>
+				</a>
+				<span>리스트</span>
+			</h2>
+			<div id="recentList">
+				<h3 class="rightsideTitle">최근에 올라온 글</h3>
+				<ol>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ol>
+			</div>
+			<hr>
+			<div id="categoryList">
+				<h3 class="rightsideTitle">카테고리 다른글</h3>
+				<ol>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ol>
 			</div>
 		</div>
 	</aside>
@@ -397,7 +440,7 @@ SyntaxHighlighter.all();
 	</main>
 	<!-- start:footer -->
 	<footer>
-		<div class="footer-widget">
+		<!--<div class="footer-widget">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="links">
@@ -405,7 +448,7 @@ SyntaxHighlighter.all();
 					</div>
 				</div>
 			</div>
-		</div>
+		</div>-->
 		<!-- start:footer bottom -->
 		<div class="footer-bottom">
 			<div class="container">
@@ -429,10 +472,10 @@ SyntaxHighlighter.all();
 	</footer>
 	<!-- end:footer -->
 	<section style="display: none" id="template">
+		<div id="categoryTemplate">[##_category_list_##]</div>
+		<div id="blogImage">[##_image_##]</div>
+		<div id="loginstate"></div>
 		<s_sidebar>
-			<div id="categoryTemplate">[##_category_list_##]</div>
-			<div id="blogImage">[##_image_##]</div>
-			<div id="loginstate"></div>
 			<s_sidebar_element>
 				<!-- 최근에 올라온 글 -->
 				<div class="recentPost">

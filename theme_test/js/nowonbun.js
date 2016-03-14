@@ -17,7 +17,7 @@ $(function(){
 	initLogo();
 	initMenu();
 	initAside();
-	initFooter();
+	/*initFooter();*/
 });
 /*onResize*/
 $(window).resize(function(){
@@ -112,7 +112,7 @@ function initAside(){
 	main_min_height = $(window).height();
 	main_min_height -= $("header").height();
 	main_min_height -= $("div.footer-bottom").height();
-	main_min_height -= $("div.widget-footer").height();
+	/*main_min_height -= $("div.widget-footer").height();*/
 	/*padding값들*/
 	main_min_height -= 41;
 	$("main").css("min-height",main_min_height);
@@ -127,12 +127,12 @@ function initRightAside(){
 	}
 	dom2.css("height",aside2_height);
 }
-function initFooter(){
+/*function initFooter(){
 	htmltest = $("div.article>div.tt_article_useless_p_margin>div.another_category").html();
 	if(htmltest != null){
 		$("div.widget-footer").html(htmltest);
 	}
-}
+}*/
 /*메뉴 상태.. 처음 누르면 메뉴가 나옴. 다시 누르면 메뉴가 들어감*/
 function menu(state){
 	if(state === "close"){

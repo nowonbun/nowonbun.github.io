@@ -128,6 +128,67 @@ aside#leftside h2{
     background: -moz-linear-gradient(#222, #FFF); /* For Firefox 3.6 to 15 */
     background: linear-gradient(#222, #FFF); /* Standard syntax */
 }
+aside#rightside h2{
+	background: #222;
+	margin:0px;
+	height:52px;
+}
+aside#rightside h2.side-header > a{
+    float: left;
+    width: 45px;
+    height: 45px;
+    padding: 3px;
+	padding-left: 6px;
+    font-size: 10px;
+    line-height: 1;
+    text-align: center;
+    cursor: pointer;
+	background-color:#FFF;
+	border-radius: 10px;
+	margin-top: 3px;
+    margin-left: 3px;
+	color:#000;
+}
+aside#rightside h2.side-header > a:hover{
+	background-color:#81a9db;
+	color:#FFF;
+}
+aside#rightside h2.side-header > a > span:first-child{
+	font-size:30px;
+	float:left;
+}
+aside#rightside h2.side-header > a > span:last-child{
+	font-size:10px;
+	float:left;
+}
+aside#rightside h2.side-header > span{
+	color:#fff;
+	padding:10px;
+	display:block;
+	padding-left: 70px;
+}
+aside#rightside h3.rightsideTitle{
+	font-size: 20px;
+    height: 40px;
+    padding: 10px;
+    margin: 10px;
+    border-bottom: 1px solid #000;
+}
+aside#rightside h3.rightsideTitle:after{
+	position: absolute;
+    display: block;
+    content: '';
+    padding-bottom: 6px;
+    border-bottom: 3px solid #f1c40f;
+    width: 120px;
+}
+aside#rightside li{
+    height: 30px;
+}
+aside#rightside hr{
+	border-top:1px solid #000;
+	margin:0px;
+}
 /*사이드바 타이틀 유저 사진*/
 aside#leftside img{
 	width:50px;
@@ -329,6 +390,6 @@ div.widget-footer td {
 	}
 	/*사이드바가 나올때 뒤 모서리*/
 	aside#leftside > div,aside#leftside h2{
-		border-top-right-radius: 10px;
+		/*border-top-right-radius: 10px;*/
 	}
 }
