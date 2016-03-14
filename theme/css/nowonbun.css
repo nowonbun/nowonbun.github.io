@@ -227,6 +227,7 @@ div.sourcecode .syntaxhighlighter{
 div.entry{
 	margin-bottom: 5px;
 }
-p.commentContents{
+p.commentContents,
+div.article{
 	word-break: break-all;
 }
