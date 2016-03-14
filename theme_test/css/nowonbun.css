@@ -114,6 +114,12 @@ aside#leftside > div > h2{
     margin: 0px;
     padding: 10px;
 }
+aside#rightside > div > h2{
+    background-color: #222;
+    color: #FFF;
+    margin: 0px;
+    padding: 10px;
+}
 /*사이드메뉴*/
 main{
 	/*float:left;*/
@@ -128,6 +134,14 @@ aside#leftside h2{
     background: -moz-linear-gradient(#222, #FFF); /* For Firefox 3.6 to 15 */
     background: linear-gradient(#222, #FFF); /* Standard syntax */
 }
+aside#rightside h2{
+	background: #222;
+    /*background: -webkit-linear-gradient(#222, #FFF); /* For Safari 5.1 to 6.0 */
+    /*background: -o-linear-gradient(#222, #FFF); /* For Opera 11.1 to 12.0 */
+    /*background: -moz-linear-gradient(#222, #FFF); /* For Firefox 3.6 to 15 */
+    /*background: linear-gradient(#222, #FFF); /* Standard syntax */
+	height:60px;
+}
 /*사이드바 타이틀 유저 사진*/
 aside#leftside img{
 	width:50px;
@@ -136,6 +150,37 @@ aside#leftside img{
 	border-radius: 30px;
 	margin-right:20px;
 }
+aside#rightside h2.side-header > a{
+	float: left;
+    width: 39px;
+    /*height: 55px;*/
+    padding: 3px;
+    font-size: 10px;
+    line-height: 1;
+    text-align: center;
+    padding-top: 6px;
+	background-color: #FFF;
+	color: #000;
+	text-decoration:none;
+    border-radius: 10px;
+	/*margin-top:5px;*/
+}
+aside#rightside h2.side-header > a:hover{
+	background-color:#81a9db;
+	color:#FFF;
+}
+aside#rightside h2.side-header > a > span:first-child{
+	font-size:20px;
+}
+aside#rightside h2.side-header > a > span:last-child{
+	font-size:10px;
+}
+aside#rightside h2.side-header > span{
+	float: left;
+    margin-top: 5px;
+	margin-left: 80px;
+}
+
 /*사이드바 아이콘 메뉴*/
 div.bs-glyphicons{
 	width:100%;
@@ -328,7 +373,7 @@ div.widget-footer td {
 		-webkit-filter:blur(1px);
 	}
 	/*사이드바가 나올때 뒤 모서리*/
-	aside#leftside > div,aside#leftside h2{
+	/*aside#leftside > div,aside#leftside h2{
 		border-top-right-radius: 10px;
-	}
+	}*/
 }
