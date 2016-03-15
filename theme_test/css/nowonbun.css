@@ -382,6 +382,13 @@ div.widget-footer td {
 	    position: absolute;
 	    right: 0px;
 	}
+	aside#rightside ol > li:nth-child(6),
+	aside#rightside ol > li:nth-child(7),
+	aside#rightside ol > li:nth-child(8),
+	aside#rightside ol > li:nth-child(9),
+	aside#rightside ol > li:nth-child(10){
+		display:none;
+	}
 }
 /*브라우저만*/
 @media screen and (min-width:768px) {
