@@ -305,119 +305,150 @@ SyntaxHighlighter.all();
 								<!-- ************************방명록************************-->
 								<!-- ************************글************************-->
 								<s_article_rep>
-								<div class="entry">
-									<!-- 글 관련 정보 : 글제목, 카테고리, 날짜, 관리자 -->
-									<div class="titleArea">
-										<div class="title">[##_article_rep_title_##]</div>
-										<hr class="titileHr">
-										<div class="categoryArea">
-											<a href="[##_article_rep_category_link_##]">[##_article_rep_category_##]</a> &nbsp;[##_article_rep_date_##]
-											<s_ad_div> &nbsp;|&nbsp; <a href="[##_s_ad_m_link_##]">Modify</a> : <a href="#" onclick="[##_s_ad_m_onclick_##]">Modify(new)</a> &nbsp;|&nbsp; ([##_s_ad_s1_label_##])→<a href="#" onclick="[##_s_ad_s2_onclick_##]">[##_s_ad_s2_label_##]</a> &nbsp;|&nbsp; <a href="#" onclick="[##_s_ad_t_onclick_##]">Trackback</a> &nbsp;|&nbsp; <a href="#" onclick="[##_s_ad_d_onclick_##]">Delete</a> </s_ad_div>
+								<article class="entry">
+									<s_index_article_rep>
+										<div class="list-row pos-right ratio-fixed ratio-4by3 crop-center lts-narrow fouc clearfix">	
+											<s_article_rep_thumbnail>
+											<a class="has-object t-photo" href="[##_article_rep_link_##]">
+												<div class="thumbnail">
+													<div class="cropzone">
+														<img src="[##_article_rep_thumbnail_url_##]">
+													</div>
+												</div>
+											</a>
+											</s_article_rep_thumbnail>
+
+											<div class="list-body">
+												<div class="flexbox">
+													<a class="list-link" href="[##_article_rep_link_##]">
+														<h3 class="list-head ie-nanum ci-link">[##_article_rep_title_##]</h3>
+														<p class="list-summary">[##_article_rep_summary_##]</p>
+													</a>
+													<div class="list-meta ie-dotum">
+														<a href="[##_article_rep_category_link_##]" class="p-category ci-color">[##_article_rep_category_##]</a>
+														<span class="txt-bar"></span>
+														<abbr class="timeago ff-h dt-published" title="[##_article_rep_date_##]">
+														[##_article_rep_date_##]
+														</abbr>
+													</div>
+												</div>
+											</div>
 										</div>
-									</div>
-									<!-- 글 관련 정보 : 글제목, 카테고리, 날짜, 관리자 -->
-									<!-- 블로그 글 -->
-									<div class="article">[##_article_rep_desc_##]</div>
-									<!-- 블로그 글 -->
-									<!-- 2-8-3. 글 관련 태그 -->
-									<s_tag_label>
-									<div class="tagTrail">
-										<div class="tagText">[##_tag_label_rep_##]</div>
-									</div>
-									</s_tag_label>
-									<!-- 2-8-3. 글 관련 태그 -->
-									<hr>
-									<!-- 2-8-4. 트랙백과 댓글 보이기/감추기 -->
-									<div class="actionTrail ">
-										<ul class="nav nav-tabs nav-justified">
-											<li class="active"><a href="#tb" data-toggle="tab"> 댓글 <span class="cnt">[##_article_rep_rp_cnt_##]</span>개
-											</a></li>
-										</ul>
-									</div>
-									<!-- 2-8-4. 트랙백과 댓글 보이기/감추기 -->
-									<div class="tab-content">
-										<!-- 2-8-6. 댓글 -->
-										<div class="tab-pane fade active in" id="tb">
-											<s_rp>
-											<div class="comment">
-												<!-- 2-8-6-2. 댓글 쓰기 -->
-												<s_rp_input_form>
-												<div class="commentWrite">
-													<div class="row">
-														<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-															<s_rp_member> <s_rp_guest>
-															<div class="row">
-																<div class="form-group col-col-lg-12 col-md-12 col-sm-12 col-xs-12">
-																	<label for="[##_rp_input_name_##]_[##_article_rep_id_##]">name</label>
+									</s_index_article_rep>
+									<s_permalink_article_rep>
+										<!-- 글 관련 정보 : 글제목, 카테고리, 날짜, 관리자 -->
+										<div class="titleArea">
+											<div class="title">[##_article_rep_title_##]</div>
+											<hr class="titileHr">
+											<div class="categoryArea">
+												<a href="[##_article_rep_category_link_##]">[##_article_rep_category_##]</a> &nbsp;[##_article_rep_date_##]
+												<s_ad_div> &nbsp;|&nbsp; <a href="[##_s_ad_m_link_##]">Modify</a> : <a href="#" onclick="[##_s_ad_m_onclick_##]">Modify(new)</a> &nbsp;|&nbsp; ([##_s_ad_s1_label_##])→<a href="#" onclick="[##_s_ad_s2_onclick_##]">[##_s_ad_s2_label_##]</a> &nbsp;|&nbsp; <a href="#" onclick="[##_s_ad_t_onclick_##]">Trackback</a> &nbsp;|&nbsp; <a href="#" onclick="[##_s_ad_d_onclick_##]">Delete</a> </s_ad_div>
+											</div>
+										</div>
+										<!-- 글 관련 정보 : 글제목, 카테고리, 날짜, 관리자 -->
+										<!-- 블로그 글 -->
+										<div class="article">[##_article_rep_desc_##]</div>
+										<!-- 블로그 글 -->
+										<!-- 2-8-3. 글 관련 태그 -->
+										<s_tag_label>
+										<div class="tagTrail">
+											<div class="tagText">[##_tag_label_rep_##]</div>
+										</div>
+										</s_tag_label>
+										<!-- 2-8-3. 글 관련 태그 -->
+										<hr>
+										<!-- 2-8-4. 트랙백과 댓글 보이기/감추기 -->
+										<div class="actionTrail ">
+											<ul class="nav nav-tabs nav-justified">
+												<li class="active"><a href="#tb" data-toggle="tab"> 댓글 <span class="cnt">[##_article_rep_rp_cnt_##]</span>개
+												</a></li>
+											</ul>
+										</div>
+										<!-- 2-8-4. 트랙백과 댓글 보이기/감추기 -->
+										<div class="tab-content">
+											<!-- 2-8-6. 댓글 -->
+											<div class="tab-pane fade active in" id="tb">
+												<s_rp>
+												<div class="comment">
+													<!-- 2-8-6-2. 댓글 쓰기 -->
+													<s_rp_input_form>
+													<div class="commentWrite">
+														<div class="row">
+															<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+																<s_rp_member> <s_rp_guest>
+																<div class="row">
+																	<div class="form-group col-col-lg-12 col-md-12 col-sm-12 col-xs-12">
+																		<label for="[##_rp_input_name_##]_[##_article_rep_id_##]">name</label>
+																	</div>
+																	<div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+																		<input type="text" id="[##_rp_input_name_##]_[##_article_rep_id_##]" name="[##_rp_input_name_##]" value="" class="form-control textField commenttext" placeholder="enter name">
+																	</div>
+																	<div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+																		<label for="[##_rp_input_password_##]_[##_article_rep_id_##]">password</label>
+																	</div>
+																	<div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+																		<input type="password" id="[##_rp_input_password_##]_[##_article_rep_id_##]" class="form-control textField commenttext" maxlength="8" name="[##_rp_input_password_##]" value="" placeholder="password">
+																	</div>
+																	<div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+																		<div>
+																			<input id="[##_rp_input_is_secret_##]_[##_article_rep_id_##]" type="checkbox" name="[##_rp_input_is_secret_##]" value="1" /> <label> 비밀글 </label>
+																		</div>
+																	</div>
 																</div>
-																<div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
-																	<input type="text" id="[##_rp_input_name_##]_[##_article_rep_id_##]" name="[##_rp_input_name_##]" value="" class="form-control textField commenttext" placeholder="enter name">
-																</div>
-																<div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
-																	<label for="[##_rp_input_password_##]_[##_article_rep_id_##]">password</label>
-																</div>
-																<div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
-																	<input type="password" id="[##_rp_input_password_##]_[##_article_rep_id_##]" class="form-control textField commenttext" maxlength="8" name="[##_rp_input_password_##]" value="" placeholder="password">
-																</div>
-																<div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
-																	<div>
-																		<input id="[##_rp_input_is_secret_##]_[##_article_rep_id_##]" type="checkbox" name="[##_rp_input_is_secret_##]" value="1" /> <label> 비밀글 </label>
+																</s_rp_guest> </s_rp_member>
+																<div class="row">
+																	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 content-line">
+																		<textarea id="[##_rp_input_comment_##]_[##_article_rep_id_##]" placeholder="enter comment" name="[##_rp_input_comment_##]" class="form-control commenttext" rows="3" style="resize: none;"></textarea>
+																		<button type="button" class="btn btn-default btnComment pull-right" onclick="[##_rp_onclick_submit_##]" style="background-color: #000;">submit</button>
 																	</div>
 																</div>
 															</div>
-															</s_rp_guest> </s_rp_member>
-															<div class="row">
-																<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 content-line">
-																	<textarea id="[##_rp_input_comment_##]_[##_article_rep_id_##]" placeholder="enter comment" name="[##_rp_input_comment_##]" class="form-control commenttext" rows="3" style="resize: none;"></textarea>
-																	<button type="button" class="btn btn-default btnComment pull-right" onclick="[##_rp_onclick_submit_##]" style="background-color: #000;">submit</button>
-																</div>
+														</div>
+													</div>
+													</s_rp_input_form>
+													<!-- 2-8-6-2. 댓글 쓰기 -->
+													<!-- 2-8-6-1. 댓글 리스트 -->
+													<s_rp_container>
+													<div class="commentList">
+														<div class="row">
+															<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+																<ol class="reply list-unstyled">
+																	<s_rp_rep>
+																	<li id='[##_rp_rep_id_##]' class="commentList">
+																		<div class="[##_rp_rep_class_##]">
+																			<span class="name">[##_rp_rep_name_##]</span> <br /> <span class="date"> [##_rp_rep_date_##]</span> | <span class="control"> <a href="#" onclick="[##_rp_rep_onclick_delete_##]" class="modify commentA">&nbsp;<span>수정/삭제</span></a> <a href="#" onclick="[##_rp_rep_onclick_reply_##]" class="write commentA">&nbsp;<span>댓글쓰기</span></a>
+																			</span>
+																			<hr class="commentHr">
+																			<p class="commentContents">[##_rp_rep_desc_##]</p>
+																		</div> <s_rp2_container>
+																		<ul>
+																			<s_rp2_rep>
+																			<li id='[##_rp_rep_id_##]'>
+																				<div class="[##_rp_rep_class_##]">
+																					<span class="name">[##_rp_rep_name_##]</span><br /> <span class="date"> [##_rp_rep_date_##]</span> | <span class="control"> <a href="#" onclick="[##_rp_rep_onclick_delete_##]" class="modify">&nbsp;<span>수정/삭제</span></a>
+																					</span>
+																					<hr class="commentHr">
+																					<p class="commentContents">[##_rp_rep_desc_##]</p>
+																				</div>
+																			</li>
+																			</s_rp2_rep>
+																		</ul>
+																		</s_rp2_container>
+																	</li>
+																	</s_rp_rep>
+																</ol>
 															</div>
 														</div>
 													</div>
+													</s_rp_container>
 												</div>
-												</s_rp_input_form>
-												<!-- 2-8-6-2. 댓글 쓰기 -->
 												<!-- 2-8-6-1. 댓글 리스트 -->
-												<s_rp_container>
-												<div class="commentList">
-													<div class="row">
-														<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-															<ol class="reply list-unstyled">
-																<s_rp_rep>
-																<li id='[##_rp_rep_id_##]' class="commentList">
-																	<div class="[##_rp_rep_class_##]">
-																		<span class="name">[##_rp_rep_name_##]</span> <br /> <span class="date"> [##_rp_rep_date_##]</span> | <span class="control"> <a href="#" onclick="[##_rp_rep_onclick_delete_##]" class="modify commentA">&nbsp;<span>수정/삭제</span></a> <a href="#" onclick="[##_rp_rep_onclick_reply_##]" class="write commentA">&nbsp;<span>댓글쓰기</span></a>
-																		</span>
-																		<hr class="commentHr">
-																		<p class="commentContents">[##_rp_rep_desc_##]</p>
-																	</div> <s_rp2_container>
-																	<ul>
-																		<s_rp2_rep>
-																		<li id='[##_rp_rep_id_##]'>
-																			<div class="[##_rp_rep_class_##]">
-																				<span class="name">[##_rp_rep_name_##]</span><br /> <span class="date"> [##_rp_rep_date_##]</span> | <span class="control"> <a href="#" onclick="[##_rp_rep_onclick_delete_##]" class="modify">&nbsp;<span>수정/삭제</span></a>
-																				</span>
-																				<hr class="commentHr">
-																				<p class="commentContents">[##_rp_rep_desc_##]</p>
-																			</div>
-																		</li>
-																		</s_rp2_rep>
-																	</ul>
-																	</s_rp2_container>
-																</li>
-																</s_rp_rep>
-															</ol>
-														</div>
-													</div>
-												</div>
-												</s_rp_container>
 											</div>
-											<!-- 2-8-6-1. 댓글 리스트 -->
+											</s_rp>
+											<!-- 2-8-6. 댓글 -->
 										</div>
-										</s_rp>
-										<!-- 2-8-6. 댓글 -->
-									</div>
-								</div>
+									</s_permalink_article_rep>
+								</article>
 								</s_article_rep>
 								<!-- ************************글************************-->
 								<!-- ************************2-9. 페이징************************ -->
