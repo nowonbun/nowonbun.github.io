@@ -372,6 +372,21 @@ div.tab-content.on{
 div.tab-content.off{
 	display:none;
 }
+aside#rightside h2.side-header > span > input[type=text]{
+	width:150px;
+	padding-top: 20px;
+	height: 30px;
+	float:left;
+	color: #222;
+}
+aside#rightside h2.side-header > span > input[type=button]{
+	color: #222;
+    float: left;
+    font-size: 15px;
+    height: 30px;
+    margin-left: 5px;
+    width: 50px;
+}
 /*모바일만*/
 @media screen and (max-width:768px) {
 	/*해더 재정의 버그...(왜 부트스트랩엔 이런 기능이 있지??)*/
