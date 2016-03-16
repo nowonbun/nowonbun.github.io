@@ -17,6 +17,8 @@ $(function(){
 	initLogo();
 	initMenu();
 	initAside();
+	initList();
+	initComment();
 	/*initFooter();*/
 });
 /*onResize*/
@@ -274,4 +276,29 @@ function isMobile(){
 		return true;
 	}
 	return false;
+}
+/*오른쪽 사이드메 글 생성*/
+function initList(){
+	$("section#template div.recentPost ul > li").each(function(index){
+		if(index < 10){
+			html = "<a class='recentlyPost' href='"+$(this).children("a").prop("href")+"'>"+$(this).children("a").html()+"</a>";
+			$("aside#rightside div#recentList ol > li:nth-child("+(index+1)+")").html(html);
+		}
+	});
+	$("div.article div.another_category tr th").each(function(index){
+		if(index < 10){
+			html = "<a class='anotherPost' href='"+$(this).children("a").prop("href")+"'>"+$(this).children("a").html()+"</a>";
+			$("aside#rightside div#categoryList ol > li:nth-child("+(index+1)+")").html(html);
+		}
+	});
+}
+function initComment(){
+	changeClassState($("div.tab-content"),false);
+}
+function commnet(){
+	if($("div.tab-content").hasClass("off")){
+		changeClassState($("div.tab-content"),true);
+	}else{
+		changeClassState($("div.tab-content"),false);
+	}
 }
