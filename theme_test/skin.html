@@ -156,7 +156,12 @@ SyntaxHighlighter.all();
 					<span class="glyphicon glyphicon-remove" aria-hidden="true" title="메뉴닫기"></span>
 					<span>메뉴닫기</span>
 				</a>
-				<span>리스트</span>
+				<span>
+					<s_search>
+						<input type="text" name="[##_search_name_##]" value="[##_search_text_##]" onkeypress="if (event.keyCode == 13) { [##_search_onclick_submit_##] }"/>
+						<input value="검색" type="button" onclick="[##_search_onclick_submit_##]" class="submit"/>
+						</s_search>
+				</span>
 			</h2>
 			<div id="recentList">
 				<h3 class="rightsideTitle">최근에 올라온 글</h3>
