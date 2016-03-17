@@ -1,5 +1,6 @@
 
 var lastScroll = 0;
+var rightsideListCount = 9;
 var myUrl = "http://nowonbunskinex.tistory.com";
 
 /*메인 화면 리다이렉트*/
@@ -9,7 +10,7 @@ url = url.split('#')[0];
 url = url.split('?')[0];
 url = url.split('/');
 if(url[1] == '') { 
-	//location.href = '/notice/3'; 
+	//location.href = '/notice/5'; 
 }
 
 /*OnLoad*/
@@ -280,25 +281,28 @@ function isMobile(){
 /*오른쪽 사이드메 글 생성*/
 function initList(){
 	$("section#template div.recentPost ul > li").each(function(index){
-		if(index < 10){
+		if(index < rightsideListCount){
 			html = "<a class='recentlyPost' href='"+$(this).children("a").prop("href")+"'>"+$(this).children("a").html()+"</a>";
 			$("aside#rightside div#recentList ol > li:nth-child("+(index+1)+")").html(html);
 		}
 	});
 	$("div.article div.another_category tr th").each(function(index){
-		if(index < 10){
+		if(index < rightsideListCount){
 			html = "<a class='anotherPost' href='"+$(this).children("a").prop("href")+"'>"+$(this).children("a").html()+"</a>";
 			$("aside#rightside div#categoryList ol > li:nth-child("+(index+1)+")").html(html);
 		}
 	});
 }
 function initComment(){
+	changeClassState($("div.actionTrail ul.nav.nav-tabs.nav-justified a"),false);
 	changeClassState($("div.tab-content"),false);
 }
 function commnet(){
 	if($("div.tab-content").hasClass("off")){
+		changeClassState($("div.actionTrail ul.nav.nav-tabs.nav-justified a"),true);
 		changeClassState($("div.tab-content"),true);
 	}else{
+		changeClassState($("div.actionTrail ul.nav.nav-tabs.nav-justified a"),false);
 		changeClassState($("div.tab-content"),false);
 	}
 }
