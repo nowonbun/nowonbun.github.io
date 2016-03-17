@@ -373,7 +373,7 @@ div.tab-content.off{
 	display:none;
 }
 aside#rightside h2.side-header > span > input[type=text]{
-	width:150px;
+	width:130px;
 	height: 30px;
 	float:left;
 	color: #222;
