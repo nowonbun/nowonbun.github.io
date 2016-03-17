@@ -435,6 +435,9 @@ div.commentList p.commentContents{
     font-size: 14px;
     border-radius: 5px;
 }
+div.content-line{
+	margin-bottom:15px;
+}
 /*모바일만*/
 @media screen and (max-width:768px) {
 	/*해더 재정의 버그...(왜 부트스트랩엔 이런 기능이 있지??)*/
