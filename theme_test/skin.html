@@ -365,13 +365,15 @@ SyntaxHighlighter.all();
 										<!-- 2-8-4. 트랙백과 댓글 보이기/감추기 -->
 										<div class="actionTrail ">
 											<ul class="nav nav-tabs nav-justified">
-												<li><a href="#" onclick="commnet();"> 댓글 <span class="cnt">[##_article_rep_rp_cnt_##]</span>개
-												</a></li>
+												<li><a href="#" onclick="commnet();"> 댓글 </a></li>
 											</ul>
 										</div>
 										<!-- 2-8-4. 트랙백과 댓글 보이기/감추기 -->
 										<div class="tab-content">
 											<!-- 2-8-6. 댓글 -->
+											<div class="commentCnt">
+											댓글 <span class="cnt">[##_article_rep_rp_cnt_##]</span>개가 달렸습니다.
+											</div>
 											<div>
 												<s_rp>
 												<div class="comment">
@@ -381,22 +383,22 @@ SyntaxHighlighter.all();
 														<div class="row">
 															<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 																<s_rp_member> <s_rp_guest>
-																<div class="row">
-																	<div class="form-group col-col-lg-12 col-md-12 col-sm-12 col-xs-12">
-																		<label for="[##_rp_input_name_##]_[##_article_rep_id_##]">name</label>
+																<div class="row commentSet">
+																	<div class="col-lg-1 col-md-2 col-sm-12 col-xs-12">
+																		<label for="name_20">name</label>
 																	</div>
-																	<div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
-																		<input type="text" id="[##_rp_input_name_##]_[##_article_rep_id_##]" name="[##_rp_input_name_##]" value="" class="form-control textField commenttext" placeholder="enter name">
+																	<div class="col-lg-4 col-md-10 col-sm-12 col-xs-12">
+																		<input type="text" id="name_20" name="name" value="" class="form-control textField commenttext" placeholder="enter name">
 																	</div>
-																	<div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
-																		<label for="[##_rp_input_password_##]_[##_article_rep_id_##]">password</label>
+																	<div class="col-lg-1 col-md-2 col-sm-12 col-xs-12">
+																		<label for="password_20">password</label>
 																	</div>
-																	<div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
-																		<input type="password" id="[##_rp_input_password_##]_[##_article_rep_id_##]" class="form-control textField commenttext" maxlength="8" name="[##_rp_input_password_##]" value="" placeholder="password">
+																	<div class="col-lg-4 col-md-10 col-sm-12 col-xs-12">
+																		<input type="password" id="password_20" class="form-control textField commenttext" maxlength="8" name="password" value="" placeholder="password">
 																	</div>
-																	<div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+																	<div class="col-lg-2 col-md-12 col-sm-12 col-xs-12">
 																		<div>
-																			<input id="[##_rp_input_is_secret_##]_[##_article_rep_id_##]" type="checkbox" name="[##_rp_input_is_secret_##]" value="1" /> <label> 비밀글 </label>
+																			<input id="secret_20" type="checkbox" name="secret" value="1" /> <label> 비밀글 </label>
 																		</div>
 																	</div>
 																</div>
@@ -404,7 +406,7 @@ SyntaxHighlighter.all();
 																<div class="row">
 																	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 content-line">
 																		<textarea id="[##_rp_input_comment_##]_[##_article_rep_id_##]" placeholder="enter comment" name="[##_rp_input_comment_##]" class="form-control commenttext" rows="3" style="resize: none;"></textarea>
-																		<button type="button" class="btn btn-default btnComment pull-right" onclick="[##_rp_onclick_submit_##]" style="background-color: #000;">submit</button>
+																		<a class="btnComment pull-right" onclick="[##_rp_onclick_submit_##]">댓글쓰기</a>
 																	</div>
 																</div>
 															</div>
@@ -421,7 +423,7 @@ SyntaxHighlighter.all();
 																	<s_rp_rep>
 																	<li id='[##_rp_rep_id_##]' class="commentList">
 																		<div class="[##_rp_rep_class_##]">
-																			<span class="name">[##_rp_rep_name_##]</span> <br /> <span class="date"> [##_rp_rep_date_##]</span> | <span class="control"> <a href="#" onclick="[##_rp_rep_onclick_delete_##]" class="modify commentA">&nbsp;<span>수정/삭제</span></a> <a href="#" onclick="[##_rp_rep_onclick_reply_##]" class="write commentA">&nbsp;<span>댓글쓰기</span></a>
+																			<span class="name">[##_rp_rep_name_##]</span> <span class="date"> [##_rp_rep_date_##]</span> | <span class="control"> <a href="#" onclick="[##_rp_rep_onclick_delete_##]" class="modify commentA">&nbsp;<span>수정/삭제</span></a> <a href="#" onclick="[##_rp_rep_onclick_reply_##]" class="write commentA">&nbsp;<span>댓글쓰기</span></a>
 																			</span>
 																			<hr class="commentHr">
 																			<p class="commentContents">[##_rp_rep_desc_##]</p>
@@ -456,14 +458,6 @@ SyntaxHighlighter.all();
 								</article>
 								</s_article_rep>
 								<!-- ************************글************************-->
-								<!-- ************************2-9. 페이징************************ -->
-								<s_paging>
-								<div class="paging">
-									<a [##_prev_page_##] class="[##_no_more_prev_##]">◀ PREV </a> <span class="numbox"> <s_paging_rep> <a [##_paging_rep_link_##] class="num">[[##_paging_rep_link_num_##]]</a> </s_paging_rep>
-									</span> <a [##_next_page_##] class="[##_no_more_next_##]">NEXT ▶</a>
-								</div>
-								</s_paging>
-								<!-- ************************2-9. 페이징************************ -->
 							</div>
 							<!-- 메인 -->
 						</div>
@@ -474,6 +468,14 @@ SyntaxHighlighter.all();
 			<!-- sidebar -->
 		</div>
 	</main>
+	<!-- ************************2-9. 페이징************************ -->
+	<s_paging>
+		<section class="paging">
+			<a [##_prev_page_##] class="[##_no_more_prev_##]">◀ PREV </a> <span class="numbox"> <s_paging_rep> <a [##_paging_rep_link_##] class="num">[[##_paging_rep_link_num_##]]</a> </s_paging_rep>
+			</span> <a [##_next_page_##] class="[##_no_more_next_##]">NEXT ▶</a>
+		</section>
+	</s_paging>
+	<!-- ************************2-9. 페이징************************ -->
 	<!-- start:footer -->
 	<footer>
 		<!--<div class="footer-widget">
@@ -497,9 +499,7 @@ SyntaxHighlighter.all();
 							</div>
 						</div>
 						<!-- 방문자수 -->
-						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-							<p class="pull-right">Copyright © 2016 nowonbun.tistory.com</p>
-						</div>
+						<p class="pull-right">Copyright © 2016 nowonbun.tistory.com</p>
 					</div>
 				</div>
 			</div>
