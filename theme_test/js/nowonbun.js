@@ -20,6 +20,7 @@ $(function(){
 	initAside();
 	initList();
 	initComment();
+	initpaging();
 	/*initFooter();*/
 });
 /*onResize*/
@@ -305,4 +306,14 @@ function commnet(){
 		changeClassState($("div.actionTrail ul.nav.nav-tabs.nav-justified a"),false);
 		changeClassState($("div.tab-content"),false);
 	}
+}
+function initpaging(){
+	maxdom = $("section.paging > span.numbox > a:nth-last-of-type(1) > span");
+	//maxurl = maxdom.parent().prop("href");
+	selectdom = $("section.paging > span.numbox > a > span.selected");
+	//selecturl = maxdom.parent().prop("href");
+	html = "<span class='selected'>"+selectdom.html()+"</span>";
+	html += "<span class='splite'>/</span>";
+	html += "<span class='max'>"+maxdom.html()+"</span>";
+	$("section.paging > span.numbox").html(html);
 }
