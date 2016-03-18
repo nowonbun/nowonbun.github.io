@@ -438,6 +438,26 @@ div.commentList p.commentContents{
 div.content-line{
 	margin-bottom:15px;
 }
+section.paging{
+	text-align:center;
+    font-size: 20px;
+	margin-bottom:15px;
+}
+section.paging > a{
+	margin:0px 20px;
+	color:#222;
+	text-decoration:none;
+	top:4px;
+}
+section.paging > span.numbox > span.selected,
+section.paging > span.numbox > span.max{
+    display: inline-block;
+    background-color: #222;
+    width: 30px;
+    border-radius: 10px;
+    color: #fff;
+    margin: 0 20px;
+}
 /*모바일만*/
 @media screen and (max-width:768px) {
 	/*해더 재정의 버그...(왜 부트스트랩엔 이런 기능이 있지??)*/
