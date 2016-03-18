@@ -119,6 +119,8 @@ function initAside(){
 	/*main_min_height -= $("div.widget-footer").height();*/
 	/*padding값들*/
 	main_min_height -= 41;
+	/*paging크기*/
+	main_min_height -= 43;
 	$("main").css("min-height",main_min_height);
 	
 }
