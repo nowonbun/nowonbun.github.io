@@ -398,6 +398,9 @@ div.actionTrail ul.nav.nav-tabs.nav-justified a{
 textarea.commenttext{
 	border: 1px solid #222;
 }
+div.guestWrite textarea.commenttext{
+	margin-top:10px;
+}
 div.actionTrail ul.nav.nav-tabs.nav-justified a.off:after{
 	content:"펼침"
 }
@@ -419,23 +422,35 @@ div.commentCnt{
 div.commentCnt span{
 	color:#337ab7;
 }
-div.commentSet{
+div.commentSet,
+div.guestWrite{
 	margin-bottom:15px;
 	font-size:16px;
 }
-div.commentList span.name{
+div.commentList span.name,
+div.guestList span.name{
 	font-size:17px;
 	margin-right:20px;
 }
-div.commentList hr.commentHr{
+div.commentList span.name a,
+div.guestList span.name a{
+	text-decoration:none;
+}
+div.commentList hr.commentHr,
+div.guestList hr.commentHr{
 	margin: 5px;
 }
-div.commentList p.commentContents{
+div.commentList p.commentContents,
+div.guestList p.commentContents{
 	border: 1px solid #BDBDBD;
     padding: 10px;
     font-size: 14px;
     border-radius: 5px;
 	overflow-wrap: break-word;
+}
+div.commentList li.commentList,
+div.guestList li.commentList{
+	margin-bottom:20px;
 }
 div.content-line{
 	margin-bottom:15px;
@@ -462,6 +477,12 @@ section.paging > span.numbox > span.max{
 }
 div.entry-ccl{
 	text-align:left!important;
+}
+div.commentSet input[type=text],
+div.guestWrite input[type=text],
+div.commentSet input[type=password],
+div.guestWrite input[type=password]{
+	margin-bottom: 5px;
 }
 /*모바일만*/
 @media screen and (max-width:768px) {
