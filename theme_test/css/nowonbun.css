@@ -460,6 +460,9 @@ section.paging > span.numbox > span.max{
     color: #fff;
     margin: 0 20px;
 }
+div.entry-ccl{
+	text-align:left!important;
+}
 /*모바일만*/
 @media screen and (max-width:768px) {
 	/*해더 재정의 버그...(왜 부트스트랩엔 이런 기능이 있지??)*/
