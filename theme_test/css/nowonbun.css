@@ -327,6 +327,7 @@ main div.title{
 /*메인글*/
 main div.article{
 	font-size:18px;
+	overflow-wrap: break-word;
 }
 /*카테고리 다른글 가리기*/
 main div.another_category{
@@ -434,6 +435,7 @@ div.commentList p.commentContents{
     padding: 10px;
     font-size: 14px;
     border-radius: 5px;
+	overflow-wrap: break-word;
 }
 div.content-line{
 	margin-bottom:15px;
