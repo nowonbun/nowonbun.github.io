@@ -111,6 +111,19 @@ article > div.searchListEntity > div.list-body div.list-meta.ie-dotum > span.txt
     width: 10px;
     display: inline-block;
 }
+article > div.searchListEntity > a.t-photo{
+	float: right;
+    width: 25%;
+    margin: 20px 0px;
+}
+article > div.searchListEntity > a.t-photo img{
+	width:100%;
+	height:100%;
+}
+article > div.searchListEntity > div.list-body{
+    float: right;
+    width: 75%;
+}
 /*header div.navbar-header > a:first-child,
 header div.navbar-header > a:last-child{
 	position:absolute;
