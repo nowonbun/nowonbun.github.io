@@ -56,6 +56,61 @@ header div.navbar-header > a:last-child{
 header div.navbar-header > a:nth-child(2){
 	position:absolute;
 }
+div.searchList{
+	border-bottom:1px solid #ccc;
+}
+div.searchList h3{
+	font-size: 25px;
+	text-align:center;
+}
+div.searchList h3>span{
+	font-size:30px;
+	color:#81a9db;
+}
+div.searchList h3>span:before{
+	content:"\0020\201C\0020";
+	color:#81a9db;
+	font-size:40px;
+}
+div.searchList h3>span:after{
+	content:"\0020\201D\0020";
+	color:#81a9db;
+	font-size:40px;
+}
+div.searchList p{
+	text-align:center;
+}
+article > div.searchListEntity{
+    padding: 0px 50px;
+	border-bottom:1px solid #ccc;
+}
+article > div.searchListEntity > div.list-body{
+	margin:20px 0px;
+}
+article > div.searchListEntity > div.list-body a{
+	text-decoration:none;
+	color:#000;
+}
+article > div.searchListEntity > div.list-body a:hover{
+	color:#81a9db;
+}
+article > div.searchListEntity > div.list-body a.list-link > h3{
+	font-size:25px;
+
+}
+article > div.searchListEntity > div.list-body a.list-link > p.list-summary{
+	font-size:18px;
+	color:#000;
+	min-height:80px;
+}
+article > div.searchListEntity > div.list-body div.list-meta.ie-dotum > a {
+	text-decoration:none;
+	color:#81a9db;
+}
+article > div.searchListEntity > div.list-body div.list-meta.ie-dotum > span.txt-bar{
+    width: 10px;
+    display: inline-block;
+}
 /*header div.navbar-header > a:first-child,
 header div.navbar-header > a:last-child{
 	position:absolute;
