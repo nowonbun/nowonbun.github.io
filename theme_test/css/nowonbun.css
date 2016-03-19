@@ -112,7 +112,7 @@ article > div.searchListEntity > div.list-body div.list-meta.ie-dotum > span.txt
     display: inline-block;
 }
 article > div.searchListEntity > a.t-photo{
-	float: right;
+	float: left;
     width: 25%;
     margin: 20px 0px;
 }
@@ -121,7 +121,7 @@ article > div.searchListEntity > a.t-photo img{
 	height:100%;
 }
 article > div.searchListEntity > div.list-body{
-    float: right;
+    float: left;
     width: 75%;
 }
 /*header div.navbar-header > a:first-child,
