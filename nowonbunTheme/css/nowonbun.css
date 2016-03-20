@@ -386,6 +386,9 @@ aside#rightside > div{
 	border:1px solid #000;
 	overflow:auto;
 }
+aside#rightside > div ol{
+	list-style:none;
+}
 /*오른쪽 사이드바*/
 aside#rightside h2{
 	background: #222;
@@ -465,6 +468,12 @@ aside#rightside div ol > li a {
 	text-decoration:none;
 	color:#222;
 	width:90%;
+
+	display: inline-block;
+    width: 220px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 aside#rightside div ol > li a:hover{
 	color: #81a9db;
