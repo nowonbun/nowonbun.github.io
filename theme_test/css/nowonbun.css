@@ -416,10 +416,16 @@ ul.bs-glyphicons-list > li.off:hover{
 	color:#333;
 }
 /*푸터 저작권 및 카운팅*/
-div.footer-bottom{
+footer > div.footer-bottom{
 	background-color:#101010;
 	color:#EFEFEF;
 	padding-top:10px;
+}
+/*푸터 저작권 및 카운팅*/
+footer > div.footer-bottom > p{
+	display:block;
+	text-align:right;
+	margin:0px 20px;
 }
 /*메인타이틀*/
 main div.title{
