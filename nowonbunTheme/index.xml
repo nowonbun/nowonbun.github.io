@@ -22,7 +22,7 @@
 		<itemsOnGuestbook>10</itemsOnGuestbook>
 		<tagsInCloud>100</tagsInCloud>
 		<sortInCloud>1</sortInCloud>
-		<expandComment>0</expandComment>
+		<expandComment>1</expandComment>
 		<expandTrackback>0</expandTrackback>
 		<lengthOfRecentNotice>100</lengthOfRecentNotice>
 		<lengthOfRecentEntry>100</lengthOfRecentEntry>

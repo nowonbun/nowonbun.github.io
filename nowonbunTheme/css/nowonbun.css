@@ -388,6 +388,8 @@ aside#rightside > div{
 }
 aside#rightside > div ol{
 	list-style:none;
+	padding-left: 20px;
+    padding-top: 5px;
 }
 /*오른쪽 사이드바*/
 aside#rightside h2{
@@ -453,7 +455,7 @@ aside#rightside h3.rightsideTitle:after{
 }
 /*오른쪽 사이드바*/
 aside#rightside li{
-    height: 30px;
+    height: 29px;
 }
 /*오른쪽 사이드바*/
 aside#rightside hr{
