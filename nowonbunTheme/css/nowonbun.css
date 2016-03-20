@@ -186,7 +186,7 @@ article > div.searchListEntity > div.list-body div.list-meta.ie-dotum > span.txt
 article > div.searchListEntity > a.t-photo{
 	float: left;
 	/*자바스크립트 처리*/
-    /*width: 25%;*/
+    width: 0%;
     margin: 20px 0px;
 }
 /*본문 리스트(검색결과)*/
