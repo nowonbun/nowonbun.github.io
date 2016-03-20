@@ -6,6 +6,12 @@
 /*헤더 z-index  스크롤링때문에*/
 header{
 	z-index:999;
+    position: fixed;
+    top: 0px;
+	width:100%;
+}
+section.headerspace{
+	height: 70px;
 }
 /*폰트 설정*/
 body {
