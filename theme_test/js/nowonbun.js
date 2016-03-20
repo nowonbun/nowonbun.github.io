@@ -21,12 +21,14 @@ $(function(){
 	initList();
 	initComment();
 	initpaging();
+	initListRate();
 	/*initFooter();*/
 });
 /*onResize*/
 $(window).resize(function(){
 	initLogo();
 	initAside();
+	initListRate();
 });
 /*스크롤링시 헤더처리*/
 
@@ -318,4 +320,14 @@ function initpaging(){
 	html += "<span class='splite'>/</span>";
 	html += "<span class='max'>"+maxdom.html()+"</span>";
 	$("section.paging > span.numbox").html(html);
+}
+function initListRate(){
+	$("article > div.searchListEntity").each(function(){
+		imgWidthRate = (150 / $(this).width()) * 100;
+		console.log($(this).children("a.t-photo").children("div.thumbnail").children("div.cropzone").children("img").prop("src"));
+		if($(this).children("a.t-photo").children("div.thumbnail").children("div.cropzone").children("img").prop("src") != null){
+			$(this).children("a.t-photo").css("width",imgWidthRate+"%");
+			$(this).children("div.list-body").css("width",(100 - imgWidthRate)+"%");
+		}
+	});
 }
