@@ -317,11 +317,10 @@ function initpaging(){
 }
 /*리스트시 비율 재조정하기*/
 function initListRate(){
-	imgWidthRate = (150 / $(this).width()) * 100;
-	console.log(imgWidthRate);
 	$("article > div.searchListEntity").each(function(){
 		if($(this).children("a.t-photo").css("display") != "none"){
 			if($(this).children("a.t-photo").children("div.thumbnail").children("div.cropzone").children("img").prop("src") != null){
+				imgWidthRate = (150 / $(this).width()) * 100;
 				$(this).children("a.t-photo").css("width",imgWidthRate+"%");
 				$(this).children("div.list-body").css("width",(100 - imgWidthRate)+"%");
 				return;
