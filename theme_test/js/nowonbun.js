@@ -31,7 +31,7 @@ $(window).resize(function(){
 	initListRate();
 });
 /*스크롤링시 헤더처리*/
-
+/*
 $(window).scroll(function(event){
 	var st = $(this).scrollTop();
 	if (st > lastScroll || st <50){
@@ -42,7 +42,7 @@ $(window).scroll(function(event){
 		$("header").css("width",$(window).width());
 	}
 	lastScroll = st;
-});
+});*/
 function initLogo(){
 	$("header div.navbar-header > a:nth-child(2)").css("left",($(window).width()/2)-($("header div.navbar-header > a:nth-child(2)").width()/2));
 }
