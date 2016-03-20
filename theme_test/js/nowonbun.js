@@ -10,7 +10,7 @@ url = url.split('#')[0];
 url = url.split('?')[0];
 url = url.split('/');
 if(url[1] == '') { 
-	//location.href = '/notice/5'; 
+	location.href = '/notice/5'; 
 }
 
 /*OnLoad*/
@@ -26,6 +26,7 @@ $(function(){
 });
 /*onResize*/
 $(window).resize(function(){
+	initLogo();
 	initLogo();
 	initAside();
 	initListRate();
@@ -43,8 +44,10 @@ $(window).scroll(function(event){
 	}
 	lastScroll = st;
 });*/
+/*로고 중앙 위치*/
 function initLogo(){
-	$("header div.navbar-header > a:nth-child(2)").css("left",($(window).width()/2)-($("header div.navbar-header > a:nth-child(2)").width()/2));
+	headerLogoPos = ($(window).width()/2)-($("header div.navbar-header > a:nth-child(2)").width()/2);
+	$("header div.navbar-header > a:nth-child(2)").css("left",headerLogoPos);
 }
 /*초기화*/
 function initMenu(){
@@ -298,10 +301,12 @@ function initList(){
 		}
 	});
 }
+/*최초 댓글 닫기*/
 function initComment(){
 	changeClassState($("div.actionTrail ul.nav.nav-tabs.nav-justified a"),false);
 	changeClassState($("div.tab-content"),false);
 }
+/*댓글 이벤트*/
 function commnet(){
 	if($("div.tab-content").hasClass("off")){
 		changeClassState($("div.actionTrail ul.nav.nav-tabs.nav-justified a"),true);
@@ -311,6 +316,7 @@ function commnet(){
 		changeClassState($("div.tab-content"),false);
 	}
 }
+/*페이징 만들기*/
 function initpaging(){
 	maxdom = $("section.paging > span.numbox > a:nth-last-of-type(1) > span");
 	//maxurl = maxdom.parent().prop("href");
@@ -321,6 +327,7 @@ function initpaging(){
 	html += "<span class='max'>"+maxdom.html()+"</span>";
 	$("section.paging > span.numbox").html(html);
 }
+/*리스트시 비율 재조정하기*/
 function initListRate(){
 	imgWidthRate = (150 / $(this).width()) * 100;
 	$("article > div.searchListEntity").each(function(){
