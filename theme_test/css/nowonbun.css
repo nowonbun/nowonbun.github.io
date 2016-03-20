@@ -60,32 +60,32 @@ div.searchList{
 	border-bottom:1px solid #ccc;
 }
 div.searchList h3{
-	font-size: 25px;
+	font-size: 22px;
 	text-align:center;
 }
 div.searchList h3>span{
-	font-size:30px;
+	font-size:25px;
 	color:#81a9db;
 }
 div.searchList h3>span:before{
-	content:"\0020\201C\0020";
+	content:"\201C";
 	color:#81a9db;
-	font-size:40px;
+	font-size:25px;
 }
 div.searchList h3>span:after{
-	content:"\0020\201D\0020";
+	content:"\201D";
 	color:#81a9db;
-	font-size:40px;
+	font-size:25px;
 }
 div.searchList p{
 	text-align:center;
 }
 article > div.searchListEntity{
-    padding: 0px 50px;
+    /*padding: 0px 50px;*/
 	border-bottom:1px solid #ccc;
 }
 article > div.searchListEntity > div.list-body{
-	margin:20px 0px;
+	/*margin:20px 0px;*/
 }
 article > div.searchListEntity > div.list-body a{
 	text-decoration:none;
@@ -95,25 +95,53 @@ article > div.searchListEntity > div.list-body a:hover{
 	color:#81a9db;
 }
 article > div.searchListEntity > div.list-body a.list-link > h3{
-	font-size:25px;
+	font-size:20px;
 
+	white-space: normal;
+    line-height: 1.2;
+	min-height: 1.2em;
+    max-height: 2.4em;
+	/*white-space: nowrap;*/
+    overflow: hidden;
+    text-overflow: ellipsis;
+	text-align: left;
+    word-wrap: break-word;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 article > div.searchListEntity > div.list-body a.list-link > p.list-summary{
-	font-size:18px;
+	font-size:15px;
 	color:#000;
-	min-height:80px;
+	/*min-height:80px;*/
+	white-space: normal;
+    line-height: 1.2;
+    height: 3.6em;
+	/*white-space: nowrap;*/
+    overflow: hidden;
+    text-overflow: ellipsis;
+	text-align: left;
+    word-wrap: break-word;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+article > div.searchListEntity > div.list-body div.list-meta.ie-dotum{
+	width:200px;
 }
 article > div.searchListEntity > div.list-body div.list-meta.ie-dotum > a {
 	text-decoration:none;
 	color:#81a9db;
+	font-size:12px;
 }
 article > div.searchListEntity > div.list-body div.list-meta.ie-dotum > span.txt-bar{
     width: 10px;
     display: inline-block;
+	font-size:12px;
 }
 article > div.searchListEntity > a.t-photo{
 	float: left;
-    width: 25%;
+    /*width: 25%;*/
     margin: 20px 0px;
 }
 article > div.searchListEntity > a.t-photo img{
@@ -122,7 +150,7 @@ article > div.searchListEntity > a.t-photo img{
 }
 article > div.searchListEntity > div.list-body{
     float: left;
-    width: 75%;
+    /*width: 75%;*/
 }
 /*header div.navbar-header > a:first-child,
 header div.navbar-header > a:last-child{
@@ -395,7 +423,8 @@ main div.title{
 /*메인글*/
 main div.article{
 	font-size:18px;
-	overflow-wrap: break-word;
+	/*overflow-wrap: break-word;*/
+	word-wrap: break-word;
 }
 /*카테고리 다른글 가리기*/
 main div.another_category{
@@ -514,7 +543,8 @@ div.guestList p.commentContents{
     padding: 10px;
     font-size: 14px;
     border-radius: 5px;
-	overflow-wrap: break-word;
+	/*overflow-wrap: break-word;*/
+	word-wrap: break-word;
 }
 div.commentList li.commentList,
 div.guestList li.commentList{
