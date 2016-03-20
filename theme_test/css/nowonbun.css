@@ -50,6 +50,9 @@ nav.navbar{
 header,main{
 	margin-bottom:15px;
 }
+header nav{
+	padding:0px 60px;
+}
 header div.navbar-header{
 	width:100%;
 }
@@ -596,6 +599,9 @@ div.guestWrite input[type=password]{
 }
 /*모바일만*/
 @media screen and (max-width:768px) {
+	header nav{
+		padding:0px 0px;
+	}
 	/*해더 재정의 버그...(왜 부트스트랩엔 이런 기능이 있지??)*/
 	div.navbar-header{
 		margin-left: 0px!important;
