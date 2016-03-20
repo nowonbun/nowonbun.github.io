@@ -434,10 +434,10 @@ aside#rightside h2.side-header > span{
 /*오른쪽 사이드바*/
 aside#rightside h3.rightsideTitle{
 	font-size: 20px;
-    height: 40px;
-    padding: 10px;
-    margin: 10px;
-    border-bottom: 1px solid #000;
+	height: 40px;
+	padding: 10px;
+	margin: 5px 10px;
+	border-bottom: 1px solid #000;
 }
 /*오른쪽 사이드바*/
 aside#rightside h3.rightsideTitle:after{
