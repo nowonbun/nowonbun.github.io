@@ -322,12 +322,15 @@ function initpaging(){
 	$("section.paging > span.numbox").html(html);
 }
 function initListRate(){
+	imgWidthRate = (150 / $(this).width()) * 100;
 	$("article > div.searchListEntity").each(function(){
-		imgWidthRate = (150 / $(this).width()) * 100;
-		console.log($(this).children("a.t-photo").children("div.thumbnail").children("div.cropzone").children("img").prop("src"));
-		if($(this).children("a.t-photo").children("div.thumbnail").children("div.cropzone").children("img").prop("src") != null){
-			$(this).children("a.t-photo").css("width",imgWidthRate+"%");
-			$(this).children("div.list-body").css("width",(100 - imgWidthRate)+"%");
+		if($(this).children("a.t-photo").css("display") != "none"){
+			if($(this).children("a.t-photo").children("div.thumbnail").children("div.cropzone").children("img").prop("src") != null){
+				$(this).children("a.t-photo").css("width",imgWidthRate+"%");
+				$(this).children("div.list-body").css("width",(100 - imgWidthRate)+"%");
+				return;
+			}
 		}
+		$(this).children("div.list-body").css("width","100%");
 	});
 }
