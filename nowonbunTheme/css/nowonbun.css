@@ -496,6 +496,13 @@ aside#rightside h2.side-header > span > input[type=button]{
     width: 50px;
 }
 /*******************
+*      공지사항 처리
+********************/
+div.entryNotice h2 > a{
+	color:#222;
+	text-decoration:none;
+}
+/*******************
 *      본문 처리
 ********************/
 /*메인타이틀*/
