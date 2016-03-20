@@ -1,7 +1,7 @@
 
 var lastScroll = 0;
 var rightsideListCount = 9;
-var myUrl = "http://nowonbunskinex.tistory.com";
+var myUrl = "http://nowonbun.tistory.com";
 
 /*메인 화면 리다이렉트*/
 var url = decodeURIComponent(location.href);
@@ -10,7 +10,7 @@ url = url.split('#')[0];
 url = url.split('?')[0];
 url = url.split('/');
 if(url[1] == '') { 
-	location.href = '/notice/5'; 
+	location.href = '/notice/342'; 
 }
 
 /*OnLoad*/
