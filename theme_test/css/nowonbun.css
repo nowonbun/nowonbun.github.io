@@ -186,7 +186,7 @@ article > div.searchListEntity > div.list-body div.list-meta.ie-dotum > span.txt
 article > div.searchListEntity > a.t-photo{
 	float: left;
 	/*자바스크립트 처리*/
-    /*width: 25%;*/
+    width: 0%;
     margin: 20px 0px;
 }
 /*본문 리스트(검색결과)*/
@@ -386,6 +386,11 @@ aside#rightside > div{
 	border:1px solid #000;
 	overflow:auto;
 }
+aside#rightside > div ol{
+	list-style:none;
+	padding-left: 20px;
+    padding-top: 5px;
+}
 /*오른쪽 사이드바*/
 aside#rightside h2{
 	background: #222;
@@ -436,7 +441,7 @@ aside#rightside h3.rightsideTitle{
 	font-size: 20px;
 	height: 40px;
 	padding: 10px;
-	margin: 5px 10px;
+	margin: 0px 10px;
 	border-bottom: 1px solid #000;
 }
 /*오른쪽 사이드바*/
@@ -450,7 +455,7 @@ aside#rightside h3.rightsideTitle:after{
 }
 /*오른쪽 사이드바*/
 aside#rightside li{
-    height: 30px;
+    height: 29px;
 }
 /*오른쪽 사이드바*/
 aside#rightside hr{
@@ -465,6 +470,12 @@ aside#rightside div ol > li a {
 	text-decoration:none;
 	color:#222;
 	width:90%;
+
+	display: inline-block;
+    width: 220px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 aside#rightside div ol > li a:hover{
 	color: #81a9db;
@@ -483,6 +494,13 @@ aside#rightside h2.side-header > span > input[type=button]{
     height: 30px;
     margin-left: 5px;
     width: 50px;
+}
+/*******************
+*      공지사항 처리
+********************/
+div.entryNotice h2 > a{
+	color:#222;
+	text-decoration:none;
 }
 /*******************
 *      본문 처리
@@ -526,6 +544,10 @@ div.commentList span.name,
 div.guestList span.name{
 	font-size:17px;
 	margin-right:20px;
+}
+div.commentList ol,
+div.guestList ol{
+	line-style:none;
 }
 div.commentList span.name a,
 div.guestList span.name a{

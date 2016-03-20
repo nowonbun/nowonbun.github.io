@@ -545,6 +545,10 @@ div.guestList span.name{
 	font-size:17px;
 	margin-right:20px;
 }
+div.commentList ol,
+div.guestList ol{
+	line-style:none;
+}
 div.commentList span.name a,
 div.guestList span.name a{
 	text-decoration:none;
