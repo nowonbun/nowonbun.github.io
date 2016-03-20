@@ -126,6 +126,8 @@ function initAside(){
 	main_min_height -= 41;
 	/*paging크기*/
 	main_min_height -= 43;
+	/*재조정값*/
+	main_min_height -= 2;
 	$("main").css("min-height",main_min_height);
 	
 }
