@@ -117,10 +117,6 @@ namespace Calculator
         /// </returns>
         private Boolean isOperation(char token)
         {
-            if (token == null)
-            {
-                throw new NullReferenceException();
-            }
             if (token >= 48 && token <= 57 || token == 46)
             {
                 return false;
@@ -332,7 +328,7 @@ namespace Calculator
                     String buffer = exprStack.Pop();
                     exprStack.Push(buffer);
                     //왼쪽 괄호 [(]를 만나면 종료
-                    if (OPERATION1[0].Equals(opcode))
+                    if (OPERATION1[0].Equals(buffer))
                     {
                         break;
                     }
@@ -574,7 +570,7 @@ namespace Calculator
             //pow
             if (WORD_OPERATION3[0].Equals(opcode))
             {
-                return new Decimal(Math.Pow(Decimal.ToDouble(op2), Decimal.ToDouble(op1)));
+                return calculateByOpCode(op1, op2, OPERATION3[4]);
             }
             //ceil
             if (WORD_OPERATION2[13].Equals(opcode))
@@ -587,7 +583,7 @@ namespace Calculator
                 return new Decimal(Math.Floor(Decimal.ToDouble(op1)));
             }
             //round
-            if (WORD_OPERATION3[0].Equals(opcode))
+            if (WORD_OPERATION3[1].Equals(opcode))
             {
                 return new Decimal(Math.Round(Decimal.ToDouble(op2), Decimal.ToInt32(op1)));
             }
