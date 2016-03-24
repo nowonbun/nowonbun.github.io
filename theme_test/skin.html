@@ -28,10 +28,8 @@
 <meta name="keywords" content="Software" />
 <meta name="keywords" content="HTML5" />
 <meta name="description" content="[##_title_##] " />
-<!--
-<meta name="naver-site-verification" content="32aa8ce7d767e05669cb5b31f2579de56cc15359"/>
 <meta name="google-site-verification" content="ljPQvQ6mq2E944lm0Rs7S8zSSYT8Fbc3gQxtLS5wb7I" />
--->
+<meta name="naver-site-verification" content="32aa8ce7d767e05669cb5b31f2579de56cc15359"/>
 <!-- start:javascript -->
 <script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -72,130 +70,116 @@ SyntaxHighlighter.all();
 	<s_t3></s_t3>
 	<header>
 		<nav class="navbar navbar-inverse">
-			<div class="container">
-				<div class="navbar-header">
-					<!--
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-						<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
-					</button>-->
-					<!--glyphicon glyphicon-th-list-->
-					<a class="navbar-brand" href="#" onclick="menu('left')"><span class="glyphicon glyphicon-th-list"></span></a> 
-					<a class="navbar-brand title" href="#" onclick="/"><span>[##_title_##]</span></a>
-					<a class="navbar-brand" href="#" onclick="menu('right')"><span class="glyphicon glyphicon-th-list"></span></a> 
-				</div>
-				<!--<div id="navbar" class="collapse navbar-collapse">
-					<ul class="nav navbar-nav top-nav">
-					</ul>
-				</div>-->
-				<!--/.nav-collapse -->
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#" onclick="menu('left')"><span class="glyphicon glyphicon-th-list"></span></a> 
+				<a class="navbar-brand title" href="#" onclick="/"><span>[##_title_##]</span></a>
+				<a class="navbar-brand" href="#" onclick="menu('right')"><span class="glyphicon glyphicon-th-list"></span></a>
 			</div>
 		</nav>
 	</header>
+	<section class="headerspace"></section>
 	<aside id="leftside" style="display:none;">
-		<div>
-			<h2 class="side-header"><img src="" alt="[##_blogger_##]">[##_title_##]</h2>
-			<div class="side-menu bs-glyphicons">
+		<h2 class="side-header"><img src="" alt="[##_blogger_##]">[##_title_##]</h2>
+		<div class="side-menu bs-glyphicons">
+			<ul class="bs-glyphicons-list">
+			<li onclick="location.href='/';">
+				<span class="glyphicon glyphicon-home" aria-hidden="true" title="홈으로"></span>
+				<span>홈으로</span>
+			</li>
+			<li onclick="location.href='mailto:nowonbun@naver.com';">
+				<span class="glyphicon glyphicon-envelope" aria-hidden="true" title="메일보내기"></span>
+				<span>메일발송</span>
+			</li>
+			<li onclick="window.external.AddFavorite('http://nowonbun.tistory.com','☆~명월일지~☆');">
+				<span class="glyphicon glyphicon-star-empty" aria-hidden="true" title="즐겨찾기"></span>
+				<span>즐겨찾기</span>
+			</li>
+			<li onclick="location.href='[##_guestbook_link_##]';">
+				<span class="glyphicon glyphicon-pencil" aria-hidden="true" title="방명록"></span>
+				<span>방명록</span>
+			</li>
+			<li onclick="menu('close');">
+				<span class="glyphicon glyphicon-remove" aria-hidden="true" title="메뉴닫기"></span>
+				<span>메뉴닫기</span>
+			</li>
+			</ul>
+		</div>
+		<div class="side-list">
+			<ul class="side-nav"></ul>
+		</div>
+		<div class="side-footer">
+			<div class="bs-glyphicons">
 				<ul class="bs-glyphicons-list">
-				<li onclick="location.href='/';">
-					<span class="glyphicon glyphicon-home" aria-hidden="true" title="홈으로"></span>
-					<span>홈으로</span>
-				</li>
-				<li onclick="location.href='mailto:nowonbun@naver.com';">
-					<span class="glyphicon glyphicon-envelope" aria-hidden="true" title="메일보내기"></span>
-					<span>메일발송</span>
-				</li>
-				<li onclick="window.external.AddFavorite('http://nowonbun.tistory.com','☆~명월일지~☆');">
-					<span class="glyphicon glyphicon-star-empty" aria-hidden="true" title="즐겨찾기"></span>
-					<span>즐겨찾기</span>
-				</li>
-				<li onclick="location.href='[##_guestbook_link_##]';">
-					<span class="glyphicon glyphicon-pencil" aria-hidden="true" title="방명록"></span>
-					<span>방명록</span>
-				</li>
-				<li onclick="menu('close');">
-					<span class="glyphicon glyphicon-remove" aria-hidden="true" title="메뉴닫기"></span>
-					<span>메뉴닫기</span>
-				</li>
+					<li onclick="login();" class='logout on'>
+						<span class="glyphicon glyphicon-log-in" aria-hidden="true" title="로그인"></span>
+						<span>로그인</span>
+					</li>
+					<li onclick="logout();" class='login off'>
+						<span class="glyphicon glyphicon-log-out" aria-hidden="true" title="로그인"></span>
+						<span>로그아웃</span>
+					</li>
+					<li onclick="addLink();" class='login off'>
+						<span class="glyphicon glyphicon-list-alt" aria-hidden="true" title="링크추가"></span>
+						<span>링크추가</span>
+					</li>
+					<li onclick="writeTistory();" class='admin off'>
+						<span class="glyphicon glyphicon-leaf" aria-hidden="true" title="글쓰기"></span>
+						<span>글쓰기</span>
+					</li>
+					<li onclick="adminTistory();" class='admin off'>
+						<span class="glyphicon glyphicon-cog" aria-hidden="true" title="관리"></span>
+						<span>관리</span>
+					</li>
 				</ul>
-			</div>
-			<div class="side-list">
-				<ul class="side-nav"></ul>
-			</div>
-			<div class="side-footer">
-				<div class="bs-glyphicons">
-					<ul class="bs-glyphicons-list">
-						<li onclick="login();" class='logout on'>
-							<span class="glyphicon glyphicon-log-in" aria-hidden="true" title="로그인"></span>
-							<span>로그인</span>
-						</li>
-						<li onclick="logout();" class='login off'>
-							<span class="glyphicon glyphicon-log-out" aria-hidden="true" title="로그인"></span>
-							<span>로그아웃</span>
-						</li>
-						<li onclick="addLink();" class='login off'>
-							<span class="glyphicon glyphicon-list-alt" aria-hidden="true" title="링크추가"></span>
-							<span>링크추가</span>
-						</li>
-						<li onclick="writeTistory();" class='admin off'>
-							<span class="glyphicon glyphicon-leaf" aria-hidden="true" title="글쓰기"></span>
-							<span>글쓰기</span>
-						</li>
-						<li onclick="adminTistory();" class='admin off'>
-							<span class="glyphicon glyphicon-cog" aria-hidden="true" title="관리"></span>
-							<span>관리</span>
-						</li>
-					</ul>
-				</div>
 			</div>
 		</div>
 	</aside>
 	<aside id="rightside"style="display:none;">
-		<div>
-			<h2 class="side-header">
-				<a href="#" onclick="menu('close');">
-					<span class="glyphicon glyphicon-remove" aria-hidden="true" title="메뉴닫기"></span>
-					<span>메뉴닫기</span>
-				</a>
-				<span>
-					<s_search>
-						<input type="text" name="[##_search_name_##]" value="[##_search_text_##]" onkeypress="if (event.keyCode == 13) { [##_search_onclick_submit_##] }"/>
-						<input value="검색" type="button" onclick="[##_search_onclick_submit_##]" class="submit"/>
-						</s_search>
-				</span>
-			</h2>
-			<div id="recentList">
-				<h3 class="rightsideTitle">최근에 올라온 글</h3>
-				<ol>
-					<li></li>
-					<li></li>
-					<li></li>
-					<li></li>
-					<li></li>
-					<li></li>
-					<li></li>
-					<li></li>
-					<li></li>
-					<li></li>
-				</ol>
-			</div>
-			<hr>
-			<div id="categoryList">
-				<h3 class="rightsideTitle">카테고리 다른글</h3>
-				<ol>
-					<li></li>
-					<li></li>
-					<li></li>
-					<li></li>
-					<li></li>
-					<li></li>
-					<li></li>
-					<li></li>
-					<li></li>
-					<li></li>
-				</ol>
-			</div>
+		<h2 class="side-header">
+			<a href="#" onclick="menu('close');">
+				<span class="glyphicon glyphicon-remove" aria-hidden="true" title="메뉴닫기"></span>
+				<span>메뉴닫기</span>
+			</a>
+			<span>
+				<s_search>
+					<input type="text" name="[##_search_name_##]" value="[##_search_text_##]" onkeypress="if (event.keyCode == 13) { [##_search_onclick_submit_##] }"/>
+					<input value="검색" type="button" onclick="[##_search_onclick_submit_##]" class="submit"/>
+					</s_search>
+			</span>
+		</h2>
+		<div id="recentList">
+			<h3 class="rightsideTitle">최근에 올라온 글</h3>
+			<ol>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ol>
+		</div>
+		<hr>
+		<div id="categoryList">
+			<h3 class="rightsideTitle">카테고리 다른글</h3>
+			<ol>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ol>
 		</div>
 	</aside>
+	<section class="backgroundLayout"></section>
 	<main role="main" class="off">
 		<div id="container">
 			<div id="content">
@@ -313,16 +297,6 @@ SyntaxHighlighter.all();
 								<article class="entry">
 									<s_index_article_rep>
 										<div class="list-row pos-right ratio-fixed ratio-4by3 crop-center lts-narrow fouc clearfix searchListEntity">	
-											<s_article_rep_thumbnail>
-											<a class="has-object t-photo" href="[##_article_rep_link_##]">
-												<div class="thumbnail">
-													<div class="cropzone">
-														<img src="[##_article_rep_thumbnail_url_##]">
-													</div>
-												</div>
-											</a>
-											</s_article_rep_thumbnail>
-
 											<div class="list-body">
 												<div class="flexbox">
 													<a class="list-link" href="[##_article_rep_link_##]">
@@ -336,6 +310,15 @@ SyntaxHighlighter.all();
 													</div>
 												</div>
 											</div>
+											<s_article_rep_thumbnail>
+											<a class="has-object t-photo" href="[##_article_rep_link_##]">
+												<div class="thumbnail">
+													<div class="cropzone">
+														<img src="[##_article_rep_thumbnail_url_##]">
+													</div>
+												</div>
+											</a>
+											</s_article_rep_thumbnail>
 										</div>
 									</s_index_article_rep>
 									<s_permalink_article_rep>
@@ -363,11 +346,11 @@ SyntaxHighlighter.all();
 										<!-- 2-8-4. 트랙백과 댓글 보이기/감추기 -->
 										<div class="actionTrail ">
 											<ul class="nav nav-tabs nav-justified">
-												<li><a href="#" onclick="commnet();"> 댓글 </a></li>
+												<li><a href="#commentList" onclick="commnet();"> 댓글 </a></li>
 											</ul>
 										</div>
 										<!-- 2-8-4. 트랙백과 댓글 보이기/감추기 -->
-										<div class="tab-content">
+										<div id="commentList" class="tab-content">
 											<!-- 2-8-6. 댓글 -->
 											<div class="commentCnt">
 											댓글 <span class="cnt">[##_article_rep_rp_cnt_##]</span>개가 달렸습니다.
@@ -481,33 +464,15 @@ SyntaxHighlighter.all();
 	<!-- ************************2-9. 페이징************************ -->
 	<!-- start:footer -->
 	<footer>
-		<!--<div class="footer-widget">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="links">
-						<div class="widget-footer"></div>
-					</div>
-				</div>
-			</div>
-		</div>-->
-		<!-- start:footer bottom -->
-		<div class="footer-bottom">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-						<div style="text-align: right">
-							<!-- 방문자수 -->
-							<div class="counter">
-								<span class="total">Total : [##_count_total_##] </span> <span class="today">Today : [##_count_today_##]</span> <span class="yesterday">Yesterday : [##_count_yesterday_##]</span>
-							</div>
-						</div>
-						<!-- 방문자수 -->
-						<p class="pull-right">Copyright © 2016 nowonbun.tistory.com</p>
-					</div>
-				</div>
-			</div>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-bottom">
+			<!-- 방문자수 -->
+			<p>
+				<span class="total">Total : [##_count_total_##] </span>
+				<span class="today">Today : [##_count_today_##]</span>
+				<span class="yesterday">Yesterday : [##_count_yesterday_##]</span>
+			</p>
+			<p>Copyright © 2016 nowonbun.tistory.com</p>
 		</div>
-		<!-- end:footer bottom -->
 	</footer>
 	<!-- end:footer -->
 	<section style="display: none" id="template">

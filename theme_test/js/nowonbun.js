@@ -10,7 +10,7 @@ url = url.split('#')[0];
 url = url.split('?')[0];
 url = url.split('/');
 if(url[1] == '') { 
-	location.href = '/notice/5'; 
+	//location.href = '/notice/5'; 
 }
 
 /*OnLoad*/
@@ -102,15 +102,15 @@ function openSublist(obj){
 }
 /*메뉴 초기 설정 - 메뉴숨기기,사이즈 변경때마다도 요청한다.(메뉴가 가끔씩 튀어나오는 버그때문에)*/
 function initAside(){
-	dom = $("aside#leftside");
+	//dom = $("aside#leftside");
 	/*사이드 메뉴 높이 설정*/
 	//dom.css("height",$(window).height()-$("header").height());
 	aside_height = $(window).height();
 	/*모바일이 되면 position이 absolute으로 되기 때문에 사이드바가 깨짐*/
 	if(!isMobile()){
-		aside_height -= $("header").height();
+		aside_height -= $("section.headerspace").height()*2;
 	}
-	dom.css("height",aside_height);
+	$("aside#leftside").css("height",aside_height);
 	/*오른쪽 사이드 추가*/
 	initRightAside();
 	sideLeftOff();
@@ -133,12 +133,12 @@ function initAside(){
 }
 /*오른쪽 사이드 추가*/
 function initRightAside(){
-	dom2 = $("aside#rightside");
+	//dom2 = $("aside#rightside");
 	aside2_height = $(window).height();
 	if(!isMobile()){
 		aside2_height -= $("header").height();
 	}
-	dom2.css("height",aside2_height);
+	$("aside#rightside").css("height",aside2_height);
 }
 /*function initFooter(){
 	htmltest = $("div.article>div.tt_article_useless_p_margin>div.another_category").html();
@@ -186,7 +186,7 @@ function sideLeftOff(){
 	changeClassState($("main"),false);
 	/*화면이 작을때 튀어나오는 버그처리*/
 	$("aside#leftside").css("left",$(window).width() > 300 ? -$(window).width() : -300);
-	$("aside#leftside").css("width",0);
+//	$("aside#leftside").css("width",0);
 	$("aside#leftside").hide();
 	/*화면 깨짐 버그처리*/
 	$('body').css("width","");
@@ -215,10 +215,10 @@ function sideLeftOn(){
 	$('body').css("width",$(window).width());
 	/*화면이 작을때 튀어나오는 버그처리*/
 	$("aside#leftside").show();
-	$("aside#leftside").css("width",$(window).width());
+	//$("aside#leftside").css("width",$(window).width());
 	$("aside#leftside").css("left",0);
 	/*하단 아이콘처리*/
-	$("aside#leftside > div > div.side-list").css("min-height",$("aside#leftside> div").height()-210);
+	$("aside#leftside > div.side-list").css("min-height",$("aside#leftside").height()-210);
 	changeClassState($("main"),true);
 	changeClassState($("aside#leftside"),true);
 }

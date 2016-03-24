@@ -198,14 +198,13 @@ article > div.searchListEntity > a.t-photo img{
 *   왼쪽 사이드 처리
 ********************/
 /*사이드메뉴*/
-aside#leftside#leftside{
+aside#leftside{
 	position:absolute;
-	/*float:left;*/
-	float:initial;
-	width:100%;
-	background-color:rgba( 255, 255, 255, 0.7 );
+	width:300px;
+	background-color:rgba( 255, 255, 255, 1 );
 	z-index: 1000;
 	transition: left 50ms linear;
+	border:1px solid #000;
 }
 /*오른쪽 사이드 메뉴*/
 aside#rightside{
@@ -221,15 +220,15 @@ aside#leftside.on{
 	left:0px;
 }
 /*사이드메뉴*/
-aside#leftside > div{
+/*aside#leftside > div{
 	width:300px;
 	height:90%;
 	background-color: rgba( 255, 255, 255, 1 );
 	border:1px solid #000;
 	overflow:auto;
-}
+}*/
 /*사이드 타이틀*/
-aside#leftside > div > h2{
+aside#leftside > h2{
     background-color: #222;
     color: #FFF;
     margin: 0px;
