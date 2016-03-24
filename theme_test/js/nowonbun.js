@@ -219,7 +219,7 @@ function sideLeftOn(){
 	$("aside#leftside").css("left",0);
 	/*하단 아이콘처리*/
 	if(isMobile()){
-		$("aside#leftside > div.side-list").css("min-height",$(window).height()-210);
+		$("aside#leftside > div.side-list").css("min-height",$(window).height()-212);
 	}else{
 		$("aside#leftside > div.side-list").css("min-height",$(window).height()-(212 + $("section.headerspace").height()*2));
 	}
