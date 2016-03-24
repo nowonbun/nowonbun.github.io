@@ -205,28 +205,13 @@ aside#leftside{
 	z-index: 1000;
 	transition: left 50ms linear;
 	border:1px solid #000;
-}
-/*오른쪽 사이드 메뉴*/
-aside#rightside{
-	position:absolute;
-	/*float:left;*/
-	float:initial;
-	width:300px;
-	z-index: 1001;
-	transition: left 50ms linear;
+	overflow:auto;
 }
 /*사이드메뉴*/
 aside#leftside.on{
 	left:0px;
 }
-/*사이드메뉴*/
-/*aside#leftside > div{
-	width:300px;
-	height:90%;
-	background-color: rgba( 255, 255, 255, 1 );
-	border:1px solid #000;
-	overflow:auto;
-}*/
+
 /*사이드 타이틀*/
 aside#leftside > h2{
     background-color: #222;
@@ -377,6 +362,15 @@ ul.bs-glyphicons-list > li.off:hover{
 ********************/
 aside#rightside.on{
 	right:300px;
+}
+/*오른쪽 사이드 메뉴*/
+aside#rightside{
+	position:absolute;
+	/*float:left;*/
+	float:initial;
+	width:300px;
+	z-index: 1001;
+	transition: left 50ms linear;
 }
 aside#rightside > div{
 	width:300px;

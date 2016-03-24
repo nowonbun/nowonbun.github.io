@@ -218,7 +218,11 @@ function sideLeftOn(){
 	//$("aside#leftside").css("width",$(window).width());
 	$("aside#leftside").css("left",0);
 	/*하단 아이콘처리*/
-	$("aside#leftside > div.side-list").css("min-height",$("aside#leftside").height()-210);
+	if(isMobile()){
+		$("aside#leftside > div.side-list").css("min-height",$(window).height()-210);
+	}else{
+		$("aside#leftside > div.side-list").css("min-height",$(window).height()-(212 + $("section.headerspace").height()*2));
+	}
 	changeClassState($("main"),true);
 	changeClassState($("aside#leftside"),true);
 }
