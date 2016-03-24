@@ -218,7 +218,7 @@ function sideLeftOn(){
 	//$("aside#leftside").css("width",$(window).width());
 	$("aside#leftside").css("left",0);
 	/*하단 아이콘처리*/
-	$("aside#leftside > div.side-list").css("min-height",$("aside#leftside").height()-210);
+	$("aside#leftside > div.side-list").css("min-height",$("aside#leftside").height()-435);
 	changeClassState($("main"),true);
 	changeClassState($("aside#leftside"),true);
 }

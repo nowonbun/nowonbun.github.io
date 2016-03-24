@@ -689,9 +689,9 @@ div.widget-footer td {
 		min-height: 100%;
 	}
 	/*사이드바 크기*/
-	aside#leftside > div{
-		height:100%;
-	}
+	/*aside#leftside > div{
+		height:80%;
+	}*/
 	/*오른쪽사이드바*/
 	aside#rightside{
 		position: absolute;
