@@ -134,7 +134,7 @@ function initRightAside(){
 	//dom2 = $("aside#rightside");
 	aside2_height = $(window).height();
 	if(!isMobile()){
-		aside2_height -= $("header").height();
+		aside2_height -= $("section.headerspace").height()*2;
 	}
 	$("aside#rightside").css("height",aside2_height);
 }

@@ -366,12 +366,14 @@ aside#rightside.on{
 /*오른쪽 사이드 메뉴*/
 aside#rightside{
 	position:absolute;
+	/*float:left;*/
+	float:initial;
 	width:300px;
 	height:90%;
+	z-index: 1001;
 	background-color: rgba( 255, 255, 255, 1 );
 	border:1px solid #000;
 	overflow:auto;
-	z-index: 1001;
 	transition: left 50ms linear;
 }
 aside#rightside > div ol{
@@ -685,18 +687,19 @@ div.widget-footer td {
 	aside#rightside{
 		position: absolute;
 		top: 0px;
+		min-height: 100%;
 		z-index: 1002;
 		/*모바일에서 오른쪽 메뉴 짤리는 버그*/
 		/*min-height: 100%;*/
-		width:100%;
-		background-color:rgba( 255, 255, 255, 0.7 );
+		/*width:100%;
+		background-color:rgba( 255, 255, 255, 0.7 );*/
 	}
 	/*오른쪽사이드바*/
-	aside#rightside > div{
+	/*aside#rightside > div{
 		height:100%;
 	    position: absolute;
 	    right: 0px;
-	}
+	}*/
 }
 /*******************
 *    브라우저 처리
