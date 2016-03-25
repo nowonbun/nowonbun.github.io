@@ -698,8 +698,8 @@ div.widget-footer td {
 	}
 	main div#main{
 		padding:0px;
-		margin-right: -5px;
-		margin-left: -5px;
+		margin-right: 0px;
+		margin-left: 0px;
 	}
 }
 /*******************
