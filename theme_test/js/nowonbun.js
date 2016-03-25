@@ -18,6 +18,7 @@ $(function(){
 	initLogo();
 	initMenu();
 	initAside();
+	initMain();
 	initList();
 	initComment();
 	initpaging();
@@ -29,33 +30,18 @@ $(window).resize(function(){
 	initLogo();
 	initLogo();
 	initAside();
+	initMain();
 	initListRate();
 });
-/*스크롤링시 헤더처리*/
-/*
-$(window).scroll(function(event){
-	var st = $(this).scrollTop();
-	if (st > lastScroll || st <50){
-		$("header").css("width","");
-		$("header").css("position","static");
-	}else{
-		$("header").css("position","fixed");
-		$("header").css("width",$(window).width());
-	}
-	lastScroll = st;
-});*/
 /*로고 중앙 위치*/
 function initLogo(){
 	headerLogoPos = ($(window).width()/2)-($("header div.navbar-header > a:nth-child(2)").width()/2);
 	$("header div.navbar-header > a:nth-child(2)").css("left",headerLogoPos);
 }
-/*초기화*/
+/*메뉴 만들기*/
 function initMenu(){
-	/*메뉴 만들기*/
-	temp = $("ul.category_list").html();
-	/*탑메뉴 삭제*/
-	/*$("ul.top-nav").html(temp);*/
-	$("ul.side-nav").html(temp);
+	/*카테고리 메뉴 생성*/
+	$("ul.side-nav").html($("ul.category_list").html());
 	/*사이드 메뉴 하위가 있을경우 위 아래 이미지생성*/
 	$("div.side-list > ul.side-nav > li > ul").parent().children("a").append("<a href='#' class='glyphicon glyphicon-triangle-bottom pull-right' aria-hidden='true' onclick='openSublist($(this));'></a>");
 	/*사이드 메뉴 상위 메뉴 초기화*/
@@ -102,21 +88,24 @@ function openSublist(obj){
 }
 /*메뉴 초기 설정 - 메뉴숨기기,사이즈 변경때마다도 요청한다.(메뉴가 가끔씩 튀어나오는 버그때문에)*/
 function initAside(){
-	//dom = $("aside#leftside");
+	/*사이드바 메뉴*/
 	/*사이드 메뉴 높이 설정*/
-	//dom.css("height",$(window).height()-$("header").height());
 	aside_height = $(window).height();
 	/*모바일이 되면 position이 absolute으로 되기 때문에 사이드바가 깨짐*/
 	if(!isMobile()){
+		/*브라우저시 해더,푸터 만큼 사이즈 줄이기*/
 		aside_height -= $("section.headerspace").height()*2;
 	}
-	$("aside#leftside").css("height",aside_height);
-	/*오른쪽 사이드 추가*/
-	initRightAside();
+	$("aside").css("height",aside_height);
+	$("aside").css("height",aside_height);
+	/*왼쪽 사이드바 해더 이미지 집어넣기*/
+	$("aside#leftside h2.side-header > img").prop("src",$("div#blogImage").html());
+
 	sideLeftOff();
 	sideRightOff();
-	/*이미지 집어넣기*/
-	$("aside#leftside h2.side-header > img").prop("src",$("div#blogImage").html());
+}
+/* 메인 초기 설정*/
+function initMain(){
 	/*메인 최소사이즈 변경(Footer)*/
 	main_min_height = $(window).height();
 	main_min_height -= $("header").height();
@@ -127,23 +116,7 @@ function initAside(){
 	/*재조정값*/
 	main_min_height -= 2;
 	$("main").css("min-height",main_min_height);
-	
 }
-/*오른쪽 사이드 추가*/
-function initRightAside(){
-	//dom2 = $("aside#rightside");
-	aside2_height = $(window).height();
-	if(!isMobile()){
-		aside2_height -= $("section.headerspace").height()*2;
-	}
-	$("aside#rightside").css("height",aside2_height);
-}
-/*function initFooter(){
-	htmltest = $("div.article>div.tt_article_useless_p_margin>div.another_category").html();
-	if(htmltest != null){
-		$("div.widget-footer").html(htmltest);
-	}
-}*/
 /*메뉴 상태.. 처음 누르면 메뉴가 나옴. 다시 누르면 메뉴가 들어감*/
 function menu(state){
 	if(state === "close"){
@@ -186,6 +159,7 @@ function sideLeftOff(){
 	$("aside#leftside").css("left",$(window).width() > 300 ? -$(window).width() : -300);
 //	$("aside#leftside").css("width",0);
 	$("aside#leftside").hide();
+	//나중에 하나로 몰기
 	/*화면 깨짐 버그처리*/
 	$('body').css("width","");
 	$('html').css("position","static");
@@ -196,6 +170,7 @@ function sideRightOff(){
 	changeClassState($("aside#rightside"),false);
 	$("aside#rightside").css("right",-300);
 	$("aside#rightside").hide();
+	//나중에 하나로 몰기
 	if(isMobile()){
 		/*화면 깨짐 버그처리*/
 		$('body').css("width","");
@@ -211,6 +186,7 @@ function sideLeftOn(){
 	/*화면 깨짐 버그처리*/
 	$('html').css("position","fixed");
 	$('body').css("width",$(window).width());
+
 	/*화면이 작을때 튀어나오는 버그처리*/
 	$("aside#leftside").show();
 	//$("aside#leftside").css("width",$(window).width());
@@ -333,8 +309,8 @@ function initpaging(){
 }
 /*리스트시 비율 재조정하기*/
 function initListRate(){
-	
 	$("article > div.searchListEntity").each(function(){
+		/*이미지가 있을 때*/
 		if($(this).children("a.t-photo").css("display") != "none"){
 			if($(this).children("a.t-photo").children("div.thumbnail").children("div.cropzone").children("img").prop("src") != null){
 				imgWidthRate = (150 / $(this).width()) * 100;
@@ -343,6 +319,7 @@ function initListRate(){
 				return;
 			}
 		}
+		/*이미지가 없을 때*/
 		$(this).children("div.list-body").css("width","100%");
 	});
 }
