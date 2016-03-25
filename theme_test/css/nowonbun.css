@@ -507,11 +507,6 @@ main{
 	float:initial;
 	width:100%;
 }
-main div#id{
-	padding:0px;
-    margin-right: -15px;
-    margin-left: -15px;
-}
 /*메인타이틀*/
 main div.title{
 	font-size:25px;
@@ -700,6 +695,11 @@ div.widget-footer td {
 		position: absolute;
 		top: 0px;
 		/*z-index: 1001;*/
+	}
+	main div#main{
+		padding:0px;
+		margin-right: -15px;
+		margin-left: -15px;
 	}
 }
 /*******************
