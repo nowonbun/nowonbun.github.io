@@ -109,10 +109,15 @@ function initMain(){
 	/*메인 최소사이즈 변경(Footer)*/
 	main_min_height = $(window).height();
 	main_min_height -= $("section.headerspace").height();
-	main_min_height -= $("div.footer-bottom").height();
+	//main_min_height -= $("div.footer-bottom").height();
+	main_min_height -= 40;
 	main_min_height -= $("section.paging").outerHeight(true);
 	//footer padding :10 main-margin:15;
 	main_min_height -= 25;
+	console.log($(window).height());
+	console.log($("section.headerspace").height());
+	console.log($("div.footer-bottom").height());
+	console.log($("section.paging").outerHeight(true));
 	$("main").css("min-height",main_min_height);
 }
 /*메뉴 상태.. 처음 누르면 메뉴가 나옴. 다시 누르면 메뉴가 들어감*/
@@ -158,46 +163,36 @@ function menu(state){
 }
 function sideBackOn(){
 	changeClassState($("section.backgroundLayout"),true);
+	/*화면 고정처리*/
+	$('html').css("overflow","hidden");
+	/*화면 깨짐 버그처리*/
+	$('html').css("position","fixed");
+	$('body').css("width",$(window).width());
+	changeClassState($("main"),true);
 }
 function sideBackOff(){
 	changeClassState($("section.backgroundLayout"),false);
-}
-/*사이드바 없어질 때 처리*/
-function sideLeftOff(){
-	changeClassState($("aside#leftside"),false);
 	changeClassState($("main"),false);
-	/*화면이 작을때 튀어나오는 버그처리*/
-	$("aside#leftside").css("left",$(window).width() > 300 ? -$(window).width() : -300);
-//	$("aside#leftside").css("width",0);
-	$("aside#leftside").hide();
-	//나중에 하나로 몰기
 	/*화면 깨짐 버그처리*/
 	$('body').css("width","");
 	$('html').css("position","static");
 	/*화면 고정처리*/
 	$('html').css("overflow","auto");
 }
+/*사이드바 없어질 때 처리*/
+function sideLeftOff(){
+	changeClassState($("aside#leftside"),false);
+	/*화면이 작을때 튀어나오는 버그처리*/
+	$("aside#leftside").css("left",$(window).width() > 300 ? -$(window).width() : -300);
+	$("aside#leftside").hide();
+}
 function sideRightOff(){
 	changeClassState($("aside#rightside"),false);
 	$("aside#rightside").css("right",-300);
 	$("aside#rightside").hide();
-	//나중에 하나로 몰기
-	if(isMobile()){
-		/*화면 깨짐 버그처리*/
-		$('body').css("width","");
-		$('html').css("position","static");
-		/*화면 고정처리*/
-		$('html').css("overflow","auto");
-	}
 }
 /*사이드바 생길 때 처리*/
 function sideLeftOn(){
-	/*화면 고정처리*/
-	$('html').css("overflow","hidden");
-	/*화면 깨짐 버그처리*/
-	$('html').css("position","fixed");
-	$('body').css("width",$(window).width());
-
 	/*화면이 작을때 튀어나오는 버그처리*/
 	$("aside#leftside").show();
 	//$("aside#leftside").css("width",$(window).width());
@@ -209,17 +204,9 @@ function sideLeftOn(){
 	}else{
 		$("aside#leftside > div.side-list").css("min-height",$(window).height()-(212 + $("section.headerspace").height()*2));
 	}
-	changeClassState($("main"),true);
 	changeClassState($("aside#leftside"),true);
 }
 function sideRightOn(){
-	if(isMobile()){
-		/*화면 고정처리*/
-		$('html').css("overflow","hidden");
-		/*화면 깨짐 버그처리*/
-		$('html').css("position","fixed");
-		$('body').css("width",$(window).width());
-	}
 	$("aside#rightside").show();
 	$("aside#rightside").css("right",0);
 	changeClassState($("aside#rightside"),true);
