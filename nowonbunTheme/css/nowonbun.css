@@ -733,3 +733,10 @@ div.widget-footer td {
 		/*-webkit-filter:blur(1px);*/
 	}
 }
+/*******************
+*    아이템 처리
+********************/
+div.sourcecode > div > div{
+	margin:0px!important;
+ 	font-size :14px!important;
+} 
