@@ -87,6 +87,8 @@ span.menuSpan{
     padding: 5px;
     border-radius: 10px;
     border-style: double;
+    width: 60px;
+    text-align: center;
 }
 span.menuSpan:hover{
 	background-color:#81a9db;
