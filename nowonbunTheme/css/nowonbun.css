@@ -77,6 +77,22 @@ header div.navbar-header > a:last-child{
 /*배치 처리(리팩토링 필요)*/
 header div.navbar-header > a:nth-child(2){
 	position:absolute;
+	padding: 15px!important;
+}
+span.menuSpan{
+	color:#222;
+	background-color:#fff;
+	display:inline-block;
+	height: 35px;
+    padding: 5px;
+    border-radius: 10px;
+    border-style: double;
+    width: 60px;
+    text-align: center;
+}
+span.menuSpan:hover{
+	background-color:#81a9db;
+	color:#FFF;
 }
 /*******************
 *     리스트 처리
@@ -197,49 +213,40 @@ article > div.searchListEntity > a.t-photo img{
 /*******************
 *   왼쪽 사이드 처리
 ********************/
-/*사이드메뉴*/
-aside#leftside#leftside{
-	position:absolute;
-	/*float:left;*/
-	float:initial;
-	width:100%;
-	background-color:rgba( 255, 255, 255, 0.7 );
+section.backgroundLayout{
+	background-color:rgba( 255, 255, 255, 0.7);
 	z-index: 1000;
-	transition: left 50ms linear;
-}
-/*오른쪽 사이드 메뉴*/
-aside#rightside{
+	width:0px;
+	height:0px;
 	position:absolute;
-	/*float:left;*/
-	float:initial;
+	top:0px;
+	left:0px;
+}
+section.backgroundLayout.on{
+	width:100%;
+	height:100%;
+}
+/*사이드메뉴*/
+aside#leftside{
+	position:absolute;
 	width:300px;
+	background-color:rgba( 255, 255, 255, 1 );
 	z-index: 1001;
 	transition: left 50ms linear;
+	border:1px solid #000;
+	overflow:auto;
 }
 /*사이드메뉴*/
 aside#leftside.on{
 	left:0px;
 }
-/*사이드메뉴*/
-aside#leftside > div{
-	width:300px;
-	height:90%;
-	background-color: rgba( 255, 255, 255, 1 );
-	border:1px solid #000;
-	overflow:auto;
-}
+
 /*사이드 타이틀*/
-aside#leftside > div > h2{
+aside#leftside > h2{
     background-color: #222;
     color: #FFF;
     margin: 0px;
     padding: 10px;
-}
-/*사이드메뉴*/
-main{
-	/*float:left;*/
-	float:initial;
-	width:100%;
 }
 /*사이드바 타이틀 색깔 효과*/
 aside#leftside h2{
@@ -261,7 +268,7 @@ aside#leftside h2.side-header > img{
 div.bs-glyphicons{
 	width:100%;
 	height: 55px;
-	margin-bottom:20px;
+	/*margin-bottom:20px;*/
 }
 /*사이드바 아이콘 메뉴*/
 ul.bs-glyphicons-list{
@@ -379,12 +386,18 @@ ul.bs-glyphicons-list > li.off:hover{
 aside#rightside.on{
 	right:300px;
 }
-aside#rightside > div{
+/*오른쪽 사이드 메뉴*/
+aside#rightside{
+	position:absolute;
+	/*float:left;*/
+	float:initial;
 	width:300px;
 	height:90%;
+	z-index: 1001;
 	background-color: rgba( 255, 255, 255, 1 );
 	border:1px solid #000;
 	overflow:auto;
+	transition: left 50ms linear;
 }
 aside#rightside > div ol{
 	list-style:none;
@@ -505,6 +518,11 @@ div.entryNotice h2 > a{
 /*******************
 *      본문 처리
 ********************/
+main{
+	/*float:left;*/
+	float:initial;
+	width:100%;
+}
 /*메인타이틀*/
 main div.title{
 	font-size:25px;
@@ -617,6 +635,12 @@ div.commentCnt span{
 div.content-line{
 	margin-bottom:15px;
 }
+/*리팩토링*/
+div.commentWrite,
+div.commentList{
+	padding-left:0px;
+	padding-right:0px;
+}
 /*******************
 *   페이징 처리
 ********************/
@@ -686,28 +710,18 @@ div.widget-footer td {
 	aside#leftside{
 		position: absolute;
 		top: 0px;
-		z-index: 1002;
-		min-height: 100%;
-	}
-	/*사이드바 크기*/
-	aside#leftside > div{
-		height:100%;
+		/*z-index: 1001;*/
 	}
 	/*오른쪽사이드바*/
 	aside#rightside{
 		position: absolute;
 		top: 0px;
-		z-index: 1002;
-		/*모바일에서 오른쪽 메뉴 짤리는 버그*/
-		/*min-height: 100%;*/
-		width:100%;
-		background-color:rgba( 255, 255, 255, 0.7 );
+		/*z-index: 1001;*/
 	}
-	/*오른쪽사이드바*/
-	aside#rightside > div{
-		height:100%;
-	    position: absolute;
-	    right: 0px;
+	main div#main{
+		padding:0px;
+		margin-right: 0px;
+		margin-left: 0px;
 	}
 }
 /*******************
@@ -718,16 +732,4 @@ div.widget-footer td {
 	main.on{
 		-webkit-filter:blur(1px);
 	}
-	/*사이드바가 나올때 뒤 모서리*/
-	aside#leftside > div,aside#leftside h2{
-		/*border-top-right-radius: 10px;*/
-	}
-}
-
-/*******************
-*    아이템 처리
-********************/
-div.sourcecode > div > div{
-	 margin:0px!important;
-	 font-size :14px!important;
 }
