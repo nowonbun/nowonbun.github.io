@@ -77,6 +77,20 @@ header div.navbar-header > a:last-child{
 /*배치 처리(리팩토링 필요)*/
 header div.navbar-header > a:nth-child(2){
 	position:absolute;
+	padding: 15px!important;
+}
+span.menuSpan{
+	color:#222;
+	background-color:#fff;
+	display:inline-block;
+	height: 35px;
+    padding: 5px;
+    border-radius: 10px;
+    border-style: double;
+}
+span.menuSpan:hover{
+	background-color:#81a9db;
+	color:#FFF;
 }
 /*******************
 *     리스트 처리
