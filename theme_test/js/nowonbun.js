@@ -28,7 +28,6 @@ $(function(){
 /*onResize*/
 $(window).resize(function(){
 	initLogo();
-	initLogo();
 	initAside();
 	initMain();
 	initListRate();
@@ -103,6 +102,7 @@ function initAside(){
 
 	sideLeftOff();
 	sideRightOff();
+	sideBackOff();
 }
 /* 메인 초기 설정*/
 function initMain(){
@@ -120,14 +120,17 @@ function menu(state){
 	if(state === "close"){
 		sideLeftOff();
 		sideRightOff();
+		sideBackOff();
 		return;
 	}
 	if(!isMobile()){
 		if($("aside#leftside").hasClass("on")){
 			sideLeftOff();
 			sideRightOff();
+			sideBackOff();
 			return;
 		}
+		sideBackOn();
 		sideLeftOn();	
 		sideRightOn();
 		return;
@@ -135,19 +138,29 @@ function menu(state){
 	if(state === "left"){
 		if($("aside#leftside").hasClass("on")){
 			sideOff();
+			sideBackOff();
 			return;
 		}
+		sideBackOn();
 		sideLeftOn();	
 		return;
 	}
 	if(state === "right"){
 		if($("aside#rightside").hasClass("on")){
 			sideRightOff();
+			sideBackOff();
 			return;
 		}
+		sideBackOn();
 		sideRightOn();
 		return;
 	}
+}
+function sideBackOn(){
+	changeClassState($("section.backgroundLayout"),true);
+}
+function sideBackOff(){
+	changeClassState($("section.backgroundLayout"),false);
 }
 /*사이드바 없어질 때 처리*/
 function sideLeftOff(){
