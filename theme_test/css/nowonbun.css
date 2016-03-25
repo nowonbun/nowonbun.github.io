@@ -509,6 +509,8 @@ main{
 }
 main div#id{
 	padding:0px;
+    margin-right: -15px;
+    margin-left: -15px;
 }
 /*메인타이틀*/
 main div.title{
