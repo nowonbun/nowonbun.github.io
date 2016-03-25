@@ -677,29 +677,13 @@ div.widget-footer td {
 		position: absolute;
 		top: 0px;
 		z-index: 1002;
-		min-height: 100%;
 	}
-	/*사이드바 크기*/
-	/*aside#leftside > div{
-		height:80%;
-	}*/
 	/*오른쪽사이드바*/
 	aside#rightside{
 		position: absolute;
 		top: 0px;
-		min-height: 100%;
 		z-index: 1002;
-		/*모바일에서 오른쪽 메뉴 짤리는 버그*/
-		/*min-height: 100%;*/
-		/*width:100%;
-		background-color:rgba( 255, 255, 255, 0.7 );*/
 	}
-	/*오른쪽사이드바*/
-	/*aside#rightside > div{
-		height:100%;
-	    position: absolute;
-	    right: 0px;
-	}*/
 }
 /*******************
 *    브라우저 처리
@@ -708,9 +692,5 @@ div.widget-footer td {
 	/*사이드바가 나올때 뒤 배경흐리기*/
 	main.on{
 		-webkit-filter:blur(1px);
-	}
-	/*사이드바가 나올때 뒤 모서리*/
-	aside#leftside > div,aside#leftside h2{
-		/*border-top-right-radius: 10px;*/
 	}
 }
