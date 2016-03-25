@@ -232,12 +232,6 @@ aside#leftside > h2{
     margin: 0px;
     padding: 10px;
 }
-/*사이드메뉴*/
-main{
-	/*float:left;*/
-	float:initial;
-	width:100%;
-}
 /*사이드바 타이틀 색깔 효과*/
 aside#leftside h2{
 	background: #222;
@@ -508,6 +502,14 @@ div.entryNotice h2 > a{
 /*******************
 *      본문 처리
 ********************/
+main{
+	/*float:left;*/
+	float:initial;
+	width:100%;
+}
+main div#id{
+	padding:0px;
+}
 /*메인타이틀*/
 main div.title{
 	font-size:25px;
