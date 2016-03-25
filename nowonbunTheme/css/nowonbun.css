@@ -232,7 +232,7 @@ aside#leftside{
 	width:300px;
 	background-color:rgba( 255, 255, 255, 1 );
 	z-index: 1001;
-	transition: left 50ms linear;
+	/*transition: left 50ms linear;*/
 	border:1px solid #000;
 	overflow:auto;
 }
@@ -397,7 +397,7 @@ aside#rightside{
 	background-color: rgba( 255, 255, 255, 1 );
 	border:1px solid #000;
 	overflow:auto;
-	transition: left 50ms linear;
+	/*transition: left 50ms linear;*/
 }
 aside#rightside > div ol{
 	list-style:none;
@@ -730,6 +730,6 @@ div.widget-footer td {
 @media screen and (min-width:768px) {
 	/*사이드바가 나올때 뒤 배경흐리기*/
 	main.on{
-		-webkit-filter:blur(1px);
+		/*-webkit-filter:blur(1px);*/
 	}
 }
