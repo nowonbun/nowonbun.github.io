@@ -110,9 +110,9 @@ function initMain(){
 	main_min_height = $(window).height();
 	main_min_height -= $("section.headerspace").height();
 	main_min_height -= $("div.footer-bottom").height();
-	main_min_height -= $("section.paging").height();
-	//main,header : margin(20), footer padding :10;
-	main_min_height -= 40;
+	main_min_height -= $("section.paging").outerHeight(true);
+	//footer padding :10 main-margin:15;
+	main_min_height -= 25;
 	$("main").css("min-height",main_min_height);
 }
 /*메뉴 상태.. 처음 누르면 메뉴가 나옴. 다시 누르면 메뉴가 들어감*/
