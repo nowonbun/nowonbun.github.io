@@ -10,7 +10,7 @@ url = url.split('#')[0];
 url = url.split('?')[0];
 url = url.split('/');
 if(url[1] == '') { 
-	location.href = '/notice/5'; 
+	location.href = '/notice/342'; 
 }
 
 /*OnLoad*/
