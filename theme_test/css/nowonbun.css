@@ -619,6 +619,12 @@ div.commentCnt span{
 div.content-line{
 	margin-bottom:15px;
 }
+/*리팩토링*/
+div.commentWrite,
+div.commentList{
+	padding-left:0px;
+	padding-right:0px;
+}
 /*******************
 *   페이징 처리
 ********************/
