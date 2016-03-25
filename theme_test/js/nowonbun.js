@@ -108,13 +108,11 @@ function initAside(){
 function initMain(){
 	/*메인 최소사이즈 변경(Footer)*/
 	main_min_height = $(window).height();
-	main_min_height -= $("header").height();
+	main_min_height -= $("section.headerspace").height();
 	main_min_height -= $("div.footer-bottom").height();
-	/*main_min_height -= $("div.widget-footer").height();*/
-	/*padding값들*/
-	main_min_height -= 41;
-	/*재조정값*/
-	main_min_height -= 2;
+	main_min_height -= $("section.paging").height();
+	//main,header : margin(20), footer padding :10;
+	main_min_height -= 40;
 	$("main").css("min-height",main_min_height);
 }
 /*메뉴 상태.. 처음 누르면 메뉴가 나옴. 다시 누르면 메뉴가 들어감*/
