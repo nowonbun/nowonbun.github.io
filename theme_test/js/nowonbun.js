@@ -1,5 +1,6 @@
 
 var lastScroll = 0;
+var preWidth = 0;
 var rightsideListCount = 9;
 var myUrl = "http://nowonbunskinex.tistory.com";
 
@@ -32,6 +33,7 @@ $(window).resize(function(){
 	initAside();
 	initMain();
 	initListRate();
+	preWidth = $(window).width();
 });
 /*로고 중앙 위치*/
 function initLogo(){
@@ -92,6 +94,11 @@ function openSublist(obj){
 }
 /*메뉴 초기 설정 - 메뉴숨기기,사이즈 변경때마다도 요청한다.(메뉴가 가끔씩 튀어나오는 버그때문에)*/
 function initAside(){
+	if($("aside#rightside input[name=search]:focus").length > 0){
+		if(isMobile() && preWidth == $(window).width()){
+			return;
+		}
+	}
 	/*사이드바 메뉴*/
 	/*사이드 메뉴 높이 설정*/
 	aside_height = $(window).height();
