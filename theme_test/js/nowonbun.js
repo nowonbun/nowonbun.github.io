@@ -36,6 +36,10 @@ $(window).resize(function(){
 function initLogo(){
 	headerLogoPos = ($(window).width()/2)-($("header div.navbar-header > a:nth-child(2)").width()/2);
 	$("header div.navbar-header > a:nth-child(2)").css("left",headerLogoPos);
+	
+	if($("div.searchList").length > 0){
+		$("div.entryNotice").remove();
+	}
 }
 /*메뉴 만들기*/
 function initMenu(){
