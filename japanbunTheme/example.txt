@@ -24,3 +24,46 @@
 		</tbody>
 	</table>
 </div>
+
+
+<div class="mainContent">
+	<div class="rightContent">
+		<p><img></p>
+	</div>
+	<div class="rightContent">
+		<p></p>
+	</div>
+	<div class="lineContents"></div>
+
+	<div class="leftContent">
+		<p><img></p>
+	</div>
+	<div class="leftContent">
+		<p></p>
+	</div>
+	<div class="lineContents"></div>
+
+	<div class="rightContent">
+		<p><img></p>
+	</div>
+	<div class="rightContent">
+		<p></p>
+	</div>
+	<div class="lineContents"></div>
+
+	<div class="leftContent">
+		<p><img></p>
+	</div>
+	<div class="leftContent">
+		<p></p>
+	</div>
+	<div class="lineContents"></div>
+
+	<div class="rightContent">
+		<p><img></p>
+	</div>
+	<div class="rightContent">
+		<p></p>
+	</div>
+	<div class="lineContents"></div>
+</div>
