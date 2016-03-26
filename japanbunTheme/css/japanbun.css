@@ -1,0 +1,19 @@
+@charset "utf-8";
+
+.navbar-inverse{
+	background-color:#A1B2C3;
+    border-color:#A0B0C0;
+}
+span.menuSpan {
+	color: #A1B2C3;
+}
+aside#leftside h2 {
+	background: linear-gradient(#A1B2C3, #FFF);
+    color: #222;
+}
+aside#leftside {
+    border: 1px solid #A0B0C0;
+}
+span.glyphicon{
+	color:#123456;
+}
