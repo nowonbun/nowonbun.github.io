@@ -4,6 +4,9 @@
 	background-color:#A1B2C3;
     border-color:#A0B0C0;
 }
+div.navbar-header > a.title > span {
+	color:#222!important;
+}
 aside#leftside h2 {
 	background: linear-gradient(#A1B2C3, #FFF)!important;
     color: #222!important;
@@ -12,7 +15,7 @@ aside#leftside {
     border: 1px solid #A0B0C0!important;
 }
 ul.bs-glyphicons-list > li {
-	color:#123456;
+	color:#123456!important;
 }
 ul.bs-glyphicons-list > li.off:hover{
 	color:#123456!important;
@@ -21,7 +24,7 @@ aside#rightside{
 	border: 1px solid #A0B0C0!important;
 }
 aside#rightside h2.side-header > a :hover{
-	color:#FFF;
+	color:#FFF!important;
 }
 aside#rightside h2 {
 	background-color:#A1B2C3!important;
@@ -39,4 +42,11 @@ span.menuSpan:hover {
     /*background-color: #81a9db;*/
 	background-color: #222!important;
     color: #FFF!important;
+}
+section.paging > a {
+	color:#123456!important;
+}
+section.paging > span.numbox > span.selected,
+section.paging > span.numbox > span.max{
+	background-color:#123456!important;
 }
