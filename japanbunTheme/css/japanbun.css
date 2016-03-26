@@ -21,7 +21,7 @@ ul.bs-glyphicons-list > li.off:hover{
 	color:#123456!important;
 }
 aside#rightside h2.side-header > a {
-	color:#123456;
+	color:#123456!important;
 }
 aside#rightside h2.side-header > a :hover{
 	color:#FFF;
