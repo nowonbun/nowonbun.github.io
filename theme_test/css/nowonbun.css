@@ -447,7 +447,7 @@ aside#rightside h2.side-header > span{
 	color:#fff;
 	padding:10px;
 	display:block;
-	padding-left: 70px;
+	padding-left: 60px;
 }
 /*오른쪽 사이드바*/
 aside#rightside h3.rightsideTitle{
@@ -506,7 +506,7 @@ aside#rightside h2.side-header > span > input[type=button]{
     font-size: 15px;
     height: 30px;
     margin-left: 5px;
-    width: 50px;
+    width: 40px;
 }
 aside#rightside ol a:before{
 	content:"\00B7";
