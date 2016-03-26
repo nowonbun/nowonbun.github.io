@@ -17,6 +17,12 @@ aside#leftside {
 ul.bs-glyphicons-list > li {
 	color:#123456;
 }
+ul.bs-glyphicons-list > li.off:hover{
+	color:#123456;
+}
+aside#rightside h2.side-header > a {
+	color:#123456;
+}
 span.glyphicon:hover not{
 	color:#FFF;
 }
