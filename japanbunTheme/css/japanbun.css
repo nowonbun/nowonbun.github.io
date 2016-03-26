@@ -1,19 +1,19 @@
 @charset "utf-8";
 
 .navbar-inverse{
-	background-color:#A1B2C3;
-    border-color:#A0B0C0;
+	background-color:#A1B2C3!important;
+    border-color:#A0B0C0!important;
 }
 span.menuSpan {
-	color: #A1B2C3;
+	color: #A1B2C3!important;
 }
 aside#leftside h2 {
-	background: linear-gradient(#A1B2C3, #FFF);
-    color: #222;
+	background: linear-gradient(#A1B2C3, #FFF)!important;
+    color: #222!important;
 }
 aside#leftside {
-    border: 1px solid #A0B0C0;
+    border: 1px solid #A0B0C0!important;
 }
 span.glyphicon{
-	color:#123456;
+	color:#123456!important;
 }

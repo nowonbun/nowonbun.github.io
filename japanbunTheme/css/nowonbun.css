@@ -1,4 +1,5 @@
 @charset "utf-8";
+@import url('./japanbun.css');
 /*******************
 *     공통 처리
 ********************/
@@ -747,4 +748,3 @@ div.sourcecode > div > div{
 	margin:0px!important;
  	font-size :14px!important;
 } 
-@import url('./japanbun.css');
