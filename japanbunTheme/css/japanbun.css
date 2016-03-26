@@ -12,16 +12,19 @@ aside#leftside h2 {
     color: #222;
 }
 aside#leftside {
-    border: 1px solid #A0B0C0;
+    border: 1px solid #A0B0C0!important;
 }
 ul.bs-glyphicons-list > li {
 	color:#123456;
 }
 ul.bs-glyphicons-list > li.off:hover{
-	color:#123456;
+	color:#123456!important;
 }
 aside#rightside h2.side-header > a {
 	color:#123456;
+}
+aside#rightside h2.side-header > a :hover{
+	color:#FFF;
 }
 span.glyphicon:hover not{
 	color:#FFF;
@@ -36,4 +39,7 @@ aside#rightside h2 {
 }
 footer > div.footer-bottom{
 	background-color: #A1B2C3!important;
+}
+span.menuSpan {
+	color:#123456!important;
 }
