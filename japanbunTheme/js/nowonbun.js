@@ -2,7 +2,7 @@
 var lastScroll = 0;
 var preWidth = 0;
 var rightsideListCount = 9;
-var myUrl = "http://japanbun.tistory.com";
+var myUrl = "http://nowonbunskinex.tistory.com";
 
 /*OnLoad*/
 initLogo();
@@ -181,21 +181,12 @@ function sideBackOff(){
 /*사이드바 없어질 때 처리*/
 function sideLeftOff(){
 	changeClassState($("aside#leftside"),false);
-	/*화면이 작을때 튀어나오는 버그처리*/
-	$("aside#leftside").css("left",$(window).width() > 300 ? -$(window).width() : -300);
-	$("aside#leftside").hide();
 }
 function sideRightOff(){
 	changeClassState($("aside#rightside"),false);
-	$("aside#rightside").css("right",-300);
-	$("aside#rightside").hide();
 }
 /*사이드바 생길 때 처리*/
 function sideLeftOn(){
-	/*화면이 작을때 튀어나오는 버그처리*/
-	$("aside#leftside").show();
-	//$("aside#leftside").css("width",$(window).width());
-	$("aside#leftside").css("left",0);
 	/*하단 아이콘처리*/
 	if(isMobile()){
 		//212 - sideheader(70) + aside-border(2) + topmenu(75) + bottom(55)
@@ -206,8 +197,6 @@ function sideLeftOn(){
 	changeClassState($("aside#leftside"),true);
 }
 function sideRightOn(){
-	$("aside#rightside").show();
-	$("aside#rightside").css("right",0);
 	changeClassState($("aside#rightside"),true);
 }
 /*클래스 상태 변경*/
