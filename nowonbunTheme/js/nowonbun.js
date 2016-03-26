@@ -15,14 +15,14 @@ if(url[1] == '') {
 
 /*OnLoad*/
 initLogo();
-initMenu();
+initMain();
 initAside();
 initList();
 initComment();
 initpaging();
 initListRate();
 $(function(){
-	initMain();
+	initMenu();
 })
 
 /*onResize*/
