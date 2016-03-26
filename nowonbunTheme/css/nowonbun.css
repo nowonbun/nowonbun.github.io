@@ -235,10 +235,12 @@ aside#leftside{
 	/*transition: left 50ms linear;*/
 	border:1px solid #000;
 	overflow:auto;
+	display:none;
 }
 /*사이드메뉴*/
 aside#leftside.on{
 	left:0px;
+	display:block;
 }
 
 /*사이드 타이틀*/
@@ -384,7 +386,8 @@ ul.bs-glyphicons-list > li.off:hover{
 * 오른쪽 사이드 처리
 ********************/
 aside#rightside.on{
-	right:270px;
+	display:block;
+	right:0px;
 }
 /*오른쪽 사이드 메뉴*/
 aside#rightside{
@@ -397,6 +400,7 @@ aside#rightside{
 	background-color: rgba( 255, 255, 255, 1 );
 	border:1px solid #000;
 	overflow:auto;
+	display:none;
 	/*transition: left 50ms linear;*/
 }
 aside#rightside > div ol{
