@@ -25,6 +25,7 @@ initListRate();
 /*initFooter();*/
 $(function(){
 	initMenu();
+	preWidth = $(window).width();
 })
 
 /*onResize*/
