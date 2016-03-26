@@ -50,3 +50,40 @@ section.paging > span.numbox > span.selected,
 section.paging > span.numbox > span.max{
 	background-color:#123456!important;
 }
+
+div.lineContents{
+	clear:both;
+	height:10px;
+}
+/*******************
+*      葛官老 贸府
+********************/
+@media screen and (max-width:768px) {
+	
+}
+/*******************
+*    宏扼快历 贸府
+********************/
+@media screen and (min-width:768px) {
+	div.rightContent{
+		float:right;
+		display:inline-block;
+		text-align:center;
+		width:50%;
+	}
+	div.rightContent > p{
+		text-align:left;
+	}
+	div.leftContent{
+		float:left;
+		display:inline-block;
+		text-align:center;
+		width:50%;
+	}
+	div.leftContent > p{
+		text-align:left;
+	}
+	div.mainContent{
+		text-align:center;
+	}
+}
