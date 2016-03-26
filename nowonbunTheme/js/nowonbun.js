@@ -17,12 +17,13 @@ if(url[1] == '') {
 initLogo();
 initMenu();
 initAside();
-initMain();
 initList();
 initComment();
 initpaging();
 initListRate();
-/*initFooter();*/
+$(function(){
+	initMain();
+})
 
 /*onResize*/
 $(window).resize(function(){
