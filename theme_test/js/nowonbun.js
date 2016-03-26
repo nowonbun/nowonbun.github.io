@@ -14,17 +14,16 @@ if(url[1] == '') {
 }
 
 /*OnLoad*/
-$(function(){
-	initLogo();
-	initMenu();
-	initAside();
-	initMain();
-	initList();
-	initComment();
-	initpaging();
-	initListRate();
-	/*initFooter();*/
-});
+initLogo();
+initMenu();
+initAside();
+initMain();
+initList();
+initComment();
+initpaging();
+initListRate();
+/*initFooter();*/
+
 /*onResize*/
 $(window).resize(function(){
 	initLogo();
