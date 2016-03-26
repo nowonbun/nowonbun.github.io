@@ -235,10 +235,12 @@ aside#leftside{
 	/*transition: left 50ms linear;*/
 	border:1px solid #000;
 	overflow:auto;
+	display:none;
 }
 /*사이드메뉴*/
 aside#leftside.on{
 	left:0px;
+	display:block;
 }
 
 /*사이드 타이틀*/
@@ -384,19 +386,21 @@ ul.bs-glyphicons-list > li.off:hover{
 * 오른쪽 사이드 처리
 ********************/
 aside#rightside.on{
-	right:300px;
+	display:block;
+	right:0px;
 }
 /*오른쪽 사이드 메뉴*/
 aside#rightside{
 	position:absolute;
 	/*float:left;*/
 	float:initial;
-	width:300px;
+	width:270px;
 	height:90%;
 	z-index: 1001;
 	background-color: rgba( 255, 255, 255, 1 );
 	border:1px solid #000;
 	overflow:auto;
+	display:none;
 	/*transition: left 50ms linear;*/
 }
 aside#rightside > div ol{
@@ -447,7 +451,7 @@ aside#rightside h2.side-header > span{
 	color:#fff;
 	padding:10px;
 	display:block;
-	padding-left: 70px;
+	padding-left: 60px;
 }
 /*오른쪽 사이드바*/
 aside#rightside h3.rightsideTitle{
@@ -506,7 +510,10 @@ aside#rightside h2.side-header > span > input[type=button]{
     font-size: 15px;
     height: 30px;
     margin-left: 5px;
-    width: 50px;
+    width: 40px;
+}
+aside#rightside ol a:before{
+	content:"\00B7";
 }
 /*******************
 *      공지사항 처리
