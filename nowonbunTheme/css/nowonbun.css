@@ -384,14 +384,14 @@ ul.bs-glyphicons-list > li.off:hover{
 * 오른쪽 사이드 처리
 ********************/
 aside#rightside.on{
-	right:300px;
+	right:270px;
 }
 /*오른쪽 사이드 메뉴*/
 aside#rightside{
 	position:absolute;
 	/*float:left;*/
 	float:initial;
-	width:300px;
+	width:270px;
 	height:90%;
 	z-index: 1001;
 	background-color: rgba( 255, 255, 255, 1 );
@@ -507,6 +507,9 @@ aside#rightside h2.side-header > span > input[type=button]{
     height: 30px;
     margin-left: 5px;
     width: 50px;
+}
+aside#rightside ol a:before{
+	content:"\00B7";
 }
 /*******************
 *      공지사항 처리
