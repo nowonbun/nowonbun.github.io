@@ -14,17 +14,16 @@ if(url[1] == '') {
 }
 
 /*OnLoad*/
-$(function(){
-	initLogo();
-	initMenu();
-	initAside();
-	initMain();
-	initList();
-	initComment();
-	initpaging();
-	initListRate();
-	/*initFooter();*/
-});
+initLogo();
+initMenu();
+initAside();
+initMain();
+initList();
+initComment();
+initpaging();
+initListRate();
+/*initFooter();*/
+
 /*onResize*/
 $(window).resize(function(){
 	initLogo();
@@ -36,6 +35,10 @@ $(window).resize(function(){
 function initLogo(){
 	headerLogoPos = ($(window).width()/2)-($("header div.navbar-header > a:nth-child(2)").width()/2);
 	$("header div.navbar-header > a:nth-child(2)").css("left",headerLogoPos);
+
+	if($("div.searchList").length > 0){
+		$("div.entryNotice").remove();
+	}
 }
 /*메뉴 만들기*/
 function initMenu(){
