@@ -26,14 +26,9 @@ aside#rightside h2.side-header > a {
 aside#rightside h2.side-header > a :hover{
 	color:#FFF;
 }
-span.glyphicon:hover not{
+/*span.glyphicon:hover not{
 	color:#FFF;
-}
-span.menuSpan:hover {
-    /*background-color: #81a9db;*/
-	background-color: #222;
-    color: #FFF;
-}
+}*/
 aside#rightside h2 {
 	background-color:#A1B2C3!important;
 }
@@ -42,4 +37,9 @@ footer > div.footer-bottom{
 }
 span.menuSpan {
 	color:#123456!important;
+}
+span.menuSpan:hover {
+    /*background-color: #81a9db;*/
+	background-color: #222!important;
+    color: #FFF!important;
 }
