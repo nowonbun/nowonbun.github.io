@@ -15,7 +15,7 @@ if(url[1] == '') {
 
 /*OnLoad*/
 initLogo();
-initMenu();
+initMain();
 initAside();
 initList();
 initComment();
@@ -23,7 +23,7 @@ initpaging();
 initListRate();
 /*initFooter();*/
 $(function(){
-	initMain();
+	initMenu();
 })
 
 /*onResize*/
