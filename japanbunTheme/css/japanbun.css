@@ -63,6 +63,9 @@ div.rightContent{
 div.leftContent{
 	padding:20px;
 }
+div.centerContents{
+	padding:20px;
+}
 div.lineContents{
 	clear:both;
 	height:20px;
