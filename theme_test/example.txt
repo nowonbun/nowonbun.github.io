@@ -24,3 +24,6 @@
 		</tbody>
 	</table>
 </div>
+
+
+<q cite="urn:isbn:4041001013"></q>
