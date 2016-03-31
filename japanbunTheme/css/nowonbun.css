@@ -752,5 +752,7 @@ p.image{
 	text-align: left; 
 	clear: none; 
 	float: none;
+}
+p.image > span{
 	border:3px solid #000;
 }
