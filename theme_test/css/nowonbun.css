@@ -757,6 +757,8 @@ p.image > span{
 }
 
 div.adsenseHeadDefault,
-div.adsenseFootDefault{
+div.adsenseFootDefault,
+div.adsenseHead,
+div.adsenseFoot{
 	margin:20px 0px;
 }

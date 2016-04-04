@@ -33,16 +33,18 @@ function initAdsense(){
 	adfooter = $("div#adsenseFooter").html();
 	if($("div.adsenseHead").length == 1){
 		$("div.adsenseHead").html(adheader);
-	}else{
+		(adsbygoogle = window.adsbygoogle || []).push({});
+	}else if($("div.adsenseHeadDefault").length == 1)){
 		$("div.adsenseHeadDefault").html(adheader);
 	}
-	(adsbygoogle = window.adsbygoogle || []).push({});
+	
 	if($("div.adsenseFoot").length == 1){
 		$("div.adsenseFoot").html(adfooter);
-	}else{
+		(adsbygoogle = window.adsbygoogle || []).push({});
+	}else if($("div.adsenseFootDefault").length == 1)){
 		$("div.adsenseFootDefault").html(adfooter);
+		(adsbygoogle = window.adsbygoogle || []).push({});
 	}
-	(adsbygoogle = window.adsbygoogle || []).push({});
 }
 /*로고 중앙 위치*/
 function initLogo(){

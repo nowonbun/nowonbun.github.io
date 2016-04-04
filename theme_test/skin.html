@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="kr">
 <head>
+<script src="https://nowonbun.github.io/theme_test/js/redirect.js"></script>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
@@ -32,7 +33,7 @@
 <!-- start:javascript -->
 <script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<script src="https://nowonbun.github.io/theme_test/js/nowonbun.js"></script>
+
 <!-- end:javascript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shCore.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shLegacy.min.js"></script>
@@ -55,9 +56,6 @@
 <!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushVb.min.js"></script>-->
 <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shCore.min.css">
 <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shThemeDefault.min.css">
-<script type="text/javascript">
-SyntaxHighlighter.all();
-</script>
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
@@ -77,7 +75,7 @@ SyntaxHighlighter.all();
 		</nav>
 	</header>
 	<section class="headerspace"></section>
-	<aside id="leftside" style="display:none;">
+	<aside id="leftside">
 		<h2 class="side-header"><img src="" alt="[##_blogger_##]">[##_title_##]</h2>
 		<div class="side-menu bs-glyphicons">
 			<ul class="bs-glyphicons-list">
@@ -131,7 +129,7 @@ SyntaxHighlighter.all();
 			</ul>
 		</div>
 	</aside>
-	<aside id="rightside" style="display:none;">
+	<aside id="rightside">
 		<h2 class="side-header">
 			<a href="#" onclick="menu('close');">
 				<span class="glyphicon glyphicon-remove" aria-hidden="true" title="메뉴닫기"></span>
@@ -198,7 +196,9 @@ SyntaxHighlighter.all();
 							<!--span class="date"> [##_notice_rep_date_##]</span-->
 						</div>
 						<hr class="titileHr">
+						<div class="adsenseHeadDefault"></div>
 						<div class="article">[##_notice_rep_desc_##]</div>
+						<div class="adsenseFootDefault"></div>
 					</div>
 				</s_notice_rep>
 				<!-- ************************공지사항************************-->
@@ -321,7 +321,9 @@ SyntaxHighlighter.all();
 						</div>
 						<!-- 글 관련 정보 : 글제목, 카테고리, 날짜, 관리자 -->
 						<!-- 블로그 글 -->
+						<div class="adsenseHeadDefault"></div>
 						<div class="article">[##_article_rep_desc_##]</div>
+						<div class="adsenseFootDefault"></div>
 						<!-- 블로그 글 -->
 						<!-- 2-8-3. 글 관련 태그 -->
 						<s_tag_label>
@@ -445,6 +447,12 @@ SyntaxHighlighter.all();
 	</footer>
 	<!-- end:footer -->
 	<section style="display: none" id="template">
+		<div id="adsenseHeader">
+		<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="3977396448" data-ad-format="auto"></ins>
+		</div>
+		<div id="adsenseFooter">
+			<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="6930862840" data-ad-format="auto"></ins>
+		</div>
 		<div id="categoryTemplate">[##_category_list_##]</div>
 		<div id="blogImage">[##_image_##]</div>
 		<div id="loginstate"></div>
@@ -465,5 +473,7 @@ SyntaxHighlighter.all();
 			</s_sidebar_element>
 		</s_sidebar>
 	</section>
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<script src="https://nowonbun.github.io/theme_test/js/nowonbun.js"></script>
 </body>
 </html>
