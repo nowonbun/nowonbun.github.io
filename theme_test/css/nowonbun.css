@@ -746,6 +746,7 @@ div.widget-footer td {
 div.sourcecode > div > div{
 	margin:0px!important;
  	font-size :14px!important;
+	padding:1px!important;
 } 
 p.image{
 	text-align: left; 
