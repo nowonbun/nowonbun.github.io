@@ -5,6 +5,7 @@ var rightsideListCount = 9;
 var myUrl = "http://nowonbunskinex.tistory.com";
 
 /*OnLoad*/
+initAdsense();
 initLogo();
 initMain();
 initAside();
@@ -12,6 +13,7 @@ initList();
 initComment();
 initpaging();
 initListRate();
+dp.SyntaxHighlighter.HighlightAll('code');
 /*initFooter();*/
 $(function(){
 	initMenu();
@@ -26,6 +28,16 @@ $(window).resize(function(){
 	initListRate();
 	preWidth = $(window).width();
 });
+function initAdsense(){
+	adheader = $("div#adsenseHeader").html();
+	adfooter = $("div#adsenseFooter").html();
+	console.log($("div.adsenseHead"));
+	
+	$("div.adsenseHeadDefault").html(adheader);
+	$("div.adsenseFootDefault").html(adfooter);
+	(adsbygoogle = window.adsbygoogle || []).push({});
+	(adsbygoogle = window.adsbygoogle || []).push({});
+}
 /*로고 중앙 위치*/
 function initLogo(){
 	headerLogoPos = ($(window).width()/2)-($("header div.navbar-header > a:nth-child(2)").width()/2);
