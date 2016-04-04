@@ -36,12 +36,12 @@ function initAdsense(){
 	}else{
 		$("div.adsenseHeadDefault").html(adheader);
 	}
+	(adsbygoogle = window.adsbygoogle || []).push({});
 	if($("div.adsenseFoot").length != 1){
 		$("div.adsenseFoot").html(adfooter);
 	}else{
 		$("div.adsenseFootDefault").html(adfooter);
 	}
-	(adsbygoogle = window.adsbygoogle || []).push({});
 	(adsbygoogle = window.adsbygoogle || []).push({});
 }
 /*로고 중앙 위치*/
