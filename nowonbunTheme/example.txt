@@ -24,3 +24,13 @@
 		</tbody>
 	</table>
 </div>
+
+<div class="adsenseHead"></div>
+
+<div class="adsenseFoot"></div>
+
+<p class="postStyle">
+<h3>타이틀</h3>
+<blockquote style="border: 1px solid;border-left: 5px solid;">
+</blockquote>
+</p>

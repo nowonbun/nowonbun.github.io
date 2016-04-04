@@ -761,3 +761,7 @@ div.adsenseHead,
 div.adsenseFoot{
 	margin:20px 0px;
 }
+
+p.postStyle > h3{
+	font-size : 21px;
+}
