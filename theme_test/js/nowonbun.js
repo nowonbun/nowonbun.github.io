@@ -31,7 +31,6 @@ $(window).resize(function(){
 function initAdsense(){
 	adheader = $("div#adsenseHeader").html();
 	adfooter = $("div#adsenseFooter").html();
-	console.log($("div.adsenseHead"));
 	if($("div.adsenseHead").length != 1){
 		$("div.adsenseHead").html(adheader);
 	}else{
