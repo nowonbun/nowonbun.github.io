@@ -5,6 +5,7 @@ var rightsideListCount = 9;
 var myUrl = "http://nowonbunskinex.tistory.com";
 
 /*OnLoad*/
+initAdsense();
 initLogo();
 initMain();
 initAside();
@@ -12,6 +13,7 @@ initList();
 initComment();
 initpaging();
 initListRate();
+dp.SyntaxHighlighter.HighlightAll('code');
 /*initFooter();*/
 $(function(){
 	initMenu();
@@ -26,6 +28,25 @@ $(window).resize(function(){
 	initListRate();
 	preWidth = $(window).width();
 });
+/*애드센스 적용*/
+function initAdsense(){
+	adheader = $("div#adsenseHeader").html();
+	adfooter = $("div#adsenseFooter").html();
+	if($("div.adsenseHead").length == 1){
+		$("div.adsenseHead").html(adheader);
+		(adsbygoogle = window.adsbygoogle || []).push({});
+	}else if($("div.adsenseHeadDefault").length == 1){
+		$("div.adsenseHeadDefault").html(adheader);
+		(adsbygoogle = window.adsbygoogle || []).push({});
+	}
+	if($("div.adsenseFoot").length == 1){
+		$("div.adsenseFoot").html(adfooter);
+		(adsbygoogle = window.adsbygoogle || []).push({});
+	}else if($("div.adsenseFootDefault").length == 1){
+		$("div.adsenseFootDefault").html(adfooter);
+		(adsbygoogle = window.adsbygoogle || []).push({});
+	}
+}
 /*로고 중앙 위치*/
 function initLogo(){
 	headerLogoPos = ($(window).width()/2)-($("header div.navbar-header > a:nth-child(2)").width()/2);

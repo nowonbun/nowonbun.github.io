@@ -28,6 +28,7 @@ $(window).resize(function(){
 	initListRate();
 	preWidth = $(window).width();
 });
+/*애드센스 적용*/
 function initAdsense(){
 	adheader = $("div#adsenseHeader").html();
 	adfooter = $("div#adsenseFooter").html();
