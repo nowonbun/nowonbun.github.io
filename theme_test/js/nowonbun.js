@@ -31,13 +31,13 @@ $(window).resize(function(){
 function initAdsense(){
 	adheader = $("div#adsenseHeader").html();
 	adfooter = $("div#adsenseFooter").html();
-	if($("div.adsenseHead").length != 1){
+	if($("div.adsenseHead").length == 1){
 		$("div.adsenseHead").html(adheader);
 	}else{
 		$("div.adsenseHeadDefault").html(adheader);
 	}
 	(adsbygoogle = window.adsbygoogle || []).push({});
-	if($("div.adsenseFoot").length != 1){
+	if($("div.adsenseFoot").length == 1){
 		$("div.adsenseFoot").html(adfooter);
 	}else{
 		$("div.adsenseFootDefault").html(adfooter);
