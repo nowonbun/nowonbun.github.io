@@ -34,14 +34,14 @@ function initAdsense(){
 	if($("div.adsenseHead").length == 1){
 		$("div.adsenseHead").html(adheader);
 		(adsbygoogle = window.adsbygoogle || []).push({});
-	}else if($("div.adsenseHeadDefault").length == 1)){
+	}else if($("div.adsenseHeadDefault").length == 1){
 		$("div.adsenseHeadDefault").html(adheader);
+		(adsbygoogle = window.adsbygoogle || []).push({});
 	}
-	
 	if($("div.adsenseFoot").length == 1){
 		$("div.adsenseFoot").html(adfooter);
 		(adsbygoogle = window.adsbygoogle || []).push({});
-	}else if($("div.adsenseFootDefault").length == 1)){
+	}else if($("div.adsenseFootDefault").length == 1){
 		$("div.adsenseFootDefault").html(adfooter);
 		(adsbygoogle = window.adsbygoogle || []).push({});
 	}
