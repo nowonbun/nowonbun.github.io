@@ -32,9 +32,16 @@ function initAdsense(){
 	adheader = $("div#adsenseHeader").html();
 	adfooter = $("div#adsenseFooter").html();
 	console.log($("div.adsenseHead"));
-	
-	$("div.adsenseHeadDefault").html(adheader);
-	$("div.adsenseFootDefault").html(adfooter);
+	if($("div.adsenseHead").length != 1){
+		$("div.adsenseHead").html(adheader);
+	}else{
+		$("div.adsenseHeadDefault").html(adheader);
+	}
+	if($("div.adsenseFoot").length != 1){
+		$("div.adsenseFoot").html(adfooter);
+	}else{
+		$("div.adsenseFootDefault").html(adfooter);
+	}
 	(adsbygoogle = window.adsbygoogle || []).push({});
 	(adsbygoogle = window.adsbygoogle || []).push({});
 }
