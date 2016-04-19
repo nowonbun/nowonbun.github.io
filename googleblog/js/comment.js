@@ -2,6 +2,7 @@
 	var items = $('#commentJao').val();
 	var msgs = $('#commentMsgs').val();
 	var config = $('#commentConfig').val();
+	console.log(config);
 	var cursor = null;
 	if (items && items.length> 0) {
 		cursor = parseInt(items[items.length - 1].timestamp) + 1;
