@@ -155,7 +155,6 @@
 	var render = function() {
 		if (window.goog && window.goog.comments) {
 			var holder = document.getElementById('comment-holder');
-			console.log(config.postId);
 			window.goog.comments.render(holder, provider);
 		}
 	};
