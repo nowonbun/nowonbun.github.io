@@ -511,9 +511,8 @@
 								<!-- 라벨 -->
 								<span class='post-labels'> 
 									<b:if cond='data:top.showPostLabels and data:post.labels'>
-										<span class="labelTag">
-										<data:postLabelsLabel />
-										</span>
+										<!--<data:postLabelsLabel />-->
+										<img src="//nowonbun.github.io/googleblog/label_icon.png" style="display: inline-block;margin-right:5px;"/>
 										<b:loop values='data:post.labels' var='label'>
 											<a expr:href='data:label.url' rel='tag'><data:label.name /></a>
 											<b:if cond='not data:label.isLast'>,</b:if>
@@ -772,27 +771,33 @@
 				
 				<b:includable id='threaded-comment-form' var='post'>
 					<!-- ***댓글 입력 폼 -->
+					<style>
+						div.comment-replybox-thread{
+						    border: 1px solid silver;
+						    border-radius: 10px;
+						}
+					</style>
 					<div class='comment-form'>
 						<a name='comment-form' />
-						<b:if cond='data:mobile'>
-							<p>
-								<data:blogCommentMessage />
-							</p>
-							<data:blogTeamBlogMessage />
-							<a expr:href='data:post.commentFormIframeSrc' id='comment-editor-src' />
-							<iframe allowtransparency='true' class='blogger-iframe-colorize blogger-comment-from-post' expr:height='data:cmtIframeInitialHeight' frameborder='0' id='comment-editor' name='comment-editor' src='' style='display: none' width='100%' />
-						<b:else />
-							<p>
-								<data:blogCommentMessage />
-							</p>
-							<data:blogTeamBlogMessage />
-							<a expr:href='data:post.commentFormIframeSrc' id='comment-editor-src' />
-							<iframe allowtransparency='true' class='blogger-iframe-colorize blogger-comment-from-post' expr:height='data:cmtIframeInitialHeight' frameborder='0' id='comment-editor' name='comment-editor' src='' width='100%' />
-						</b:if>
+						<p>
+							<data:blogCommentMessage />
+						</p>
+						<data:blogTeamBlogMessage />
+						<a expr:href='data:post.commentFormIframeSrc' id='comment-editor-src' />
+						<iframe allowtransparency='true' class='blogger-iframe-colorize blogger-comment-from-post' expr:height='data:cmtIframeInitialHeight' frameborder='0' id='comment-editor' name='comment-editor' src='' width='100%' />
 						<data:post.friendConnectJs />
 						<data:post.cmtfpIframe />
 						<script type='text/javascript'>
 							BLOG_CMT_createIframe(&#39;<data:post.appRpcRelayPath/>&#39;);
+						</script>
+						<script>
+							/*
+							var frameobj = document.getElementById('comment-editor').contentWindow;
+							$('iframe#comment-editor').height(frameobj.document.body.scrollHeight);
+							$(frameobj).on('resize',function(e){
+								console.log(e);
+								$('iframe#comment-editor').height(frameobj.document.body.scrollHeight);
+							});*/
 						</script>
 					</div>
 					<!-- 댓글 입력 폼*** -->
