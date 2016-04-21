@@ -474,6 +474,7 @@
 							</style>
 						<b:else />
 							<style>
+								/*<![CDATA[*/
 								/* 일반 포스트일 때 스타일*/
 								div.post-body.entry-content {
 									min-height: 300px;
@@ -484,6 +485,7 @@
 								img{
 									max-width:100%;
 								}
+								/*]]>*/
 							</style>
 						</b:if>
 
@@ -911,34 +913,10 @@
 										<data:post.commentLabelFull/>
 									</h4>
 								</div>
-								<b:if cond='data:post.commentPagingRequired'>
-									<span class='paging-control-container'> 
-										<b:if cond='data:post.hasOlderLinks'>
-											<a expr:class='data:post.oldLinkClass' expr:href='data:post.oldestLinkUrl'>
-												<data:post.oldestLinkText/>
-											</a>
-											&#160;
-											<a expr:class='data:post.oldLinkClass' expr:href='data:post.olderLinkUrl'>
-												<data:post.olderLinkText/>
-											</a>
-											&#160;
-										</b:if>
-										<data:post.commentRangeText/> 
-										<b:if cond='data:post.hasNewerLinks'>
-											&#160;
-											<a expr:class='data:post.newLinkClass' expr:href='data:post.newerLinkUrl'>
-												<data:post.newerLinkText/>
-											</a>
-											&#160;
-											<a expr:class='data:post.newLinkClass' expr:href='data:post.newestLinkUrl'>
-												<data:post.newestLinkText/>
-											</a>
-										</b:if>
-									</span>
-								</b:if>
+								<!-- 댓글 리스트 -->
 								<div expr:id='data:widget.instanceId + &quot;_comments-block-wrapper&quot;'>
 									<dl expr:class='data:post.avatarIndentClass' id='comments-block'>
-										<!-- 댓글 리스트 -->
+
 										<b:loop values='data:post.comments' var='comment'>
 											<div class='commentItem'>
 												<dt expr:class='&quot;comment-author &quot; + data:comment.authorClass' expr:id='data:comment.anchorName'>
@@ -982,21 +960,23 @@
 								<!-- 댓글 페이징 -->
 								<b:if cond='data:post.commentPagingRequired'>
 									<span class='paging-control-container'> 
-										<a expr:class='data:post.oldLinkClass' expr:href='data:post.oldestLinkUrl'> 
-											<data:post.oldestLinkText/>
-										</a> 
-										<a expr:class='data:post.oldLinkClass' expr:href='data:post.olderLinkUrl'> 
-											<data:post.olderLinkText/>
-										</a> 
-										&#160; 
+										<b:if cond='data:post.hasOlderLinks'>
+											<a expr:class='data:post.oldLinkClass' expr:href='data:post.oldestLinkUrl'>
+												<data:post.oldestLinkText/>
+											</a>
+											<a expr:class='data:post.oldLinkClass' expr:href='data:post.olderLinkUrl'>
+												<data:post.olderLinkText/>
+											</a>
+										</b:if>
 										<data:post.commentRangeText/> 
-										&#160; 
-										<a expr:class='data:post.newLinkClass' expr:href='data:post.newerLinkUrl'> 
-											<data:post.newerLinkText/>
-										</a> 
-										<a expr:class='data:post.newLinkClass' expr:href='data:post.newestLinkUrl'> 
-											<data:post.newestLinkText/>
-										</a>
+										<b:if cond='data:post.hasNewerLinks'>
+											<a expr:class='data:post.newLinkClass' expr:href='data:post.newerLinkUrl'>
+												<data:post.newerLinkText/>
+											</a>
+											<a expr:class='data:post.newLinkClass' expr:href='data:post.newestLinkUrl'>
+												<data:post.newestLinkText/>
+											</a>
+										</b:if>
 									</span>
 								</b:if>
 								<!-- 댓글 작성 -->
@@ -1035,6 +1015,7 @@
 
 					<!-- ***includable widget:Blog parents:comments -->
 					<b:includable id='comment-form' var='post'>
+						<!-- ***댓글 입력 폼 -->
 						<div class='comment-form'>
 							<a name='comment-form'/>
 							<!--<b:if cond='data:mobile'>
@@ -1064,11 +1045,13 @@
 								BLOG_CMT_createIframe(&#39;<data:post.appRpcRelayPath/>&#39;);
 							</script>
 						</div>
+						<!-- 댓글 입력 폼*** -->
 					</b:includable>
 					<!-- includable widget:Blog parents:comments*** -->
 
 					<!-- ***includable widget:Blog parents:comments -->
 					<b:includable id='commentDeleteIcon' var='comment'>
+						<!-- ***댓글 삭제 아이콘 -->
 						<span expr:class='&quot;item-control &quot; + data:comment.adminClass'> 
 							<b:if cond='data:showCmtPopup'>
 								<div class='goog-toggle-button'>
@@ -1080,6 +1063,7 @@
 								</a>
 							</b:if>
 						</span>
+						<!-- 댓글 삭제 아이콘*** -->
 					</b:includable>
 					<!-- includable widget:Blog parents:comments*** -->
 
