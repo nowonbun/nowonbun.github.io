@@ -14,18 +14,21 @@
 		</b:skin>
 		<style>
 			/*<![CDATA[*/
+			
 			body {
 				margin: 0px;
 			}
 			p {
 				margin: 0px;
 			}
+			/* ***헤더 */
+			/* 해더 구역 나누기*/
 			header div.header.section {
 				text-align: center;
 				background-color: #B4D6F7;
 				height: 50px;
 			}
-
+			/* 해더 최대 크기 및 문서 스타일*/
 			header div.widget.Header {
 				font-size: 25px;
 				text-align: center;
@@ -36,28 +39,28 @@
 				height: 100%;
 				width: 100%;
 			}
-
+			/* 왼쪽 메뉴 구역 설정*/
 			header div.widget.Header>div:nth-of-type(1) {
 				position: relative;
 				float: left;
 				margin-left: 5px;
 				z-index: 2;
 			}
-
+			/* 가운데 메뉴 구역 설정*/
 			header div.widget.Header>div:nth-of-type(2) {
 				position: absolute;
 				left: 0px;
 				width: 100%;
 				z-index: 1;
 			}
-
+			/* 오른쪽 메뉴 구역 설정*/
 			header div.widget.Header>div:nth-of-type(3) {
 				position: relative;
 				float: right;
 				margin-right: 5px;
 				z-index: 2;
 			}
-
+			/* 해더 링크 공통 설정*/
 			header div.widget.Header>div>a {
 				text-decoration: none;
 				display: inline-block;
@@ -65,12 +68,12 @@
 				color: #000;
 				font-weight: bold;
 			}
-
+			/* 해더 링크 가운데 설정*/
 			header div.widget.Header>div:nth-of-type(2)>a {
 				padding-top: 3px;
 				float: none;
 			}
-
+			/* 양쪽 링크 가운데 설정*/
 			header div.widget.Header>div:nth-of-type(1)>a, 
 			header div.widget.Header>div:nth-of-type(3)>a {
 				font-size: 18px;
@@ -84,7 +87,8 @@
 				padding-top: 7px;
 				padding-bottom: 7px;
 			}
-
+			/* 헤더*** */
+			/* ***사이드 메뉴 */
 			aside {
 				position: absolute;
 				width: 0px;
@@ -93,7 +97,8 @@
 				height: 100%;
 				z-index: 3;
 			}
-
+			/* 사이드 메뉴*** */
+			/* ***왼쪽 사이드 */
 			aside.leftside {
 				border-right: 1px solid #000;
 				left: -10px;
@@ -102,18 +107,6 @@
 
 			aside.leftside.on {
 				left: 0px;
-				width: 300px;
-				display: block;
-			}
-
-			aside.rightside {
-				border-left: 1px solid #000;
-				right: -10px;
-				display: none;
-			}
-
-			aside.rightside.on {
-				right: 0px;
 				width: 300px;
 				display: block;
 			}
@@ -169,6 +162,66 @@
 				overflow-y: auto;
 				overflow-x: hidden;
 			}
+			/* 왼쪽 사이드*** */
+			/* ***오른쪽 사이드 */
+			aside.rightside {
+				border-left: 1px solid #000;
+				right: -10px;
+				display: none;
+			}
+
+			aside.rightside.on {
+				right: 0px;
+				width: 300px;
+				display: block;
+			}
+
+			aside.rightside div.rightsideheader {
+				background: linear-gradient(#B4D6F7, #FFF);
+				height: 50px;
+				font-size: 25px;
+				padding-top: 5px;
+				/*padding: 10px;
+				padding-left: 20px;*/
+			}
+
+			aside.rightside div.rightsideheader div {
+				display: inline-block;
+				padding-top: 5px;
+				margin-left: 20px;
+			}
+
+			aside.rightside div.rightsideheader a {
+				float: left;
+				background: #FFF;
+				border-radius: 10px;
+				margin-left: 10px;
+				border: 1px solid #000;
+				padding-top: 2px;
+				padding-left: 5px;
+				padding-right: 7px;
+				height: 40px;
+				width: 50px;
+				cursor: pointer;
+				color: #000;
+			}
+
+			aside.rightside div.rightsideheader a:hover {
+				background: #3D76DC;
+				border: 1px solid #3D76DC;
+				color: #FFF;
+			}
+
+			aside.rightside div.rightsideheader span {
+				float: right;
+				font-size: 9px;
+			}
+
+			aside.rightside div.rightsideheader>a>span:nth-of-type(1) {
+				font-size: 25px;
+				padding-right: 5px;
+			}
+			/* 오른쪽 사이드*** */
 
 			article div.main.section {
 				text-align: center;
@@ -316,6 +369,9 @@
 				if(idx === 'left'){
 					$('aside.leftside').toggleClass('on');
 				}
+				if(idx === 'right'){
+					$('aside.rightside').toggleClass('on');
+				}
 			}
 			//]]>
 		</script>
@@ -371,7 +427,16 @@
 		</aside>
 
 		<aside class='rightside'>
-			<b:section class='rightside' id='rightside'/>
+			<div class='rightsideheader'>
+				<a onclick='menu("right");'> 
+					<span aria-hidden='true' class='glyphicon glyphicon-remove' title='메뉴닫기'/> 
+					<span>CLOSE</span>
+				</a>
+				<div>LIST</div>
+			</div>
+			<div class='leftsidebody'>
+				<b:section class='rightside' id='rightside'/>
+			</div>
 		</aside>
 
 		<section/>
@@ -410,7 +475,10 @@
 										<b:include data='post' name='post'/>
 										<!-- 본문*** -->
 									</fieldset>
-									<b:include cond='data:blog.pageType in {&quot;static_page&quot;,&quot;item&quot;}' data='post' name='comment_picker'/>
+									<b:if cond='data:blog.pageType in {&quot;static_page&quot;,&quot;item&quot;}'>
+										<b:include name='nextprev'/>
+										<b:include data='post' name='comment_picker'/>
+									</b:if>
 								</div>
 								<!-- 애드센스 : 사용안함(별도로 사용) -->
 								<!--<b:if cond='data:post.includeAd'>
@@ -515,9 +583,9 @@
 								<!-- 일반 포스트 -->
 								<b:include data='post' name='post_body'/>
 								<!-- 페이징 -->
-								<b:if cond='data:blog.pageType != &quot;index&quot;'>
+								<!--<b:if cond='data:blog.pageType != &quot;index&quot;'>
 									<b:include name='nextprev'/>
-								</b:if>
+								</b:if>-->
 							</b:if>
 
 							<!-- 본문 내용*** -->
