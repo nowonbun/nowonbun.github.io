@@ -181,6 +181,7 @@
 				height: 50px;
 				font-size: 25px;
 				padding-top: 5px;
+				border-bottom: 2px solid #B4D6F7;
 				/*padding: 10px;
 				padding-left: 20px;*/
 			}
@@ -427,6 +428,7 @@
 		</aside>
 
 		<aside class='rightside'>
+			<!-- 오른쪽 사이드 바 -->
 			<div class='rightsideheader'>
 				<a onclick='menu("right");'> 
 					<span aria-hidden='true' class='glyphicon glyphicon-remove' title='메뉴닫기'/> 
@@ -435,7 +437,210 @@
 				<div>LIST</div>
 			</div>
 			<div class='leftsidebody'>
-				<b:section class='rightside' id='rightside'/>
+				<b:section class='rightside' id='rightside'>
+					<b:widget id='CustomSearch1' locked='false' title='このブログを検索' type='CustomSearch' visible='true'>
+						<b:includable id='main'>
+							<!-- only display title if it's non-empty -->
+							<!--
+							<b:if cond='data:title != &quot;&quot;'>
+								<h2 class='title'><data:title/></h2>
+							</b:if>
+							-->
+							<div class='widget-content'>
+								<div expr:id='data:widget.instanceId + &quot;_form&quot;'>
+									<span class='cse-status'><data:loadingMsg/></span>
+								</div>
+							</div>
+							<!-- override gsearch.css -->
+							<style type='text/css'>
+								#uds-searchControl .gs-result .gs-title,
+								#uds-searchControl .gs-result .gs-title *,
+								#uds-searchControl .gsc-results .gsc-trailing-more-results,
+								#uds-searchControl .gsc-results .gsc-trailing-more-results * {
+									color:<data:linkColor/>;
+								}
+
+								#uds-searchControl .gs-result .gs-title a:visited,
+								#uds-searchControl .gs-result .gs-title a:visited * {
+									color:<data:visitedLinkColor/>;
+								}
+
+								#uds-searchControl .gs-relativePublishedDate,
+								#uds-searchControl .gs-publishedDate {
+									color: <data:dateColor/>;
+								}
+
+								#uds-searchControl .gs-result a.gs-visibleUrl,
+								#uds-searchControl .gs-result .gs-visibleUrl {
+									color: <data:urlColor/>;
+								}
+
+								#uds-searchControl .gsc-results {
+									border-color: <data:borderColor/>;
+									background-color: <data:backgroundColor/>;
+								}
+
+								#uds-searchControl .gsc-tabhActive {
+									border-color: <data:borderColor/>;
+									border-top-color: <data:activeBorderColor/>;
+									background-color: <data:backgroundColor/>;
+									color: <data:textColor/>;
+								}
+
+								#uds-searchControl .gsc-tabhInactive {
+									border-color: <data:borderColor/>;
+									background-color: transparent;
+									color: <data:linkColor/>;
+								}
+
+								#uds-searchClearResults {
+									border-color: <data:borderColor/>;
+								}
+
+								#uds-searchClearResults:hover {
+									border-color: <data:activeBorderColor/>;
+								}
+
+								#uds-searchControl .gsc-cursor-page {
+									color: <data:linkColor/>;
+								}
+
+								#uds-searchControl .gsc-cursor-current-page {
+									color: <data:textColor/>;
+								}
+							</style>
+							<b:include name='quickedit'/>
+						</b:includable>
+					</b:widget>
+
+					<b:widget id='Label1' locked='false' title='ラベル' type='Label' visible='true'>
+						<b:includable id='main'>
+							<b:if cond='data:title != &quot;&quot;'>
+								<h2><data:title/></h2>
+							</b:if>
+							<div expr:class='&quot;widget-content &quot; + data:display + &quot;-label-widget-content&quot;'>
+								<b:if cond='data:display == &quot;list&quot;'>
+									<ul>
+										<b:loop values='data:labels' var='label'>
+											<li>
+												<b:if cond='data:blog.url == data:label.url'>
+													<span expr:dir='data:blog.languageDirection'>
+														<data:label.name/>
+													</span>
+												<b:else/>
+													<a expr:dir='data:blog.languageDirection' expr:href='data:label.url'>
+														<data:label.name/>
+													</a>
+												</b:if>
+												<b:if cond='data:showFreqNumbers'>
+													<span dir='ltr'>(<data:label.count/>)</span>
+												</b:if>
+											</li>
+										</b:loop>
+									</ul>
+								<b:else/>
+									<b:loop values='data:labels' var='label'>
+										<span expr:class='&quot;label-size label-size-&quot; + data:label.cssSize'>
+											<b:if cond='data:blog.url == data:label.url'>
+												<span expr:dir='data:blog.languageDirection'>
+													<data:label.name/>
+												</span>
+											<b:else/>
+												<a expr:dir='data:blog.languageDirection' expr:href='data:label.url'>
+													<data:label.name/>
+												</a>
+											</b:if>
+											<b:if cond='data:showFreqNumbers'>
+												<span class='label-count' dir='ltr'>(<data:label.count/>)</span>
+											</b:if>
+										</span>
+									</b:loop>
+								</b:if>
+								<b:include name='quickedit'/>
+							</div>
+						</b:includable>
+					</b:widget>
+					<b:widget id='PopularPosts1' locked='false' title='人気の投稿' type='PopularPosts' visible='true'>
+						<b:includable id='main'>
+							<b:if cond='data:title != &quot;&quot;'>
+								<h2><data:title/></h2>
+							</b:if>
+							<div class='widget-content popular-posts'>
+								<ul>
+									<b:loop values='data:posts' var='post'>
+										<li>
+											<b:if cond='!data:showThumbnails'>
+												<b:if cond='!data:showSnippets'>
+													<!-- (1) No snippet/thumbnail -->
+													<a expr:href='data:post.href'><data:post.title/></a>
+												<b:else/>
+													<!-- (2) Show only snippets -->
+													<div class='item-title'>
+														<a expr:href='data:post.href'><data:post.title/></a>
+													</div>
+													<div class='item-snippet'><data:post.snippet/></div>
+												</b:if>
+											<b:else/>
+												<!-- (3) Show only thumbnails or (4) Snippets and thumbnails. -->
+												<div expr:class='data:showSnippets ? &quot;item-content&quot; : &quot;item-thumbnail-only&quot;'>
+													<b:if cond='data:post.thumbnail'>
+														<div class='item-thumbnail'>
+															<a expr:href='data:post.href' target='_blank'>
+																<img alt='' border='0' expr:src='resizeImage(data:post.thumbnail, 72, &quot;1:1&quot;)'/>
+															</a>
+														</div>
+													</b:if>
+													<div class='item-title'>
+														<a expr:href='data:post.href'><data:post.title/></a>
+													</div>
+													<b:if cond='data:showSnippets'>
+														<div class='item-snippet'>
+															<data:post.snippet/>
+														</div>
+													</b:if>
+												</div>
+												<div style='clear: both;'/>
+											</b:if>
+										</li>
+									</b:loop>
+								</ul>
+								<b:include name='quickedit'/>
+							</div>
+						</b:includable>
+					</b:widget>
+					<b:widget id='FeaturedPost1' locked='false' title='注目の投稿' type='FeaturedPost' visible='true'>
+						<b:includable id='main'>
+							<!-- Only display title if it's non-empty -->
+							<b:if cond='data:title != &quot;&quot;'>
+								<h2 class='title'><data:title/></h2>
+							</b:if>
+							<b:include name='content'/>
+							<b:include name='quickedit'/>
+						</b:includable>
+						<b:includable id='content'>
+							<div class='post-summary'>
+								<b:if cond='data:showPostTitle and data:postTitle != &quot;&quot;'>
+									<h3>
+										<a expr:href='data:postUrl'><data:postTitle/></a>
+									</h3>
+								</b:if>
+								<b:if cond='data:showSnippet and data:postSummary != &quot;&quot;'>
+									<p>
+										<data:postSummary/>
+									</p>
+								</b:if>
+								<b:if cond='data:showFirstImage and data:postFirstImage != &quot;&quot;'>
+									<img class='image' expr:src='data:postFirstImage'/>
+								</b:if>
+							</div>
+							<style type='text/css'>
+								.image {
+									width: 100%;
+								}
+							</style>
+						</b:includable>
+					</b:widget>
+				</b:section>
 			</div>
 		</aside>
 
