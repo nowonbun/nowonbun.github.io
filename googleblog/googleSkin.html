@@ -22,6 +22,10 @@
 				margin: 0px;
 			}
 			/* ***헤더 */
+			header{
+			    position: fixed;
+			    width: 100%;
+			}
 			/* 해더 구역 나누기*/
 			header div.header.section {
 				text-align: center;
@@ -86,6 +90,9 @@
 				/*padding-top:3px;*/
 				padding-top: 7px;
 				padding-bottom: 7px;
+			}
+			section.headerSpace{
+				height:50px;
 			}
 			/* 헤더*** */
 			/* ***사이드 메뉴 */
@@ -221,6 +228,9 @@
 			aside.rightside div.rightsideheader>a>span:nth-of-type(1) {
 				font-size: 25px;
 				padding-right: 5px;
+			}
+			aside.rightside div.item-thumbnail{
+				display:none;
 			}
 			/* 오른쪽 사이드*** */
 
@@ -412,7 +422,7 @@
 			</b:section>
 		</header>
 
-		<section/>
+		<section class='headerSpace'/>
 
 		<aside class='leftside'>
 			<div class='leftsideheader'>
@@ -452,7 +462,7 @@
 								</div>
 							</div>
 							<!-- override gsearch.css -->
-							<style type='text/css'>
+							<!--<style type='text/css'>
 								#uds-searchControl .gs-result .gs-title,
 								#uds-searchControl .gs-result .gs-title *,
 								#uds-searchControl .gsc-results .gsc-trailing-more-results,
@@ -508,8 +518,9 @@
 								#uds-searchControl .gsc-cursor-current-page {
 									color: <data:textColor/>;
 								}
-							</style>
-							<b:include name='quickedit'/>
+							</style>-->
+							<!-- 위젯 편집 버튼 -->
+							<!--<b:include name='quickedit'/>-->
 						</b:includable>
 					</b:widget>
 
@@ -519,7 +530,7 @@
 								<h2><data:title/></h2>
 							</b:if>
 							<div expr:class='&quot;widget-content &quot; + data:display + &quot;-label-widget-content&quot;'>
-								<b:if cond='data:display == &quot;list&quot;'>
+								<!--<b:if cond='data:display == &quot;list&quot;'>
 									<ul>
 										<b:loop values='data:labels' var='label'>
 											<li>
@@ -555,8 +566,27 @@
 											</b:if>
 										</span>
 									</b:loop>
-								</b:if>
-								<b:include name='quickedit'/>
+								</b:if>-->
+								<ul>
+									<b:loop values='data:labels' var='label'>
+										<li>
+											<b:if cond='data:blog.url == data:label.url'>
+												<span expr:dir='data:blog.languageDirection'>
+													<data:label.name/>
+												</span>
+											<b:else/>
+												<a expr:dir='data:blog.languageDirection' expr:href='data:label.url'>
+													<data:label.name/>
+												</a>
+											</b:if>
+											<b:if cond='data:showFreqNumbers'>
+												<span dir='ltr'>(<data:label.count/>)</span>
+											</b:if>
+										</li>
+									</b:loop>
+								</ul>
+								<!-- 위젯 편집 버튼 -->
+								<!--<b:include name='quickedit'/>-->
 							</div>
 						</b:includable>
 					</b:widget>
@@ -644,7 +674,7 @@
 			</div>
 		</aside>
 
-		<section/>
+		<section class='sideBackground'/>
 
 		<article>
 			<!-- ***메인 -->
