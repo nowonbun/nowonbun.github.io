@@ -21,10 +21,14 @@
 			p {
 				margin: 0px;
 			}
+			.widget-item-control {
+				display: none;
+			}
 			/* ***헤더 */
 			header{
 			    position: fixed;
 			    width: 100%;
+			    z-index: 999;
 			}
 			/* 해더 구역 나누기*/
 			header div.header.section {
@@ -73,13 +77,13 @@
 				font-weight: bold;
 			}
 			/* 해더 링크 가운데 설정*/
-			header div.widget.Header>div:nth-of-type(2)>a {
+			header div.widget.Header > div:nth-of-type(2) > a {
 				padding-top: 3px;
 				float: none;
 			}
 			/* 양쪽 링크 가운데 설정*/
-			header div.widget.Header>div:nth-of-type(1)>a, 
-			header div.widget.Header>div:nth-of-type(3)>a {
+			header div.widget.Header > div:nth-of-type(1) > a, 
+			header div.widget.Header > div:nth-of-type(3) > a {
 				font-size: 18px;
 				border: 4px double #000;
 				border-radius: 10px;
@@ -102,7 +106,24 @@
 				top: 0px;
 				background-color: #fff;
 				height: 100%;
-				z-index: 3;
+				z-index: 1001;
+			    overflow: auto;
+			}
+			aside div.widget{
+				padding:10px;
+			}
+			section.sideBackground{
+				background-color:rgba( 255, 255, 255, 0.7);
+				z-index: 1000;
+				width:0px;
+				height:0px;
+				position:absolute;
+				top:0px;
+				left:0px;
+			}
+			section.sideBackground.on{
+				width:100%;
+				height:100%;
 			}
 			/* 사이드 메뉴*** */
 			/* ***왼쪽 사이드 */
@@ -136,7 +157,7 @@
 			aside.leftside div.leftsideheader a {
 				float: right;
 				background: #FFF;
-				border-radius: 10px;
+				/*border-radius: 10px;*/
 				margin-right: 10px;
 				border: 1px solid #000;
 				padding-top: 2px;
@@ -159,7 +180,7 @@
 				font-size: 9px;
 			}
 
-			aside.leftside div.leftsideheader>a>span:nth-of-type(1) {
+			aside.leftside div.leftsideheader > a > span:nth-of-type(1) {
 				font-size: 25px;
 				padding-right: 5px;
 			}
@@ -202,7 +223,7 @@
 			aside.rightside div.rightsideheader a {
 				float: left;
 				background: #FFF;
-				border-radius: 10px;
+				/*border-radius: 10px;*/
 				margin-left: 10px;
 				border: 1px solid #000;
 				padding-top: 2px;
@@ -225,13 +246,142 @@
 				font-size: 9px;
 			}
 
-			aside.rightside div.rightsideheader>a>span:nth-of-type(1) {
+			aside.rightside div.rightsideheader > a > span:nth-of-type(1) {
 				font-size: 25px;
 				padding-right: 5px;
 			}
-			aside.rightside div.item-thumbnail{
+
+			aside.rightside div.item-thumbnail {
 				display:none;
 			}
+
+			aside.rightside fieldset {
+				border: 1px solid silver;
+				padding: 15px;
+				border-radius: 20px;
+			}
+
+			aside.rightside legend {
+				width: initial;
+				border: 0;
+				padding: 0px 20px;
+				margin-bottom: 0px;
+				font-size: 15px;
+				border: 1px dotted;
+			    border-radius: 10px;
+				background-color:#B4D6F7;
+			}
+
+			/* ***오른쪽 사이드 메뉴 라벨 스타일 */
+
+			aside.rightside div.widget.Label fieldset ul,
+			aside.rightside div.widget.PopularPosts fieldset ul {
+				padding:0px;
+				list-style:none;
+			}
+
+			aside.rightside div.widget.Label fieldset ul li ,
+			aside.rightside div.widget.PopularPosts fieldset ul li {
+				background-color: #F2F5F9;
+				border: 1px dotted #D7EAFF;
+			}
+
+			aside.rightside div.widget.Label fieldset ul li a,
+			aside.rightside div.widget.Label fieldset ul li span {
+				text-decoration: none;
+				color: black;
+			    display: block;
+			    padding: 5px 10px;
+			}
+
+			aside.rightside div.widget.Label fieldset ul li a:hover {
+				background-color: #D7EAFF;
+			}
+
+			aside.rightside div.widget.Label fieldset ul li a:before {
+				content: '↘';
+			}
+			aside.rightside div.widget.Label fieldset ul li span {
+				background-color: #C3DFFD;
+			}
+			aside.rightside div.widget.Label fieldset ul li span:before {
+				content: '→';
+			}
+
+			/* 오른쪽 사이드 메뉴 라벨 스타일*** */
+			/* ***오른쪽 사이드 메뉴 인기 포스트 */
+			.PopularPosts .widget-content ul li{
+				padding:0px;
+			}
+
+			aside.rightside div.widget.PopularPosts fieldset ul li div.item-title {
+				padding: 0px;
+				height: 30px;
+			}
+
+			aside.rightside div.widget.PopularPosts fieldset ul li div.item-title:hover {
+				background-color: #D7EAFF;
+			}
+
+			aside.rightside div.widget.PopularPosts fieldset ul li div.item-title a.popularTitle {
+				display:inline-block;
+				text-decoration: none;
+			    padding: 5px 10px;
+				color: black;
+				float: left;
+				width: 80%;
+			}
+
+			aside.rightside div.widget.PopularPosts fieldset ul li div.item-title a.popularDown {
+				display:inline-block;
+				float: left;
+				text-decoration: none;
+				width: 20%;
+				padding: 5px 0px;
+				font-size: 12px;
+				text-align: center;
+			}
+
+			aside.rightside div.widget.PopularPosts fieldset ul li div.item-snippet {
+				display: none;
+				padding-left: 15px;
+				font-size: 12px;
+				clear: both;
+			    background-color: white;
+
+			    padding-top: 2px;
+				white-space: normal;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				line-height: 1.4;
+				height: 5.6em;
+				color: black;
+			}
+
+			aside.rightside div.widget.PopularPosts fieldset ul li div.item-snippet.on {
+				display: block;
+			}
+			/* 오른쪽 사이드 메뉴 인기 포스트*** */
+			/* ***오른쪽 사이드 메뉴 주목 포스트 */
+			aside.rightside div.widget.FeaturedPost fieldset div.post-summary h5 {
+				margin: 0px;
+				font-size: 18px;
+				margin-bottom: 5px;
+			}
+
+			aside.rightside div.widget.FeaturedPost fieldset div.post-summary a {
+				text-decoration: none;
+				color: black;
+			}
+
+			aside.rightside div.widget.FeaturedPost fieldset div.post-summary a:hover {
+				color: #B4D6F7;
+			}
+			aside.rightside div.widget.FeaturedPost fieldset div.post-summary a div {
+				color: black;
+			}
+			/* 오른쪽 사이드 메뉴 주목 포스트*** */
+
 			/* 오른쪽 사이드*** */
 
 			article div.main.section {
@@ -246,26 +396,28 @@
 				padding: 20px;
 			}
 
-			div.post-outer {
+			article div.post-outer {
 				margin-bottom: 20px;
 			}
 
-			fieldset {
+			article fieldset {
 				border: 1px solid silver;
 				padding: 20px;
 				border-radius: 20px;
 			}
 
-			legend {
+			article legend {
 				width: initial;
 				border: 0;
 				margin-left: 20px;
 				padding: 0px 20px;
 				margin-bottom: 0px;
 				font-size: 15px;
+				border: 1px dotted;
+			    border-radius: 10px;
 			}
 
-			fieldset>div.post.hentry.uncustomized-post-template {
+			article fieldset > div.post.hentry.uncustomized-post-template {
 				margin-top: -20px;
 			}
 
@@ -281,7 +433,7 @@
 				border-radius: 10px;
 			}
 			div.commentCount h3,
-			div.commentCount h4{
+			div.commentCount h4 {
 				margin:0px;
 				font-size:14px;
 			}
@@ -292,14 +444,14 @@
 			div.post h4 {
 				font-weight: bold;
 			}
-			div.commentItem{
+			div.commentItem {
 				border: 1px solid silver;
 				margin-left: -45px;
 				margin-top: 10px;
 				padding: 10px 10px 10px 60px;
 				border-radius: 10px;
 			}
-			div.blog-pager{
+			div.blog-pager {
 				overflow:inherit!important;
 			}
 			a.home-link,
@@ -339,17 +491,25 @@
 			div.comments{
 				margin-top: 30px!important;
 			}
+
+			div.footerSpace {
+				/*height: 40px;*/
+			}
+			footer {
+				padding: 10px 10px;
+				background-color: #B4D6F7;
+			}
 			/*******************
 			*      모바일 처리
 			********************/
 			@media screen and (max-width:768px) {
-				header div.widget.Header>div:nth-of-type(2) {
+				header div.widget.Header > div:nth-of-type(2) {
 					font-size: 15px;
 					height: 40px;
 					padding-top: 9px;
 				}
-				header div.widget.Header>div:nth-of-type(1)>a, 
-				header div.widget.Header>div:nth-of-type(3)>a {
+				header div.widget.Header > div:nth-of-type(1) > a, 
+				header div.widget.Header > div:nth-of-type(3) > a {
 					font-size: 12px;
 					width: 50px;
 					padding: 0px;
@@ -376,14 +536,54 @@
 		</style>
 		<script>
 			//<![CDATA[
-			var menu = function(idx){
-				if(idx === 'left'){
+			var menu = function(type){
+				if(type === 'left'){
 					$('aside.leftside').toggleClass('on');
+					sideBack('toggle');
 				}
-				if(idx === 'right'){
+				if(type === 'right'){
 					$('aside.rightside').toggleClass('on');
+					sideBack('toggle');
+				}
+				if(type === 'close'){
+					$('aside.leftside').removeClass('on');
+					$('aside.rightside').removeClass('on');
+					sideBack('close');
 				}
 			}
+			
+			var sideBack = function(type){
+				if(type === 'toggle'){
+					$('section.sideBackground').toggleClass('on');
+				}
+				if(type === 'close'){
+					$('section.sideBackground').removeClass('on');
+				}
+				/*화면 고정처리*/
+				if($('section.sideBackground').hasClass('on')){
+					$('html').css('overflow','hidden');
+					$('html').css('position','fixed');
+					$('body').css('width',$(window).width());
+					$('body').css('height',$(window).height());
+				}else{
+					$('body').css('width','');
+					$('body').css('height','');
+					$('html').css('position','static');
+					$('html').css('overflow','auto');
+				}
+			}
+			$(window).resize(function(){
+				menu('close');
+			});
+
+			$(function(){
+				$(document).on('click','section.sideBackground.on',function(){
+					menu('close');
+				});
+				$(document).on('click','a.popularDown',function (){
+					$(this).parent().parent().children('div.item-snippet').toggleClass('on');
+				});
+			});
 			//]]>
 		</script>
 	</head>
@@ -448,89 +648,53 @@
 			</div>
 			<div class='leftsidebody'>
 				<b:section class='rightside' id='rightside'>
-					<b:widget id='CustomSearch1' locked='false' title='このブログを検索' type='CustomSearch' visible='true'>
+					<b:widget id='Label1' locked='true' title='ラベル' type='Label' visible='true'>
+						<!-- ***라벨 위젯 -->
 						<b:includable id='main'>
-							<!-- only display title if it's non-empty -->
-							<!--
-							<b:if cond='data:title != &quot;&quot;'>
-								<h2 class='title'><data:title/></h2>
-							</b:if>
-							-->
-							<div class='widget-content'>
-								<div expr:id='data:widget.instanceId + &quot;_form&quot;'>
-									<span class='cse-status'><data:loadingMsg/></span>
-								</div>
-							</div>
-							<!-- override gsearch.css -->
-							<!--<style type='text/css'>
-								#uds-searchControl .gs-result .gs-title,
-								#uds-searchControl .gs-result .gs-title *,
-								#uds-searchControl .gsc-results .gsc-trailing-more-results,
-								#uds-searchControl .gsc-results .gsc-trailing-more-results * {
-									color:<data:linkColor/>;
-								}
-
-								#uds-searchControl .gs-result .gs-title a:visited,
-								#uds-searchControl .gs-result .gs-title a:visited * {
-									color:<data:visitedLinkColor/>;
-								}
-
-								#uds-searchControl .gs-relativePublishedDate,
-								#uds-searchControl .gs-publishedDate {
-									color: <data:dateColor/>;
-								}
-
-								#uds-searchControl .gs-result a.gs-visibleUrl,
-								#uds-searchControl .gs-result .gs-visibleUrl {
-									color: <data:urlColor/>;
-								}
-
-								#uds-searchControl .gsc-results {
-									border-color: <data:borderColor/>;
-									background-color: <data:backgroundColor/>;
-								}
-
-								#uds-searchControl .gsc-tabhActive {
-									border-color: <data:borderColor/>;
-									border-top-color: <data:activeBorderColor/>;
-									background-color: <data:backgroundColor/>;
-									color: <data:textColor/>;
-								}
-
-								#uds-searchControl .gsc-tabhInactive {
-									border-color: <data:borderColor/>;
-									background-color: transparent;
-									color: <data:linkColor/>;
-								}
-
-								#uds-searchClearResults {
-									border-color: <data:borderColor/>;
-								}
-
-								#uds-searchClearResults:hover {
-									border-color: <data:activeBorderColor/>;
-								}
-
-								#uds-searchControl .gsc-cursor-page {
-									color: <data:linkColor/>;
-								}
-
-								#uds-searchControl .gsc-cursor-current-page {
-									color: <data:textColor/>;
-								}
-							</style>-->
-							<!-- 위젯 편집 버튼 -->
-							<!--<b:include name='quickedit'/>-->
-						</b:includable>
-					</b:widget>
-
-					<b:widget id='Label1' locked='false' title='ラベル' type='Label' visible='true'>
-						<b:includable id='main'>
-							<b:if cond='data:title != &quot;&quot;'>
-								<h2><data:title/></h2>
-							</b:if>
-							<div expr:class='&quot;widget-content &quot; + data:display + &quot;-label-widget-content&quot;'>
-								<!--<b:if cond='data:display == &quot;list&quot;'>
+							<fieldset>
+								<b:if cond='data:title != &quot;&quot;'>
+									<legend>
+										<data:title/>
+									</legend>
+								</b:if>
+								<div expr:class='&quot;widget-content &quot; + data:display + &quot;-label-widget-content&quot;'>
+									<!--<b:if cond='data:display == &quot;list&quot;'>
+										<ul>
+											<b:loop values='data:labels' var='label'>
+												<li>
+													<b:if cond='data:blog.url == data:label.url'>
+														<span expr:dir='data:blog.languageDirection'>
+															<data:label.name/>
+														</span>
+													<b:else/>
+														<a expr:dir='data:blog.languageDirection' expr:href='data:label.url'>
+															<data:label.name/>
+														</a>
+													</b:if>
+													<b:if cond='data:showFreqNumbers'>
+														<span dir='ltr'>(<data:label.count/>)</span>
+													</b:if>
+												</li>
+											</b:loop>
+										</ul>
+									<b:else/>
+										<b:loop values='data:labels' var='label'>
+											<span expr:class='&quot;label-size label-size-&quot; + data:label.cssSize'>
+												<b:if cond='data:blog.url == data:label.url'>
+													<span expr:dir='data:blog.languageDirection'>
+														<data:label.name/>
+													</span>
+												<b:else/>
+													<a expr:dir='data:blog.languageDirection' expr:href='data:label.url'>
+														<data:label.name/>
+													</a>
+												</b:if>
+												<b:if cond='data:showFreqNumbers'>
+													<span class='label-count' dir='ltr'>(<data:label.count/>)</span>
+												</b:if>
+											</span>
+										</b:loop>
+									</b:if>-->
 									<ul>
 										<b:loop values='data:labels' var='label'>
 											<li>
@@ -549,126 +713,129 @@
 											</li>
 										</b:loop>
 									</ul>
-								<b:else/>
-									<b:loop values='data:labels' var='label'>
-										<span expr:class='&quot;label-size label-size-&quot; + data:label.cssSize'>
-											<b:if cond='data:blog.url == data:label.url'>
-												<span expr:dir='data:blog.languageDirection'>
-													<data:label.name/>
-												</span>
-											<b:else/>
-												<a expr:dir='data:blog.languageDirection' expr:href='data:label.url'>
-													<data:label.name/>
-												</a>
-											</b:if>
-											<b:if cond='data:showFreqNumbers'>
-												<span class='label-count' dir='ltr'>(<data:label.count/>)</span>
-											</b:if>
-										</span>
-									</b:loop>
-								</b:if>-->
-								<ul>
-									<b:loop values='data:labels' var='label'>
-										<li>
-											<b:if cond='data:blog.url == data:label.url'>
-												<span expr:dir='data:blog.languageDirection'>
-													<data:label.name/>
-												</span>
-											<b:else/>
-												<a expr:dir='data:blog.languageDirection' expr:href='data:label.url'>
-													<data:label.name/>
-												</a>
-											</b:if>
-											<b:if cond='data:showFreqNumbers'>
-												<span dir='ltr'>(<data:label.count/>)</span>
-											</b:if>
-										</li>
-									</b:loop>
-								</ul>
-								<!-- 위젯 편집 버튼 -->
-								<!--<b:include name='quickedit'/>-->
-							</div>
+									<!-- 위젯 편집 버튼 -->
+									<!--<b:include name='quickedit'/>-->
+								</div>
+							</fieldset>
 						</b:includable>
+						<!-- 라벨 위젯*** -->
 					</b:widget>
-					<b:widget id='PopularPosts1' locked='false' title='人気の投稿' type='PopularPosts' visible='true'>
+
+					<b:widget id='PopularPosts1' locked='true' title='人気の投稿' type='PopularPosts' visible='true'>
+						<!-- ***인기 포스트 위젯 -->
 						<b:includable id='main'>
-							<b:if cond='data:title != &quot;&quot;'>
-								<h2><data:title/></h2>
-							</b:if>
-							<div class='widget-content popular-posts'>
-								<ul>
-									<b:loop values='data:posts' var='post'>
-										<li>
-											<b:if cond='!data:showThumbnails'>
-												<b:if cond='!data:showSnippets'>
-													<!-- (1) No snippet/thumbnail -->
-													<a expr:href='data:post.href'><data:post.title/></a>
-												<b:else/>
-													<!-- (2) Show only snippets -->
-													<div class='item-title'>
-														<a expr:href='data:post.href'><data:post.title/></a>
-													</div>
-													<div class='item-snippet'><data:post.snippet/></div>
-												</b:if>
-											<b:else/>
-												<!-- (3) Show only thumbnails or (4) Snippets and thumbnails. -->
-												<div expr:class='data:showSnippets ? &quot;item-content&quot; : &quot;item-thumbnail-only&quot;'>
-													<b:if cond='data:post.thumbnail'>
-														<div class='item-thumbnail'>
-															<a expr:href='data:post.href' target='_blank'>
-																<img alt='' border='0' expr:src='resizeImage(data:post.thumbnail, 72, &quot;1:1&quot;)'/>
-															</a>
-														</div>
-													</b:if>
-													<div class='item-title'>
-														<a expr:href='data:post.href'><data:post.title/></a>
-													</div>
-													<b:if cond='data:showSnippets'>
-														<div class='item-snippet'>
-															<data:post.snippet/>
-														</div>
-													</b:if>
+							<fieldset>
+								<b:if cond='data:title != &quot;&quot;'>
+									<legend>
+										<data:title/>
+									</legend>
+								</b:if>
+								<div class='widget-content popular-posts'>
+									<ul>
+										<b:loop values='data:posts' var='post'>
+											<li>
+												<div class='item-title'>
+													<a expr:href='data:post.href' class='popularTitle'>
+														↘ 
+														<data:post.title/>
+													</a>
+													<a href='#' class='popularDown'>[詳細]</a>
 												</div>
-												<div style='clear: both;'/>
-											</b:if>
-										</li>
-									</b:loop>
-								</ul>
-								<b:include name='quickedit'/>
-							</div>
+												<b:if cond='data:showSnippets'>
+													<div class='item-snippet'>
+														<data:post.snippet/>
+													</div>
+												</b:if>
+												<!--
+												<b:if cond='!data:showThumbnails'>
+													<b:if cond='!data:showSnippets'>
+														// (1) No snippet/thumbnail 
+														<a expr:href='data:post.href'><data:post.title/></a>
+													<b:else/>
+														// (2) Show only snippets 
+														<div class='item-title'>
+															<a expr:href='data:post.href'><data:post.title/></a>
+														</div>
+														<div class='item-snippet'><data:post.snippet/></div>
+													</b:if>
+												<b:else/>
+													// (3) Show only thumbnails or (4) Snippets and thumbnails.
+													<div expr:class='data:showSnippets ? &quot;item-content&quot; : &quot;item-thumbnail-only&quot;'>
+														<b:if cond='data:post.thumbnail'>
+															<div class='item-thumbnail'>
+																<a expr:href='data:post.href' target='_blank'>
+																	<img alt='' border='0' expr:src='resizeImage(data:post.thumbnail, 72, &quot;1:1&quot;)'/>
+																</a>
+															</div>
+														</b:if>
+														<div class='item-title'>
+															<a expr:href='data:post.href'><data:post.title/></a>
+														</div>
+														<b:if cond='data:showSnippets'>
+															<div class='item-snippet'>
+																<data:post.snippet/>
+															</div>
+														</b:if>
+													</div>
+													<div style='clear: both;'/>
+												</b:if>-->
+											</li>
+										</b:loop>
+									</ul>
+									<!-- 위젯 편집 버튼 -->
+									<!--<b:include name='quickedit'/>-->
+								</div>
+							</fieldset>
 						</b:includable>
+						<!-- 인기 포스트 위젯*** -->
 					</b:widget>
-					<b:widget id='FeaturedPost1' locked='false' title='注目の投稿' type='FeaturedPost' visible='true'>
+
+					<b:widget id='FeaturedPost1' locked='true' title='注目の投稿' type='FeaturedPost' visible='true'>
+						<!-- ***주목 포스트 위젯 -->
 						<b:includable id='main'>
 							<!-- Only display title if it's non-empty -->
+							<fieldset>
 							<b:if cond='data:title != &quot;&quot;'>
-								<h2 class='title'><data:title/></h2>
+								<legend>
+									<data:title/>
+								</legend>
 							</b:if>
 							<b:include name='content'/>
-							<b:include name='quickedit'/>
+							</fieldset>
+							<!-- 위젯 편집 버튼 -->
+							<!--<b:include name='quickedit'/>-->
 						</b:includable>
 						<b:includable id='content'>
 							<div class='post-summary'>
 								<b:if cond='data:showPostTitle and data:postTitle != &quot;&quot;'>
-									<h3>
-										<a expr:href='data:postUrl'><data:postTitle/></a>
-									</h3>
+									<a expr:href='data:postUrl'>
+										<h5><data:postTitle/></h5>
+										<b:if cond='data:showSnippet and data:postSummary != &quot;&quot;'>
+											<div>
+												<data:postSummary/>
+											</div>
+										</b:if>
+									</a>
+								<b:else />
+									<b:if cond='data:showSnippet and data:postSummary != &quot;&quot;'>
+										<div>
+											<data:postSummary/>
+										</div>
+									</b:if>
 								</b:if>
-								<b:if cond='data:showSnippet and data:postSummary != &quot;&quot;'>
-									<p>
-										<data:postSummary/>
-									</p>
-								</b:if>
+								<!--
 								<b:if cond='data:showFirstImage and data:postFirstImage != &quot;&quot;'>
 									<img class='image' expr:src='data:postFirstImage'/>
-								</b:if>
+								</b:if>-->
 							</div>
+							<!--
 							<style type='text/css'>
 								.image {
 									width: 100%;
 								}
-							</style>
+							</style>-->
 						</b:includable>
+						<!-- 주목 포스트 위젯*** -->
 					</b:widget>
 				</b:section>
 			</div>
@@ -1611,11 +1778,36 @@
 				</b:widget>
 			</b:section>
 		</article>
-	
-		<section/>
+		<script>
+			//<![CDATA[
+			$('article').css('min-height',$(window).height()-90);
+			//]]>
+		</script>
+		<section class='footerSpace' />
 
 		<footer>
-			<b:section class='footer' id='footer'/>
+			<b:section class='footer' id='footer'>
+				<b:widget id='Attribution1' locked='true' title='' type='Attribution' visible='true'>
+					<!-- ***저작권 위젯 -->
+					<b:includable id='main'>
+						<!--
+						<b:if cond='data:feedbackSurveyLink'>
+							<div class='mobile-survey-link' style='text-align: center;'>
+								<data:feedbackSurveyLink/>
+							</div>
+						</b:if>
+						-->
+						<div class='widget-content' style='text-align: center;'>
+							<b:if cond='data:attribution != &quot;&quot;'>
+								<data:attribution/>
+							</b:if>
+						</div>
+						<!-- 위젯 편집 버튼 -->
+						<!--<b:include name='quickedit'/>-->
+					</b:includable>
+				<!-- 저작권 위젯*** -->
+				</b:widget>
+			</b:section>
 		</footer>
 		<script charset='utf-8' src='//nowonbun.github.io/googleblog/js/nowonbun.js' type='text/javascript'/>
 	</body>
