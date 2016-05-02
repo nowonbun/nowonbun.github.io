@@ -10,7 +10,6 @@
 		<script src='//code.jquery.com/jquery-1.12.1.min.js'/>
 		<script src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'/>
 		<b:skin>
-
 		</b:skin>
 		<style>
 			/*<![CDATA[*/
@@ -634,7 +633,189 @@
 				</a>
 			</div>
 			<div class='leftsidebody'>
-				<b:section class='leftside' id='leftside'/>
+				<b:section class='leftside' id='leftside'>
+					<b:widget id='Profile1' locked='false' title='自己紹介' type='Profile' visible='true'>
+						<b:includable id='main'>
+							<b:if cond='data:title != &quot;&quot;'>
+								<h2><data:title/></h2>
+							</b:if>
+							<div class='widget-content'>
+								<b:if cond='data:team'> <!-- team blog profile -->
+									<ul>
+										<b:loop values='data:authors' var='i'>
+											<li>
+												<a class='profile-name-link g-profile' expr:href='data:i.userUrl' expr:style='&quot;background-image: url(&quot; + data:i.profileLogo + &quot;);&quot;'><data:i.display-name/></a>
+											</li>
+										</b:loop>
+									</ul>
+								<b:else/> <!-- normal blog profile -->
+									<b:if cond='data:photo.url != &quot;&quot;'>
+										<a expr:href='data:userUrl'>
+											<img class='profile-img' expr:alt='data:photo.alt' expr:height='data:photo.height' expr:src='data:photo.url' expr:width='data:photo.width'/>
+										</a>
+									</b:if>
+									<dl class='profile-datablock'>
+										<dt class='profile-data'>
+											<a class='profile-name-link g-profile' expr:href='data:userUrl' expr:style='&quot;background-image: url(&quot; + data:profileLogo + &quot;);&quot;' rel='author'>
+												<data:displayname/>
+											</a>
+											<b:if cond='data:hasgoogleprofile'>
+												<br/>
+												<div class='g-follow' data-annotation='bubble' data-height='20' expr:data-href='data:userUrl'/>
+											</b:if>
+										</dt>
+										<b:if cond='data:showlocation'>
+											<dd class='profile-data'>
+												<data:location/>
+											</dd>
+										</b:if>
+										<b:if cond='data:aboutme != &quot;&quot;'>
+											<dd class='profile-textblock'>
+												<data:aboutme/>
+											</dd>
+										</b:if>
+									</dl>
+									<a class='profile-link' expr:href='data:userUrl' rel='author'>
+										<data:viewProfileMsg/>
+									</a>
+								</b:if>
+
+								<b:include name='quickedit'/>
+							</div>
+						</b:includable>
+					</b:widget>
+					
+					<b:widget id='PlusFollowers1' locked='false' title='Google+ Followers' type='PlusFollowers' visible='true'>
+						<b:includable id='main'>
+							<b:if cond='data:title != &quot;&quot;'>
+								<h2 class='title'>
+									<data:title/>
+								</h2>
+							</b:if>
+							<div class='widget-content'>
+								<b:if cond='data:profileUrl != &quot;&quot;'>
+									<div class='g-plus' data-action='followers' data-source='blogger:blog:followers' expr:data-height='data:height' expr:data-href='data:profileUrl' expr:data-theme='data:theme' expr:data-width='data:width'/>
+									<script type='text/javascript'>
+										window.___gcfg = {&#39;lang&#39;: &#39;<data:language/>&#39;};
+									</script>
+								</b:if>
+							</div>
+						</b:includable>
+					</b:widget>
+
+					<b:widget id='PlusOne1' locked='false' title='+1 Button' type='PlusOne' visible='true'>
+						<b:includable id='main'>
+							<div class='widget-content'>
+								<g:plusone expr:annotation='data:annotation' expr:href='data:blog.homepageUrl.canonical.http' expr:size='data:size' source='blogger:blog:plusone' width='250'/>
+								<script type='text/javascript'>
+									window.___gcfg = {&quot;lang&quot;: &quot;<data:language/>&quot;};
+								</script>
+							</div>
+						</b:includable>
+					</b:widget>
+
+					<b:widget id='Translate1' locked='false' title='Translate' type='Translate' version='1' visible='true'>
+						<b:includable id='main'>
+							<b:if cond='data:title != &quot;&quot;'>
+								<h2 class='title'><data:title/></h2>
+							</b:if>
+							<div id='google_translate_element'/>
+							<script>
+								function googleTranslateElementInit() {
+								  new google.translate.TranslateElement({
+									pageLanguage: &#39;<data:pageLanguage/>&#39;,
+									autoDisplay: &#39;true&#39;,
+									layout: google.translate.TranslateElement.InlineLayout.<data:layout/>
+								  }, &#39;google_translate_element&#39;);
+								}
+							</script>
+							<script src='//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'/>
+							<b:include name='quickedit'/>
+						</b:includable>
+					</b:widget>
+					
+
+					<b:widget id='BlogArchive1' locked='false' title='ブログ アーカイブ' type='BlogArchive' visible='true'>
+						<b:includable id='main'>
+							<b:if cond='data:title != &quot;&quot;'>
+								<h2>
+									<data:title/>
+								</h2>
+							</b:if>
+							<div class='widget-content'>
+								<div id='ArchiveList'>
+									<div expr:id='data:widget.instanceId + &quot;_ArchiveList&quot;'>
+										<b:include cond='data:style == &quot;HIERARCHY&quot;' data='data' name='interval'/>
+										<b:include cond='data:style == &quot;FLAT&quot;' data='data' name='flat'/>
+										<b:include cond='data:style == &quot;MENU&quot;' data='data' name='menu'/>
+									</div>
+								</div>
+								<b:include name='quickedit'/>
+							</div>
+						</b:includable>
+						
+						<b:includable id='flat' var='data'>
+							<ul class='flat'>
+								<b:loop values='data:data' var='i'>
+									<li class='archivedate'>
+										<a expr:href='data:i.url'><data:i.name/></a> (<data:i.post-count/>)
+									</li>
+								</b:loop>
+							</ul>
+						</b:includable>
+
+						<b:includable id='interval' var='intervalData'>
+							<b:loop values='data:intervalData' var='interval'>
+								<ul class='hierarchy'>
+									<li expr:class='&quot;archivedate &quot; + data:interval.expclass'>
+										<b:include cond='data:interval.toggleId' data='interval' name='toggle'/>
+										<a class='post-count-link' expr:href='data:interval.url'>
+											<data:interval.name/>
+										</a>
+										<span class='post-count' dir='ltr'>(<data:interval.post-count/>)</span>
+										<b:include cond='data:interval.data' data='interval.data' name='interval'/>
+										<b:include cond='data:interval.posts' data='interval.posts' name='posts'/>
+									</li>
+								</ul>
+							</b:loop>
+						</b:includable>
+
+						<b:includable id='menu' var='data'>
+							<select expr:id='data:widget.instanceId + &quot;_ArchiveMenu&quot;'>
+								<option value=''>
+									<data:title/>
+								</option>
+								<b:loop values='data:data' var='i'>
+									<option expr:value='data:i.url'><data:i.name/> (<data:i.post-count/>)</option>
+								</b:loop>
+							</select>
+						</b:includable>
+
+						<b:includable id='posts' var='posts'>
+							<ul class='posts'>
+								<b:loop values='data:posts' var='post'>
+									<li>
+										<a expr:href='data:post.url'><data:post.title/></a>
+									</li>
+								</b:loop>
+							</ul>
+						</b:includable>
+
+						<b:includable id='toggle' var='interval'>
+							<a class='toggle' href='javascript:void(0)'>
+								<span expr:class='&quot;zippy&quot; + (data:interval.expclass == &quot;expanded&quot; ? &quot; toggle-open&quot; : &quot;&quot;)'>
+									<b:if cond='data:interval.expclass == &quot;expanded&quot;'>
+										&#9660;&#160;
+									<b:elseif cond='data:blog.languageDirection == &quot;rtl&quot;'/>
+										&#9668;&#160;
+									<b:else/>
+										&#9658;&#160;
+									</b:if>
+								</span>
+							</a>
+						</b:includable>
+					</b:widget>
+				</b:section>
 			</div>
 		</aside>
 
