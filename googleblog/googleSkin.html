@@ -108,9 +108,11 @@
 				z-index: 1001;
 			    overflow: auto;
 			}
+
 			aside div.widget{
 				padding:10px;
 			}
+
 			section.sideBackground{
 				background-color:rgba( 255, 255, 255, 0.7);
 				z-index: 1000;
@@ -120,9 +122,27 @@
 				top:0px;
 				left:0px;
 			}
+
 			section.sideBackground.on{
 				width:100%;
 				height:100%;
+			}
+
+			aside fieldset {
+				border: 1px solid silver;
+				padding: 15px;
+				border-radius: 20px;
+			}
+
+			aside legend {
+				width: initial;
+				border: 0;
+				padding: 0px 20px;
+				margin-bottom: 0px;
+				font-size: 15px;
+				border: 1px dotted;
+			    border-radius: 10px;
+				background-color:#B4D6F7;
 			}
 			/* 사이드 메뉴*** */
 			/* ***왼쪽 사이드 */
@@ -143,8 +163,9 @@
 				height: 50px;
 				font-size: 25px;
 				padding-top: 5px;
-				/*padding: 10px;
-				padding-left: 20px;*/
+			    border-bottom: 2px solid #B4D6F7;
+				/*padding: 10px;*/
+				/*padding-left: 20px;*/
 			}
 
 			aside.leftside div.leftsideheader div {
@@ -185,10 +206,20 @@
 			}
 
 			aside.leftside div.leftsidebody {
-				height: 80%;
-				overflow-y: auto;
-				overflow-x: hidden;
+				/*height: 80%;*/
+				/*overflow-y: auto;*/
+				/*overflow-x: hidden;*/
 			}
+			aside.leftside a.profile-link{
+				text-decoration: none;
+				text-align: center;
+				display: block;
+			}
+
+			aside.leftside ul.hierarchy a{
+				text-decoration: none;
+			}
+
 			/* 왼쪽 사이드*** */
 			/* ***오른쪽 사이드 */
 			aside.rightside {
@@ -254,22 +285,7 @@
 				display:none;
 			}
 
-			aside.rightside fieldset {
-				border: 1px solid silver;
-				padding: 15px;
-				border-radius: 20px;
-			}
-
-			aside.rightside legend {
-				width: initial;
-				border: 0;
-				padding: 0px 20px;
-				margin-bottom: 0px;
-				font-size: 15px;
-				border: 1px dotted;
-			    border-radius: 10px;
-				background-color:#B4D6F7;
-			}
+			
 
 			/* ***오른쪽 사이드 메뉴 라벨 스타일 */
 
@@ -537,13 +553,21 @@
 		<script>
 			//<![CDATA[
 			var menu = function(type){
-				if(type === 'left'){
-					$('aside.leftside').toggleClass('on');
-					sideBack('toggle');
-				}
-				if(type === 'right'){
-					$('aside.rightside').toggleClass('on');
-					sideBack('toggle');
+				if(isMobile()){
+					if(type === 'left'){
+						$('aside.leftside').toggleClass('on');
+						sideBack('toggle');
+					}
+					if(type === 'right'){
+						$('aside.rightside').toggleClass('on');
+						sideBack('toggle');
+					}
+				}else{
+					if(type === 'left' || type === 'right'){
+						$('aside.leftside').toggleClass('on');
+						$('aside.rightside').toggleClass('on');
+						sideBack('toggle');
+					}
 				}
 				if(type === 'close'){
 					$('aside.leftside').removeClass('on');
@@ -572,6 +596,14 @@
 					$('html').css('overflow','auto');
 				}
 			}
+
+			var isMobile = function(){
+				if($(window).width() < 768){
+					return true;
+				}
+				return false;
+			}
+
 			$(window).resize(function(){
 				menu('close');
 			});
@@ -634,21 +666,59 @@
 			</div>
 			<div class='leftsidebody'>
 				<b:section class='leftside' id='leftside'>
-					<b:widget id='Profile1' locked='false' title='自己紹介' type='Profile' visible='true'>
+					<b:widget id='Profile1' locked='false' title='Profile' type='Profile' visible='true'>
+						<!-- ***프로필 위젯 -->
 						<b:includable id='main'>
-							<b:if cond='data:title != &quot;&quot;'>
-								<h2><data:title/></h2>
-							</b:if>
-							<div class='widget-content'>
-								<b:if cond='data:team'> <!-- team blog profile -->
-									<ul>
-										<b:loop values='data:authors' var='i'>
-											<li>
-												<a class='profile-name-link g-profile' expr:href='data:i.userUrl' expr:style='&quot;background-image: url(&quot; + data:i.profileLogo + &quot;);&quot;'><data:i.display-name/></a>
-											</li>
-										</b:loop>
-									</ul>
-								<b:else/> <!-- normal blog profile -->
+							<fieldset>
+								<b:if cond='data:title != &quot;&quot;'>
+									<legend>
+										<data:title/>
+									</legend>
+								</b:if>
+								<div class='widget-content'>
+									<!--
+									// team blog profile 
+									<b:if cond='data:team'> 
+										<ul>
+											<b:loop values='data:authors' var='i'>
+												<li>
+													<a class='profile-name-link g-profile' expr:href='data:i.userUrl' expr:style='&quot;background-image: url(&quot; + data:i.profileLogo + &quot;);&quot;'><data:i.display-name/></a>
+												</li>
+											</b:loop>
+										</ul>
+									<b:else/> 
+									//normal blog profile 
+										<b:if cond='data:photo.url != &quot;&quot;'>
+											<a expr:href='data:userUrl'>
+												<img class='profile-img' expr:alt='data:photo.alt' expr:height='data:photo.height' expr:src='data:photo.url' expr:width='data:photo.width'/>
+											</a>
+										</b:if>
+										<dl class='profile-datablock'>
+											<dt class='profile-data'>
+												<a class='profile-name-link g-profile' expr:href='data:userUrl' expr:style='&quot;background-image: url(&quot; + data:profileLogo + &quot;);&quot;' rel='author'>
+													<data:displayname/>
+												</a>
+												<b:if cond='data:hasgoogleprofile'>
+													<br/>
+													<div class='g-follow' data-annotation='bubble' data-height='20' expr:data-href='data:userUrl'/>
+												</b:if>
+											</dt>
+											<b:if cond='data:showlocation'>
+												<dd class='profile-data'>
+													<data:location/>
+												</dd>
+											</b:if>
+											<b:if cond='data:aboutme != &quot;&quot;'>
+												<dd class='profile-textblock'>
+													<data:aboutme/>
+												</dd>
+											</b:if>
+										</dl>
+										<a class='profile-link' expr:href='data:userUrl' rel='author'>
+											<data:viewProfileMsg/>
+										</a>
+									</b:if>
+									-->
 									<b:if cond='data:photo.url != &quot;&quot;'>
 										<a expr:href='data:userUrl'>
 											<img class='profile-img' expr:alt='data:photo.alt' expr:height='data:photo.height' expr:src='data:photo.url' expr:width='data:photo.width'/>
@@ -675,85 +745,106 @@
 											</dd>
 										</b:if>
 									</dl>
-									<a class='profile-link' expr:href='data:userUrl' rel='author'>
-										<data:viewProfileMsg/>
+									<a class='profile-link' expr:href='data:userUrl' rel='author' target='_blank'>
+										<!--<data:viewProfileMsg/>-->
+										[詳細]
 									</a>
-								</b:if>
-
-								<b:include name='quickedit'/>
-							</div>
+									<!-- 위젯 편집 버튼 -->
+									<!--<b:include name='quickedit'/>-->
+								</div>
+							</fieldset>
 						</b:includable>
+						<!-- 프로필 위젯*** -->
 					</b:widget>
 					
-					<b:widget id='PlusFollowers1' locked='false' title='Google+ Followers' type='PlusFollowers' visible='true'>
-						<b:includable id='main'>
-							<b:if cond='data:title != &quot;&quot;'>
-								<h2 class='title'>
-									<data:title/>
-								</h2>
-							</b:if>
-							<div class='widget-content'>
-								<b:if cond='data:profileUrl != &quot;&quot;'>
-									<div class='g-plus' data-action='followers' data-source='blogger:blog:followers' expr:data-height='data:height' expr:data-href='data:profileUrl' expr:data-theme='data:theme' expr:data-width='data:width'/>
-									<script type='text/javascript'>
-										window.___gcfg = {&#39;lang&#39;: &#39;<data:language/>&#39;};
-									</script>
-								</b:if>
-							</div>
-						</b:includable>
-					</b:widget>
-
 					<b:widget id='PlusOne1' locked='false' title='+1 Button' type='PlusOne' visible='true'>
+						<!-- ***플러스 +1-->
 						<b:includable id='main'>
-							<div class='widget-content'>
-								<g:plusone expr:annotation='data:annotation' expr:href='data:blog.homepageUrl.canonical.http' expr:size='data:size' source='blogger:blog:plusone' width='250'/>
-								<script type='text/javascript'>
-									window.___gcfg = {&quot;lang&quot;: &quot;<data:language/>&quot;};
-								</script>
-							</div>
+							<fieldset>
+								<legend>
+									Google Button +1
+								</legend>
+								<div class='widget-content'>
+									<g:plusone expr:annotation='data:annotation' expr:href='data:blog.homepageUrl.canonical.http' expr:size='data:size' source='blogger:blog:plusone' width='250'/>
+									<script type='text/javascript'>
+										window.___gcfg = {&quot;lang&quot;: &quot;<data:language/>&quot;};
+									</script>
+								</div>
+							</fieldset>
 						</b:includable>
+						<!-- 플러스 +1***-->
 					</b:widget>
 
 					<b:widget id='Translate1' locked='false' title='Translate' type='Translate' version='1' visible='true'>
+						<!-- ***번역 -->
 						<b:includable id='main'>
-							<b:if cond='data:title != &quot;&quot;'>
-								<h2 class='title'><data:title/></h2>
-							</b:if>
-							<div id='google_translate_element'/>
-							<script>
-								function googleTranslateElementInit() {
-								  new google.translate.TranslateElement({
-									pageLanguage: &#39;<data:pageLanguage/>&#39;,
-									autoDisplay: &#39;true&#39;,
-									layout: google.translate.TranslateElement.InlineLayout.<data:layout/>
-								  }, &#39;google_translate_element&#39;);
-								}
-							</script>
-							<script src='//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'/>
-							<b:include name='quickedit'/>
+							<fieldset>
+								<b:if cond='data:title != &quot;&quot;'>
+									<legend>
+										<data:title/>
+									</legend>
+								</b:if>
+								<div id='google_translate_element'/>
+								<script>
+									function googleTranslateElementInit() {
+									  new google.translate.TranslateElement({
+										pageLanguage: &#39;<data:pageLanguage/>&#39;,
+										autoDisplay: &#39;true&#39;,
+										layout: google.translate.TranslateElement.InlineLayout.<data:layout/>
+									  }, &#39;google_translate_element&#39;);
+									}
+								</script>
+								<script src='//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'/>
+								<!-- 위젯 편집 버튼 -->
+								<!--<b:include name='quickedit'/>-->
+							</fieldset>
 						</b:includable>
+						<!-- 번역*** -->
 					</b:widget>
 					
 
 					<b:widget id='BlogArchive1' locked='false' title='ブログ アーカイブ' type='BlogArchive' visible='true'>
+						<!-- ***블로그 아카이브 -->
 						<b:includable id='main'>
-							<b:if cond='data:title != &quot;&quot;'>
-								<h2>
-									<data:title/>
-								</h2>
-							</b:if>
-							<div class='widget-content'>
-								<div id='ArchiveList'>
-									<div expr:id='data:widget.instanceId + &quot;_ArchiveList&quot;'>
-										<b:include cond='data:style == &quot;HIERARCHY&quot;' data='data' name='interval'/>
-										<b:include cond='data:style == &quot;FLAT&quot;' data='data' name='flat'/>
-										<b:include cond='data:style == &quot;MENU&quot;' data='data' name='menu'/>
+							<fieldset>
+								<b:if cond='data:title != &quot;&quot;'>
+									<legend>
+										<data:title/>
+									</legend>
+								</b:if>
+								<div class='widget-content'>
+									<div id='ArchiveList'>
+										<div expr:id='data:widget.instanceId + &quot;_ArchiveList&quot;'>
+											<b:include data='data' name='interval'/>
+											<!--<b:include cond='data:style == &quot;HIERARCHY&quot;' data='data' name='interval'/>
+											<b:include cond='data:style == &quot;FLAT&quot;' data='data' name='flat'/>
+											<b:include cond='data:style == &quot;MENU&quot;' data='data' name='menu'/>-->
+										</div>
 									</div>
+									<!-- 위젯 편집 버튼 -->
+									<!--<b:include name='quickedit'/>-->
 								</div>
-								<b:include name='quickedit'/>
-							</div>
+							</fieldset>
 						</b:includable>
 						
+						<b:includable id='interval' var='intervalData'>
+							<b:loop values='data:intervalData' var='interval'>
+								<ul class='hierarchy'>
+									<li expr:class='&quot;archivedate &quot; + data:interval.expclass'>
+										<b:include cond='data:interval.toggleId' data='interval' name='toggle'/>
+										<a class='post-count-link' expr:href='data:interval.url'>
+											<data:interval.name/>
+											<span class='post-count' dir='ltr'>(<data:interval.post-count/>)</span>
+										</a>
+										<!--<span class='post-count' dir='ltr'>(<data:interval.post-count/>)</span>-->
+										<b:include cond='data:interval.data' data='interval.data' name='interval'/>
+										<b:include cond='data:interval.posts' data='interval.posts' name='posts'/>
+									</li>
+								</ul>
+							</b:loop>
+						</b:includable>
+
+						<!--
 						<b:includable id='flat' var='data'>
 							<ul class='flat'>
 								<b:loop values='data:data' var='i'>
@@ -762,24 +853,9 @@
 									</li>
 								</b:loop>
 							</ul>
-						</b:includable>
-
-						<b:includable id='interval' var='intervalData'>
-							<b:loop values='data:intervalData' var='interval'>
-								<ul class='hierarchy'>
-									<li expr:class='&quot;archivedate &quot; + data:interval.expclass'>
-										<b:include cond='data:interval.toggleId' data='interval' name='toggle'/>
-										<a class='post-count-link' expr:href='data:interval.url'>
-											<data:interval.name/>
-										</a>
-										<span class='post-count' dir='ltr'>(<data:interval.post-count/>)</span>
-										<b:include cond='data:interval.data' data='interval.data' name='interval'/>
-										<b:include cond='data:interval.posts' data='interval.posts' name='posts'/>
-									</li>
-								</ul>
-							</b:loop>
-						</b:includable>
-
+						</b:includable>-->
+						
+						<!--
 						<b:includable id='menu' var='data'>
 							<select expr:id='data:widget.instanceId + &quot;_ArchiveMenu&quot;'>
 								<option value=''>
@@ -789,7 +865,7 @@
 									<option expr:value='data:i.url'><data:i.name/> (<data:i.post-count/>)</option>
 								</b:loop>
 							</select>
-						</b:includable>
+						</b:includable>-->
 
 						<b:includable id='posts' var='posts'>
 							<ul class='posts'>
@@ -814,6 +890,7 @@
 								</span>
 							</a>
 						</b:includable>
+						<!-- 블로그 아카이브*** -->
 					</b:widget>
 				</b:section>
 			</div>
@@ -1120,7 +1197,7 @@
 									height: 5.6em;
 									color:black;
 								}
-								img:not(.firstImage){
+								img:not(.firstImage):not(.profile-img):not(a.goog-logo-link>img){
 									display:none;
 								}
 								img.firstImage{
