@@ -539,6 +539,21 @@
 				background-color: #B4D6F7;
 				font-size: 10px;
 			}
+			/*****************************
+			* IE버그
+			******************************/
+			a.titlelink,
+			div.post-body.entry-content,
+			div.post-footer{
+				text-align:left;
+			}
+			/*****************************
+			* 리스트버그
+			******************************/
+			a.titlelink{
+				text-decoration:none;
+				color:black;
+			}
 			/*******************
 			*      모바일 처리
 			********************/
@@ -1204,10 +1219,6 @@
 								hr {
 									display: none;
 								}
-								a.titlelink{
-									text-decoration:none;
-									color:black;
-								}
 								a.titlelink:hover{
 									color:#B4D6F7;
 								}
@@ -1227,6 +1238,7 @@
 								img.firstImage{
 									height:5.6em;
 									float:right;
+									border:2px solid black;
 								}
 								/*]]>*/
 							</style>
@@ -1261,9 +1273,7 @@
 							<a expr:name='data:post.id'/>
 							<b:if cond='data:post.link or (data:post.url and data:blog.url != data:post.url)'>
 								<!-- 리스트 -->
-								<a class='titlelink' expr:href='data:post.link ? data:post.link : data:post.url'>
-									<b:include data='post' name='post_body'/>
-								</a>
+								<b:include data='post' name='post_body'/>
 							<b:else/>
 								<!-- 일반 포스트 -->
 								<b:include data='post' name='post_body'/>
@@ -1412,16 +1422,21 @@
 					<b:includable id='post_body' var='post'>
 						<!-- ***본문 타이틀 -->
 						<b:if cond='data:post.title'>
-							<h3 class='post-title entry-title' itemprop='name'>
-								<data:post.title/>
-							</h3>
+							<a class='titlelink' expr:href='data:post.link ? data:post.link : data:post.url'>
+								<h3 class='post-title entry-title' itemprop='name'>
+									<data:post.title/>
+								</h3>
+							</a>
 						</b:if>
 						<!-- 본문 타이틀*** -->
 						<hr/>
 						<!-- ***본문 내용 -->
-						<div class='post-body entry-content' expr:id='&quot;post-body-&quot; + data:post.id' expr:itemprop='(data:blog.metaDescription ? &quot;&quot; : &quot;description &quot;) + &quot;articleBody&quot;'>
-							<b:if cond='data:post.firstImageUrl'>
-								<img class='firstImage' expr:src='data:post.firstImageUrl'/>
+						<!--<div class='post-body entry-content' expr:id='&quot;post-body-&quot; + data:post.id' expr:itemprop='(data:blog.metaDescription ? &quot;&quot; : &quot;description &quot;) + &quot;articleBody&quot;'>-->
+						<div class='post-body entry-content'>
+							<b:if cond='data:blog.pageType == &quot;index&quot;'>
+								<b:if cond='data:post.firstImageUrl'>
+									<img class='firstImage' expr:src='data:post.firstImageUrl'/>
+								</b:if>
 							</b:if>
 							<data:post.body/>
 						</div>
