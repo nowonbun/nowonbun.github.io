@@ -579,6 +579,17 @@
 				text-decoration:none;
 				color:black;
 			}
+			/******************************
+			* 본문 타이틀 처리
+			*******************************/
+			div.post-title.entry-title{
+				border:1px solid silver;
+			    background-color: rgba(192, 192, 192, 0.38);
+				padding:10px;
+				font-weight: bold;
+				font-size: 24px;
+				margin: 20px 0px;
+			}
 			/*******************
 			*      모바일 처리
 			********************/
@@ -1256,6 +1267,7 @@
 									line-height: 1.4;
 									height: 5.6em;
 									color:black;
+									padding: 0px 10px;
 								}
 								img:not(.firstImage):not(.profile-img):not(a.goog-logo-link>img){
 									display:none;
@@ -1448,14 +1460,20 @@
 					<b:includable id='post_body' var='post'>
 						<!-- ***본문 타이틀 -->
 						<b:if cond='data:post.title'>
-							<a class='titlelink' expr:href='data:post.link ? data:post.link : data:post.url'>
-								<h3 class='post-title entry-title' itemprop='name'>
+							<b:if cond='data:blog.pageType == &quot;item&quot;'>
+								<div class='post-title entry-title' itemprop='name'>
 									<data:post.title/>
-								</h3>
-							</a>
+								</div>
+							<b:else />
+								<a class='titlelink' expr:href='data:post.link ? data:post.link : data:post.url'>
+									<h3 class='post-title entry-title' itemprop='name'>
+										<data:post.title/>
+									</h3>
+								</a>
+							</b:if>
 						</b:if>
 						<!-- 본문 타이틀*** -->
-						<hr/>
+						<!--<hr/>-->
 						<!-- ***본문 내용 -->
 						<!--<div class='post-body entry-content' expr:id='&quot;post-body-&quot; + data:post.id' expr:itemprop='(data:blog.metaDescription ? &quot;&quot; : &quot;description &quot;) + &quot;articleBody&quot;'>-->
 						<div class='post-body entry-content'>
