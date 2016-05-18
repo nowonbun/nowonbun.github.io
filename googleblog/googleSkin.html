@@ -2,8 +2,11 @@
 <!DOCTYPE html>
 <html xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
 	<head>
-		<title>明月のプログラム</title>
+		<b:include data='blog' name='all-head-content'/>
+		<title><data:blog.pageTitle/></title>
 		<meta charset='utf-8'/>
+		<meta content='!' name='fragment'/>
+	    <meta content='dynamic' name='nowonbunTemplate'/>
 		<meta content='IE=edge' http-equiv='X-UA-Compatible'/>
 		<meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no' name='viewport'/>
 		<meta name="Author" content="明月" />
@@ -578,6 +581,15 @@
 			a.titlelink{
 				text-decoration:none;
 				color:black;
+			}
+			/*****************************
+			* 특정 강조 제목
+			******************************/
+			p > b{
+				border:1px solid silver;
+				display:block;
+				padding:10px
+				font-size:20px;
 			}
 			/******************************
 			* 본문 타이틀 처리
