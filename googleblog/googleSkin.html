@@ -486,6 +486,7 @@
 
 			article fieldset > div.post.hentry.uncustomized-post-template {
 				margin-top: -20px;
+				padding-top:20px;
 			}
 
 			div.status-msg {
@@ -562,6 +563,10 @@
 			div.footerSpace {
 				/*height: 40px;*/
 			}
+			div.firstImageBox{
+				display: inline-block;
+			    float: right;
+			}
 			footer {
 				padding: 10px 10px;
 				background-color: #B4D6F7;
@@ -574,6 +579,7 @@
 			div.post-body.entry-content,
 			div.post-footer{
 				text-align:left;
+				clear:left;
 			}
 			/*****************************
 			* 리스트버그
@@ -581,6 +587,8 @@
 			a.titlelink{
 				text-decoration:none;
 				color:black;
+				border: 1px dotted #CAC7C7;
+			    padding: 10px;
 			}
 			/*****************************
 			* 특정 강조 제목
@@ -592,6 +600,11 @@
 				font-size:20px;
 				background:#f5f5f5;
 			}
+			aside.rightside div.rightsidebody a.popularTitle{
+			    text-overflow: ellipsis;
+				overflow: hidden;
+				white-space: nowrap;
+			}
 			/******************************
 			* 본문 타이틀 처리
 			*******************************/
@@ -602,6 +615,8 @@
 				font-weight: bold;
 				font-size: 24px;
 				margin: 20px 0px;
+				/*IE버그 처리*/
+				text-align:left;
 			}
 			/*******************
 			*      모바일 처리
@@ -627,7 +642,7 @@
 				}
 				div.post h3,
 				div.post h4 {
-					font-size:18px;
+					font-size:16px;
 				    font-weight: bold;
 				}
 			}
@@ -635,6 +650,11 @@
 			*    브라우저 처리
 			********************/
 			@media screen and (min-width:768px) {
+				div.post h3,
+				div.post h4 {
+					font-size:24px;
+				    font-weight: bold;
+				}
 			}
 			/*]]>*/
 		</style>
@@ -993,7 +1013,7 @@
 				</a>
 				<div>LIST</div>
 			</div>
-			<div class='leftsidebody'>
+			<div class='rightsidebody'>
 				<b:section class='rightside' id='rightside'>
 					<b:widget id='Label1' locked='true' title='ラベル' type='Label' visible='true'>
 						<!-- ***라벨 위젯 -->
@@ -1268,10 +1288,16 @@
 								hr {
 									display: none;
 								}
+								a.titlelink{
+									height: 100px;
+									font-size: 40px;
+								    float: left;
+									display: inline-block;
+								}
 								a.titlelink:hover{
 									color:#B4D6F7;
 								}
-								div.post-body.entry-content{
+								/*div.post-body.entry-content{
 									display: inline-block;
 									width: 100%;
 									white-space: normal;
@@ -1280,14 +1306,22 @@
 									line-height: 1.4;
 									height: 5.6em;
 									color:black;
-								}
+								}*/
 								img:not(.firstImage):not(.profile-img):not(a.goog-logo-link>img){
 									display:none;
 								}
 								img.firstImage{
-									height:5.6em;
+									/*height:5.6em;*/
 									float:right;
+									max-height: 100px;
+									max-width:100px;
 									border:2px solid black;
+									/*border:2px solid black;*/
+								}
+								@media screen and (max-width:768px) {
+									a.titlelink{
+										/*width:60%;*/
+									}
 								}
 								/*]]>*/
 							</style>
@@ -1305,6 +1339,15 @@
 								}
 								img{
 									max-width:100%;
+								}
+								div.post-body.entry-content p{
+								    line-height: 25px;
+								}
+								div.sourcecode{
+									font-size:12px;
+								}
+								p.titleImage{
+									display:none;
 								}
 								/*]]>*/
 							</style>
@@ -1489,14 +1532,18 @@
 						<!--<hr/>-->
 						<!-- ***본문 내용 -->
 						<!--<div class='post-body entry-content' expr:id='&quot;post-body-&quot; + data:post.id' expr:itemprop='(data:blog.metaDescription ? &quot;&quot; : &quot;description &quot;) + &quot;articleBody&quot;'>-->
-						<div class='post-body entry-content'>
-							<b:if cond='data:blog.pageType == &quot;index&quot;'>
-								<b:if cond='data:post.firstImageUrl'>
+						<b:if cond='data:blog.pageType == &quot;index&quot;'>
+							<b:if cond='data:post.firstImageUrl'>
+								<div class='firstImageBox'>
 									<img class='firstImage' expr:src='data:post.firstImageUrl'/>
-								</b:if>
+								</div>
 							</b:if>
-							<data:post.body/>
-						</div>
+						</b:if>
+						<b:if cond='data:blog.pageType == &quot;item&quot;'>
+							<div class='post-body entry-content'>
+								<data:post.body/>
+							</div>
+						</b:if>
 					</b:includable>
 					<!-- includable widget:Blog parents:post*** -->
 
@@ -2166,7 +2213,27 @@
 		</footer>
 		<script charset='utf-8' src='//nowonbun.github.io/googleblog/js/nowonbun.js' type='text/javascript'/>
 		<script>
+			//<![CDATA[
 			dp.SyntaxHighlighter.HighlightAll('code');
+			$(function(){
+				listImageSetting();
+			});
+			$(window).resize(function(){
+				listImageSetting();
+			});
+			var listImageSetting = function(){
+				$('div.post-outer > fieldset').each(function(index,item){
+					imageWidth = 0;
+					imageWidth = $(this).children('div').children('div.firstImageBox').width();
+					if(imageWidth == null){
+						imageWidth = 0;
+					}else{
+						imageWidth = 105;
+					}
+					$(this).children('div').children('a.titlelink').css('width',$(this).width()-imageWidth);
+				});
+			};
+			//]]>
 		</script>
 	</body>
 </html>
