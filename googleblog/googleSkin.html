@@ -598,6 +598,11 @@
 				font-size:20px;
 				background:#f5f5f5;
 			}
+			aside.rightside div.rightsidebody a.popularTitle{
+			    text-overflow: ellipsis;
+				overflow: hidden;
+				white-space: nowrap;
+			}
 			/******************************
 			* 본문 타이틀 처리
 			*******************************/
@@ -1004,7 +1009,7 @@
 				</a>
 				<div>LIST</div>
 			</div>
-			<div class='leftsidebody'>
+			<div class='rightsidebody'>
 				<b:section class='rightside' id='rightside'>
 					<b:widget id='Label1' locked='true' title='ラベル' type='Label' visible='true'>
 						<!-- ***라벨 위젯 -->
@@ -2204,6 +2209,7 @@
 		</footer>
 		<script charset='utf-8' src='//nowonbun.github.io/googleblog/js/nowonbun.js' type='text/javascript'/>
 		<script>
+			//<![CDATA[
 			dp.SyntaxHighlighter.HighlightAll('code');
 			$(function(){
 				listImageSetting();
@@ -2223,6 +2229,7 @@
 					$(this).children('div').children('a.titlelink').css('width',$(this).width()-imageWidth);
 				});
 			};
+			//]]>
 		</script>
 	</body>
 </html>
