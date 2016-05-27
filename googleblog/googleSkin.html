@@ -593,12 +593,16 @@
 			/*****************************
 			* 특정 강조 제목
 			******************************/
-			p > b{
+			p > b, h2 > b{
 				border:1px solid silver;
 				display:block;
 				padding:10px;
 				font-size:20px;
 				background:#f5f5f5;
+			}
+			p > b > span,h2 > b > span{
+				border-left: 5px solid black;
+			    padding-left: 10px;
 			}
 			aside.rightside div.rightsidebody a.popularTitle{
 			    text-overflow: ellipsis;
@@ -608,7 +612,7 @@
 			/******************************
 			* 본문 타이틀 처리
 			*******************************/
-			div.post-title.entry-title{
+			h1.post-title.entry-title{
 				border:1px solid silver;
 			    background-color: rgba(192, 192, 192, 0.38);
 				padding:10px;
@@ -1517,9 +1521,11 @@
 						<!-- ***본문 타이틀 -->
 						<b:if cond='data:post.title'>
 							<b:if cond='data:blog.pageType == &quot;item&quot;'>
-								<div class='post-title entry-title' itemprop='name'>
+								<!--<div class='post-title entry-title' itemprop='name'>-->
+								<h1 class='post-title entry-title' itemprop='name'>
 									<data:post.title/>
-								</div>
+								</h1>
+								<!--</div>-->
 							<b:else />
 								<a class='titlelink' expr:href='data:post.link ? data:post.link : data:post.url'>
 									<h3 class='post-title entry-title' itemprop='name'>
