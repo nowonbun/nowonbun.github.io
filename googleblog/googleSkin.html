@@ -9,7 +9,7 @@
 	    <meta content='dynamic' name='nowonbunTemplate'/>
 		<meta content='IE=edge' http-equiv='X-UA-Compatible'/>
 		<meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no' name='viewport'/>
-		<meta name="Author" content="明月" />
+		<meta name="author" content="明月" itemprop='author'/>
 		<meta name="keywords" content="プログラミング" />
 		<meta name="keywords" content="プログラム" />
 		<meta name="keywords" content="開発" />
@@ -1371,7 +1371,10 @@
 							</b:if>
 							<meta expr:content='data:blog.blogId' itemprop='blogId'/>
 							<meta expr:content='data:post.id' itemprop='postId'/>
-							<a expr:name='data:post.id'/>
+							<meta content="明月" itemprop='author'/>
+							<meta expr:content='data:post.timestampISO8601' itemprop='datePublished'/>
+							<meta expr:content='data:post.authorPhoto.url' itemprop='image'/>
+							<!--<a expr:name='data:post.id'/>-->
 							<b:if cond='data:post.link or (data:post.url and data:blog.url != data:post.url)'>
 								<!-- 리스트 -->
 								<b:include data='post' name='post_body'/>
