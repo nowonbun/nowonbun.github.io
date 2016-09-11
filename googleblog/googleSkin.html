@@ -77,9 +77,9 @@
 			}
 			/* ***헤더 */
 			header{
-			    position: fixed;
-			    width: 100%;
-			    z-index: 999;
+				position: fixed;
+				width: 100%;
+				z-index: 999;
 			}
 			/* 해더 구역 나누기*/
 			header div.header.section {
@@ -158,7 +158,7 @@
 				background-color: #fff;
 				height: 100%;
 				z-index: 1001;
-			    overflow: auto;
+				overflow: auto;
 			}
 
 			aside div.widget{
@@ -193,7 +193,7 @@
 				margin-bottom: 0px;
 				font-size: 15px;
 				border: 1px dotted;
-			    border-radius: 10px;
+				border-radius: 10px;
 				background-color:#B4D6F7;
 			}
 			/* 사이드 메뉴*** */
@@ -215,7 +215,7 @@
 				height: 50px;
 				font-size: 25px;
 				padding-top: 5px;
-			    border-bottom: 2px solid #B4D6F7;
+				border-bottom: 2px solid #B4D6F7;
 				/*padding: 10px;*/
 				/*padding-left: 20px;*/
 			}
@@ -340,7 +340,6 @@
 			
 
 			/* ***오른쪽 사이드 메뉴 라벨 스타일 */
-
 			aside.rightside div.widget.Label fieldset ul,
 			aside.rightside div.widget.PopularPosts fieldset ul {
 				padding:0px;
@@ -357,8 +356,8 @@
 			aside.rightside div.widget.Label fieldset ul li span {
 				text-decoration: none;
 				color: black;
-			    display: block;
-			    padding: 5px 10px;
+				display: block;
+				padding: 5px 10px;
 			}
 
 			aside.rightside div.widget.Label fieldset ul li a:hover {
@@ -393,7 +392,7 @@
 			aside.rightside div.widget.PopularPosts fieldset ul li div.item-title a.popularTitle {
 				display:inline-block;
 				text-decoration: none;
-			    padding: 5px 10px;
+				padding: 5px 10px;
 				color: black;
 				float: left;
 				width: 80%;
@@ -414,9 +413,8 @@
 				padding-left: 15px;
 				font-size: 12px;
 				clear: both;
-			    background-color: white;
-
-			    padding-top: 2px;
+				background-color: white;
+				padding-top: 2px;
 				white-space: normal;
 				overflow: hidden;
 				text-overflow: ellipsis;
@@ -481,7 +479,7 @@
 				margin-bottom: 0px;
 				font-size: 15px;
 				border: 1px dotted;
-			    border-radius: 10px;
+				border-radius: 10px;
 			}
 
 			article fieldset > div.post.hentry.uncustomized-post-template {
@@ -565,7 +563,7 @@
 			}
 			div.firstImageBox{
 				display: inline-block;
-			    float: right;
+				float: right;
 			}
 			footer {
 				padding: 10px 10px;
@@ -588,13 +586,13 @@
 				text-decoration:none;
 				color:black;
 				border: 1px dotted #CAC7C7;
-			    padding: 10px;
+				padding: 10px;
 			}
 			/*****************************
 			* 특정 강조 제목
 			******************************/
 			h2{
-			    margin: 0px;
+				margin: 0px;
 			}
 			p > b, h2 > b{
 				border:1px solid silver;
@@ -605,12 +603,29 @@
 			}
 			p > b > span,h2 > b > span{
 				border-left: 5px solid black;
-			    padding-left: 10px;
+				padding-left: 10px;
 			}
 			aside.rightside div.rightsidebody a.popularTitle{
-			    text-overflow: ellipsis;
+				text-overflow: ellipsis;
 				overflow: hidden;
 				white-space: nowrap;
+			}
+			div.comment{
+				/*border-left: solid 3px black;*/
+				padding-left: 5px;
+				/*margin-left: 5px;*/
+			}
+			div.comment:before{
+			  	content:"↓";
+				margin-right:10px;
+				font-weight:bold;
+				font-size'15px;
+			}
+			div.sourcecode > div.title{
+				background-color: black;
+			    color: white;
+			    font-size: 13px;
+			    padding: 3px;
 			}
 			/******************************
 			* 본문 타이틀 처리

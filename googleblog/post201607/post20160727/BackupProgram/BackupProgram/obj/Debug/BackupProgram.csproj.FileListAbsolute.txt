@@ -1,0 +1,6 @@
+c:\users\sy\documents\visual studio 2015\Projects\BackupProgram\BackupProgram\bin\Debug\BackupProgram.exe.config
+c:\users\sy\documents\visual studio 2015\Projects\BackupProgram\BackupProgram\bin\Debug\BackupProgram.exe
+c:\users\sy\documents\visual studio 2015\Projects\BackupProgram\BackupProgram\bin\Debug\BackupProgram.pdb
+c:\users\sy\documents\visual studio 2015\Projects\BackupProgram\BackupProgram\obj\Debug\BackupProgram.csprojResolveAssemblyReference.cache
+c:\users\sy\documents\visual studio 2015\Projects\BackupProgram\BackupProgram\obj\Debug\BackupProgram.exe
+c:\users\sy\documents\visual studio 2015\Projects\BackupProgram\BackupProgram\obj\Debug\BackupProgram.pdb
