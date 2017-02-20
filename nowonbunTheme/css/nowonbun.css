@@ -756,13 +756,10 @@ p.image{
 p.image > span{
 	border:3px solid #000;
 }
+
 div.adsenseHeadDefault,
 div.adsenseFootDefault,
 div.adsenseHead,
 div.adsenseFoot{
 	margin:20px 0px;
-}
-
-p.postStyle > h3{
-	font-size : 21px;
 }

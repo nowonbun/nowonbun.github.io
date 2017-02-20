@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <skin>
 	<information>
 		<name>nowonbun</name>
 		<version>0.01b</version>
 		<description>
-		<![CDATA[ 명월일지 스킨입니다. ]]>
+		<![CDATA[ 부트스트랩을 응용한 스킨입니다. ]]>
 		</description>
 		<license>
 		<![CDATA[자유롭게 수정이 가능하며, 저작권 표시하에 재배포 가능합니다. ]]>
@@ -16,19 +16,19 @@
 		<email>nowonbun@naver.com</email>
 	</author>
 	<default>
-		<recentEntries>10</recentEntries>
+		<recentEntries>0</recentEntries>
 		<recentComments>0</recentComments>
 		<recentTrackbacks>0</recentTrackbacks>
 		<itemsOnGuestbook>10</itemsOnGuestbook>
-		<tagsInCloud>100</tagsInCloud>
+		<tagsInCloud>30</tagsInCloud>
 		<sortInCloud>1</sortInCloud>
 		<expandComment>1</expandComment>
-		<expandTrackback>0</expandTrackback>
-		<lengthOfRecentNotice>100</lengthOfRecentNotice>
-		<lengthOfRecentEntry>100</lengthOfRecentEntry>
-		<lengthOfRecentComment>0</lengthOfRecentComment>
-		<lengthOfRecentTrackback>0</lengthOfRecentTrackback>
-		<lengthOfLink>0</lengthOfLink>
+		<expandTrackback>1</expandTrackback>
+		<lengthOfRecentNotice>30</lengthOfRecentNotice>
+		<lengthOfRecentEntry>30</lengthOfRecentEntry>
+		<lengthOfRecentComment>10</lengthOfRecentComment>
+		<lengthOfRecentTrackback>10</lengthOfRecentTrackback>
+		<lengthOfLink>30</lengthOfLink>
 		<showListOnCategory>0</showListOnCategory>
 		<showListOnArchive>0</showListOnArchive>
 		<commentMessage>
@@ -44,9 +44,9 @@
 			<bgColor>ffffff</bgColor>
 			<activeColor>000000</activeColor>
 			<activeBgColor>eeeeee</activeBgColor>
-			<labelLength>30</labelLength>
+			<labelLength>15</labelLength>
 			<showValue>0</showValue>
-		</tree>
+			</tree>
 		<contentWidth>700</contentWidth>
 	</default>
 </skin>

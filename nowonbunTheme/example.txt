@@ -2,7 +2,7 @@
 
 <div style="border-style:solid;" class="sourcecode">
 <textarea name="code" class="brush:text;"> 
-
+에디터 모드에서 이 사이에 코드를 작성하면 된다.
 </textarea>
 </div>
 
@@ -25,12 +25,5 @@
 	</table>
 </div>
 
-<div class="adsenseHead"></div>
 
-<div class="adsenseFoot"></div>
-
-<p class="postStyle">
-<h3>타이틀</h3>
-<blockquote style="border: 1px solid;border-left: 5px solid;">
-</blockquote>
-</p>
+<q cite="urn:isbn:4041001013"></q>
