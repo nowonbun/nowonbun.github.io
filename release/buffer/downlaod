@@ -1,0 +1,51 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using Gecko;
+using System.IO;
+
+namespace GeckoDownloadTest
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            Xpcom.EnableProfileMonitoring = false;
+            var app_dir = Path.GetDirectoryName(Application.ExecutablePath);
+            Xpcom.Initialize(Path.Combine(app_dir, "Firefox"));
+            Gecko.LauncherDialog.Download += (sender, e) =>
+            {
+                nsIWebBrowserPersist persist = Xpcom.CreateInstance<nsIWebBrowserPersist>("@mozilla.org/embedding/browser/nsWebBrowserPersist;1");
+                persist.SaveURI(IOService.CreateNsIUri(e.Url),
+                                    null,
+                                    null,
+                                    (uint)Gecko.nsIHttpChannelConsts.REFERRER_POLICY_NO_REFERRER,
+                                    null,
+                                    null,
+                                    (nsISupports)IOService.CreateNsIUri(new Uri("c:\\work\\" + e.Filename).AbsoluteUri),
+                                    null
+                                );
+            };
+            InitializeComponent();
+            webBrowser1.DocumentCompleted += (sender, e) =>
+            {
+                GeckoElement script = webBrowser1.Document.CreateElement("script");
+                script.SetAttribute("type", "text/javascript");
+                script.TextContent = "$(\"#download\").submit();";
+                webBrowser1.Document.Head.AppendChild(script);
+            };
+        }
+
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+            webBrowser1.Navigate("http://localhost:8080/ScrapTest/index.php");
+        }
+    }
+}
