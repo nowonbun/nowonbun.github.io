@@ -1,19 +1,8 @@
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Gecko;
 using System.IO;
-/*
-http://www.esmplus.com/Member/SignIn/LogOn
-isorikids
-tmakdlf5
-*/
+
 namespace GeckoDownloadTest
 {
     public partial class Form1 : Form
@@ -23,8 +12,15 @@ namespace GeckoDownloadTest
             Xpcom.EnableProfileMonitoring = false;
             var app_dir = Path.GetDirectoryName(Application.ExecutablePath);
             Xpcom.Initialize(Path.Combine(app_dir, "Firefox"));
+            
             Gecko.LauncherDialog.Download += (sender, e) =>
             {
+                nsILocalFile objTarget = (nsILocalFile)Xpcom.NewNativeLocalFile("c:\\work\\" + e.Filename);
+                e.HelperAppLauncher.SaveToDisk(objTarget, false);
+                //e.HelperAppLauncher.LaunchWithApplication(null, false);
+
+                //e.HelperAppLauncher.SaveToDisk
+                /*
                 nsIWebBrowserPersist persist = Xpcom.CreateInstance<nsIWebBrowserPersist>("@mozilla.org/embedding/browser/nsWebBrowserPersist;1");
                 persist.SaveURI(IOService.CreateNsIUri(e.Url),
                                     null,
@@ -35,21 +31,102 @@ namespace GeckoDownloadTest
                                     (nsISupports)IOService.CreateNsIUri(new Uri("c:\\work\\" + e.Filename).AbsoluteUri),
                                     null
                                 );
+                */
+                /*
+                nsILocalFile objTarget = Xpcom.CreateInstance<nsILocalFile>("@mozilla.org/file/local;1");
+
+                using (nsAString tmp = new nsAString(@Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\temp.tmp"))
+                {
+                    objTarget.InitWithPath(tmp);
+                }
+
+                //Save file dialog
+                Stream myStream;
+                SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+
+                saveFileDialog1.Filter = "All files (*.*)|*.*";
+                saveFileDialog1.FilterIndex = 2;
+                saveFileDialog1.RestoreDirectory = true;
+                saveFileDialog1.FileName = e.Filename;
+
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    using (myStream = saveFileDialog1.OpenFile())
+                    {
+                        nsIURI source = IOService.CreateNsIUri(e.Url);
+                        nsIURI dest = IOService.CreateNsIUri(new Uri(@saveFileDialog1.FileName).AbsoluteUri);
+                        nsAStringBase t = (nsAStringBase)new nsAString(System.IO.Path.GetFileName(@saveFileDialog1.FileName));
+
+                        nsIWebBrowserPersist persist = Xpcom.CreateInstance<nsIWebBrowserPersist>("@mozilla.org/embedding/browser/nsWebBrowserPersist;1");
+                        nsIDownloadManager DownloadMan = null;
+                        DownloadMan = Xpcom.CreateInstance<nsIDownloadManager>("@mozilla.org/download-manager;1");
+                        nsIDownload download = DownloadMan.AddDownload(0, source, dest, t, e.Mime, 0, null, (nsICancelable)persist, true);
+
+                        if (download != null)
+                        {
+                            persist.SetPersistFlagsAttribute(2 | 32 | 16384);
+                            persist.SetProgressListenerAttribute((nsIWebProgressListener)download);
+                            persist.SaveURI(source, null, null, (uint)Gecko.nsIHttpChannelConsts.REFERRER_POLICY_NO_REFERRER, null, null, (nsISupports)dest, null);
+                        }
+                    }
+                }*/
+                /*
+                uint flags = (uint)nsIWebBrowserPersistConsts.PERSIST_FLAGS_NO_CONVERSION |
+                (uint)nsIWebBrowserPersistConsts.PERSIST_FLAGS_REPLACE_EXISTING_FILES |
+                (uint)nsIWebBrowserPersistConsts.PERSIST_FLAGS_BYPASS_CACHE;
+
+                SaveFileDialog sfd = new SaveFileDialog();
+                sfd.FileName = e.Filename;
+
+
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    // the part that do the download, may be used for automation, or when the source URI is known, or after a parse of the dom :
+                    string url = e.Url;  //url to download
+                    string fullpath = sfd.FileName; //destination file absolute path
+
+                    nsIURI source = IOService.CreateNsIUri(url);
+                    nsIURI dest = IOService.CreateNsIUri(new Uri(fullpath).AbsoluteUri);
+
+                    nsIWebBrowserPersist persist = Xpcom.GetService<nsIWebBrowserPersist>("@mozilla.org/embedding/browser/nsWebBrowserPersist;1");
+
+                    nsIWindowWatcher win = Xpcom.GetService<nsIWindowWatcher>("@mozilla.org/embedcomp/window-watcher;1");
+                    win.OpenWindow(null, new Uri("chrome://mozapps/content/downloads/downloads.xul").AbsoluteUri,
+                        "Downloads", "chrome,resizable=yes", null);
+
+                    nsIDownloadManager DownloadMan = Xpcom.CreateInstance<nsIDownloadManager>("@mozilla.org/download-manager;1");
+                    nsIDownload download = DownloadMan.AddDownload(0, source, dest, null, e.Mime, 0, null, (nsICancelable)persist, false);
+
+                    persist.SetPersistFlagsAttribute(flags);
+                    persist.SetProgressListenerAttribute((nsIWebProgressListener)download);
+                    persist.SaveURI(source, null, null, (uint)Gecko.nsIHttpChannelConsts.REFERRER_POLICY_NO_REFERRER, null, null, (nsISupports)dest, null);
+                    // file is saved - asynchronous call
+                    // need to try to have a temp name while the file is downloaded eg filename.ext.geckodownload (one of the SaveURI option)
+                }*/
             };
             InitializeComponent();
-            webBrowser1.DocumentCompleted += (sender, e) =>
+            /*webBrowser1.DocumentCompleted += (sender, e) =>
             {
                 GeckoElement script = webBrowser1.Document.CreateElement("script");
                 script.SetAttribute("type", "text/javascript");
                 script.TextContent = "$(\"#download\").submit();";
                 webBrowser1.Document.Head.AppendChild(script);
+            };*/
+            webBrowser1.Navigated += (sender, e) =>
+            {
+                //Console.WriteLine(e.Uri);
+            };
+            webBrowser1.DocumentCompleted += (sender, e) =>
+            {
+                //Console.WriteLine(e.Uri);
             };
         }
 
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
-            webBrowser1.Navigate("http://localhost:8080/ScrapTest/index.php");
+            webBrowser1.Navigate("http://www.esmplus.com/Member/SignIn/LogOn");
+            //webBrowser1.Navigate("http://localhost:8080/ScrapTest/index.php");
         }
     }
 }
