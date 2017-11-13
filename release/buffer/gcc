@@ -1,0 +1,2 @@
+g++ -c -fPIC HelloWorldClass.cpp -o HelloWorldClass.o
+g++ -shared HelloWorldClass.o -o HelloWorldClass.so
