@@ -1,0 +1,9 @@
+cygwin_setup.exe -q -P wget,tar,qawk,bzip2,subversion,vim,openssh,tcp-wrappers,zlib
+
+
+https://github.com/transcode-open/apt-cyg/blob/master/apt-cyg
+
+
+cd /bin/
+wget https://raw.githubusercontent.com/transcode-open/apt-cyg/master/apt-cyg
+chmod +x /bin/apt-cyg
